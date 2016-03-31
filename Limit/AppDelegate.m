@@ -54,10 +54,12 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WILL_ENTER_FOREGROUND" object:self ];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DID_BECOME_ACTIVE" object:self ];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -102,6 +104,7 @@
 }
 
 -(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DID_REGISTER_USER_NOTIFICATION" object:self userInfo:[[NSDictionary alloc] initWithObjectsAndKeys:notificationSettings, @"setting", nil]];
 }
 

@@ -23,28 +23,23 @@
 }
 
 
-// Will be called when changing notification setting
-- (void)receiveNotificationPermissionChange:(NSNotification *)notification{
+- (void)checkNotificationPermission{
+    UIApplication *application = [UIApplication sharedApplication];
     
-    NSDictionary *info = notification.userInfo;
-    
-    NSLog(@"%lu",(unsigned long)[[info objectForKey:@"setting"] types]);
-    
-    if([[info objectForKey:@"setting"] types]){
-        NSLog(@"%@", @"Succeed-S");
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        NSLog(@"Succeed to get permission");
         [self switchToMainPage];
     }else{
-        NSLog(@"%@", @"Fail-S");
+        NSLog(@"Fail to get permission");
     }
 }
 
 
+
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
-    // DOESN'T WORK
-    // Need to relaunch the app in order to make changes
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotificationPermissionChange:) name:@"DID_REGISTER_USER_NOTIFICATION" object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNotificationPermission) name:@"DID_BECOME_ACTIVE" object:nil];
 
 }
 
