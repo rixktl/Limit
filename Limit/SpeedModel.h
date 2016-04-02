@@ -7,34 +7,34 @@
 //
 
 #import <Foundation/Foundation.h>
-
-#import "Utility.h"
+#import "GoogleGeo.h"
 #import "LocationManager.h"
 #import "OSMXMLParser.h"
-#import "GoogleGeo.h"
+#import "Utility.h"
+
+#pragma mark - Protocol
 
 @protocol SpeedModelDelegate <NSObject>
+
 @required
+
 - (void)updateSpeed:(int)currentSpeed;
-- (void)updateUnit:(NSString*)unit;
+- (void)updateUnit:(NSString *)unit;
 - (void)updateLimit:(int)limitSpeed;
+
 @end
 
+#pragma mark - Interface
 
+@interface SpeedModel : NSObject <LocationManagerDelegate>
 
-@interface SpeedModel : NSObject<LocationManagerDelegate>{
-    LocationManager *Manager;
-    OSMXMLParser *DB;
-    GoogleGeo *Geo;
-    id<SpeedModelDelegate> delegate;
-}
-
-@property id delegate;
-
+@property(nonatomic) LocationManager *Manager;
+@property(nonatomic) OSMXMLParser *DB;
+@property(nonatomic) GoogleGeo *Geo;
+@property(nonatomic) id<SpeedModelDelegate> delegate;
 
 - (void)startUpdate;
 - (void)stopUpdate;
 - (void)flipUnit;
 
 @end
-

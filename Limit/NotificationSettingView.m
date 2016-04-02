@@ -38,9 +38,9 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNotificationPermission) name:@"DID_BECOME_ACTIVE" object:nil];
-
+    
 }
 
 @end

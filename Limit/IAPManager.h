@@ -1,6 +1,6 @@
 //
 //  IAPManager.h
-//  Limit_beta
+//  Limit
 //
 //  Created by Rix on 5/25/15.
 //  Copyright (c) 2015 Rix. All rights reserved.
@@ -10,7 +10,8 @@
 #import <StoreKit/StoreKit.h>
 #import "Utility.h"
 
-@interface IAPManager : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
+@interface IAPManager
+    : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property NSMutableArray *productID;
 
