@@ -29,7 +29,7 @@
 
 -(void)switchToNextPage{
     
-    UIViewController *v = [[UIStoryboard storyboardWithName:@"Main" bundle: nil]instantiateViewControllerWithIdentifier:@"NotificationRequest"];
+    UIViewController *v = [[UIStoryboard storyboardWithName:@"Main" bundle: nil]instantiateViewControllerWithIdentifier:@"MainSpeed"];
     [self presentViewController:v animated:YES completion:nil];
 }
 

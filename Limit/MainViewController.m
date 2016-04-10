@@ -362,7 +362,7 @@ static const double AUDIO_OFFSET = 0.0;
     
     if(!self.DidLoad){
         // Restart all
-        //[self viewDidLoad];
+        [self viewDidLoad];
         NSLog(@"Restart");
     }
 }

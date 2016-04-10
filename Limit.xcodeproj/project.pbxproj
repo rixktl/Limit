@@ -63,8 +63,6 @@
 		D98204721C2E758A001243EE /* LoadingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98204711C2E758A001243EE /* LoadingPageViewController.m */; };
 		D98204741C2E761D001243EE /* LoadingVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = D98204731C2E761D001243EE /* LoadingVideo.mov */; };
 		D98204761C2E927A001243EE /* loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = D98204751C2E927A001243EE /* loader.gif */; };
-		D9B975361C4DF25B00C5405F /* NotificationRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B975351C4DF25B00C5405F /* NotificationRequestView.m */; };
-		D9BF083A1C5EEAE0000D52BD /* NotificationSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9BF08391C5EEAE0000D52BD /* NotificationSettingView.m */; };
 		D9CA279E1C30C14C0018C63B /* LocationSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CA279D1C30C14C0018C63B /* LocationSettingView.m */; };
 		D9DD91C41C2E444E001E750A /* LocationRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DD91C31C2E444E001E750A /* LocationRequestView.m */; };
 		D9DD92351C2E5389001E750A /* single0.png in Resources */ = {isa = PBXBuildFile; fileRef = D9DD91D01C2E5389001E750A /* single0.png */; };
@@ -330,10 +328,6 @@
 		D98204711C2E758A001243EE /* LoadingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingPageViewController.m; sourceTree = "<group>"; };
 		D98204731C2E761D001243EE /* LoadingVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = LoadingVideo.mov; sourceTree = "<group>"; };
 		D98204751C2E927A001243EE /* loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader.gif; sourceTree = "<group>"; };
-		D9B975341C4DF25B00C5405F /* NotificationRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationRequestView.h; sourceTree = "<group>"; };
-		D9B975351C4DF25B00C5405F /* NotificationRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationRequestView.m; sourceTree = "<group>"; };
-		D9BF08381C5EEAE0000D52BD /* NotificationSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingView.h; sourceTree = "<group>"; };
-		D9BF08391C5EEAE0000D52BD /* NotificationSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingView.m; sourceTree = "<group>"; };
 		D9CA279C1C30C14C0018C63B /* LocationSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSettingView.h; sourceTree = "<group>"; };
 		D9CA279D1C30C14C0018C63B /* LocationSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSettingView.m; sourceTree = "<group>"; };
 		D9DD91C21C2E444E001E750A /* LocationRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationRequestView.h; sourceTree = "<group>"; };
@@ -703,7 +697,6 @@
 				D9DD91CC1C2E524C001E750A /* AppDelegate */,
 				D9DD91C51C2E50B8001E750A /* Functionality */,
 				D9455E401C2E3F9100086AC7 /* LocationPermission */,
-				D9B975331C4DF1FF00C5405F /* NotificationPermission */,
 				D982046F1C2E7562001243EE /* LoadingPageView */,
 				D9DD91CD1C2E52A6001E750A /* MainView */,
 				D9DD91CE1C2E52D4001E750A /* SettingView */,
@@ -769,17 +762,6 @@
 				D98204711C2E758A001243EE /* LoadingPageViewController.m */,
 			);
 			name = LoadingPageView;
-			sourceTree = "<group>";
-		};
-		D9B975331C4DF1FF00C5405F /* NotificationPermission */ = {
-			isa = PBXGroup;
-			children = (
-				D9B975341C4DF25B00C5405F /* NotificationRequestView.h */,
-				D9B975351C4DF25B00C5405F /* NotificationRequestView.m */,
-				D9BF08381C5EEAE0000D52BD /* NotificationSettingView.h */,
-				D9BF08391C5EEAE0000D52BD /* NotificationSettingView.m */,
-			);
-			name = NotificationPermission;
 			sourceTree = "<group>";
 		};
 		D9DD91C51C2E50B8001E750A /* Functionality */ = {
@@ -1247,13 +1229,11 @@
 				4C976E9F1AFAF2B0009A3AFA /* GoogleGeo.m in Sources */,
 				4CF73E1B1AF6DFBE002EDA42 /* LocationManager.m in Sources */,
 				D9DD91C41C2E444E001E750A /* LocationRequestView.m in Sources */,
-				D9B975361C4DF25B00C5405F /* NotificationRequestView.m in Sources */,
 				4C51C0801B0B51CC007BE27B /* OSMData.m in Sources */,
 				4C968A511B13DAE00082FDF9 /* TablePurchaseViewController.m in Sources */,
 				4C007E671AF88A2B006FB5D7 /* OSMXMLParser.m in Sources */,
 				4C02552B1B14F68F00E8E36E /* NavigationViewController.m in Sources */,
 				4CF73DF81AF6D86F002EDA42 /* MainViewController.m in Sources */,
-				D9BF083A1C5EEAE0000D52BD /* NotificationSettingView.m in Sources */,
 				D9CA279E1C30C14C0018C63B /* LocationSettingView.m in Sources */,
 				4CF73E1E1AF71631002EDA42 /* Utility.m in Sources */,
 				4C81930B1B3C7920004EFE0F /* Reachability.m in Sources */,
