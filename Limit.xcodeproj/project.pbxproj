@@ -60,6 +60,7 @@
 		4CF73E1B1AF6DFBE002EDA42 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF73E1A1AF6DFBE002EDA42 /* LocationManager.m */; };
 		4CF73E1E1AF71631002EDA42 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF73E1D1AF71631002EDA42 /* Utility.m */; };
 		D90B2F741C4CA595007B833A /* SpeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D90B2F731C4CA595007B833A /* SpeedModel.m */; };
+		D964AD991CBB17F100F37A4F /* CommunicationProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D964AD981CBB17F100F37A4F /* CommunicationProtocol.m */; };
 		D98204721C2E758A001243EE /* LoadingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98204711C2E758A001243EE /* LoadingPageViewController.m */; };
 		D98204741C2E761D001243EE /* LoadingVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = D98204731C2E761D001243EE /* LoadingVideo.mov */; };
 		D98204761C2E927A001243EE /* loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = D98204751C2E927A001243EE /* loader.gif */; };
@@ -324,6 +325,8 @@
 		D90B2F721C4CA595007B833A /* SpeedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedModel.h; sourceTree = "<group>"; };
 		D90B2F731C4CA595007B833A /* SpeedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedModel.m; sourceTree = "<group>"; };
 		D956DE271C3CF56F0012AF70 /* Limit WatchOS2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Limit WatchOS2.entitlements"; sourceTree = "<group>"; };
+		D964AD971CBB17F100F37A4F /* CommunicationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationProtocol.h; sourceTree = "<group>"; };
+		D964AD981CBB17F100F37A4F /* CommunicationProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationProtocol.m; sourceTree = "<group>"; };
 		D98204701C2E758A001243EE /* LoadingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingPageViewController.h; sourceTree = "<group>"; };
 		D98204711C2E758A001243EE /* LoadingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingPageViewController.m; sourceTree = "<group>"; };
 		D98204731C2E761D001243EE /* LoadingVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = LoadingVideo.mov; sourceTree = "<group>"; };
@@ -755,6 +758,15 @@
 			name = LocationPermission;
 			sourceTree = "<group>";
 		};
+		D964AD961CBB17CB00F37A4F /* Watch2PhoneCommunication */ = {
+			isa = PBXGroup;
+			children = (
+				D964AD971CBB17F100F37A4F /* CommunicationProtocol.h */,
+				D964AD981CBB17F100F37A4F /* CommunicationProtocol.m */,
+			);
+			name = Watch2PhoneCommunication;
+			sourceTree = "<group>";
+		};
 		D982046F1C2E7562001243EE /* LoadingPageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +779,7 @@
 		D9DD91C51C2E50B8001E750A /* Functionality */ = {
 			isa = PBXGroup;
 			children = (
+				D964AD961CBB17CB00F37A4F /* Watch2PhoneCommunication */,
 				D90B2F711C4CA585007B833A /* SpeedModel */,
 				D9DD91CB1C2E5229001E750A /* Connectivity */,
 				D9DD91CA1C2E5112001E750A /* Purchase */,
@@ -1233,6 +1246,7 @@
 				4C968A511B13DAE00082FDF9 /* TablePurchaseViewController.m in Sources */,
 				4C007E671AF88A2B006FB5D7 /* OSMXMLParser.m in Sources */,
 				4C02552B1B14F68F00E8E36E /* NavigationViewController.m in Sources */,
+				D964AD991CBB17F100F37A4F /* CommunicationProtocol.m in Sources */,
 				4CF73DF81AF6D86F002EDA42 /* MainViewController.m in Sources */,
 				D9CA279E1C30C14C0018C63B /* LocationSettingView.m in Sources */,
 				4CF73E1E1AF71631002EDA42 /* Utility.m in Sources */,

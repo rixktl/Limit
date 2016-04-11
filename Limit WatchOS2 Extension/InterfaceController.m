@@ -70,6 +70,8 @@ static const int NORMAL_MODE = 2;
     }
 }
 
+#pragma mark - Interfaces for Modes
+
 - (void)startMode{
     dispatch_async(dispatch_get_main_queue(), ^{
         [self sendMessage:@"mode" withData:@"start"];
@@ -97,7 +99,7 @@ static const int NORMAL_MODE = 2;
     });
 }
 
-
+#pragma mark - Timeout
 
 - (void)addTimeout{
     _timeout += TIMEOUT_PERIOD;
@@ -116,6 +118,7 @@ static const int NORMAL_MODE = 2;
         self.unitLabel.text = @"";
         // Replace background image
         //[self.ringsGroup setBackgroundImage:<#(nullable UIImage *)#>];
+        
     }else{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, TIMEOUT_PERIOD * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             [self checkConnectionTimeout];
@@ -123,7 +126,7 @@ static const int NORMAL_MODE = 2;
     }
 }
 
-
+#pragma mark - Handle message
 
 - (void)sendMessage:(NSString*)command withData:(NSString*)data{
     
@@ -216,6 +219,7 @@ static const int NORMAL_MODE = 2;
     }
 }
 
+#pragma mark - Ring graphic
 
 - (void)setRing:(int)speed
       withLimit:(int)limit
@@ -257,6 +261,7 @@ static const int NORMAL_MODE = 2;
     });
 }
 
+#pragma mark - App status
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];

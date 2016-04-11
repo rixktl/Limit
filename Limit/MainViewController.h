@@ -12,11 +12,10 @@
 
 #import "Utility.h"
 #import "SpeedModel.h"
+#import "CommunicationProtocol.h"
 
 
-@interface MainViewController : UIViewController <SpeedModelDelegate>{
-    SpeedModel* model;
-}
-
+@interface MainViewController : UIViewController <SpeedModelDelegate>
+@property SpeedModel* model;
 @end
 

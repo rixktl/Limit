@@ -13,10 +13,15 @@
 #define RedColor [UIColor colorWithRed:222.0/255.0 green:78.0/255.0 blue:90.0/255.0 alpha:1]
 #define BlackColor [UIColor blackColor]
 
+static int const DEFAULT_TIMEOUT = 180;
+
 static const double AUDIO_OFFSET = 0.0;
 //static const int TIMEOUT_WATCH = 30; // 30s
 
 @interface MainViewController()
+
+@property int active;
+@property bool queueCheck;
 
 @property AVAudioPlayer *audioPlayer;
 @property NSTimer *timer;
@@ -73,13 +78,13 @@ static const double AUDIO_OFFSET = 0.0;
 
 // Go to setting page
 - (IBAction)SettingButton:(id)sender {
-    [model stopUpdate];
+    [self.model stopUpdate];
 }
 
 
 
 - (IBAction)UnitChange:(id)sender {
-    [model flipUnit];
+    [self.model flipUnit];
 }
 
 
@@ -109,7 +114,7 @@ static const double AUDIO_OFFSET = 0.0;
     }else{
         // Only when in background mode
         // Make notification
-        [self notification:@"Test"];
+        //[self notification:@"Test"];
     }
     
     // Timer for unlocking
@@ -126,7 +131,7 @@ static const double AUDIO_OFFSET = 0.0;
 }
 
 
-
+/*
 - (void)notification:(NSString*)content{
     
     UILocalNotification* localNotification = [[UILocalNotification alloc] init];
@@ -135,7 +140,7 @@ static const double AUDIO_OFFSET = 0.0;
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
-
+*/
 
 
 // Send message to watch
@@ -163,7 +168,7 @@ static const double AUDIO_OFFSET = 0.0;
                                        NSLog(@"sending Error:%@", error);
         }];
         
-        self.activeConnection = true;
+        self.active = DEFAULT_TIMEOUT;
         
         
         
@@ -188,6 +193,23 @@ static const double AUDIO_OFFSET = 0.0;
 }
 
 
+- (void)checkTimeout{
+    
+    self.active -= 5;
+    
+    if(self.active <= 0){
+        exit(1);
+    }
+    
+    if(!self.queueCheck){
+        self.queueCheck = true;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            self.queueCheck = false;
+            [self checkTimeout];
+        });
+    }
+}
+
 
 - (void)processMessage:(NSNotification *)notification{
     
@@ -196,12 +218,12 @@ static const double AUDIO_OFFSET = 0.0;
     NSLog(@"MSG:%@", message);
     
     NSString* mode = [message objectForKey:@"mode"];
-    NSLog(@"%@", mode);
     
+    /*
     if([mode isEqualToString:@"init"] && self.activeConnection == false){
         // Launch background mode
         UIApplication *application = [UIApplication sharedApplication];
-    /*
+     
         __block UIBackgroundTaskIdentifier identifier = UIBackgroundTaskInvalid;
         dispatch_block_t endBlock = ^ {
             if (identifier != UIBackgroundTaskInvalid) {
@@ -211,21 +233,22 @@ static const double AUDIO_OFFSET = 0.0;
         };
     
         identifier = [application beginBackgroundTaskWithExpirationHandler:endBlock];
-    */
-        self.activeConnection = true;
     
     }
+    */
+    
+    self.active = DEFAULT_TIMEOUT;
     
     if([mode isEqualToString:@"start"]){
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             // Should start from stopped state
-            [model stopUpdate];
+            [self.model stopUpdate];
             exit(1);
         });
     }else if([mode isEqualToString:@"stop"]){
         // Nothing to do
     }else if([mode isEqualToString:@"unit"]){
-        [self UnitChange:nil];
+        [self.model flipUnit];
     }
     
 }
@@ -258,10 +281,10 @@ static const double AUDIO_OFFSET = 0.0;
     [self updateInfoForWatchOS:_limitSpeed withSpeed:_currentSpeed withUnit:_unit];
     
     // Active speed
-    if(_currentSpeed > 0 && _currentSpeed <= _limitSpeed)
+    if(_currentSpeed > 0 && _limitSpeed > 0 && _currentSpeed <= _limitSpeed)
         self.view.backgroundColor = GreenColor;
     
-    else if(_currentSpeed > 0 && _currentSpeed > _limitSpeed){
+    else if(_currentSpeed > 0 && _limitSpeed > 0 && _currentSpeed > _limitSpeed){
         // Alert
         self.view.backgroundColor = RedColor;
         [self requestAudioPlay];
@@ -292,6 +315,7 @@ static const double AUDIO_OFFSET = 0.0;
 
 -(void)preLoading{
     
+    
     [Utility saveBoolData:@"Launched" withValue:true];
     
     self.LoadingPageController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoadingPage"];
@@ -318,13 +342,17 @@ static const double AUDIO_OFFSET = 0.0;
     _unit = @"M P H";
     
     // Initalize
-    model = [[SpeedModel alloc] init];
+    self.model = [[SpeedModel alloc] init];
     
     // Set delegate for updating speed related info
-    [model setDelegate:self];
+    [self.model setDelegate:self];
     
     // Start updating
-    [model startUpdate];
+    [self.model startUpdate];
+    
+    self.active = DEFAULT_TIMEOUT;
+    self.queueCheck = false;
+    [self checkTimeout];
 }
 
 
@@ -347,7 +375,7 @@ static const double AUDIO_OFFSET = 0.0;
 
 
 - (void)viewWillDisappear:(BOOL)animated{
-    [model stopUpdate];
+    [self.model stopUpdate];
     self.DidLoad = false;
 }
 

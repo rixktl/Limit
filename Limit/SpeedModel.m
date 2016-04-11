@@ -24,8 +24,10 @@ static NSString *const MPH = @"M P H";
 static NSString *const KPH = @"K P H";
 static const int LIMIT_OFFSET = 5;   // Default as MPH
 static const int DEFAULT_LIMIT = 70; // For non-purchased user only
+
 // For purchased user, go to OSMData.m and change DefaultLimit there
 static const bool purchaseBypass = true; // DO NOT SET TRUE FOR RELEASE VERSION
+// MAKE IT TRUE IF STATE CHECK IS NOT NEEDED
 
 #pragma mark - Initialize
 

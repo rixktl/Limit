@@ -17,11 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Start WCSession for watch communication
     if ([WCSession isSupported]) {
         [[WCSession defaultSession] setDelegate:self];
         [[WCSession defaultSession] activateSession];
     }
+    
     // No idle(screen off)
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 
