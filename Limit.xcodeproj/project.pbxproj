@@ -43,7 +43,7 @@
 		4C8F649A1BAA2F9800A9CA09 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5A96C61B678CC1009133B6 /* SystemConfiguration.framework */; };
 		4C91C6071B13AA9D005C1F25 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C91C6061B13AA9D005C1F25 /* SettingViewController.m */; };
 		4C968A4C1B13D2EA0082FDF9 /* DoubleBeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C968A4B1B13D2EA0082FDF9 /* DoubleBeep.mp3 */; };
-		4C968A4E1B13D30B0082FDF9 /* settings_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C968A4D1B13D30B0082FDF9 /* settings_icon.png */; };
+		4C968A4E1B13D30B0082FDF9 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C968A4D1B13D30B0082FDF9 /* Settings.png */; };
 		4C968A511B13DAE00082FDF9 /* TablePurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C968A501B13DAE00082FDF9 /* TablePurchaseViewController.m */; };
 		4C968A541B13E16C0082FDF9 /* IAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C968A531B13E16C0082FDF9 /* IAPManager.m */; };
 		4C976E9F1AFAF2B0009A3AFA /* GoogleGeo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C976E9E1AFAF2B0009A3AFA /* GoogleGeo.m */; };
@@ -297,7 +297,7 @@
 		4C91C6051B13AA9D005C1F25 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		4C91C6061B13AA9D005C1F25 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		4C968A4B1B13D2EA0082FDF9 /* DoubleBeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DoubleBeep.mp3; sourceTree = "<group>"; };
-		4C968A4D1B13D30B0082FDF9 /* settings_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_icon.png; sourceTree = "<group>"; };
+		4C968A4D1B13D30B0082FDF9 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		4C968A4F1B13DAE00082FDF9 /* TablePurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TablePurchaseViewController.h; sourceTree = "<group>"; };
 		4C968A501B13DAE00082FDF9 /* TablePurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TablePurchaseViewController.m; sourceTree = "<group>"; };
 		4C968A521B13E16C0082FDF9 /* IAPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPManager.h; sourceTree = "<group>"; };
@@ -663,7 +663,7 @@
 		4CBA1B871B1188DD00D17703 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
-				4C968A4D1B13D30B0082FDF9 /* settings_icon.png */,
+				4C968A4D1B13D30B0082FDF9 /* Settings.png */,
 			);
 			name = Photo;
 			sourceTree = "<group>";
@@ -1194,7 +1194,7 @@
 			files = (
 				E1CEA5A11C7155E800DC8617 /* Limit_Icon_Logo_FNL_CMYK-02.jpg in Resources */,
 				4CF73DFB1AF6D86F002EDA42 /* Main.storyboard in Resources */,
-				4C968A4E1B13D30B0082FDF9 /* settings_icon.png in Resources */,
+				4C968A4E1B13D30B0082FDF9 /* Settings.png in Resources */,
 				4CF73E001AF6D86F002EDA42 /* LaunchScreen.xib in Resources */,
 				4CF73DFD1AF6D86F002EDA42 /* Images.xcassets in Resources */,
 				D98204761C2E927A001243EE /* loader.gif in Resources */,
@@ -1484,7 +1484,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Limit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.limitlabs.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit;
 				PRODUCT_NAME = Limit;
 				PROVISIONING_PROFILE = "";
 			};
@@ -1499,7 +1499,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Limit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.limitlabs.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit;
 				PRODUCT_NAME = Limit;
 				PROVISIONING_PROFILE = "";
 			};
