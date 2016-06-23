@@ -8,8 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, LocationManagerDelegate {
+    
+    let locationModel: LocationModel = LocationModel()
+    
+    func locationUpdate(data: LocationData) {
+        data.printOut()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        locationModel.delegate = self
+        locationModel.start()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

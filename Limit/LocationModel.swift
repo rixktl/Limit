@@ -9,19 +9,19 @@
 import Foundation
 import CoreLocation
 
-protocol LocationManagerDelegate{
+internal protocol LocationManagerDelegate {
     func locationUpdate(data: LocationData)
 }
 
-class LocationModel: NSObject, CLLocationManagerDelegate {
+public class LocationModel: NSObject, CLLocationManagerDelegate {
     
-    var address: String?
-    var isMPH: Bool!
-    var locationManager: CLLocationManager?
-    var delegate: LocationManagerDelegate?
-    // Location detail
-    let gpsDistanceFilter = kCLDistanceFilterNone
-    let gpsAccuracy = kCLLocationAccuracyBestForNavigation
+    internal var delegate: LocationManagerDelegate?
+    internal var isMPH: Bool!
+    private var address: String?
+    private var locationManager: CLLocationManager?
+    // Location update details
+    private let gpsDistanceFilter = kCLDistanceFilterNone
+    private let gpsAccuracy = kCLLocationAccuracyBestForNavigation
     
     /* Manager raw velocity */
     struct velocity {
@@ -39,22 +39,22 @@ class LocationModel: NSObject, CLLocationManagerDelegate {
         
         /* Return a absolute value */
         func getRealValue(speed: Double?) -> Double? {
-            
-            guard (speed == nil) else{
+            // Check for nil
+            guard (speed != nil) else {
                 return nil
             }
-            
-            if speed < 0.0 {
+            // Return 0.0 when below zero, normal value otherwise
+            if speed <= 0.0 {
                 return 0.0
-            }else{
+            } else {
                 return fabs(speed!)
             }
         }
         
         /* Return speed in MPH */
         func getMPH() -> Double? {
-            
-            guard (speed == nil) else{
+            // Check for nil
+            guard (speed != nil) else {
                 return nil
             }
             
@@ -63,8 +63,8 @@ class LocationModel: NSObject, CLLocationManagerDelegate {
         
         /* Return speed in KPH */
         func getKPH() -> Double? {
-            
-            guard (speed == nil) else{
+            // Check for nil
+            guard (speed != nil) else {
                 return nil
             }
             
@@ -72,54 +72,105 @@ class LocationModel: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    /* Initialization without delegate */
+    override public convenience init() {
+        self.init(delegate: nil)
+    }
+    
     /* Initialization */
-    override init() {
+    internal init(delegate: LocationManagerDelegate?) {
         super.init()
+        
         // Set up location manager
         locationManager = CLLocationManager()
         locationManager?.delegate = self
+        
         // Preferences
         locationManager?.distanceFilter = gpsDistanceFilter
         locationManager?.desiredAccuracy = gpsAccuracy
+        
+        // Delegate for update result(callback)
+        self.delegate = delegate
         
         // Default unit
         self.isMPH = true
     }
     
-    /* Start receiving update */
-    func start() {
+    /* Convert location to state */
+    private func locationToState() {
+        
+        // Return if nil
+        guard (locationManager?.location != nil) else {
+            return
+        }
+        
+        // Reserve geocode from location
+        let geocoder: CLGeocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation((locationManager?.location)!, completionHandler: {(placemarks, error) -> Void in
+            // Check if error exist
+            if error != nil {
+                // TODO: Error handling
+            }
+            // Check if placemarks exist
+            guard (placemarks != nil) else {
+                return
+            }
+            // Check if single placemark exist
+            guard (placemarks!.count >= 0) else {
+                return
+            }
+            let placemark: CLPlacemark = placemarks![0]
+            self.address = placemark.administrativeArea
+        })
+        
+    }
+    
+    /* Start updating location */
+    public func start() {
         // Request authorization if needed
         locationManager?.requestAlwaysAuthorization()
         // Start receiving location update
         locationManager?.startUpdatingLocation()
+        
     }
     
     /* Stop updating location */
-    func stop() {
+    public func stop() {
         locationManager?.stopUpdatingLocation()
     }
     
-    /* Receiving update */
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    
-        // To Do: Check if confirmed to protocol (CLLocation)
-        let info: CLLocation = locations[locations.endIndex]
+    /* Receives update */
+    public func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // Check if location details exist
+        guard (locations.count > 0) else {
+            return
+        }
+        
+        let info: CLLocation = locations[locations.endIndex - 1]
         let v: velocity = velocity(speed: info.speed, direction: info.course)
         let speed: Double?
         
         // Unit check
         if(isMPH!) {
             speed = v.getMPH()
-        }else{
+        } else {
             speed = v.getKPH()
         }
-    
-        // To Do: latitude, longitude, state
-        let data: LocationData = LocationData(speed: speed, latitude: nil, longitude: nil, state: nil)
+        
+        // Covert location to state
+        locationToState()
+        
+        // Construct data
+        let data: LocationData = LocationData(speed: speed, latitude: info.coordinate.latitude, longitude: info.coordinate.longitude, state: address)
         
         // Update to handler
         delegate?.locationUpdate(data)
         
+    }
+    
+    /*  Receives error */
+    public func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        // TODO: Error handling
     }
     
 }

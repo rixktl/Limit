@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D91C6EFE1D1B727000923644 /* OpenStreetMapXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C6EFD1D1B727000923644 /* OpenStreetMapXML.swift */; };
 		D9A5EF6B1D1B079F0077C1C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF6A1D1B079F0077C1C0 /* AppDelegate.swift */; };
 		D9A5EF6D1D1B079F0077C1C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF6C1D1B079F0077C1C0 /* ViewController.swift */; };
 		D9A5EF701D1B079F0077C1C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A5EF6E1D1B079F0077C1C0 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D91C6EFD1D1B727000923644 /* OpenStreetMapXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapXML.swift; sourceTree = "<group>"; };
 		D9A5EF671D1B079F0077C1C0 /* Limit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Limit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A5EF6A1D1B079F0077C1C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9A5EF6C1D1B079F0077C1C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				D9A5EF761D1B079F0077C1C0 /* Info.plist */,
 				D9A5EF981D1B175D0077C1C0 /* LocationModel.swift */,
 				D9A5EF9A1D1B2D420077C1C0 /* LocationData.swift */,
+				D91C6EFD1D1B727000923644 /* OpenStreetMapXML.swift */,
 			);
 			path = Limit;
 			sourceTree = "<group>";
@@ -199,6 +202,11 @@
 				TargetAttributes = {
 					D9A5EF661D1B079F0077C1C0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					D9A5EF7A1D1B079F0077C1C0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -264,6 +272,7 @@
 			files = (
 				D9A5EF9B1D1B2D420077C1C0 /* LocationData.swift in Sources */,
 				D9A5EF6D1D1B079F0077C1C0 /* ViewController.swift in Sources */,
+				D91C6EFE1D1B727000923644 /* OpenStreetMapXML.swift in Sources */,
 				D9A5EF991D1B175D0077C1C0 /* LocationModel.swift in Sources */,
 				D9A5EF6B1D1B079F0077C1C0 /* AppDelegate.swift in Sources */,
 			);
@@ -490,6 +499,7 @@
 				D9A5EF911D1B079F0077C1C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9A5EF921D1B079F0077C1C0 /* Build configuration list for PBXNativeTarget "LimitTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +508,7 @@
 				D9A5EF941D1B079F0077C1C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9A5EF951D1B079F0077C1C0 /* Build configuration list for PBXNativeTarget "LimitUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +517,7 @@
 				D9A5EF971D1B079F0077C1C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
