@@ -12,6 +12,16 @@ struct OpenStreetMapData {
     var ways: [way]?
 }
 
+struct coordinates {
+    var latitude: Double!
+    var longitude: Double!
+    
+    init(latitude: Double!, longitude: Double!) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+}
+
 struct tag {
     var key: String!
     var value: String!
@@ -23,13 +33,11 @@ struct tag {
 }
 
 struct node {
-    var latitude: Double!
-    var longitude: Double!
+    var coord: coordinates!
     var subTag: [tag]?
     
     init(latitude: Double!, longitude: Double!) {
-        self.latitude = latitude
-        self.longitude = longitude
+        self.coord = coordinates(latitude: latitude, longitude: longitude)
     }
 }
 

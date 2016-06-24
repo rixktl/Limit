@@ -25,11 +25,11 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
      */
     
     internal var delegate: OpenStreetMapParserDelegate!
+    internal var offsetLatitude: Double!
+    internal var offsetLongitude: Double!
     
     private let PRE_URL: String! = "https://www.overpass-api.de/api/xapi?*[maxspeed=*][bbox="
     private let POST_URL: String! = "]"
-    private let OFFSET_LATITUDE: Double! = 0.01
-    private let OFFSET_LONGITUDE: Double! = 0.01
     private let COORDINATES_SEPARATION: String! = ","
     
     private let OSM_IDENTIFIER: String! = "osm"
@@ -51,13 +51,16 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     private var isNode: Bool!
     private var parser: NSXMLParser!
     
-    override init() {
+    override public init() {
         wayIndex = 0
         nodeIndex = ""
         tmpNode = [:]
         result = OpenStreetMapData()
         isNode = true
         parser = NSXMLParser()
+        // Default values
+        offsetLatitude = 0.01
+        offsetLongitude = 0.01
         
         super.init()
     }
@@ -93,12 +96,12 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Request for new data corresponding to coordinates */
-    public func request(latitude: Double!, longitude: Double!) {
+    internal func request(coord: coordinates!) {
         // Calculate coordinates for bounded box
-        let minLat: Double! = latitude - OFFSET_LATITUDE
-        let maxLat: Double! = latitude + OFFSET_LATITUDE
-        let minLon: Double! = longitude - OFFSET_LONGITUDE
-        let maxLon: Double! = longitude + OFFSET_LONGITUDE
+        let minLat: Double! = coord.latitude - offsetLatitude
+        let maxLat: Double! = coord.latitude + offsetLatitude
+        let minLon: Double! = coord.longitude - offsetLongitude
+        let maxLon: Double! = coord.longitude + offsetLongitude
         
         // Create url
         let url: String! = PRE_URL + formUrl(minLat, maxLat, minLon, maxLon) + POST_URL

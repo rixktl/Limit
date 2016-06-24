@@ -25,7 +25,7 @@ class ViewController: UIViewController, OpenStreetMapParserDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         osmParser.delegate = self
-        osmParser.request(-122.047246, longitude: 37.324539)
+        osmParser.request(coordinates(latitude: -122.047246, longitude: 37.324539))
     }
 
     override func didReceiveMemoryWarning() {
