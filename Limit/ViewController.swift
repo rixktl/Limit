@@ -8,24 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController, LocationManagerDelegate {
+class ViewController: UIViewController, OpenStreetMapParserDelegate {
     
-    let locationModel: LocationModel = LocationModel()
+    let osmParser: OpenStreetMapParser = OpenStreetMapParser()
     
-    func locationUpdate(data: LocationData) {
-        data.printOut()
+    func dataUpdate(data: OpenStreetMapData) {
+        print("received")
+        print(data.ways?.count)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        locationModel.delegate = self
-        locationModel.start()
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        osmParser.delegate = self
+        osmParser.request(-122.047246, longitude: 37.324539)
     }
 
     override func didReceiveMemoryWarning() {

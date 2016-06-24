@@ -9,19 +9,24 @@
 import Foundation
 import CoreLocation
 
+/*
+ * A model for handling location information update.
+ * It runs in async manner
+ */
+
 internal protocol LocationManagerDelegate {
     func locationUpdate(data: LocationData)
 }
 
 public class LocationModel: NSObject, CLLocationManagerDelegate {
     
-    internal var delegate: LocationManagerDelegate?
+    internal var delegate: LocationManagerDelegate!
     internal var isMPH: Bool!
     private var address: String?
     private var locationManager: CLLocationManager?
     // Location update details
-    private let gpsDistanceFilter = kCLDistanceFilterNone
-    private let gpsAccuracy = kCLLocationAccuracyBestForNavigation
+    private let GPS_DISTANCE_FILTER = kCLDistanceFilterNone
+    private let GPS_ACCURACY = kCLLocationAccuracyBestForNavigation
     
     /* Manager raw velocity */
     struct velocity {
@@ -78,19 +83,19 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
     }
     
     /* Initialization */
-    internal init(delegate: LocationManagerDelegate?) {
+    internal init(delegate: LocationManagerDelegate!) {
         super.init()
         
         // Set up location manager
         locationManager = CLLocationManager()
-        locationManager?.delegate = self
+        locationManager!.delegate = self
         
         // Preferences
-        locationManager?.distanceFilter = gpsDistanceFilter
-        locationManager?.desiredAccuracy = gpsAccuracy
+        locationManager!.distanceFilter = GPS_DISTANCE_FILTER
+        locationManager!.desiredAccuracy = GPS_ACCURACY
         
         // Delegate for update result(callback)
-        self.delegate = delegate
+        self.delegate = delegate!
         
         // Default unit
         self.isMPH = true
@@ -164,7 +169,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         let data: LocationData = LocationData(speed: speed, latitude: info.coordinate.latitude, longitude: info.coordinate.longitude, state: address)
         
         // Update to handler
-        delegate?.locationUpdate(data)
+        delegate!.locationUpdate(data)
         
     }
     

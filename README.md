@@ -7,16 +7,16 @@ Swift version of Limit app
 
 Location Manager
 
+OpenStreetMap XML Parser
+
+Network Connectivity(implementation) *(Use error handling)
+
 
 # To Do (iPhone)
 
 Views & Controllers(Main,Settings, Purchase, Permissions...)
 
 Components:
-
-  OpenStreetMap XML Parser
-
-  Network Connectivity(implementation)
   
   SpeedModel(Combine OpenStreetMap & Location Manager for speed limit)
   

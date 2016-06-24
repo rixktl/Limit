@@ -8,21 +8,21 @@
 
 import Foundation
 
-public struct LocationData {
+struct LocationData {
     
-    private var speed: Double?
-    private var latitude: Double?
-    private var longitude: Double?
-    private var state: String?
+    var speed: Double?
+    var latitude: Double?
+    var longitude: Double?
+    var state: String?
     
-    public init(speed: Double?, latitude: Double?, longitude: Double?, state: String?) {
+    init(speed: Double?, latitude: Double?, longitude: Double?, state: String?) {
         self.speed = speed
         self.latitude = latitude
         self.longitude = longitude
         self.state = state
     }
     
-    public func printOut() {
+    func printOut() {
         print("speed:", speed)
         print("latitude:", latitude)
         print("longitude:", longitude)
