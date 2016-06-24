@@ -12,6 +12,16 @@ struct OpenStreetMapData {
     var ways: [way]?
 }
 
+struct line {
+    var coord1: coordinates!
+    var coord2: coordinates!
+    
+    init(coord1: coordinates!, coord2: coordinates) {
+        self.coord1 = coord1
+        self.coord2 = coord2
+    }
+}
+
 struct coordinates {
     var latitude: Double!
     var longitude: Double!

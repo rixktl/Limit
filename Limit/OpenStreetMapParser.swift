@@ -28,7 +28,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     internal var offsetLatitude: Double!
     internal var offsetLongitude: Double!
     
-    private let PRE_URL: String! = "https://www.overpass-api.de/api/xapi?*[maxspeed=*][bbox="
+    private let PRE_URL: String! = "https://www.overpass-api.de/api/xapi?way[maxspeed=*][bbox="
     private let POST_URL: String! = "]"
     private let COORDINATES_SEPARATION: String! = ","
     

@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, OpenStreetMapParserDelegate {
+class ViewController: UIViewController, OpenStreetMapModelDelegate {
     
-    let osmParser: OpenStreetMapParser = OpenStreetMapParser()
+    let osmModel: OpenStreetMapModel = OpenStreetMapModel()
     
-    func dataUpdate(data: OpenStreetMapData) {
-        print("received")
-        print(data.ways?.count)
+    func limitUpdate(limit: Double?) {
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -24,8 +22,8 @@ class ViewController: UIViewController, OpenStreetMapParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        osmParser.delegate = self
-        osmParser.request(coordinates(latitude: -122.047246, longitude: 37.324539))
+        osmModel.delegate = self
+        osmModel.request(coordinates(latitude: -122.047246, longitude: 37.324539))
     }
 
     override func didReceiveMemoryWarning() {

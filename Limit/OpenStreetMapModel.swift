@@ -8,6 +8,8 @@
 
 import Foundation
 
+/* Not tested yet */
+
 internal protocol OpenStreetMapModelDelegate {
     func limitUpdate(limit: Double?)
 }
@@ -18,11 +20,15 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     let osmFinder: OpenStreetMapFinder = OpenStreetMapFinder()
     var delegate: OpenStreetMapModelDelegate!
     
+    /* TODO: bound coord check (exceed->request new chunk) */
+    
     override public init() {
         // Set up parser
         osmParser.offsetLatitude = 0.01
         osmParser.offsetLongitude = 0.01
         super.init()
+        osmParser.delegate = self
+        osmFinder.delegate = self
     }
     
     /* Set bounded offset for parser */
