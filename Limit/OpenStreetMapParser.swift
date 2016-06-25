@@ -73,6 +73,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     
     /* Send an async request */
     private func asyncRequest(urlPath: String!) {
+        print(urlPath)
         let url = NSURL(string: urlPath)!
         let session = NSURLSession.sharedSession()
         

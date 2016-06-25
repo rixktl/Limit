@@ -124,6 +124,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
             let placemark: CLPlacemark = placemarks![0]
             self.address = placemark.administrativeArea
             self.ref = placemark.thoroughfare
+            //print(placemark.addressDictionary)
         })
         
     }
@@ -168,6 +169,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         
         // Update to handler
         delegate!.locationUpdate(data)
+        
     }
     
     /*  Receives error */

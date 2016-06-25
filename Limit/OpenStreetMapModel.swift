@@ -29,8 +29,8 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     
     override public init() {
         // Set up parser
-        osmParser.offsetLatitude = 0.03
-        osmParser.offsetLongitude = 0.03
+        osmParser.offsetLatitude = 0.01
+        osmParser.offsetLongitude = 0.01
         osmFinder.offsetDegree = 5.0
         coord = nil
         upperBound = nil
