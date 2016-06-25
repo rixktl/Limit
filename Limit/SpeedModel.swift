@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+ * A model that manage location data and OSM-Model
+ */
+
 internal protocol SpeedModelDelegate {
     func updateSpeedInfo(speed: Double?, speedLimit: Double?)
 }
@@ -27,14 +31,17 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
         locManager.delegate = self
     }
     
+    /* Start receiving location data */
     public func start() {
         locManager.start()
     }
     
+    /* Stop receiving location data */
     public func stop() {
         locManager.stop()
     }
     
+    /* Called when speed limit is updated */
     internal func updateSpeedLimit(speedLimit: Double?) {
         // Update speed limit
         self.speedLimit = speedLimit
@@ -42,11 +49,12 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
         delegate.updateSpeedInfo(self.speed, speedLimit: self.speedLimit)
     }
     
+    /* Called when location is updated */
     internal func locationUpdate(data: LocationData) {
         // Update speed
         self.speed = data.speed
         // Update to internal handler
-        osmModel.newCoordinates(coordinates(latitude: data.latitude, longitude: data.longitude), direction: data.direction, ref: data.ref)
+        osmModel.newCoordinates(data)
         // Update to handler
         delegate.updateSpeedInfo(self.speed, speedLimit: self.speedLimit)
     }

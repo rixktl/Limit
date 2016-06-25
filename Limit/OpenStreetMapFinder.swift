@@ -6,8 +6,6 @@
 //  Copyright © 2016 Limit Labs. All rights reserved.
 //
 
-/* Not tested yet */
-
 import Foundation
 
 /*
@@ -24,11 +22,8 @@ public class OpenStreetMapFinder {
     internal var offsetDegree: Double! = 15.0
     
     internal var data: OpenStreetMapData?
-    internal var coord: coordinates?
-    internal var direction: Double?
-    internal var ref: String?
-    internal var id: String?
-    internal var name: String?
+    internal var reverseGeoData: OpenStreetMapReverseGeoData?
+    internal var locationData: LocationData?
     
     private let MAXSPEED_TAG_IDENTIFIER: String! = "maxspeed"
     private let HIGHWAY_TAG_IDENTIFIER: String! = "highway"
@@ -47,35 +42,39 @@ public class OpenStreetMapFinder {
     /* Async search for limit */
     internal func asyncSearch() {
         
+        
         let queue: NSOperationQueue = NSOperationQueue()
         
         queue.addOperationWithBlock { () -> Void in
             var limit: Double?
             
-            limit = self.searchWithName(self.name)
-            
-            //print("Name:", self.name)
-            //print("NameLimit:", limit)
-            
-            if(limit != nil){
-                self.delegate.updateSpeedLimit(limit)
-                return
+            if(self.reverseGeoData != nil) {
+                
+                // Search limit with road name
+                limit = self.searchWithName(self.reverseGeoData!.name)
+                
+                if(limit != nil){
+                    self.delegate.updateSpeedLimit(limit)
+                    return
+                }
+                
+                // Search limit with road id
+                limit = self.searchWithId(self.reverseGeoData!.id)
+                
+                if(limit != nil){
+                    self.delegate.updateSpeedLimit(limit)
+                    return
+                }
+                
             }
             
-            limit = self.searchWithId(self.id)
-            
-            //print("IdLimit:", limit)
-            
-            if(limit != nil){
+            if(self.locationData != nil) {
+                // Fallback mode, search limit with coordinates
+                limit = self.searchWithCoordinates(self.locationData!.coord, direction: self.locationData!.direction, thoroughfare: self.locationData!.thoroughfare)
+                
                 self.delegate.updateSpeedLimit(limit)
-                return
+                
             }
-            
-            limit = self.searchWithCoordinates(self.coord, direction: self.direction, ref: self.ref)
-            
-            //print("FallbackLimit:", limit)
-            
-            self.delegate.updateSpeedLimit(limit)
         }
     }
     
@@ -119,18 +118,18 @@ public class OpenStreetMapFinder {
     }
     
     /* Search limit by coordinates */
-    private func searchWithCoordinates(coord: coordinates?, direction: Double?, ref: String?) -> Double? {
+    private func searchWithCoordinates(coord: coordinates?, direction: Double?, thoroughfare: String?) -> Double? {
         // Ensure data exist
         guard (data != nil && data!.ways != nil && coord != nil && direction != nil) else {
             // Failed to find speed limit
             return nil
         }
         
-        if(ref != nil) {
+        if(thoroughfare != nil) {
         
             for wayIndex in 0..<data!.ways!.count {
             
-                let maxspeed: Double! = extractLimitFromWayTagWithRef(data!.ways![wayIndex], ref: ref)
+                let maxspeed: Double! = extractLimitFromWayTagWithThoroughfare(data!.ways![wayIndex], thoroughfare: thoroughfare)
                 if(maxspeed != nil) {
                     return maxspeed
                 }
@@ -215,6 +214,7 @@ public class OpenStreetMapFinder {
         }
     }
     
+    /* Get limit from node's tag type */
     private func getLimitFromNodeTagType(n: node) -> Double? {
         // Ensure tag exist
         guard (n.subTag != nil) else {
@@ -230,6 +230,7 @@ public class OpenStreetMapFinder {
         return nil
     }
     
+    /* Get limit from way's tag type */
     private func getLimitFromWayTagType(w: way) -> Double? {
         // Ensure tag exist
         guard (w.subTag != nil) else {
@@ -296,7 +297,8 @@ public class OpenStreetMapFinder {
         return nil
     }
     
-    private func extractLimitFromWayTagWithRef(w: way, ref: String!) -> Double? {
+    /* Extract limit from way's tag with thoroughfare(ref) */
+    private func extractLimitFromWayTagWithThoroughfare(w: way, thoroughfare: String!) -> Double? {
         // Ensure tag exist
         guard (w.subTag != nil) else {
             return nil
@@ -305,7 +307,7 @@ public class OpenStreetMapFinder {
         var maxspeed: Double?
         var hit: Bool! = false
         for tg in w.subTag! {
-            if (tg.key == REFERENCE_TAG_IDENTIFIER && tg.value == ref) {
+            if (tg.key == REFERENCE_TAG_IDENTIFIER && tg.value == thoroughfare) {
                 hit = true
                 if(maxspeed != nil) {
                     return maxspeed
@@ -405,11 +407,13 @@ public class OpenStreetMapFinder {
         return [nearestWayIndex, finalNearestNodeIndex, finalNextNearest, Int(wayDistance)]
     }
     
+    /* Check directional distance(degree) of given line segment and direction */
     private func checkDirection(l: line!, direction: Double!) -> Bool! {
         let dir: Double! = getDirection(l)
         return (fabs(dir - direction) <= offsetDegree)
     }
     
+    /* Get direction of given line segment */
     private func getDirection(l: line!) -> Double! {
         let dlon: Double! = l.coord2.longitude - l.coord1.longitude
         let y: Double! = sin(dlon) * cos(l.coord2.latitude)

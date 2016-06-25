@@ -23,7 +23,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
     internal var delegate: LocationManagerDelegate!
     internal var isMPH: Bool!
     private var address: String?
-    private var ref: String?
+    private var thoroughfare: String?
     private var locationManager: CLLocationManager?
     // Location update details
     private let GPS_DISTANCE_FILTER = kCLDistanceFilterNone
@@ -123,8 +123,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
             
             let placemark: CLPlacemark = placemarks![0]
             self.address = placemark.administrativeArea
-            self.ref = placemark.thoroughfare
-            //print(placemark.addressDictionary)
+            self.thoroughfare = placemark.thoroughfare
         })
         
     }
@@ -165,7 +164,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         locationToState()
 
         // Construct data
-        let data: LocationData = LocationData(speed: speed, direction:v.direction, ref: ref, latitude: info.coordinate.latitude, longitude: info.coordinate.longitude, state: address)
+        let data: LocationData = LocationData(speed: speed, direction:v.direction, thoroughfare: thoroughfare, coord: coordinates(latitude: info.coordinate.latitude, longitude: info.coordinate.longitude), state: address)
         
         // Update to handler
         delegate!.locationUpdate(data)

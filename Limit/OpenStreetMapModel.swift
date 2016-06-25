@@ -8,27 +8,25 @@
 
 import Foundation
 
+/*
+ * A model that manage OSM-XAPI and OSM-Nominatim and takes current location data
+ */
+
 internal protocol OpenStreetMapModelDelegate {
     func updateSpeedLimit(speedLimit: Double?)
 }
 
 public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreetMapFinderDelegate, OpenStreetMapReverseGeoParserDelegate {
     
-    let osmParser: OpenStreetMapParser! = OpenStreetMapParser()
-    let osmFinder: OpenStreetMapFinder! = OpenStreetMapFinder()
-    let osmReverseGeo: OpenStreetMapReverseGeoParser! = OpenStreetMapReverseGeoParser()
+    private let osmParser: OpenStreetMapParser! = OpenStreetMapParser()
+    private let osmFinder: OpenStreetMapFinder! = OpenStreetMapFinder()
+    private let osmReverseGeo: OpenStreetMapReverseGeoParser! = OpenStreetMapReverseGeoParser()
     
-    var delegate: OpenStreetMapModelDelegate!
-    var coord: coordinates?
-    var direction: Double?
-    var ref: String?
-    var id: String?
-    var name: String?
-    var upperBound: coordinates?
-    var lowerBound: coordinates?
-    
-    
-    /* TODO: bound coord check (exceed->request new chunk) */
+    internal var delegate: OpenStreetMapModelDelegate!
+    private var locationData: LocationData?
+    private var reverseGeoData: OpenStreetMapReverseGeoData?
+    private var upperBound: coordinates?
+    private var lowerBound: coordinates?
     
     override public init() {
         // Set up parser
@@ -36,10 +34,6 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
         osmParser.offsetLongitude = 0.01
         // Set up finder
         osmFinder.offsetDegree = 5.0
-        // Local init
-        coord = nil
-        upperBound = nil
-        lowerBound = nil
         super.init()
         // Set up delegate
         osmParser.delegate = self
@@ -49,22 +43,23 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     
     /* Attempt to request update */
     private func request() {
+        
+        // Always get reverse geo
+        osmReverseGeo.request(self.locationData?.coord)
+        
         // Ensure non nil
         guard (checkBound() != nil) else {
             // Request new data
-            osmReverseGeo.request(coord!)
-            osmParser.request(coord!)
+            osmParser.request(self.locationData?.coord)
             return
         }
         
         // See if Bound check fail
-        if(!checkBound()! || (osmParser.coord!.latitude != coord!.latitude || osmParser.coord!.longitude != coord!.longitude) ) {
+        if(!checkBound()! || (osmParser.coord!.latitude != self.locationData!.coord!.latitude || osmParser.coord!.longitude != self.locationData!.coord!.longitude) ) {
             // Request new data
-            osmReverseGeo.request(coord!)
-            osmParser.request(coord!)
+            osmParser.request(self.locationData?.coord)
         } else {
             // Search within data using id
-            osmReverseGeo.request(coord!)
             osmFinder.asyncSearch()
         }
     }
@@ -72,15 +67,15 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     /* Check if coordinates within bound */
     private func checkBound() -> Bool? {
         // Ensure non nil
-        guard (coord != nil && upperBound != nil && lowerBound != nil) else {
+        guard (self.locationData?.coord != nil && upperBound != nil && lowerBound != nil) else {
             return nil
         }
         
         // return boolean result
-        return (coord!.latitude < upperBound!.latitude &&
-            coord!.longitude < upperBound!.latitude &&
-            coord!.latitude > lowerBound!.latitude &&
-            coord!.longitude > lowerBound?.longitude)
+        return (self.locationData?.coord!.latitude < upperBound!.latitude &&
+            self.locationData?.coord!.longitude < upperBound!.latitude &&
+            self.locationData?.coord!.latitude > lowerBound!.latitude &&
+            self.locationData?.coord!.longitude > lowerBound?.longitude)
     }
     
     /* Set bounded offset for parser */
@@ -90,33 +85,27 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     }
     
     /* Update new coordinate */
-    internal func newCoordinates(coord: coordinates?, direction: Double?, ref: String?) {
-        guard (coord != nil) else {
+    internal func newCoordinates(data: LocationData) {
+        guard (data.coord?.latitude != nil && data.coord?.longitude != nil) else {
             return
         }
         
-        self.coord = coord!
-        self.direction = direction
-        self.ref = ref
+        self.locationData = data
         request()
     }
     
     /* Receives update from reverse geo parser */
-    internal func updateReverseGeoResult(id: String!, name: String!) {
+    internal func updateReverseGeoResult(data: OpenStreetMapReverseGeoData!) {
         // Update local data
-        self.id = id
-        self.name = name
+        self.reverseGeoData = data
     }
     
     /* Receives update from parser */
     internal func updateData(data: OpenStreetMapData!) {
         // Update data for finder
         osmFinder.data = data
-        osmFinder.coord = coord
-        osmFinder.id = id
-        osmFinder.name = name
-        osmFinder.direction = direction
-        osmFinder.ref = ref
+        osmFinder.locationData = locationData
+        osmFinder.reverseGeoData = reverseGeoData
         
         // Update local boundary
         upperBound = coordinates(latitude: osmParser.coord!.latitude + osmParser.offsetLatitude, longitude: osmParser.coord!.longitude + osmParser.offsetLongitude)

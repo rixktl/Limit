@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, SpeedModelDelegate {
     
-    let speedModel: SpeedModel = SpeedModel()
+    internal let speedModel: SpeedModel = SpeedModel()
     
     func updateSpeedInfo(speed: Double?, speedLimit: Double?) {
         print("speed:", speed)

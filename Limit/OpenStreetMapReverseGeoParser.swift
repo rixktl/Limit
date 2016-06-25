@@ -14,7 +14,23 @@ import Foundation
  */
 
 internal protocol OpenStreetMapReverseGeoParserDelegate {
-    func updateReverseGeoResult(id: String!, name: String!)
+    func updateReverseGeoResult(data: OpenStreetMapReverseGeoData!)
+}
+
+/* Struct of result for reverse geo */
+struct OpenStreetMapReverseGeoData {
+    var id: String?
+    var name: String?
+    
+    init() {
+        self.id = nil
+        self.name = nil
+    }
+    
+    init(id: String?, name: String?) {
+        self.id = id
+        self.name = name
+    }
 }
 
 public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
@@ -32,8 +48,7 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
     private var lock: Bool! = false
     private var foundRoadName: Bool! = false
     
-    private var id: String?
-    private var name: String?
+    private var data: OpenStreetMapReverseGeoData! = OpenStreetMapReverseGeoData()
 
     /* Form an url according to coordinates */
     private func formUrl(coord: coordinates) -> String! {
@@ -90,7 +105,7 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
     /* Called when parsing new element */
     public func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if(elementName == RESULT_IDENTIFIER) {
-            self.id = attributeDict[OSM_ID_IDENTIFIER]
+            self.data.id = attributeDict[OSM_ID_IDENTIFIER]
         } else if(elementName == ROAD_NAME_IDENTIFIER) {
             self.foundRoadName = true
         }
@@ -99,19 +114,19 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
     /* Called when parsing character */
     public func parser(parser: NSXMLParser, foundCharacters string: String) {
         if(self.foundRoadName!) {
-            self.name = string
+            self.data.name = string
             self.foundRoadName = false
         }
     }
     
     /* Called when parsing element ends */
     public func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if(self.id != nil && self.name != nil) {
-            self.delegate.updateReverseGeoResult(self.id!, name: self.name!)
+        if(self.data.id != nil && self.data.name != nil) {
+            self.delegate.updateReverseGeoResult(self.data!)
             
             // Clean up
-            self.id = nil
-            self.name = nil
+            self.data.id = nil
+            self.data.name = nil
         }
     }
     
