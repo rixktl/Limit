@@ -16,15 +16,17 @@ import Foundation
  */
 
 internal protocol OpenStreetMapFinderDelegate {
-    func limitUpdate(limit: Double?)
+    func updateSpeedLimit(speedLimit: Double?)
 }
 
 public class OpenStreetMapFinder {
     internal var data: OpenStreetMapData?
     internal var delegate: OpenStreetMapFinderDelegate!
+    internal var offsetDegree: Double! = 15.0
     
     private let MAXSPEED_TAG_IDENTIFIER: String! = "maxspeed"
     private let HIGHWAY_TAG_IDENTIFIER: String! = "highway"
+    private let REFERENCE_TAG_IDENTIFIER: String! = "ref"
     
     private let RESIDENTIAL_VALUE_IDENTIFIER: String! = "residential"
     private let SERVICE_VALUE_IDENTIFIER: String! = "service"
@@ -36,28 +38,48 @@ public class OpenStreetMapFinder {
     private let TRUNK_VALUE_IDENTIFIER: String! = "trunk"
     
     /* Make a async search */
-    internal func searchWithCoordinates(coord: coordinates) {
-        // TODO: make it real async
-        asyncSearch(coord)
+    internal func searchWithCoordinates(coord: coordinates!, direction: Double!, ref: String!) {
+        let queue: NSOperationQueue = NSOperationQueue()
+        
+        queue.addOperationWithBlock { () -> Void in
+            self.asyncSearch(coord, direction: direction, ref: ref)
+        }
+        
     }
     
     /* Search limit by coordinates */
-    private func asyncSearch(coord: coordinates) {
+    private func asyncSearch(coord: coordinates!, direction: Double!, ref: String!) {
         // Ensure data exist
         guard (data != nil && data!.ways != nil) else {
-            // Update limit as zero
-            delegate!.limitUpdate(0.0)
+            // Failed to find speed limit
+            delegate!.updateSpeedLimit(nil)
             return
         }
         
+        if(ref != nil) {
+        
+            for wayIndex in 0..<data!.ways!.count {
+            
+                let maxspeed: Double! = extractLimitFromWayTagWithRef(data!.ways![wayIndex], ref: ref)
+                if(maxspeed != nil) {
+                    delegate.updateSpeedLimit(maxspeed)
+                    return
+                }
+            }
+        }
+        
         // Find nearest way
-        var wayResult: [Int] = searchNearestWay(coord)
+        var wayResult: [Int] = searchNearestWay(coord, direction: direction)
         
         // Attempt to get maxspeed from way's tag
         var limit: Double? = extractLimitFromWayTag(data!.ways![wayResult[0]])
         
         if(limit != nil) {
-            delegate.limitUpdate(limit)
+            delegate.updateSpeedLimit(limit)
+            //print("Way's Tag", wayResult[3])
+            //print(data!.ways![wayResult[0]].id)
+            //print(data!.ways![wayResult[0]].subNode![wayResult[1]])
+            //print(data!.ways![wayResult[0]].subNode![ (wayResult[1] + wayResult[2]) ])
             return
         }
         
@@ -65,7 +87,8 @@ public class OpenStreetMapFinder {
         limit = extractLimitFromNodeTag(data!.ways![wayResult[0]].subNode![wayResult[1]])
         
         if(limit != nil) {
-            delegate.limitUpdate(limit)
+            delegate.updateSpeedLimit(limit)
+            print("Node's Tag")
             return
         }
         
@@ -75,7 +98,8 @@ public class OpenStreetMapFinder {
         limit = extractLimitFromNodeTag(data!.ways![wayResult[0]].subNode![index])
         
         if(limit != nil) {
-            delegate.limitUpdate(limit)
+            delegate.updateSpeedLimit(limit)
+            print("Near Node's Tag")
             return
         }
         
@@ -83,7 +107,8 @@ public class OpenStreetMapFinder {
         for n in data!.ways![wayResult[0]].subNode! {
             limit = extractLimitFromNodeTag(n)
             if(limit != nil) {
-                delegate.limitUpdate(limit)
+                delegate.updateSpeedLimit(limit)
+                print("All Node's Tag")
                 return
             }
         }
@@ -92,7 +117,8 @@ public class OpenStreetMapFinder {
         limit = getLimitFromWayTagType(data!.ways![wayResult[0]])
         
         if(limit != nil) {
-            delegate.limitUpdate(limit)
+            delegate.updateSpeedLimit(limit)
+            print("Way's Tag Type")
             return
         }
         
@@ -100,7 +126,8 @@ public class OpenStreetMapFinder {
         limit = getLimitFromNodeTagType(data!.ways![wayResult[0]].subNode![wayResult[1]])
         
         if(limit != nil) {
-            delegate.limitUpdate(limit)
+            delegate.updateSpeedLimit(limit)
+            print("Node's Tag Type")
             return
         }
         
@@ -108,11 +135,13 @@ public class OpenStreetMapFinder {
         limit = getLimitFromNodeTagType(data!.ways![wayResult[0]].subNode![index])
         
         if(limit != nil) {
-            delegate.limitUpdate(limit)
+            delegate.updateSpeedLimit(limit)
+            print("Near Node's Tag Type")
             return
         }
         
-        
+        // Failed to find speed limit
+        delegate.updateSpeedLimit(nil)
     }
     
     /* Convert type to speed limit */
@@ -198,9 +227,36 @@ public class OpenStreetMapFinder {
         return nil
     }
     
+    private func extractLimitFromWayTagWithRef(w: way, ref: String!) -> Double? {
+        // Ensure tag exist
+        guard (w.subTag != nil) else {
+            return nil
+        }
+        
+        var maxspeed: Double?
+        var hit: Bool! = false
+        for tg in w.subTag! {
+            if (tg.key == REFERENCE_TAG_IDENTIFIER && tg.value == ref) {
+                hit = true
+                if(maxspeed != nil) {
+                    return maxspeed
+                }
+            }
+            
+            if(tg.key == MAXSPEED_TAG_IDENTIFIER) {
+                maxspeed = Double(NSString(string: tg.value).doubleValue)
+                if(hit == true) {
+                    return maxspeed
+                }
+            }
+        }
+        
+        return nil
+    }
+    
     /* Search nearest way cooresponding to given coordinates */
     /* Return: wayIndex, nodeIndex, isNext, wayDistance*/
-    private func searchNearestWay(coord: coordinates) -> [Int] {
+    private func searchNearestWay(coord: coordinates!, direction: Double!) -> [Int] {
         var nearestWayIndex: Int = 0
         var wayDistance: Double! = 10000.0
         var finalNearestNodeIndex: Int = 0
@@ -212,6 +268,7 @@ public class OpenStreetMapFinder {
             if (data!.ways![wayIndex].subNode != nil) {
                 
                 var nearestNodeIndex: Int = 0
+                // Distance between first node and given coordinates
                 var nodeDistance: Double! = distanceTwoPoints(data!.ways![wayIndex].subNode![0].coord, coord2: coord)
                 
                 // Loop through all nodes in a single way
@@ -225,37 +282,82 @@ public class OpenStreetMapFinder {
                 }
                 
                 /* Assuming pervious/next node are the second nearest node */
-                // Line formed with pervious node
-                let perviousLine: line = line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord, coord2: data!.ways![wayIndex - 1].subNode![nearestNodeIndex].coord)
                 
-                let distancePervious: Double! = distanceLinePoint(perviousLine, coord: coord)
+                var distancePervious: Double?
+                var distanceNext: Double?
                 
-                // Line formed with next node
-                let nextLine: line = line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord, coord2: data!.ways![wayIndex + 1].subNode![nearestNodeIndex].coord)
-                let distanceNext: Double! = distanceLinePoint(nextLine, coord: coord)
+                if(nearestNodeIndex > 0) {
+                    // Line formed with pervious node
+                    let perviousLine: line = line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord, coord2: data!.ways![wayIndex].subNode![nearestNodeIndex - 1].coord)
+                    distancePervious = distanceLineSegmentPoint(perviousLine, coord: coord)
+                }
                 
-                let distance: Double! = (distancePervious > distanceNext ? distanceNext : distancePervious)
-                // Get smallest distance
-                if(distance < wayDistance) {
+                if(nearestNodeIndex + 1 < data!.ways![wayIndex].subNode!.count) {
+                    // Line formed with next node
+                    let nextLine: line = line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord, coord2: data!.ways![wayIndex].subNode![nearestNodeIndex + 1].coord)
+                    distanceNext = distanceLineSegmentPoint(nextLine, coord: coord)
+                }
+                
+                var distance: Double! = 10000.0
+                
+                if(distancePervious != nil && distanceNext != nil) {
+                    distance = (distancePervious > distanceNext ? distanceNext : distancePervious)
+                    finalNextNearest = (distancePervious > distanceNext ? 1 : -1)
+                } else if(distancePervious != nil) {
+                    distance = distancePervious
+                    finalNextNearest = -1
+                } else if(distanceNext != nil) {
+                    distance = distanceNext
+                    finalNextNearest = 1
+                }
+                
+                
+                var l: line!
+                if(finalNextNearest == 1) {
+                    // Next
+                    l = line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord, coord2: data!.ways![wayIndex].subNode![nearestNodeIndex + 1].coord)
+                } else {
+                    // Previous
+                    l = line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex - 1].coord, coord2: data!.ways![wayIndex].subNode![nearestNodeIndex].coord)
+                }
+                
+                
+                // Get smallest distance with acceptable direction
+                if(distance < wayDistance && checkDirection(l, direction: direction)) {
                     wayDistance = distance
                     nearestWayIndex = wayIndex
                     finalNearestNodeIndex = nearestNodeIndex
-                    finalNextNearest = (distancePervious > distanceNext ? 1 : 0)
                 }
+                
                 
             }
         }
-        
+
         return [nearestWayIndex, finalNearestNodeIndex, finalNextNearest, Int(wayDistance)]
+    }
+    
+    private func checkDirection(l: line!, direction: Double!) -> Bool! {
+        let dir: Double! = getDirection(l)
+        return (fabs(dir - direction) <= offsetDegree)
+    }
+    
+    private func getDirection(l: line!) -> Double! {
+        let dlon: Double! = l.coord2.longitude - l.coord1.longitude
+        let y: Double! = sin(dlon) * cos(l.coord2.latitude)
+        let x: Double! = cos(l.coord1.latitude) * sin(l.coord2.latitude) - sin(l.coord1.latitude) * cos(l.coord2.latitude) * cos(dlon)
+        var brng: Double! = atan2(y, x)
+        brng = brng * 180 / M_PI
+        brng = 360 - brng
+        return brng
     }
     
     /* Calculate distance between two points */
     private func distanceTwoPoints(coord1: coordinates!, coord2: coordinates!) -> Double! {
-        return (fabs(coord1.latitude - coord2.latitude) + fabs(coord1.longitude - coord2.longitude))
+        return sqrt(pow(coord1.latitude - coord2.latitude, 2) + pow(coord1.longitude - coord2.longitude, 2))
     }
     
-    /* Calculate distance between line and point */
-    private func distanceLinePoint(l: line, coord: coordinates) -> Double! {
+    /* Calculate distance between line segment and point */
+    private func distanceLineSegmentPoint(l: line, coord: coordinates) -> Double! {
         // (x,y) -> (lat,lon)
         let x1: Double! = l.coord1.latitude
         let x2: Double! = l.coord2.latitude
@@ -264,15 +366,20 @@ public class OpenStreetMapFinder {
         let x0: Double! = coord.latitude
         let y0: Double! = coord.longitude
         
-        let dx: Double! = x2 - x1
-        let dy: Double! = y2 - y1
+        // Check distance between two points that form the line segment
+        let l2: Double! = distanceTwoPoints(l.coord1, coord2: l.coord2)
+        // Two points are at the same location
+        if(l2 == 0) {
+            // Return distance between one point of line segment(same) and the given point
+            return distanceTwoPoints(coord, coord2: l.coord1)
+        }
         
-        // (y2-y1)x0 - (x2-x1)y0 + x2*y1 - y2*x1
-        let numerator: Double! = dy*x0 - dx*y0 + x2*y1 - y2*x1
-        // (y2-y1)^2 + (x2-x1)^2
-        let denominator: Double! = pow(dy, 2.0) + pow(dx, 2.0)
-        // |numerator| / sqrt(denominator)
-        return (fabs(numerator)/sqrt(denominator))
+        var t: Double! = (x0 - x1) * (x2 - x1) + (y0 - y1) * (y2 - y1) / l2
+        t = max(0, min(1, t))
+        
+        let newPoint: coordinates! = coordinates( latitude: x1 + t*(x2 - x1),
+                                                  longitude: y1 + t*(y2 - y1) )
+        return sqrt( distanceTwoPoints(coord, coord2: newPoint) )
     }
     
 }

@@ -14,7 +14,7 @@ import Foundation
  */
 
 internal protocol OpenStreetMapParserDelegate {
-    func dataUpdate(data: OpenStreetMapData)
+    func updateData(data: OpenStreetMapData!)
 }
 
 public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
@@ -27,6 +27,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     internal var delegate: OpenStreetMapParserDelegate!
     internal var offsetLatitude: Double!
     internal var offsetLongitude: Double!
+    internal var coord: coordinates?
     
     private let PRE_URL: String! = "https://www.overpass-api.de/api/xapi?way[maxspeed=*][bbox="
     private let POST_URL: String! = "]"
@@ -67,7 +68,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     
     /* Form an url according to coordinates */
     private func formUrl(minLat: Double!, _ maxLat: Double!, _ minLon: Double!, _ maxLon: Double!) -> String! {
-        return String(minLat) + COORDINATES_SEPARATION + String(minLon) + COORDINATES_SEPARATION + String(maxLat) + COORDINATES_SEPARATION + String(maxLon)
+        return String(minLon) + COORDINATES_SEPARATION + String(minLat) + COORDINATES_SEPARATION + String(maxLon) + COORDINATES_SEPARATION + String(maxLat)
     }
     
     /* Send an async request */
@@ -97,6 +98,9 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     
     /* Request for new data corresponding to coordinates */
     internal func request(coord: coordinates!) {
+        // Set coordinates
+        self.coord = coord
+        
         // Calculate coordinates for bounded box
         let minLat: Double! = coord.latitude - offsetLatitude
         let maxLat: Double! = coord.latitude + offsetLatitude
@@ -133,7 +137,8 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
             
             case NODE_IDENTIFIER:
                 isNode = true
-                let newNode: node = node(latitude: Double(attributeDict[LATITUDE_IDENTIFIER]!), longitude: Double(attributeDict[LONGITUDE_IDENTIFIER]!))
+                var newNode: node = node(latitude: Double(attributeDict[LATITUDE_IDENTIFIER]!), longitude: Double(attributeDict[LONGITUDE_IDENTIFIER]!))
+                newNode.id = attributeDict[ID_IDENTIFIER]
                 // Add new node
                 tmpNode[attributeDict[ID_IDENTIFIER]!] = newNode
                 nodeIndex = attributeDict[ID_IDENTIFIER]
@@ -144,7 +149,8 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
                     result!.ways = [way]()
                 }
                 isNode = false
-                let newWay: way = way()
+                var newWay: way = way()
+                newWay.id = attributeDict[ID_IDENTIFIER]
                 // Add new way
                 result!.ways!.append(newWay)
                 wayIndex += 1
@@ -166,7 +172,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     public func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         // Update result when reaching end of file
         if(elementName == OSM_IDENTIFIER) {
-            delegate!.dataUpdate(result!)
+            delegate!.updateData(result!)
         }
     }
     

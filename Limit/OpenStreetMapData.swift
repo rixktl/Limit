@@ -43,6 +43,7 @@ struct tag {
 }
 
 struct node {
+    var id: String!
     var coord: coordinates!
     var subTag: [tag]?
     
@@ -52,6 +53,7 @@ struct node {
 }
 
 struct way {
+    var id: String!
     var subNode: [node]?
     var subTag: [tag]?
 }

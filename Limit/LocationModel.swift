@@ -23,6 +23,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
     internal var delegate: LocationManagerDelegate!
     internal var isMPH: Bool!
     private var address: String?
+    private var ref: String?
     private var locationManager: CLLocationManager?
     // Location update details
     private let GPS_DISTANCE_FILTER = kCLDistanceFilterNone
@@ -78,12 +79,8 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
     }
     
     /* Initialization without delegate */
-    override public convenience init() {
-        self.init(delegate: nil)
-    }
-    
-    /* Initialization */
-    internal init(delegate: LocationManagerDelegate!) {
+    override init() {
+        
         super.init()
         
         // Set up location manager
@@ -93,9 +90,6 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         // Preferences
         locationManager!.distanceFilter = GPS_DISTANCE_FILTER
         locationManager!.desiredAccuracy = GPS_ACCURACY
-        
-        // Delegate for update result(callback)
-        self.delegate = delegate!
         
         // Default unit
         self.isMPH = true
@@ -116,16 +110,20 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
             if error != nil {
                 // TODO: Error handling
             }
+            
             // Check if placemarks exist
             guard (placemarks != nil) else {
                 return
             }
+            
             // Check if single placemark exist
             guard (placemarks!.count >= 0) else {
                 return
             }
+            
             let placemark: CLPlacemark = placemarks![0]
             self.address = placemark.administrativeArea
+            self.ref = placemark.thoroughfare
         })
         
     }
@@ -164,13 +162,12 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         
         // Covert location to state
         locationToState()
-        
+
         // Construct data
-        let data: LocationData = LocationData(speed: speed, latitude: info.coordinate.latitude, longitude: info.coordinate.longitude, state: address)
+        let data: LocationData = LocationData(speed: speed, direction:v.direction, ref: ref, latitude: info.coordinate.latitude, longitude: info.coordinate.longitude, state: address)
         
         // Update to handler
         delegate!.locationUpdate(data)
-        
     }
     
     /*  Receives error */
