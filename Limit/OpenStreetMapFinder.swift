@@ -20,13 +20,20 @@ internal protocol OpenStreetMapFinderDelegate {
 }
 
 public class OpenStreetMapFinder {
-    internal var data: OpenStreetMapData?
     internal var delegate: OpenStreetMapFinderDelegate!
     internal var offsetDegree: Double! = 15.0
+    
+    internal var data: OpenStreetMapData?
+    internal var coord: coordinates?
+    internal var direction: Double?
+    internal var ref: String?
+    internal var id: String?
+    internal var name: String?
     
     private let MAXSPEED_TAG_IDENTIFIER: String! = "maxspeed"
     private let HIGHWAY_TAG_IDENTIFIER: String! = "highway"
     private let REFERENCE_TAG_IDENTIFIER: String! = "ref"
+    private let NAME_TAG_IDENTIFIER: String! = "name"
     
     private let RESIDENTIAL_VALUE_IDENTIFIER: String! = "residential"
     private let SERVICE_VALUE_IDENTIFIER: String! = "service"
@@ -37,23 +44,86 @@ public class OpenStreetMapFinder {
     private let MOTORWAY_VALUE_IDENTIFIER: String! = "motorway"
     private let TRUNK_VALUE_IDENTIFIER: String! = "trunk"
     
-    /* Make a async search */
-    internal func searchWithCoordinates(coord: coordinates!, direction: Double!, ref: String!) {
+    /* Async search for limit */
+    internal func asyncSearch() {
+        
         let queue: NSOperationQueue = NSOperationQueue()
         
         queue.addOperationWithBlock { () -> Void in
-            self.asyncSearch(coord, direction: direction, ref: ref)
+            var limit: Double?
+            
+            limit = self.searchWithName(self.name)
+            
+            //print("Name:", self.name)
+            //print("NameLimit:", limit)
+            
+            if(limit != nil){
+                self.delegate.updateSpeedLimit(limit)
+                return
+            }
+            
+            limit = self.searchWithId(self.id)
+            
+            //print("IdLimit:", limit)
+            
+            if(limit != nil){
+                self.delegate.updateSpeedLimit(limit)
+                return
+            }
+            
+            limit = self.searchWithCoordinates(self.coord, direction: self.direction, ref: self.ref)
+            
+            //print("FallbackLimit:", limit)
+            
+            self.delegate.updateSpeedLimit(limit)
+        }
+    }
+    
+    /* Search limit by Id */
+    private func searchWithName(name: String?) -> Double? {
+        // Ensure data exist
+        guard (data != nil && data!.ways != nil && name != nil) else {
+            return nil
         }
         
+        // Loop through all ways
+        for wayIndex in 0..<data!.ways!.count {
+            
+            // Check name
+            if(extractNameFromWayTag(data!.ways![wayIndex]) == name) {
+                return extractLimitFromWayTag(data!.ways![wayIndex])
+            }
+        }
+        
+        // Cannot find any result
+        return nil
+    }
+    
+    /* Search limit by Id */
+    private func searchWithId(id: String?) -> Double? {
+        // Ensure data exist
+        guard (data != nil && data!.ways != nil && id != nil) else {
+            return nil
+        }
+        
+        // Loop through all ways
+        for wayIndex in 0..<data!.ways!.count {
+            // Check id
+            if(data!.ways![wayIndex].id == id) {
+                return extractLimitFromWayTag(data!.ways![wayIndex])
+            }
+        }
+        
+        // Cannot find any result
+        return nil
     }
     
     /* Search limit by coordinates */
-    private func asyncSearch(coord: coordinates!, direction: Double!, ref: String!) {
+    private func searchWithCoordinates(coord: coordinates?, direction: Double?, ref: String?) -> Double? {
         // Ensure data exist
-        guard (data != nil && data!.ways != nil) else {
+        guard (data != nil && data!.ways != nil && coord != nil && direction != nil) else {
             // Failed to find speed limit
-            delegate!.updateSpeedLimit(nil)
-            return
+            return nil
         }
         
         if(ref != nil) {
@@ -62,8 +132,7 @@ public class OpenStreetMapFinder {
             
                 let maxspeed: Double! = extractLimitFromWayTagWithRef(data!.ways![wayIndex], ref: ref)
                 if(maxspeed != nil) {
-                    delegate.updateSpeedLimit(maxspeed)
-                    return
+                    return maxspeed
                 }
             }
         }
@@ -75,21 +144,14 @@ public class OpenStreetMapFinder {
         var limit: Double? = extractLimitFromWayTag(data!.ways![wayResult[0]])
         
         if(limit != nil) {
-            delegate.updateSpeedLimit(limit)
-            //print("Way's Tag", wayResult[3])
-            //print(data!.ways![wayResult[0]].id)
-            //print(data!.ways![wayResult[0]].subNode![wayResult[1]])
-            //print(data!.ways![wayResult[0]].subNode![ (wayResult[1] + wayResult[2]) ])
-            return
+            return limit
         }
         
         // Attempt to get maxspeed from node's tag
         limit = extractLimitFromNodeTag(data!.ways![wayResult[0]].subNode![wayResult[1]])
         
         if(limit != nil) {
-            delegate.updateSpeedLimit(limit)
-            print("Node's Tag")
-            return
+            return limit
         }
         
         // Attempt to get maxspeed from near node's tag
@@ -98,18 +160,14 @@ public class OpenStreetMapFinder {
         limit = extractLimitFromNodeTag(data!.ways![wayResult[0]].subNode![index])
         
         if(limit != nil) {
-            delegate.updateSpeedLimit(limit)
-            print("Near Node's Tag")
-            return
+            return limit
         }
         
         // Attempt to get maxspeed from the rest node's tag
         for n in data!.ways![wayResult[0]].subNode! {
             limit = extractLimitFromNodeTag(n)
             if(limit != nil) {
-                delegate.updateSpeedLimit(limit)
-                print("All Node's Tag")
-                return
+                return limit
             }
         }
         
@@ -117,31 +175,25 @@ public class OpenStreetMapFinder {
         limit = getLimitFromWayTagType(data!.ways![wayResult[0]])
         
         if(limit != nil) {
-            delegate.updateSpeedLimit(limit)
-            print("Way's Tag Type")
-            return
+            return limit
         }
         
         // Attempt to match speed limit with node's tag type
         limit = getLimitFromNodeTagType(data!.ways![wayResult[0]].subNode![wayResult[1]])
         
         if(limit != nil) {
-            delegate.updateSpeedLimit(limit)
-            print("Node's Tag Type")
-            return
+            return limit
         }
         
         // Attempt to match speed limit with near node's tag type
         limit = getLimitFromNodeTagType(data!.ways![wayResult[0]].subNode![index])
         
         if(limit != nil) {
-            delegate.updateSpeedLimit(limit)
-            print("Near Node's Tag Type")
-            return
+            return limit
         }
         
         // Failed to find speed limit
-        delegate.updateSpeedLimit(nil)
+        return nil
     }
     
     /* Convert type to speed limit */
@@ -204,6 +256,23 @@ public class OpenStreetMapFinder {
         for tg in n.subTag! {
             if(tg.key == MAXSPEED_TAG_IDENTIFIER) {
                 return Double(NSString(string: tg.value).doubleValue)
+            }
+        }
+        
+        return nil
+    }
+    
+    /* Extract name from tag in way */
+    private func extractNameFromWayTag(w: way) -> String? {
+        // Ensure tag exist
+        guard (w.subTag != nil) else {
+            return nil
+        }
+        
+        // Loop through all tags
+        for tg in w.subTag! {
+            if(tg.key == NAME_TAG_IDENTIFIER) {
+                return tg.value
             }
         }
         

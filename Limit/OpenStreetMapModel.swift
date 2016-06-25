@@ -8,22 +8,25 @@
 
 import Foundation
 
-/* Not tested yet */
-
 internal protocol OpenStreetMapModelDelegate {
     func updateSpeedLimit(speedLimit: Double?)
 }
 
-public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreetMapFinderDelegate {
+public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreetMapFinderDelegate, OpenStreetMapReverseGeoParserDelegate {
     
     let osmParser: OpenStreetMapParser! = OpenStreetMapParser()
     let osmFinder: OpenStreetMapFinder! = OpenStreetMapFinder()
+    let osmReverseGeo: OpenStreetMapReverseGeoParser! = OpenStreetMapReverseGeoParser()
+    
     var delegate: OpenStreetMapModelDelegate!
     var coord: coordinates?
     var direction: Double?
     var ref: String?
+    var id: String?
+    var name: String?
     var upperBound: coordinates?
     var lowerBound: coordinates?
+    
     
     /* TODO: bound coord check (exceed->request new chunk) */
     
@@ -31,13 +34,17 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
         // Set up parser
         osmParser.offsetLatitude = 0.01
         osmParser.offsetLongitude = 0.01
+        // Set up finder
         osmFinder.offsetDegree = 5.0
+        // Local init
         coord = nil
         upperBound = nil
         lowerBound = nil
         super.init()
+        // Set up delegate
         osmParser.delegate = self
         osmFinder.delegate = self
+        osmReverseGeo.delegate = self
     }
     
     /* Attempt to request update */
@@ -45,17 +52,20 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
         // Ensure non nil
         guard (checkBound() != nil) else {
             // Request new data
+            osmReverseGeo.request(coord!)
             osmParser.request(coord!)
             return
         }
         
         // See if Bound check fail
-        if(!checkBound()!) {
+        if(!checkBound()! || (osmParser.coord!.latitude != coord!.latitude || osmParser.coord!.longitude != coord!.longitude) ) {
             // Request new data
+            osmReverseGeo.request(coord!)
             osmParser.request(coord!)
         } else {
-            // Search within data
-            osmFinder.searchWithCoordinates(coord!, direction: direction!, ref: ref)
+            // Search within data using id
+            osmReverseGeo.request(coord!)
+            osmFinder.asyncSearch()
         }
     }
     
@@ -81,7 +91,7 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     
     /* Update new coordinate */
     internal func newCoordinates(coord: coordinates?, direction: Double?, ref: String?) {
-        guard (coord != nil && direction != nil) else {
+        guard (coord != nil) else {
             return
         }
         
@@ -91,21 +101,34 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
         request()
     }
     
+    /* Receives update from reverse geo parser */
+    internal func updateReverseGeoResult(id: String!, name: String!) {
+        // Update local data
+        self.id = id
+        self.name = name
+    }
+    
     /* Receives update from parser */
     internal func updateData(data: OpenStreetMapData!) {
         // Update data for finder
         osmFinder.data = data
-        // Update boundary
+        osmFinder.coord = coord
+        osmFinder.id = id
+        osmFinder.name = name
+        osmFinder.direction = direction
+        osmFinder.ref = ref
+        
+        // Update local boundary
         upperBound = coordinates(latitude: osmParser.coord!.latitude + osmParser.offsetLatitude, longitude: osmParser.coord!.longitude + osmParser.offsetLongitude)
         lowerBound = coordinates(latitude: osmParser.coord!.latitude - osmParser.offsetLatitude, longitude: osmParser.coord!.longitude - osmParser.offsetLongitude)
-        // Search speed limit if able to
-        if (osmFinder.data != nil && coord != nil && direction != nil) {
-            osmFinder.searchWithCoordinates(coord!, direction: direction!, ref: ref)
-        }
+        
+        // Search speed limit 
+        osmFinder.asyncSearch()
     }
     
     /* Receives update from finder */
     internal func updateSpeedLimit(speedLimit: Double?) {
+        // Update to handler
         self.delegate.updateSpeedLimit(speedLimit)
     }
 }

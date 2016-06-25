@@ -9,7 +9,7 @@
 import Foundation
 
 /*
- * A parser for handling XML data.
+ * A parser for handling XML data from OpenStreetMap XAPI.
  * It runs in async manner for both parsing and data fetching.
  */
 
@@ -32,6 +32,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     private let PRE_URL: String! = "https://www.overpass-api.de/api/xapi?way[maxspeed=*][bbox="
     private let POST_URL: String! = "]"
     private let COORDINATES_SEPARATION: String! = ","
+    private let LOCK_TIME: Double! = 1.0
     
     private let OSM_IDENTIFIER: String! = "osm"
     private let TAG_IDENTIFIER: String! = "tag"
@@ -51,6 +52,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     private var result: OpenStreetMapData!
     private var isNode: Bool!
     private var parser: NSXMLParser!
+    private var lock: Bool! = false
     
     override public init() {
         wayIndex = 0
@@ -73,7 +75,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     
     /* Send an async request */
     private func asyncRequest(urlPath: String!) {
-        print(urlPath)
+        //print(urlPath)
         let url = NSURL(string: urlPath)!
         let session = NSURLSession.sharedSession()
         
@@ -99,6 +101,23 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     
     /* Request for new data corresponding to coordinates */
     internal func request(coord: coordinates!) {
+        
+        //print("xapi requested")
+        
+        // Ensure unlocked
+        guard (lock == false) else {
+            //print("xapi locked")
+            return
+        }
+        
+        // Lock
+        lock = true
+        
+        // Delay unlock
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(LOCK_TIME * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
+            self.lock = false
+        }))
+        
         // Set coordinates
         self.coord = coord
         

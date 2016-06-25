@@ -36,16 +36,18 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
     }
     
     internal func updateSpeedLimit(speedLimit: Double?) {
+        // Update speed limit
         self.speedLimit = speedLimit
+        // Update to handler
         delegate.updateSpeedInfo(self.speed, speedLimit: self.speedLimit)
     }
     
     internal func locationUpdate(data: LocationData) {
+        // Update speed
         self.speed = data.speed
-        print(data.latitude)
-        print(data.longitude)
-        print(data.direction)
+        // Update to internal handler
         osmModel.newCoordinates(coordinates(latitude: data.latitude, longitude: data.longitude), direction: data.direction, ref: data.ref)
+        // Update to handler
         delegate.updateSpeedInfo(self.speed, speedLimit: self.speedLimit)
     }
 }

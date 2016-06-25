@@ -10,20 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, SpeedModelDelegate {
     
-    
     let speedModel: SpeedModel = SpeedModel()
     
     func updateSpeedInfo(speed: Double?, speedLimit: Double?) {
-        print("Speed: ", speed)
-        print("SpeedLimit: ", speedLimit)
+        print("speed:", speed)
+        print("limit:", speedLimit)
         print("")
-    }
- 
-    
-    let osmModel: OpenStreetMapModel = OpenStreetMapModel()
-    
-    func updateSpeedLimit(speedLimit: Double?) {
-        print(speedLimit)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,10 +25,9 @@ class ViewController: UIViewController, SpeedModelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         speedModel.delegate = self
         speedModel.start()
-        //osmModel.delegate = self
-        //osmModel.newCoordinates(coordinates(latitude: 37.334820000000001, longitude: -122.0370759))
     }
 
     override func didReceiveMemoryWarning() {

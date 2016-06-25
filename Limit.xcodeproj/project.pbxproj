@@ -21,6 +21,7 @@
 		D9A5EF8B1D1B079F0077C1C0 /* LimitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF8A1D1B079F0077C1C0 /* LimitUITests.swift */; };
 		D9A5EF991D1B175D0077C1C0 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF981D1B175D0077C1C0 /* LocationModel.swift */; };
 		D9A5EF9B1D1B2D420077C1C0 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF9A1D1B2D420077C1C0 /* LocationData.swift */; };
+		D9F3CE9E1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F3CE9D1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D9A5EF8C1D1B079F0077C1C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9A5EF981D1B175D0077C1C0 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		D9A5EF9A1D1B2D420077C1C0 /* LocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		D9F3CE9D1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapReverseGeoParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				D9145EA81D1CE74C009128E1 /* OpenStreetMapFinder.swift */,
 				D9145EAA1D1CE75E009128E1 /* OpenStreetMapModel.swift */,
 				D92FA58F1D1DC10900B7FACC /* SpeedModel.swift */,
+				D9F3CE9D1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift */,
 			);
 			path = Limit;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				D91C6EFE1D1B727000923644 /* OpenStreetMapParser.swift in Sources */,
 				D9145EAB1D1CE75E009128E1 /* OpenStreetMapModel.swift in Sources */,
 				D991BDEC1D1C061C0039BCCB /* OpenStreetMapData.swift in Sources */,
+				D9F3CE9E1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift in Sources */,
 				D9A5EF991D1B175D0077C1C0 /* LocationModel.swift in Sources */,
 				D9145EA91D1CE74C009128E1 /* OpenStreetMapFinder.swift in Sources */,
 				D92FA5901D1DC10900B7FACC /* SpeedModel.swift in Sources */,
