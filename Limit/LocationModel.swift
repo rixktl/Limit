@@ -95,6 +95,11 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         self.isMPH = true
     }
     
+    deinit {
+        // Prevent from exit crash
+        locationManager?.stopUpdatingLocation()
+    }
+    
     /* Convert location to state */
     private func locationToState() {
         
@@ -131,7 +136,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
     /* Start updating location */
     public func start() {
         // Request authorization if needed
-        locationManager?.requestAlwaysAuthorization()
+        locationManager!.requestAlwaysAuthorization()
         // Start receiving location update
         locationManager?.startUpdatingLocation()
         

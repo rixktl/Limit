@@ -15,6 +15,16 @@ import StoreKit
 
 public class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
+    override init() {
+        super.init()
+        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+    }
+    
+    deinit {
+        // Prevent from crash when deinit
+        SKPaymentQueue.defaultQueue().removeTransactionObserver(self)
+    }
+    
     /* Called when product request is responsed */
     public func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
         
@@ -28,5 +38,46 @@ public class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentT
     /* Called when transcation status changes */
     public func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         
+        // Loop for transcations
+        for transaction in transactions {
+            
+            // Check transaction state
+            switch (transaction.transactionState) {
+                
+                // Delay
+                case SKPaymentTransactionState.Deferred:
+                    break
+                    
+                // Purchasing
+                case SKPaymentTransactionState.Purchasing:
+                    break
+                    
+                // Purchased
+                case SKPaymentTransactionState.Purchased:
+                    // Finish transaction
+                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    // Then save to local record
+                
+                // Restored
+                case SKPaymentTransactionState.Restored:
+                    // Finish transaction
+                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    // Then save to local record
+                
+                // Failed
+                case SKPaymentTransactionState.Failed:
+                    // Finish transaction
+                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    // Check if cancelled
+                    if (transaction.error!.code == SKErrorCode.PaymentCancelled.rawValue) {
+                        // TODO: error handling
+                    } else {
+                        // Other errors
+                    }
+                    
+            }
+        }
+
     }
+
 }
