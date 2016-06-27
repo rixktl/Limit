@@ -220,9 +220,13 @@
 				TargetAttributes = {
 					D9A5EF661D1B079F0077C1C0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = DKYHV57U2S;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
 							};
 						};
 					};
@@ -442,7 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Limit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit.Limit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -453,7 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Limit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit.Limit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

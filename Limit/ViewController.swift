@@ -27,7 +27,7 @@ class ViewController: UIViewController, SpeedModelDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         speedModel.delegate = self
-        speedModel.start()
+        //speedModel.start()
     }
 
     override func didReceiveMemoryWarning() {

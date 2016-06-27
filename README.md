@@ -3,6 +3,8 @@
 Swift version of Limit app
 
 
+No in-app purchase (not using, but code exists)
+
 # Completed
 
 Location Manager
