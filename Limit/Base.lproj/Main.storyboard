@@ -8,8 +8,8 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
         <mutableArray key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Thin</string>
@@ -20,10 +20,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Main View Controller-->
+        <!--View Controller-->
         <scene sceneID="kMf-hW-fQh">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="9tx-2L-JJX" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="9tx-2L-JJX" customClass="ViewController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vqN-DZ-eh0"/>
                         <viewControllerLayoutGuide type="bottom" id="2D4-Ca-sFh"/>
@@ -44,11 +44,11 @@
                                     <constraint firstAttribute="height" constant="25" id="A0a-TC-e2Q"/>
                                     <constraint firstAttribute="width" constant="25" id="tes-qo-uDx"/>
                                 </constraints>
-                                <state key="normal" image="Settings.png">
+                                <state key="normal" image="Setting.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="SettingButton:" destination="9tx-2L-JJX" eventType="touchUpInside" id="HEq-bM-3dy"/>
+                                    <action selector="settingButtonClicked:" destination="9tx-2L-JJX" eventType="touchUpInside" id="CAp-G8-qoc"/>
                                     <segue destination="YmE-9V-YPZ" kind="modal" id="3yl-zE-6sm"/>
                                 </connections>
                             </button>
@@ -60,7 +60,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="UnitChange:" destination="9tx-2L-JJX" eventType="touchUpInside" id="ORL-TB-ObA"/>
+                                    <action selector="unitButtonClicked:" destination="9tx-2L-JJX" eventType="touchUpInside" id="IPw-Sl-1eM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,9 +79,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="SettingButton" destination="LmH-EX-sw8" id="NPS-8b-e1y"/>
-                        <outlet property="currentSpeedLabel" destination="VZA-OS-KMI" id="lq9-o3-Qlc"/>
-                        <outlet property="currentUnitLabel" destination="gdt-Fc-7I7" id="Ts9-MH-ysW"/>
+                        <outlet property="settingButton" destination="LmH-EX-sw8" id="Gic-u7-S1J"/>
+                        <outlet property="speedLabel" destination="VZA-OS-KMI" id="fLr-Q6-i19"/>
+                        <outlet property="unitButton" destination="gdt-Fc-7I7" id="Iuy-hg-Wam"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a88-i0-laT" sceneMemberID="firstResponder"/>
@@ -91,7 +91,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="ZWl-7q-Mxr">
             <objects>
-                <navigationController storyboardIdentifier="NavigationView" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="YmE-9V-YPZ" customClass="NavigationViewController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationView" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="YmE-9V-YPZ" customClass="NavigationViewController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="fBw-kc-Bbm">
@@ -102,17 +102,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="fV6-By-Nri" kind="relationship" relationship="rootViewController" id="g6U-Nq-Jek"/>
+                        <segue destination="fV6-By-Nri" kind="relationship" relationship="rootViewController" id="uLT-7J-go2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLU-gX-tbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="374" y="276"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--View Controller-->
         <scene sceneID="Gcb-bn-bdu">
             <objects>
-                <viewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fV6-By-Nri" customClass="SettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fV6-By-Nri" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h6z-xh-eMo"/>
                         <viewControllerLayoutGuide type="bottom" id="I3E-7Z-rIg"/>
@@ -124,22 +124,6 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Jx-ye-lnn" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="-4" width="320" height="576"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRH-ZV-oUm">
-                                        <rect key="frame" x="124" y="438" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="Lso-fb-cvd"/>
-                                            <constraint firstAttribute="width" constant="80" id="Yvy-G3-zaj"/>
-                                            <constraint firstAttribute="width" secondItem="jRH-ZV-oUm" secondAttribute="height" multiplier="1:1" id="ZHx-lo-9Gh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Done" backgroundImage="circle_green.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="DoneButton:" destination="fV6-By-Nri" eventType="touchUpInside" id="78x-aU-Zor"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8s-f8-1vg" userLabel="Unit Question">
                                         <rect key="frame" x="40" y="75" width="240" height="54"/>
                                         <subviews>
@@ -169,9 +153,6 @@
                                                     <color key="titleColor" red="0.20392156859999999" green="0.74117647060000003" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="UnitChange:" destination="fV6-By-Nri" eventType="touchUpInside" id="XGS-BU-Hip"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,9 +193,6 @@
                                                     <color key="titleColor" red="0.20392156859999999" green="0.74117647060000003" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="OffsetChange:" destination="fV6-By-Nri" eventType="touchUpInside" id="CQR-ob-y3l"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,6 +204,19 @@
                                             <constraint firstAttribute="width" secondItem="5AX-P9-BVU" secondAttribute="height" multiplier="40:9" id="jz5-G1-viZ"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRH-ZV-oUm">
+                                        <rect key="frame" x="120" y="438" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Lso-fb-cvd"/>
+                                            <constraint firstAttribute="width" constant="80" id="Yvy-G3-zaj"/>
+                                            <constraint firstAttribute="width" secondItem="jRH-ZV-oUm" secondAttribute="height" multiplier="1:1" id="ZHx-lo-9Gh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="Done" backgroundImage="Done.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -250,10 +241,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="udY-uq-WVd"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <connections>
-                        <outlet property="OffsetLabel" destination="Kdm-zt-Leh" id="6qK-DP-Y8m"/>
-                        <outlet property="UnitLabel" destination="fni-jj-SLF" id="ocw-pC-yLe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="va4-bQ-57A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -261,7 +248,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Settings.png" width="1639" height="779"/>
-        <image name="circle_green.png" width="1639" height="779"/>
+        <image name="Done.png" width="500" height="500"/>
+        <image name="Setting.png" width="233" height="233"/>
     </resources>
 </document>

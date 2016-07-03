@@ -21,7 +21,6 @@ internal protocol LocationManagerDelegate {
 public class LocationModel: NSObject, CLLocationManagerDelegate {
     
     internal var delegate: LocationManagerDelegate!
-    internal var isMPH: Bool!
     private var address: String?
     private var thoroughfare: String?
     private var locationManager: CLLocationManager?
@@ -35,7 +34,6 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         var direction: Double?
         // Convert rate
         let MPHrate: Double! = 2.23694
-        let KPHrate: Double! = 3.6
         
         /* Initialize with speed(magnitude) and direction */
         init(speed: Double?, direction: Double?) {
@@ -66,16 +64,6 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
             
             return getRealValue(speed)! * MPHrate
         }
-        
-        /* Return speed in KPH */
-        func getKPH() -> Double? {
-            // Check for nil
-            guard (speed != nil) else {
-                return nil
-            }
-            
-            return getRealValue(speed)! * KPHrate
-        }
     }
     
     /* Initialization without delegate */
@@ -90,9 +78,6 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         // Preferences
         locationManager!.distanceFilter = GPS_DISTANCE_FILTER
         locationManager!.desiredAccuracy = GPS_ACCURACY
-        
-        // Default unit
-        self.isMPH = true
     }
     
     deinit {
@@ -158,12 +143,8 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         let v: velocity = velocity(speed: info.speed, direction: info.course)
         let speed: Double?
         
-        // Unit check
-        if(isMPH!) {
-            speed = v.getMPH()
-        } else {
-            speed = v.getKPH()
-        }
+        // Convert unit
+        speed = v.getMPH()
         
         // Covert location to state
         locationToState()
