@@ -10,13 +10,13 @@ import Foundation
 
 struct LocationData {
     
-    var coord: coordinates?
+    var coord: Coordinates?
     var state: String?
     var thoroughfare: String?
     var speed: Double?
     var direction: Double?
     
-    init(speed: Double?, direction: Double?, thoroughfare: String?, coord: coordinates?, state: String?) {
+    init(speed: Double?, direction: Double?, thoroughfare: String?, coord: Coordinates?, state: String?) {
         self.coord = coord
         self.state = state
         self.thoroughfare = thoroughfare

@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="-69" y="276"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="ZWl-7q-Mxr">
             <objects>
-                <navigationController storyboardIdentifier="NavigationView" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="YmE-9V-YPZ" customClass="NavigationViewController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationView" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="YmE-9V-YPZ" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="fBw-kc-Bbm">
@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="374" y="276"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="Gcb-bn-bdu">
             <objects>
-                <viewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fV6-By-Nri" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fV6-By-Nri" customClass="SettingViewController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h6z-xh-eMo"/>
                         <viewControllerLayoutGuide type="bottom" id="I3E-7Z-rIg"/>
@@ -153,6 +153,9 @@
                                                     <color key="titleColor" red="0.20392156859999999" green="0.74117647060000003" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="unitButtonClicked:" destination="fV6-By-Nri" eventType="touchUpInside" id="QaQ-IN-SgN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -187,12 +190,15 @@
                                         <rect key="frame" x="40" y="280" width="240" height="54"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdm-zt-Leh">
-                                                <rect key="frame" x="97" y="12" width="46" height="30"/>
+                                                <rect key="frame" x="97" y="11" width="46" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="Off">
                                                     <color key="titleColor" red="0.20392156859999999" green="0.74117647060000003" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="accuracyButtonClicked:" destination="fV6-By-Nri" eventType="touchUpInside" id="dQ5-dW-dwF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -216,6 +222,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="doneButtonClicked:" destination="fV6-By-Nri" eventType="touchUpInside" id="S5A-0U-CQO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,6 +250,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="udY-uq-WVd"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="accuracyButton" destination="Kdm-zt-Leh" id="jcI-5d-TK3"/>
+                        <outlet property="unitButton" destination="fni-jj-SLF" id="5OA-L7-2AY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="va4-bQ-57A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

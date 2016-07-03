@@ -150,7 +150,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         locationToState()
 
         // Construct data
-        let data: LocationData = LocationData(speed: speed, direction:v.direction, thoroughfare: thoroughfare, coord: coordinates(latitude: info.coordinate.latitude, longitude: info.coordinate.longitude), state: address)
+        let data: LocationData = LocationData(speed: speed, direction:v.direction, thoroughfare: thoroughfare, coord: Coordinates(latitude: info.coordinate.latitude, longitude: info.coordinate.longitude), state: address)
         
         // Update to handler
         delegate!.locationUpdate(data)

@@ -3,7 +3,7 @@
 Swift version of Limit app
 
 
-No in-app purchase (not using, but code exists)
+No in-app purchase (not in use, but code exists)
 
 # Completed
 
@@ -15,16 +15,17 @@ Network Connectivity(implementation) *(Use error handling)
 
 SpeedModel(Combine OpenStreetMap & Location Manager for speed limit)
 
+In-App-Purchase Manager
+
+Main view & Setting view
 
 # To Do (iPhone)
 
-Views & Controllers(Main,Settings, Purchase, Permissions...)
+Views & Controllers(Permissions, Loading)
 
 Components:
   
   Watch connectivity
-  
-  In-App-Purchase Manager
 
 
 # To Do (WatchOS3)

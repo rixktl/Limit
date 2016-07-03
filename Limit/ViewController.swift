@@ -18,6 +18,12 @@ class ViewController: UIViewController, SpeedModelDelegate {
     private let audioModel: AudioModel = AudioModel()
     private let MPH_NAME: String! = "M P H"
     private let KPH_NAME: String! = "K P H"
+    private let GREEN_COLOR = UIColor.init(red: 0.0/255.0, green: 180.0/255.0, blue: 81.0/255.0, alpha: 1)
+    private let RED_COLOR = UIColor.init(red: 222.0/255.0, green: 78.0/255.0, blue: 90.0/255.0, alpha: 1)
+    private let BLACK_COLOR = UIColor.blackColor()
+    
+    private var supposedColor: UIColor?
+    private var speed: Double?
     
     /* Initialize */
     convenience init() {
@@ -52,6 +58,11 @@ class ViewController: UIViewController, SpeedModelDelegate {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
     }
     
+    // Light status bar content
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     // Setting button clicked
     @IBAction func settingButtonClicked(sender: AnyObject) {
         speedModel.stop()
@@ -63,21 +74,40 @@ class ViewController: UIViewController, SpeedModelDelegate {
     }
     
     // Updated by speedModel
-    func updateSpeedInfo(speed: Double?, speedLimit: Double?, unit: Bool!) {
-        print("speed:", speed)
-        print("limit:", speedLimit)
-        print("")
+    func updateSpeedInfo(speed: Double!, unit: Bool!, status: Status) {
         
-        if(speed != nil) {
-            // Update speed label
-            self.speedLabel.text = String(Int(round(speed!)))
+        self.speed = speed
+        // Update speed label with rounded number
+        dispatch_async(dispatch_get_main_queue()) {
+            self.speedLabel.text = String(Int(round(self.speed!)))
         }
         
         // Update unit label
         if(unit!) {
-            self.unitButton.setTitle(MPH_NAME, forState: UIControlState.Normal)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.unitButton.setTitle(self.MPH_NAME, forState: UIControlState.Normal)
+            }
         } else {
-            self.unitButton.setTitle(KPH_NAME, forState: UIControlState.Normal)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.unitButton.setTitle(self.KPH_NAME, forState: UIControlState.Normal)
+            }
+        }
+        
+        // Update background according to status code
+        switch status {
+            case Status.Alert:
+                audioModel.play()
+                supposedColor = RED_COLOR
+            case Status.Normal:
+                supposedColor = GREEN_COLOR
+            case Status.Rest:
+                supposedColor = BLACK_COLOR
+        }
+        
+        if(self.view.backgroundColor != supposedColor) {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.view.backgroundColor = self.supposedColor
+            }
         }
     }
     
@@ -91,7 +121,6 @@ class ViewController: UIViewController, SpeedModelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //self.audioModel.play()
     }
 
     override func didReceiveMemoryWarning() {

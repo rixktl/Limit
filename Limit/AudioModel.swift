@@ -31,7 +31,8 @@ public class AudioModel: NSObject {
         }
         
         super.init()
-        // In Background means opened by AppleWatch
+        // Background means it really just in background
+        // Need to research on detecting whether launched by Apple Watch
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didEnterBackground), name: "DID_ENTER_BACKGROUND", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(willEnterForeground), name: "WILL_ENTER_FOREGROUND", object: nil)
     }
@@ -56,7 +57,7 @@ public class AudioModel: NSObject {
     /* Request to play audio */
     public func play() {
         // Ensure status ok
-        guard (self.lock != true && self.audioPlayer != nil && inBackground != true) else {
+        guard (self.lock != true && self.audioPlayer != nil) else {
             return
         }
         

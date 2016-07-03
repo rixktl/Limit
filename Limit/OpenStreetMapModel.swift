@@ -25,8 +25,8 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     internal var delegate: OpenStreetMapModelDelegate!
     private var locationData: LocationData?
     private var reverseGeoData: OpenStreetMapReverseGeoData?
-    private var upperBound: coordinates?
-    private var lowerBound: coordinates?
+    private var upperBound: Coordinates?
+    private var lowerBound: Coordinates?
     
     override public init() {
         // Set up parser
@@ -108,8 +108,8 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
         osmFinder.reverseGeoData = reverseGeoData
         
         // Update local boundary
-        upperBound = coordinates(latitude: osmParser.coord!.latitude + osmParser.offsetLatitude, longitude: osmParser.coord!.longitude + osmParser.offsetLongitude)
-        lowerBound = coordinates(latitude: osmParser.coord!.latitude - osmParser.offsetLatitude, longitude: osmParser.coord!.longitude - osmParser.offsetLongitude)
+        upperBound = Coordinates(latitude: osmParser.coord!.latitude + osmParser.offsetLatitude, longitude: osmParser.coord!.longitude + osmParser.offsetLongitude)
+        lowerBound = Coordinates(latitude: osmParser.coord!.latitude - osmParser.offsetLatitude, longitude: osmParser.coord!.longitude - osmParser.offsetLongitude)
         
         // Search speed limit 
         osmFinder.asyncSearch()

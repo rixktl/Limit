@@ -15,9 +15,10 @@
 		D991BDEC1D1C061C0039BCCB /* OpenStreetMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991BDEB1D1C061C0039BCCB /* OpenStreetMapData.swift */; };
 		D994F3571D28BEED00E73A85 /* Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = D994F3561D28BEED00E73A85 /* Setting.png */; };
 		D994F35A1D28BF5C00E73A85 /* Done.png in Resources */ = {isa = PBXBuildFile; fileRef = D994F3591D28BF5C00E73A85 /* Done.png */; };
-		D994F35C1D28C04000E73A85 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994F35B1D28C04000E73A85 /* NavigationViewController.swift */; };
 		D994F35E1D28C8C500E73A85 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994F35D1D28C8C500E73A85 /* AudioModel.swift */; };
 		D994F3601D28E18100E73A85 /* DoubleBeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D994F35F1D28E18100E73A85 /* DoubleBeep.mp3 */; };
+		D9A49C141D29753A00338883 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A49C131D29753A00338883 /* SettingModel.swift */; };
+		D9A49C161D298FA300338883 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A49C151D298FA300338883 /* SettingViewController.swift */; };
 		D9A5EF6B1D1B079F0077C1C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF6A1D1B079F0077C1C0 /* AppDelegate.swift */; };
 		D9A5EF6D1D1B079F0077C1C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF6C1D1B079F0077C1C0 /* ViewController.swift */; };
 		D9A5EF701D1B079F0077C1C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9A5EF6E1D1B079F0077C1C0 /* Main.storyboard */; };
@@ -56,9 +57,10 @@
 		D991BDEB1D1C061C0039BCCB /* OpenStreetMapData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapData.swift; sourceTree = "<group>"; };
 		D994F3561D28BEED00E73A85 /* Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Setting.png; path = Media/Setting.png; sourceTree = "<group>"; };
 		D994F3591D28BF5C00E73A85 /* Done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Done.png; path = Media/Done.png; sourceTree = "<group>"; };
-		D994F35B1D28C04000E73A85 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		D994F35D1D28C8C500E73A85 /* AudioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 		D994F35F1D28E18100E73A85 /* DoubleBeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = DoubleBeep.mp3; path = Media/DoubleBeep.mp3; sourceTree = "<group>"; };
+		D9A49C131D29753A00338883 /* SettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		D9A49C151D298FA300338883 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D9A5EF671D1B079F0077C1C0 /* Limit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Limit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A5EF6A1D1B079F0077C1C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9A5EF6C1D1B079F0077C1C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,8 +153,9 @@
 				D92FA58F1D1DC10900B7FACC /* SpeedModel.swift */,
 				D9F3CE9D1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift */,
 				D957CF091D1F4B9100DBE484 /* InAppPurchaseModel.swift */,
-				D994F35B1D28C04000E73A85 /* NavigationViewController.swift */,
 				D994F35D1D28C8C500E73A85 /* AudioModel.swift */,
+				D9A49C131D29753A00338883 /* SettingModel.swift */,
+				D9A49C151D298FA300338883 /* SettingViewController.swift */,
 			);
 			path = Limit;
 			sourceTree = "<group>";
@@ -318,11 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D994F35C1D28C04000E73A85 /* NavigationViewController.swift in Sources */,
 				D9A5EF9B1D1B2D420077C1C0 /* LocationData.swift in Sources */,
 				D9A5EF6D1D1B079F0077C1C0 /* ViewController.swift in Sources */,
 				D994F35E1D28C8C500E73A85 /* AudioModel.swift in Sources */,
 				D91C6EFE1D1B727000923644 /* OpenStreetMapParser.swift in Sources */,
+				D9A49C161D298FA300338883 /* SettingViewController.swift in Sources */,
 				D9145EAB1D1CE75E009128E1 /* OpenStreetMapModel.swift in Sources */,
 				D991BDEC1D1C061C0039BCCB /* OpenStreetMapData.swift in Sources */,
 				D9F3CE9E1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift in Sources */,
@@ -330,6 +333,7 @@
 				D9A5EF991D1B175D0077C1C0 /* LocationModel.swift in Sources */,
 				D9145EA91D1CE74C009128E1 /* OpenStreetMapFinder.swift in Sources */,
 				D92FA5901D1DC10900B7FACC /* SpeedModel.swift in Sources */,
+				D9A49C141D29753A00338883 /* SettingModel.swift in Sources */,
 				D9A5EF6B1D1B079F0077C1C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

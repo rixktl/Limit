@@ -51,7 +51,7 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
     private var data: OpenStreetMapReverseGeoData! = OpenStreetMapReverseGeoData()
 
     /* Form an url according to coordinates */
-    private func formUrl(coord: coordinates) -> String! {
+    private func formUrl(coord: Coordinates) -> String! {
         return String(coord.latitude) + COORDINATES_SEPARATION + String(coord.longitude)
     }
     
@@ -82,7 +82,7 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Request for new data corresponding to coordinates */
-    internal func request(coord: coordinates!) {
+    internal func request(coord: Coordinates!) {
         
         // Ensure unlocked
         guard (lock == false) else {

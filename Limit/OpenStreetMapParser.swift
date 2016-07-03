@@ -27,12 +27,12 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     internal var delegate: OpenStreetMapParserDelegate!
     internal var offsetLatitude: Double!
     internal var offsetLongitude: Double!
-    internal var coord: coordinates?
+    internal var coord: Coordinates?
     
     private let PRE_URL: String! = "https://www.overpass-api.de/api/xapi?way[maxspeed=*][bbox="
     private let POST_URL: String! = "]"
     private let COORDINATES_SEPARATION: String! = ","
-    private let LOCK_TIME: Double! = 1.0
+    private let LOCK_TIME: Double! = 2.5
     
     private let OSM_IDENTIFIER: String! = "osm"
     private let TAG_IDENTIFIER: String! = "tag"
@@ -48,7 +48,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     
     private var wayIndex: Int
     private var nodeIndex: String!
-    private var tmpNode: [String: node]!
+    private var tmpNode: [String: Node]!
     private var result: OpenStreetMapData!
     private var isNode: Bool!
     private var parser: NSXMLParser!
@@ -99,7 +99,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Request for new data corresponding to coordinates */
-    internal func request(coord: coordinates!) {
+    internal func request(coord: Coordinates!) {
         // Ensure unlocked
         guard (lock == false) else {
             return
@@ -132,19 +132,19 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
         
         switch elementName {
             case TAG_IDENTIFIER:
-                let newTag: tag = tag(key: attributeDict[KEY_IDENTIFIER], value: attributeDict[VALUE_IDENTIFIER])
+                let newTag: Tag = Tag(key: attributeDict[KEY_IDENTIFIER], value: attributeDict[VALUE_IDENTIFIER])
                 // Determines type of father struct
                 if(isNode!) {
                     // Initialize if not exist
                     if(tmpNode[nodeIndex]!.subTag == nil) {
-                        tmpNode[nodeIndex]!.subTag = [tag]()
+                        tmpNode[nodeIndex]!.subTag = [Tag]()
                     }
                     // Add new tag
                     tmpNode[nodeIndex]!.subTag!.append(newTag)
                 } else {
                     // Initialize if not exist
                     if(result!.ways![wayIndex-1].subTag == nil) {
-                        result!.ways![wayIndex-1].subTag = [tag]()
+                        result!.ways![wayIndex-1].subTag = [Tag]()
                     }
                     // Add new tag
                     result!.ways![wayIndex-1].subTag!.append(newTag)
@@ -152,7 +152,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
             
             case NODE_IDENTIFIER:
                 isNode = true
-                var newNode: node = node(latitude: Double(attributeDict[LATITUDE_IDENTIFIER]!), longitude: Double(attributeDict[LONGITUDE_IDENTIFIER]!))
+                var newNode: Node = Node(latitude: Double(attributeDict[LATITUDE_IDENTIFIER]!), longitude: Double(attributeDict[LONGITUDE_IDENTIFIER]!))
                 newNode.id = attributeDict[ID_IDENTIFIER]
                 // Add new node
                 tmpNode[attributeDict[ID_IDENTIFIER]!] = newNode
@@ -161,10 +161,10 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
             case WAY_IDENTIFIER:
                 // Initialize if not exist
                 if(wayIndex == 0) {
-                    result!.ways = [way]()
+                    result!.ways = [Way]()
                 }
                 isNode = false
-                var newWay: way = way()
+                var newWay: Way = Way()
                 newWay.id = attributeDict[ID_IDENTIFIER]
                 // Add new way
                 result!.ways!.append(newWay)
@@ -173,7 +173,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
             case SUB_NODE_IDENTIFIER:
                 // Initialize if not exist
                 if(result!.ways![wayIndex-1].subNode == nil) {
-                    result!.ways![wayIndex-1].subNode = [node]()
+                    result!.ways![wayIndex-1].subNode = [Node]()
                 }
                 // Reference to node in way
                 result!.ways![wayIndex-1].subNode!.append(tmpNode[attributeDict[REFERENCE_IDENTIFIER]!]!)

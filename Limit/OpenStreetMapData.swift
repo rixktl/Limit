@@ -9,20 +9,20 @@
 import Foundation
 
 struct OpenStreetMapData {
-    var ways: [way]?
+    var ways: [Way]?
 }
 
-struct line {
-    var coord1: coordinates!
-    var coord2: coordinates!
+struct Line {
+    var coord1: Coordinates!
+    var coord2: Coordinates!
     
-    init(coord1: coordinates!, coord2: coordinates) {
+    init(coord1: Coordinates!, coord2: Coordinates) {
         self.coord1 = coord1
         self.coord2 = coord2
     }
 }
 
-struct coordinates {
+struct Coordinates {
     var latitude: Double!
     var longitude: Double!
     
@@ -32,7 +32,7 @@ struct coordinates {
     }
 }
 
-struct tag {
+struct Tag {
     var key: String!
     var value: String!
     
@@ -42,18 +42,18 @@ struct tag {
     }
 }
 
-struct node {
+struct Node {
     var id: String!
-    var coord: coordinates!
-    var subTag: [tag]?
+    var coord: Coordinates!
+    var subTag: [Tag]?
     
     init(latitude: Double!, longitude: Double!) {
-        self.coord = coordinates(latitude: latitude, longitude: longitude)
+        self.coord = Coordinates(latitude: latitude, longitude: longitude)
     }
 }
 
-struct way {
+struct Way {
     var id: String!
-    var subNode: [node]?
-    var subTag: [tag]?
+    var subNode: [Node]?
+    var subTag: [Tag]?
 }

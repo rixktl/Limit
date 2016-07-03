@@ -16,8 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        // Set status bar style to light content
-        application.statusBarStyle = UIStatusBarStyle.LightContent
+        
+        // Disable idle (prevent from screen off)
+        UIApplication.sharedApplication().idleTimerDisabled = true
         return true
     }
 

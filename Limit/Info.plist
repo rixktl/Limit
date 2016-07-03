@@ -26,6 +26,7 @@
 	<string>Limit uses your location to determine how fast you drive.</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
 		<string>location</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
