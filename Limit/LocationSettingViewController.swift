@@ -40,6 +40,7 @@ class LocationSettingViewController: UIViewController, CLLocationManagerDelegate
         }
     }
     
+    /* Switch to other view */
     private func switchToView(name: String!) {
         let view: UIViewController = UIStoryboard.init(name: STORYBOARD_NAME, bundle: nil).instantiateViewControllerWithIdentifier(name)
         self.presentViewController(view, animated: true, completion: nil)

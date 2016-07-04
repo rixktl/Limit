@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private let LOCATION_REQUEST_VIEW: String! = "LocationRequestView"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Check whether location service is accessable
+        if(CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedAlways) {
+            // Switch to location request view
+            let storyboard: UIStoryboard = (self.window?.rootViewController?.storyboard)!
+            let rootViewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier(LOCATION_REQUEST_VIEW)
+            self.window?.rootViewController = rootViewController
+            self.window?.makeKeyAndVisible()
+        }
         
         // Disable idle (prevent from screen off)
         UIApplication.sharedApplication().idleTimerDisabled = true

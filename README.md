@@ -19,9 +19,9 @@ In-App-Purchase Manager
 
 Main view & Setting view & Loading View with Loading Model
 
-# To Do (iPhone)
-
 Views & Controllers(Permissions)
+
+# To Do (iPhone)
 
 Components:
   
@@ -45,4 +45,5 @@ Error handling
 
 Network Error(Connection, Data Parsing), Permission Error, Limit Not Found
 
+Handle permission missing in MainView
 
