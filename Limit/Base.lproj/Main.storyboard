@@ -18,6 +18,19 @@
             <string>HelveticaNeue-Thin</string>
             <string>HelveticaNeue-Thin</string>
         </mutableArray>
+        <mutableArray key="SanFranciscoDisplay-Bold.otf">
+            <string>SanFranciscoDisplay-Bold</string>
+            <string>SanFranciscoDisplay-Bold</string>
+        </mutableArray>
+        <mutableArray key="SanFranciscoDisplay-Regular.otf">
+            <string>SanFranciscoDisplay-Regular</string>
+            <string>SanFranciscoDisplay-Regular</string>
+        </mutableArray>
+        <mutableArray key="SanFranciscoText-Regular.otf">
+            <string>SanFranciscoText-Regular</string>
+            <string>SanFranciscoText-Regular</string>
+            <string>SanFranciscoText-Regular</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -218,7 +231,7 @@
                                             <constraint firstAttribute="width" secondItem="jRH-ZV-oUm" secondAttribute="height" multiplier="1:1" id="ZHx-lo-9Gh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Done" backgroundImage="Done.png">
+                                        <state key="normal" title="Done" backgroundImage="GreenButton.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -292,9 +305,162 @@
             </objects>
             <point key="canvasLocation" x="-69" y="-444"/>
         </scene>
+        <!--Location Request View Controller-->
+        <scene sceneID="3Vq-FF-clh">
+            <objects>
+                <viewController storyboardIdentifier="LocationRequestView" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8gC-bo-eVF" customClass="LocationRequestViewController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4fn-uc-n7o"/>
+                        <viewControllerLayoutGuide type="bottom" id="in3-SY-bPb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="ZJQ-p6-G9e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location Services" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axu-8Q-yi8">
+                                <rect key="frame" x="72" y="238" width="176" height="29"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please Turn On " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pZ-RV-yC2">
+                                <rect key="frame" x="92" y="217" width="136" height="21"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This way, we can determine how fast you are driving." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eJ-Js-g0S">
+                                <rect key="frame" x="50" y="304" width="220" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5eJ-Js-g0S" secondAttribute="height" multiplier="55:14" id="L4r-DP-ZMP"/>
+                                    <constraint firstAttribute="width" constant="220" id="dF7-ah-vcg"/>
+                                    <constraint firstAttribute="height" constant="56" id="o9X-sp-6eo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="IconLogoWhiteGreen.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dbD-XQ-0R8">
+                                <rect key="frame" x="102" y="100" width="117" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dbD-XQ-0R8" secondAttribute="height" multiplier="117:62" id="DWP-iC-qEY"/>
+                                    <constraint firstAttribute="width" constant="117" id="Kkg-gH-uR0"/>
+                                    <constraint firstAttribute="height" constant="62" id="t9t-w8-NGN"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6l-76-PyI">
+                                <rect key="frame" x="120" y="428" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="eo4-ax-rgF"/>
+                                    <constraint firstAttribute="height" constant="80" id="fhb-34-Syq"/>
+                                    <constraint firstAttribute="width" secondItem="T6l-76-PyI" secondAttribute="height" multiplier="1:1" id="vkK-Cz-dcE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="18"/>
+                                <state key="normal" title="Enable" backgroundImage="GreenButton.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="enableButtonClicked:" destination="8gC-bo-eVF" eventType="touchUpInside" id="VJ4-lA-InG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5eJ-Js-g0S" firstAttribute="centerX" secondItem="ZJQ-p6-G9e" secondAttribute="centerX" id="60x-Jv-VMt"/>
+                            <constraint firstItem="7pZ-RV-yC2" firstAttribute="top" secondItem="dbD-XQ-0R8" secondAttribute="bottom" constant="40" id="N6g-jE-wY8"/>
+                            <constraint firstItem="axu-8Q-yi8" firstAttribute="centerX" secondItem="ZJQ-p6-G9e" secondAttribute="centerX" id="NRZ-uh-PAq"/>
+                            <constraint firstItem="dbD-XQ-0R8" firstAttribute="centerX" secondItem="ZJQ-p6-G9e" secondAttribute="centerX" id="R3r-vO-pMF"/>
+                            <constraint firstItem="T6l-76-PyI" firstAttribute="centerX" secondItem="ZJQ-p6-G9e" secondAttribute="centerX" id="evD-8e-lkE"/>
+                            <constraint firstItem="dbD-XQ-0R8" firstAttribute="top" secondItem="4fn-uc-n7o" secondAttribute="bottom" constant="100" id="jad-Rn-vp2"/>
+                            <constraint firstItem="axu-8Q-yi8" firstAttribute="top" secondItem="7pZ-RV-yC2" secondAttribute="bottom" id="oGb-ag-58K"/>
+                            <constraint firstItem="in3-SY-bPb" firstAttribute="top" secondItem="T6l-76-PyI" secondAttribute="bottom" constant="60" id="osy-lp-51F"/>
+                            <constraint firstItem="5eJ-Js-g0S" firstAttribute="centerY" secondItem="ZJQ-p6-G9e" secondAttribute="centerY" id="tMb-Lp-30X"/>
+                            <constraint firstItem="7pZ-RV-yC2" firstAttribute="centerX" secondItem="ZJQ-p6-G9e" secondAttribute="centerX" id="vUv-ER-23M"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5tS-Z8-Sn0"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Omp-1J-eyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-69" y="1051"/>
+        </scene>
+        <!--Location Setting View Controller-->
+        <scene sceneID="vsL-Cd-7Iv">
+            <objects>
+                <viewController storyboardIdentifier="LocationSettingView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4am-kY-61s" customClass="LocationSettingViewController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fJL-Bt-LfI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Glk-XO-u9z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Wi-8Y-EXz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location is Disabled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ7-yC-nRw">
+                                <rect key="frame" x="47" y="259" width="227" height="23"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="IconLogoBlackWhite.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0JE-Si-dDu">
+                                <rect key="frame" x="93" y="148" width="135" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="KJ6-Sd-OrX"/>
+                                    <constraint firstAttribute="width" constant="135" id="Pea-Pe-jej"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XC0-vZ-9fB">
+                                <rect key="frame" x="120" y="428" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XC0-vZ-9fB" secondAttribute="height" multiplier="1:1" id="PbW-oJ-k3q"/>
+                                    <constraint firstAttribute="width" constant="80" id="T1p-ME-ytd"/>
+                                    <constraint firstAttribute="height" constant="80" id="day-Qu-26h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                <state key="normal" title="Settings" backgroundImage="WhiteButton.png">
+                                    <color key="titleColor" red="0.1019607843" green="0.090196078430000007" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SettingButtonClicked:" destination="4am-kY-61s" eventType="touchUpInside" id="ZKR-o8-fue"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="To enable location, go to your Settings App &gt; Privacy &gt; Location Services" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyN-Y3-4rg">
+                                <rect key="frame" x="27" y="285" width="266" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="FzD-EY-qnW"/>
+                                    <constraint firstAttribute="width" constant="266" id="fj5-iV-ccW"/>
+                                    <constraint firstAttribute="width" secondItem="TyN-Y3-4rg" secondAttribute="height" multiplier="266:43" id="lXq-yH-Hza"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XC0-vZ-9fB" firstAttribute="centerX" secondItem="6Wi-8Y-EXz" secondAttribute="centerX" id="DU8-jr-L7N"/>
+                            <constraint firstItem="TyN-Y3-4rg" firstAttribute="top" secondItem="jJ7-yC-nRw" secondAttribute="bottom" constant="8" id="Lqs-0v-6iH"/>
+                            <constraint firstItem="0JE-Si-dDu" firstAttribute="top" secondItem="fJL-Bt-LfI" secondAttribute="bottom" constant="128" id="ROj-yw-M1D"/>
+                            <constraint firstItem="0JE-Si-dDu" firstAttribute="centerX" secondItem="6Wi-8Y-EXz" secondAttribute="centerX" id="dXG-BY-Ltw"/>
+                            <constraint firstItem="Glk-XO-u9z" firstAttribute="top" secondItem="XC0-vZ-9fB" secondAttribute="bottom" constant="60" id="hPs-rh-UmF"/>
+                            <constraint firstItem="jJ7-yC-nRw" firstAttribute="top" secondItem="0JE-Si-dDu" secondAttribute="bottom" constant="60" id="k2p-zc-lCv"/>
+                            <constraint firstItem="jJ7-yC-nRw" firstAttribute="centerX" secondItem="6Wi-8Y-EXz" secondAttribute="centerX" id="mFE-b2-5lo"/>
+                            <constraint firstItem="TyN-Y3-4rg" firstAttribute="centerX" secondItem="6Wi-8Y-EXz" secondAttribute="centerX" id="oOr-aX-mpr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNq-Dk-ea6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="374" y="1051"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Done.png" width="500" height="500"/>
+        <image name="GreenButton.png" width="500" height="500"/>
+        <image name="IconLogoBlackWhite.jpg" width="1639" height="779"/>
+        <image name="IconLogoWhiteGreen.jpg" width="1639" height="779"/>
         <image name="Setting.png" width="233" height="233"/>
+        <image name="WhiteButton.png" width="500" height="500"/>
     </resources>
 </document>
