@@ -23,7 +23,7 @@
         <!--View Controller-->
         <scene sceneID="kMf-hW-fQh">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="9tx-2L-JJX" customClass="ViewController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9tx-2L-JJX" customClass="ViewController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vqN-DZ-eh0"/>
                         <viewControllerLayoutGuide type="bottom" id="2D4-Ca-sFh"/>
@@ -258,6 +258,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="va4-bQ-57A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="798" y="276"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="K6E-yn-KOi">
+            <objects>
+                <viewController storyboardIdentifier="LoadingView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ml8-Wx-0T3" customClass="LoadingViewController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OUc-ZZ-umW"/>
+                        <viewControllerLayoutGuide type="bottom" id="G8K-dI-m26"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="l6v-ab-Red">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" ambiguous="YES" misplaced="YES" scalesPageToFit="YES" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QO-bq-VNf">
+                                <rect key="frame" x="82" y="246" width="157" height="75"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1529411765" green="0.70196078429999997" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3QO-bq-VNf" firstAttribute="centerY" secondItem="l6v-ab-Red" secondAttribute="centerY" id="7Ue-pg-JV3"/>
+                            <constraint firstItem="3QO-bq-VNf" firstAttribute="centerX" secondItem="l6v-ab-Red" secondAttribute="centerX" id="Ciu-Ti-Fuk"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="webView" destination="3QO-bq-VNf" id="WVM-G8-yj5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="stG-vY-D72" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-69" y="-444"/>
         </scene>
     </scenes>
     <resources>

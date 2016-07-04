@@ -92,9 +92,9 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
     
     /* Get status code with speedlimit(offset added) */
     private func getStatus(limit: Double?) -> Status {
-        print("offseted-limit:", limit)
-        print("speed:", self.speed)
-        print("")
+        //print("offseted-limit:", limit)
+        //print("speed:", self.speed)
+        //print("")
         
         // Both exist
         if(limit != nil && self.speed != nil) {

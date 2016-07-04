@@ -10,6 +10,7 @@
 		D9145EA91D1CE74C009128E1 /* OpenStreetMapFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9145EA81D1CE74C009128E1 /* OpenStreetMapFinder.swift */; };
 		D9145EAB1D1CE75E009128E1 /* OpenStreetMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9145EAA1D1CE75E009128E1 /* OpenStreetMapModel.swift */; };
 		D91C6EFE1D1B727000923644 /* OpenStreetMapParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C6EFD1D1B727000923644 /* OpenStreetMapParser.swift */; };
+		D92192861D2A3DCE0002BFE2 /* LoadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92192851D2A3DCE0002BFE2 /* LoadingModel.swift */; };
 		D92FA5901D1DC10900B7FACC /* SpeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92FA58F1D1DC10900B7FACC /* SpeedModel.swift */; };
 		D957CF0A1D1F4B9100DBE484 /* InAppPurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957CF091D1F4B9100DBE484 /* InAppPurchaseModel.swift */; };
 		D991BDEC1D1C061C0039BCCB /* OpenStreetMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991BDEB1D1C061C0039BCCB /* OpenStreetMapData.swift */; };
@@ -28,6 +29,8 @@
 		D9A5EF8B1D1B079F0077C1C0 /* LimitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF8A1D1B079F0077C1C0 /* LimitUITests.swift */; };
 		D9A5EF991D1B175D0077C1C0 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF981D1B175D0077C1C0 /* LocationModel.swift */; };
 		D9A5EF9B1D1B2D420077C1C0 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF9A1D1B2D420077C1C0 /* LocationData.swift */; };
+		D9AC102F1D29D75F00B75B04 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AC102E1D29D75F00B75B04 /* LoadingViewController.swift */; };
+		D9AC10311D29DB7E00B75B04 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9AC10301D29DB7E00B75B04 /* Loading.gif */; };
 		D9F3CE9E1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F3CE9D1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,7 @@
 		D9145EA81D1CE74C009128E1 /* OpenStreetMapFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapFinder.swift; sourceTree = "<group>"; };
 		D9145EAA1D1CE75E009128E1 /* OpenStreetMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapModel.swift; sourceTree = "<group>"; };
 		D91C6EFD1D1B727000923644 /* OpenStreetMapParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapParser.swift; sourceTree = "<group>"; };
+		D92192851D2A3DCE0002BFE2 /* LoadingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModel.swift; sourceTree = "<group>"; };
 		D92FA58F1D1DC10900B7FACC /* SpeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedModel.swift; sourceTree = "<group>"; };
 		D957CF091D1F4B9100DBE484 /* InAppPurchaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchaseModel.swift; sourceTree = "<group>"; };
 		D991BDEB1D1C061C0039BCCB /* OpenStreetMapData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapData.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		D9A5EF8C1D1B079F0077C1C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9A5EF981D1B175D0077C1C0 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		D9A5EF9A1D1B2D420077C1C0 /* LocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		D9AC102E1D29D75F00B75B04 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		D9AC10301D29DB7E00B75B04 /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Loading.gif; path = Media/Loading.gif; sourceTree = "<group>"; };
 		D9F3CE9D1D1EEE3600E16A77 /* OpenStreetMapReverseGeoParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapReverseGeoParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +113,7 @@
 		D994F3581D28BEF500E73A85 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				D9AC10301D29DB7E00B75B04 /* Loading.gif */,
 				D994F35F1D28E18100E73A85 /* DoubleBeep.mp3 */,
 				D994F3591D28BF5C00E73A85 /* Done.png */,
 				D994F3561D28BEED00E73A85 /* Setting.png */,
@@ -156,6 +163,8 @@
 				D994F35D1D28C8C500E73A85 /* AudioModel.swift */,
 				D9A49C131D29753A00338883 /* SettingModel.swift */,
 				D9A49C151D298FA300338883 /* SettingViewController.swift */,
+				D9AC102E1D29D75F00B75B04 /* LoadingViewController.swift */,
+				D92192851D2A3DCE0002BFE2 /* LoadingModel.swift */,
 			);
 			path = Limit;
 			sourceTree = "<group>";
@@ -297,6 +306,7 @@
 				D994F3601D28E18100E73A85 /* DoubleBeep.mp3 in Resources */,
 				D9A5EF721D1B079F0077C1C0 /* Assets.xcassets in Resources */,
 				D9A5EF701D1B079F0077C1C0 /* Main.storyboard in Resources */,
+				D9AC10311D29DB7E00B75B04 /* Loading.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +333,7 @@
 			files = (
 				D9A5EF9B1D1B2D420077C1C0 /* LocationData.swift in Sources */,
 				D9A5EF6D1D1B079F0077C1C0 /* ViewController.swift in Sources */,
+				D9AC102F1D29D75F00B75B04 /* LoadingViewController.swift in Sources */,
 				D994F35E1D28C8C500E73A85 /* AudioModel.swift in Sources */,
 				D91C6EFE1D1B727000923644 /* OpenStreetMapParser.swift in Sources */,
 				D9A49C161D298FA300338883 /* SettingViewController.swift in Sources */,
@@ -332,6 +343,7 @@
 				D957CF0A1D1F4B9100DBE484 /* InAppPurchaseModel.swift in Sources */,
 				D9A5EF991D1B175D0077C1C0 /* LocationModel.swift in Sources */,
 				D9145EA91D1CE74C009128E1 /* OpenStreetMapFinder.swift in Sources */,
+				D92192861D2A3DCE0002BFE2 /* LoadingModel.swift in Sources */,
 				D92FA5901D1DC10900B7FACC /* SpeedModel.swift in Sources */,
 				D9A49C141D29753A00338883 /* SettingModel.swift in Sources */,
 				D9A5EF6B1D1B079F0077C1C0 /* AppDelegate.swift in Sources */,

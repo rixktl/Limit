@@ -15,7 +15,9 @@ class ViewController: UIViewController, SpeedModelDelegate {
     @IBOutlet weak var settingButton: UIButton!
     
     internal let speedModel: SpeedModel = SpeedModel()
+    private var loadingModel: LoadingModel? = nil
     private let audioModel: AudioModel = AudioModel()
+    private let LOAD_VIEW_ID: String! = "LoadingView"
     private let MPH_NAME: String! = "M P H"
     private let KPH_NAME: String! = "K P H"
     private let GREEN_COLOR = UIColor.init(red: 0.0/255.0, green: 180.0/255.0, blue: 81.0/255.0, alpha: 1)
@@ -63,21 +65,27 @@ class ViewController: UIViewController, SpeedModelDelegate {
         return UIStatusBarStyle.LightContent
     }
     
-    // Setting button clicked
+    /* Setting button clicked */
     @IBAction func settingButtonClicked(sender: AnyObject) {
         speedModel.stop()
     }
     
-    // Unit button clicked
+    /* Unit button clicked */
     @IBAction func unitButtonClicked(sender: AnyObject) {
         speedModel.flipUnit()
     }
     
-    // Updated by speedModel
+    /* Updated by speedModel */
     func updateSpeedInfo(speed: Double!, unit: Bool!, status: Status) {
         
-        self.speed = speed
+        print("Updating")
+        dispatch_async(dispatch_get_main_queue()) {
+            self.loadingModel?.removeView()
+            self.loadingModel?.keepAlive()
+        }
+        
         // Update speed label with rounded number
+        self.speed = speed
         dispatch_async(dispatch_get_main_queue()) {
             self.speedLabel.text = String(Int(round(self.speed!)))
         }
@@ -104,6 +112,7 @@ class ViewController: UIViewController, SpeedModelDelegate {
                 supposedColor = BLACK_COLOR
         }
         
+        // Update background only if needed
         if(self.view.backgroundColor != supposedColor) {
             dispatch_async(dispatch_get_main_queue()) {
                 self.view.backgroundColor = self.supposedColor
@@ -113,6 +122,21 @@ class ViewController: UIViewController, SpeedModelDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let loadingViewController: UIViewController = (self.storyboard?.instantiateViewControllerWithIdentifier(LOAD_VIEW_ID))!
+        let masterView: UIView = self.view
+        self.loadingModel = LoadingModel(loadingViewController: loadingViewController, masterView: masterView)
+        
+        self.loadingModel?.keepAlive()
+        
+        /*
+        self.loadingModel?.keepAlive()
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
+            self.loadingModel?.removeView()
+        }))
+        */
+        
         // Prepare speed model
         speedModel.delegate = self
         speedModel.start()
@@ -121,6 +145,7 @@ class ViewController: UIViewController, SpeedModelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
