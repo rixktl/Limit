@@ -34,6 +34,7 @@ class ViewController: UIViewController, SpeedModelDelegate {
         // TODO: research on view controller
     }
     
+    
     // Handle rotation
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         
@@ -68,6 +69,7 @@ class ViewController: UIViewController, SpeedModelDelegate {
     /* Setting button clicked */
     @IBAction func settingButtonClicked(sender: AnyObject) {
         speedModel.stop()
+        loadingModel!.stop()
     }
     
     /* Unit button clicked */
@@ -78,7 +80,7 @@ class ViewController: UIViewController, SpeedModelDelegate {
     /* Updated by speedModel */
     func updateSpeedInfo(speed: Double!, unit: Bool!, status: Status) {
         
-        print("Updating")
+        // Disabling loading view for a while
         dispatch_async(dispatch_get_main_queue()) {
             self.loadingModel?.removeView()
             self.loadingModel?.keepAlive()
@@ -123,19 +125,13 @@ class ViewController: UIViewController, SpeedModelDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Get views
         let loadingViewController: UIViewController = (self.storyboard?.instantiateViewControllerWithIdentifier(LOAD_VIEW_ID))!
         let masterView: UIView = self.view
+        // Set up loading model
         self.loadingModel = LoadingModel(loadingViewController: loadingViewController, masterView: masterView)
-        
+        // Start counting
         self.loadingModel?.keepAlive()
-        
-        /*
-        self.loadingModel?.keepAlive()
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
-            self.loadingModel?.removeView()
-        }))
-        */
         
         // Prepare speed model
         speedModel.delegate = self
