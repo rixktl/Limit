@@ -17,11 +17,11 @@ SpeedModel(Combine OpenStreetMap & Location Manager for speed limit)
 
 In-App-Purchase Manager
 
-Main view & Setting view
+Main view & Setting view & Loading View with Loading Model
 
 # To Do (iPhone)
 
-Views & Controllers(Permissions, Loading)
+Views & Controllers(Permissions)
 
 Components:
   
