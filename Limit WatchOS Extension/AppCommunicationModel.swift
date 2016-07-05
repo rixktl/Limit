@@ -27,6 +27,8 @@ public class AppCommunicationModel: NSObject {
     private let INFO_NAME: String! = "INFO"
     private let SPEED_DATA_NAMES: [String!] = ["SPEED", "SPEED_LIMIT", "UNIT", "STATUS"]
     
+    private var timer: NSTimer?
+    
     override init() {
         super.init()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(receiveMessage), name: NOTIFICATION_NAME, object: nil)
@@ -38,6 +40,13 @@ public class AppCommunicationModel: NSObject {
     
     public func start() {
         sendMessage([INFO_NAME:WatchMessageMode.Start.rawValue])
+        // Setup spammer
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(spamUntilConfirmation), userInfo: nil, repeats: true)
+    }
+    
+    /* Spam to iPhone to prevent MainView from running */
+    internal func spamUntilConfirmation() {
+        sendMessage([INFO_NAME:"NONE"])
     }
     
     public func stop() {
@@ -52,7 +61,18 @@ public class AppCommunicationModel: NSObject {
     internal func receiveMessage(notification: NSNotification) {
         let dict: NSDictionary = notification.userInfo!
         print("Receiving:", dict)
-        delegate!.updateSpeedInfo(dict[SPEED_DATA_NAMES[0]] as! Double!, speedLimit: dict[SPEED_DATA_NAMES[1]] as! Double!, unit: dict[SPEED_DATA_NAMES[2]] as! Bool!, status: dict[SPEED_DATA_NAMES[3]] as! Int)
+        
+        // Check if receiving confirmation
+        if(dict["INFO"] != nil && dict["INFO"]! as! String == "CONFIRMED") {
+            if(timer != nil) {
+                timer!.invalidate()
+            }
+            timer = nil
+            
+        } else {
+            // Speed info received, updating
+            delegate!.updateSpeedInfo(dict[SPEED_DATA_NAMES[0]] as! Double!, speedLimit: dict[SPEED_DATA_NAMES[1]] as! Double!, unit: dict[SPEED_DATA_NAMES[2]] as! Bool!, status: dict[SPEED_DATA_NAMES[3]] as! Int)
+        }
     }
     
     /* Send message to iPhone */

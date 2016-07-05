@@ -30,21 +30,20 @@ public class WatchCommunicationModel: NSObject, SpeedModelDelegate {
     
     /* Receive new Message */
     public func newMessage(message: [String : AnyObject]) {
-        
-        // Echo test
-        // sendMessage([INFO_NAME:message])
-        
         switch message[INFO_NAME] {
+            
             case WatchMessageMode.Start.rawValue as String:
-                //NSNotificationCenter.defaultCenter().postNotificationName("DID_START_WC_COMM", object: self, userInfo: nil)
                 speedModel.start()
                 break
+            
             case WatchMessageMode.Stop.rawValue as String:
                 speedModel.stop()
                 break
+            
             case WatchMessageMode.FlipUnit.rawValue as String:
                 speedModel.flipUnit()
                 break
+            
             default:
                 break
         }

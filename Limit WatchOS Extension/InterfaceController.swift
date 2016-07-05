@@ -27,7 +27,7 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
         appModel.delegate = self
         appModel.start()
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(10 * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(60 * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
             self.appModel.stop()
         }))
     }

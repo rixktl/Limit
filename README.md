@@ -23,6 +23,8 @@ Views & Controllers(Permissions)
 
 # To Do (iPhone)
 
+*Fallback approach(no audio when in background) does not work
+
 Components:
   
   Watch connectivity

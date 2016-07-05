@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 class ViewController: UIViewController, SpeedModelDelegate {
     
@@ -34,6 +35,10 @@ class ViewController: UIViewController, SpeedModelDelegate {
         // TODO: research on view controller
     }
     
+    /* Deinitialize*/
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "DID_RECEIVE_MESSAGE", object: nil)
+    }
     
     // Handle rotation
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
@@ -122,15 +127,23 @@ class ViewController: UIViewController, SpeedModelDelegate {
         }
     }
     
-    func watchMode() {
-        speedModel.stop()
-        loadingModel!.stop()
+    /* Receive message from Apple Watch */
+    func watchModel(notification: NSNotification) {
+        // Check if it is pre-message
+        if(notification.userInfo!["INFO"] != nil && notification.userInfo!["INFO"] as! String == "NONE") {
+            // Shut down unnessary job
+            speedModel.stop()
+            loadingModel!.stop()
+            // Reply Apple Watch
+            WCSession.defaultSession().sendMessage(["INFO":"CONFIRMED"], replyHandler: nil, errorHandler: nil)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(watchMode), name: "DID_START_WC_COMM", object: nil)
+        
+        // Listen to message from Apple Watch
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(watchModel), name: "DID_RECEIVE_MESSAGE", object: nil)
         
         // Get views
         let loadingViewController: UIViewController = (self.storyboard?.instantiateViewControllerWithIdentifier(LOAD_VIEW_ID))!
