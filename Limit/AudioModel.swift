@@ -17,7 +17,6 @@ public class AudioModel: NSObject {
     private let path: String! = NSBundle.mainBundle().resourcePath! + "/DoubleBeep.mp3"
     private let AUDIO_OFFSET: Double! = 0.0
     
-    public var inBackground: Bool! = false
     private var lock: Bool! = false
     private var audioPlayer: AVAudioPlayer?
     
@@ -31,27 +30,6 @@ public class AudioModel: NSObject {
         }
         
         super.init()
-        // Background means it really just in background
-        // Need to research on detecting whether launched by Apple Watch
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didEnterBackground), name: "DID_ENTER_BACKGROUND", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(willEnterForeground), name: "WILL_ENTER_FOREGROUND", object: nil)
-    }
-    
-    /* Deallocate */
-    deinit {
-        // Remove observer
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "DID_ENTER_BACKGROUND", object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "WILL_ENTER_FOREGROUND", object: nil)
-    }
-    
-    /* Entered background (opened by AppleWatch) */
-    internal func didEnterBackground() {
-        self.inBackground = true
-    }
-    
-    /* Entering foreground */
-    internal func willEnterForeground() {
-        self.inBackground = false
     }
     
     /* Request to play audio */

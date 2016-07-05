@@ -8,15 +8,23 @@
 
 import UIKit
 import CoreLocation
+import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
     var window: UIWindow?
     private let LOCATION_REQUEST_VIEW: String! = "LocationRequestView"
-
+    private let watchModel: WatchCommunicationModel = WatchCommunicationModel()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Start WCSession for Apple Watch if possible
+        if(WCSession.isSupported()) {
+            WCSession.defaultSession().delegate = self
+            WCSession.defaultSession().activateSession()
+        }
         
         // Check whether location service is accessable
         if(CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedAlways) {
@@ -25,10 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let rootViewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier(LOCATION_REQUEST_VIEW)
             self.window?.rootViewController = rootViewController
             self.window?.makeKeyAndVisible()
+        } else {
+            // Switch to main view
+            let storyboard: UIStoryboard = (self.window?.rootViewController?.storyboard)!
+            let rootViewController: UIViewController = storyboard.instantiateViewControllerWithIdentifier("MainView")
+            self.window?.rootViewController = rootViewController
+            self.window?.makeKeyAndVisible()
         }
         
         // Disable idle (prevent from screen off)
         UIApplication.sharedApplication().idleTimerDisabled = true
+        
         return true
     }
 
@@ -40,12 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        NSNotificationCenter.defaultCenter().postNotificationName("DID_ENTER_BACKGROUND", object: self)
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        NSNotificationCenter.defaultCenter().postNotificationName("WILL_ENTER_FOREGROUND", object: self)
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -55,7 +68,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    /* Receive message from Apple Watch */
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+        watchModel.newMessage(message)
+    }
+    
 }
 

@@ -78,7 +78,7 @@ class ViewController: UIViewController, SpeedModelDelegate {
     }
     
     /* Updated by speedModel */
-    func updateSpeedInfo(speed: Double!, unit: Bool!, status: Status) {
+    func updateSpeedInfo(speed: Double!, speedLimit: Double?, unit: Bool!, status: Status) {
         
         // Disabling loading view for a while
         dispatch_async(dispatch_get_main_queue()) {
@@ -122,8 +122,15 @@ class ViewController: UIViewController, SpeedModelDelegate {
         }
     }
     
+    func watchMode() {
+        speedModel.stop()
+        loadingModel!.stop()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(watchMode), name: "DID_START_WC_COMM", object: nil)
         
         // Get views
         let loadingViewController: UIViewController = (self.storyboard?.instantiateViewControllerWithIdentifier(LOAD_VIEW_ID))!
@@ -136,6 +143,7 @@ class ViewController: UIViewController, SpeedModelDelegate {
         // Prepare speed model
         speedModel.delegate = self
         speedModel.start()
+ 
     }
     
     override func viewDidLoad() {

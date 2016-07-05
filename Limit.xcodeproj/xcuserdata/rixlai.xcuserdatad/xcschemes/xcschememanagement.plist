@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Limit WatchOS (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Limit WatchOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Limit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>D9A5EF851D1B079F0077C1C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9F5ED2D1D2B115500482368</key>
 		<dict>
 			<key>primary</key>
 			<true/>
