@@ -5,7 +5,7 @@ Swift version of Limit app
 
 No in-app purchase (not in use, but code exists)
 
-# Completed
+# Completed(iPhone)
 
 Location Manager
 
@@ -21,18 +21,25 @@ Main view & Setting view & Loading View with Loading Model
 
 Views & Controllers(Permissions)
 
+*Fallback approach(no audio when in background) does not work
+*Resolved: watch spam to phone until confirmation of disabling unnessary job
+
+Watch connectivity
+
+
 # To Do (iPhone)
 
-*Fallback approach(no audio when in background) does not work
+None!
 
-Components:
-  
-  Watch connectivity
+
+# Completed(WatchOS3)
+
+(Start, Stop) protocol/communication
 
 
 # To Do (WatchOS3)
 
-Views & Controllers(Main & (Start, Stop), Notification)
+Views & Controllers(Main, Notification)
 
 Components:
 
