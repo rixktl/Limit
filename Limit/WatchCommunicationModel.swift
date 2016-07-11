@@ -9,6 +9,10 @@
 import Foundation
 import WatchConnectivity
 
+/*
+ * A model that handle communication to Apple Watch
+ */
+
 enum WatchMessageMode: String {
     case Start = "START"
     case Stop = "STOP"

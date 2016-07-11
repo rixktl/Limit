@@ -16,13 +16,30 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     @IBOutlet var speedLabel: WKInterfaceLabel!
     @IBOutlet var unitLabel: WKInterfaceLabel!
     
+    private let MPH_NAME: String! = "M P H"
+    private let KPH_NAME: String! = "K P H"
     private let appModel: AppCommunicationModel = AppCommunicationModel()
     private let ringModel: RingModel = RingModel()
     
+    /* Called when unit button is clicked */
+    @IBAction func unitButtonClicked() {
+        // Flip unit
+        appModel.flipUnit()
+    }
+    
+    /* Called when group button is clicked */
+    @IBAction func groupButtonClicked() {
+        
+    }
+    
+    /* Updated by app communication model */
     internal func updateSpeedInfo(speed: Double!, speedLimit: Double!, unit: Bool!, status: Int) {
-        print("speed:", speed)
-        print("speedLimit:", speedLimit)
+        // Update speed label with rounded number
+        self.speedLabel.setText(  String( Int(round(speed)) )  )
+        // Update data to ring model
         ringModel.newData(speed, speedLimit: speedLimit)
+        // Update unit label
+        self.unitLabel.setText(unit! ? MPH_NAME : KPH_NAME)
     }
     
     override func awakeWithContext(context: AnyObject?) {

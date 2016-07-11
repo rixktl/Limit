@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+/*
+ * A model that show a loading view
+ */
+
 public class LoadingModel: NSObject {
     
     private let TIMER_DELAY: Double! = 2.0

@@ -8,8 +8,9 @@
 
 import Foundation
 import WatchKit
+
 /*
- * A model for controlling ring movement
+ * A model that control ring movement
  */
 
 public class RingModel: NSObject {
@@ -26,6 +27,7 @@ public class RingModel: NSObject {
         self.interfaceGroup?.setBackgroundImageNamed(IMAGE_NAME)
     }
     
+    /* Random ring movement */
     public func randomData() {
         newData(Double(rand()%100+1), speedLimit: Double(rand()%150+1))
     }
@@ -78,6 +80,7 @@ public class RingModel: NSObject {
             len = destFrame - originFrame + 1
         }
         
+        // Start animation
         self.interfaceGroup?.startAnimatingWithImagesInRange(NSMakeRange(startFrame, len), duration: Double( (Double(len)/RING_FPS)*Double(dir) ), repeatCount: 1)
         
         // Delay unlock

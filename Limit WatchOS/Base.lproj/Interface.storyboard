@@ -50,11 +50,18 @@
                                     </group>
                                 </items>
                             </group>
+                            <connections>
+                                <action selector="groupButtonClicked" destination="oTY-NP-WHE" id="Lhi-ej-R2c"/>
+                            </connections>
                         </button>
                     </items>
                     <menu key="menu" id="xkv-OA-JNj">
                         <items>
-                            <menuItem title="M P H / K P H" icon="shuffle" id="I6N-ol-WbO"/>
+                            <menuItem title="M P H / K P H" icon="shuffle" id="I6N-ol-WbO">
+                                <connections>
+                                    <action selector="unitButtonClicked" destination="oTY-NP-WHE" id="dzM-h1-7Tw"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>

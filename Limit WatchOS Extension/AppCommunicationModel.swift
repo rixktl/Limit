@@ -9,6 +9,10 @@
 import Foundation
 import WatchConnectivity
 
+/*
+ * A model that handle communication to iPhone
+ */
+
 enum WatchMessageMode: String {
     case Start = "START"
     case Stop = "STOP"
@@ -38,6 +42,7 @@ public class AppCommunicationModel: NSObject {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: NOTIFICATION_NAME, object: nil)
     }
     
+    /* Start communicating with iPhone */
     public func start() {
         sendMessage([INFO_NAME:WatchMessageMode.Start.rawValue])
         // Setup spammer
@@ -49,10 +54,12 @@ public class AppCommunicationModel: NSObject {
         sendMessage([INFO_NAME:"NONE"])
     }
     
+    /* Stop communcating with iPhone */
     public func stop() {
         sendMessage([INFO_NAME:WatchMessageMode.Stop.rawValue])
     }
     
+    /* Request to flip unit */
     public func flipUnit() {
         sendMessage([INFO_NAME:WatchMessageMode.FlipUnit.rawValue])
     }
@@ -60,7 +67,6 @@ public class AppCommunicationModel: NSObject {
     /* Called when receive new message from iPhone */
     internal func receiveMessage(notification: NSNotification) {
         let dict: NSDictionary = notification.userInfo!
-        print("Receiving:", dict)
         
         // Check if receiving confirmation
         if(dict["INFO"] != nil && dict["INFO"]! as! String == "CONFIRMED") {
