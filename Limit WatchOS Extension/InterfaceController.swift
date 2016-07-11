@@ -12,7 +12,12 @@ import Foundation
 
 class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate {
 
+    @IBOutlet var ringGroup: WKInterfaceGroup!
+    @IBOutlet var speedLabel: WKInterfaceLabel!
+    @IBOutlet var unitLabel: WKInterfaceLabel!
+    
     private let appModel: AppCommunicationModel = AppCommunicationModel()
+    private let ringModel: RingModel = RingModel()
     
     internal func updateSpeedInfo(speed: Double!, speedLimit: Double!, unit: Bool!, status: Int) {
         print("speed:", speed)
@@ -22,6 +27,10 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
+        
+        // Setup ring model
+        // Pass by reference
+        ringModel.setInterfaceGroup(&(ringGroup!))
         
         // Setup app model
         appModel.delegate = self

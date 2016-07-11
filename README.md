@@ -36,6 +36,8 @@ None!
 
 (Start, Stop) protocol/communication
 
+iPhone connectivity
+
 
 # To Do (WatchOS3)
 
@@ -44,8 +46,9 @@ Views & Controllers(Main, Notification)
 Components:
 
   Graphic(Ring)
-  
-  iPhone connectivity
+
+  Implement control for Start/Stop
+
 
 
 # Need To Work On (Potentially optional)
