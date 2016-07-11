@@ -27,12 +27,12 @@
         <!--MainView-->
         <scene sceneID="s8i-Wn-Orv">
             <objects>
-                <controller identifier="MainView" id="oTY-NP-WHE" customClass="InterfaceController">
+                <controller identifier="MainView" id="oTY-NP-WHE" customClass="InterfaceController" customModule="Limit_WatchOS_Extension">
                     <items>
                         <button alignment="left" id="eHO-46-l0B">
                             <group key="contentGroup" width="1" alignment="left" id="gbg-W5-bXp">
                                 <items>
-                                    <group width="155" height="152" alignment="center" verticalAlignment="center" backgroundImage="single0.png" contentMode="scaleAspectFill" layout="vertical" id="N7o-0K-riF">
+                                    <group width="155" height="152" alignment="center" verticalAlignment="center" backgroundImage="single0" contentMode="scaleAspectFill" layout="vertical" id="N7o-0K-riF">
                                         <items>
                                             <imageView width="121" height="117" alignment="center" verticalAlignment="center" hidden="YES" id="urM-T8-P7d"/>
                                             <label width="93" height="58" alignment="center" verticalAlignment="center" text="0" textAlignment="center" id="Gmv-u0-YwW">
@@ -50,23 +50,15 @@
                                     </group>
                                 </items>
                             </group>
-                            <connections>
-                                <action selector="changeMode" destination="oTY-NP-WHE" id="nGd-jb-9Rf"/>
-                            </connections>
                         </button>
                     </items>
                     <menu key="menu" id="xkv-OA-JNj">
                         <items>
-                            <menuItem title="M P H / K P H" icon="shuffle" id="I6N-ol-WbO">
-                                <connections>
-                                    <action selector="ChangeUnit" destination="oTY-NP-WHE" id="eai-mh-HsY"/>
-                                </connections>
-                            </menuItem>
+                            <menuItem title="M P H / K P H" icon="shuffle" id="I6N-ol-WbO"/>
                         </items>
                     </menu>
                     <connections>
                         <outlet property="ringGroup" destination="N7o-0K-riF" id="3oN-ZT-bVB"/>
-                        <outlet property="screenButton" destination="eHO-46-l0B" id="PL6-Tq-VL5"/>
                         <outlet property="speedLabel" destination="Gmv-u0-YwW" id="Vna-MC-dIA"/>
                         <outlet property="unitLabel" destination="RuS-se-wXZ" id="4OM-7x-d6e"/>
                     </connections>
@@ -95,7 +87,7 @@
         <!--Notification Controller-->
         <scene sceneID="Mdz-bU-ZId">
             <objects>
-                <controller id="aw0-Ox-5jj" customClass="NotificationController" customModule="Limit_WatchOS_Extension"/>
+                <controller id="aw0-Ox-5jj" customClass="NotificationController" customModule="Limit_WatchOS"/>
             </objects>
             <point key="canvasLocation" x="867" y="319"/>
         </scene>

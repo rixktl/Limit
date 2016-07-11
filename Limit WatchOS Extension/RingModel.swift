@@ -26,6 +26,10 @@ public class RingModel: NSObject {
         self.interfaceGroup?.setBackgroundImageNamed(IMAGE_NAME)
     }
     
+    public func randomData() {
+        newData(Double(rand()%100+1), speedLimit: Double(rand()%150+1))
+    }
+    
     /* Move ring according to new data */
     public func newData(speed: Double!, speedLimit: Double!) {
         // Ensure interface group exist
@@ -81,5 +85,6 @@ public class RingModel: NSObject {
             self.isMoving = false
         }))
     }
+    
     
 }

@@ -22,6 +22,7 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     internal func updateSpeedInfo(speed: Double!, speedLimit: Double!, unit: Bool!, status: Int) {
         print("speed:", speed)
         print("speedLimit:", speedLimit)
+        ringModel.newData(speed, speedLimit: speedLimit)
     }
     
     override func awakeWithContext(context: AnyObject?) {
@@ -37,7 +38,7 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
         appModel.start()
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(60 * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
-            self.appModel.stop()
+            //self.appModel.stop()
         }))
     }
 

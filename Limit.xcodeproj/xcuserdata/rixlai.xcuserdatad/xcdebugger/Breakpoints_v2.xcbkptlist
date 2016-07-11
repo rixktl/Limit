@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Limit WatchOS Extension/RingModel.swift"
-            timestampString = "489898526.769639"
+            timestampString = "489902159.197858"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "moveFrame(_:)"
             landmarkType = "5">
          </BreakpointContent>

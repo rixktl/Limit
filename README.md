@@ -49,6 +49,8 @@ Components:
 
   Implement control for Start/Stop
 
+  Background ring could have different size, depending on what size of watch(issue)
+
 
 
 # Need To Work On (Potentially optional)

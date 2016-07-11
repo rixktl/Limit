@@ -10,8 +10,8 @@
 		D9145EA91D1CE74C009128E1 /* OpenStreetMapFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9145EA81D1CE74C009128E1 /* OpenStreetMapFinder.swift */; };
 		D9145EAB1D1CE75E009128E1 /* OpenStreetMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9145EAA1D1CE75E009128E1 /* OpenStreetMapModel.swift */; };
 		D91C6EFE1D1B727000923644 /* OpenStreetMapParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C6EFD1D1B727000923644 /* OpenStreetMapParser.swift */; };
+		D91E96501D3355E50089B9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F5ED471D2B115500482368 /* Assets.xcassets */; };
 		D92192861D2A3DCE0002BFE2 /* LoadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92192851D2A3DCE0002BFE2 /* LoadingModel.swift */; };
-		D92EE0551D33353600243799 /* Rings in Resources */ = {isa = PBXBuildFile; fileRef = D92EE0541D33353600243799 /* Rings */; };
 		D92EE0571D3337C500243799 /* RingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EE0561D3337C500243799 /* RingModel.swift */; };
 		D92FA5901D1DC10900B7FACC /* SpeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92FA58F1D1DC10900B7FACC /* SpeedModel.swift */; };
 		D94AC8D71D2A73CF006B13AD /* GreenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D94AC8D51D2A73CF006B13AD /* GreenButton.png */; };
@@ -112,7 +112,6 @@
 		D9145EAA1D1CE75E009128E1 /* OpenStreetMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapModel.swift; sourceTree = "<group>"; };
 		D91C6EFD1D1B727000923644 /* OpenStreetMapParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapParser.swift; sourceTree = "<group>"; };
 		D92192851D2A3DCE0002BFE2 /* LoadingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModel.swift; sourceTree = "<group>"; };
-		D92EE0541D33353600243799 /* Rings */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Rings; path = Media/Rings; sourceTree = "<group>"; };
 		D92EE0561D3337C500243799 /* RingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingModel.swift; sourceTree = "<group>"; };
 		D92FA58F1D1DC10900B7FACC /* SpeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedModel.swift; sourceTree = "<group>"; };
 		D94AC8D51D2A73CF006B13AD /* GreenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenButton.png; path = Media/GreenButton.png; sourceTree = "<group>"; };
@@ -196,7 +195,6 @@
 		D994F3581D28BEF500E73A85 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				D92EE0541D33353600243799 /* Rings */,
 				D94AC8D91D2A7440006B13AD /* IconLogoBlackWhite.jpg */,
 				D94AC8DA1D2A7440006B13AD /* IconLogoWhiteGreen.jpg */,
 				D94AC8D51D2A73CF006B13AD /* GreenButton.png */,
@@ -472,7 +470,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92EE0551D33353600243799 /* Rings in Resources */,
 				D994F3571D28BEED00E73A85 /* Setting.png in Resources */,
 				D94AC8DB1D2A7440006B13AD /* IconLogoBlackWhite.jpg in Resources */,
 				D9A5EF751D1B079F0077C1C0 /* LaunchScreen.storyboard in Resources */,
@@ -505,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F5ED341D2B115500482368 /* Assets.xcassets in Resources */,
+				D91E96501D3355E50089B9EA /* Assets.xcassets in Resources */,
 				D9F5ED321D2B115500482368 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
