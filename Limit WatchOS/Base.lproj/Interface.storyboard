@@ -16,7 +16,7 @@
         <!--LocationRequestView-->
         <scene sceneID="kOj-kd-6AF">
             <objects>
-                <controller identifier="LocationRequestView" id="fME-im-bSU">
+                <controller identifier="LocationRequestView" id="fME-im-bSU" customClass="NotificationController" customModule="Limit_WatchOS_Extension">
                     <items>
                         <label width="136" height="61.5" alignment="left" text="Please Enable Location Service On Phone" textAlignment="left" numberOfLines="0" id="DgL-Ad-lI8"/>
                     </items>

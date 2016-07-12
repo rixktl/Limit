@@ -18,8 +18,9 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     
     private let MPH_NAME: String! = "M P H"
     private let KPH_NAME: String! = "K P H"
-    private let appModel: AppCommunicationModel = AppCommunicationModel()
+    private var appModel: AppCommunicationModel = AppCommunicationModel()
     private let ringModel: RingModel = RingModel()
+    private let statusModel: StatusModel = StatusModel()
     
     /* Called when unit button is clicked */
     @IBAction func unitButtonClicked() {
@@ -29,34 +30,39 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     
     /* Called when group button is clicked */
     @IBAction func groupButtonClicked() {
-        
+        // Update status
+        statusModel.update()
     }
     
     /* Updated by app communication model */
     internal func updateSpeedInfo(speed: Double!, speedLimit: Double!, unit: Bool!, status: Int) {
         // Update speed label with rounded number
         self.speedLabel.setText(  String( Int(round(speed)) )  )
-        // Update data to ring model
-        ringModel.newData(speed, speedLimit: speedLimit)
         // Update unit label
         self.unitLabel.setText(unit! ? MPH_NAME : KPH_NAME)
+        // Update data to ring model
+        ringModel.newData(speed, speedLimit: speedLimit)
+        // Update data to status model
+        statusModel.newData(speed)
     }
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
         
+        //self.presentControllerWithNames(["LocationRequestView"], contexts: nil)
+        //presentControllerWithName("LocationRequestView", context: nil)
+        
         // Setup ring model
         // Pass by reference
         ringModel.setInterfaceGroup(&(ringGroup!))
-        
         // Setup app model
         appModel.delegate = self
-        appModel.start()
+        // Setup status model
+        statusModel.setAppModel( &(appModel) )
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(60 * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
-            //self.appModel.stop()
-        }))
+        // Start app model
+        appModel.start()
     }
 
     override func willActivate() {
@@ -67,6 +73,10 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    override func willDisappear() {
+        appModel.stop()
     }
 
 }

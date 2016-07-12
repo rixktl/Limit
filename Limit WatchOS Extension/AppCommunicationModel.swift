@@ -32,6 +32,7 @@ public class AppCommunicationModel: NSObject {
     private let SPEED_DATA_NAMES: [String!] = ["SPEED", "SPEED_LIMIT", "UNIT", "STATUS"]
     
     private var timer: NSTimer?
+    private var didStart: Bool! = false
     
     override init() {
         super.init()
@@ -44,6 +45,13 @@ public class AppCommunicationModel: NSObject {
     
     /* Start communicating with iPhone */
     public func start() {
+        // Ensure stopped before starting
+        guard (self.didStart == false) else {
+            return
+        }
+        
+        self.didStart = true
+        // Send message to start
         sendMessage([INFO_NAME:WatchMessageMode.Start.rawValue])
         // Setup spammer
         timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(spamUntilConfirmation), userInfo: nil, repeats: true)
@@ -56,6 +64,12 @@ public class AppCommunicationModel: NSObject {
     
     /* Stop communcating with iPhone */
     public func stop() {
+        // Ensure started before stopping
+        guard (self.didStart == true) else {
+            return
+        }
+        
+        self.didStart = false
         sendMessage([INFO_NAME:WatchMessageMode.Stop.rawValue])
     }
     

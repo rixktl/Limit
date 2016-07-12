@@ -22,6 +22,11 @@ class NotificationController: WKUserNotificationInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        // Disable title
+        self.setTitle("")
+        
+        
     }
 
     override func didDeactivate() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D90B736A1D34AB5000CA9B93 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90B73691D34AB5000CA9B93 /* StatusModel.swift */; };
 		D9145EA91D1CE74C009128E1 /* OpenStreetMapFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9145EA81D1CE74C009128E1 /* OpenStreetMapFinder.swift */; };
 		D9145EAB1D1CE75E009128E1 /* OpenStreetMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9145EAA1D1CE75E009128E1 /* OpenStreetMapModel.swift */; };
 		D91C6EFE1D1B727000923644 /* OpenStreetMapParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C6EFD1D1B727000923644 /* OpenStreetMapParser.swift */; };
@@ -151,6 +152,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D90B73691D34AB5000CA9B93 /* StatusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 		D9145EA81D1CE74C009128E1 /* OpenStreetMapFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapFinder.swift; sourceTree = "<group>"; };
 		D9145EAA1D1CE75E009128E1 /* OpenStreetMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapModel.swift; sourceTree = "<group>"; };
 		D91C6EFD1D1B727000923644 /* OpenStreetMapParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapParser.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 		D9F5ED3E1D2B115500482368 /* Limit WatchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D90B73691D34AB5000CA9B93 /* StatusModel.swift */,
 				D92EE0561D3337C500243799 /* RingModel.swift */,
 				D9F5ED571D2B2E0000482368 /* AppCommunicationModel.swift */,
 				D9F5ED411D2B115500482368 /* InterfaceController.swift */,
@@ -703,6 +706,7 @@
 				D92EE0571D3337C500243799 /* RingModel.swift in Sources */,
 				D9F5ED461D2B115500482368 /* NotificationController.swift in Sources */,
 				D9F5ED441D2B115500482368 /* ExtensionDelegate.swift in Sources */,
+				D90B736A1D34AB5000CA9B93 /* StatusModel.swift in Sources */,
 				D9F5ED581D2B2E0000482368 /* AppCommunicationModel.swift in Sources */,
 				D9F5ED421D2B115500482368 /* InterfaceController.swift in Sources */,
 			);

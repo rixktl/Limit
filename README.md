@@ -38,19 +38,22 @@ None!
 
 iPhone connectivity
 
+Graphic(Ring)
+
+Implement control for Start/Stop
+
 
 # To Do (WatchOS3)
 
-Views & Controllers(Main, Notification)
+Views & Controllers(Notification, Start(Stopped), Optional-Stop(Started))
 
 Components:
 
-  Graphic(Ring)
+  Vibration alert
 
-  Implement control for Start/Stop
-
-  Background ring could have different size, depending on what size of watch(issue)
-
+* Problem with showing view
+* Possible solution: fallback to programmically change view
+* Possible solution 2: empty text for title and ignore tapping issue
 
 
 # Need To Work On (Potentially optional)
@@ -60,4 +63,6 @@ Error handling
 Network Error(Connection, Data Parsing), Permission Error, Limit Not Found
 
 Handle permission missing in MainView
+
+Background ring could have different size, depending on what size of watch(issue)
 
