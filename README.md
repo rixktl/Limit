@@ -42,14 +42,11 @@ Graphic(Ring)
 
 Implement control for Start/Stop
 
+Vibration alert
 
 # To Do (WatchOS3)
 
 Views & Controllers(Notification, Start(Stopped), Optional-Stop(Started))
-
-Components:
-
-  Vibration alert
 
 * Problem with showing view
 * Possible solution: fallback to programmically change view

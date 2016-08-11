@@ -22,6 +22,7 @@
 		D94AC8DE1D2A74D1006B13AD /* LocationRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94AC8DD1D2A74D1006B13AD /* LocationRequestViewController.swift */; };
 		D94AC8E01D2A74E0006B13AD /* LocationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94AC8DF1D2A74E0006B13AD /* LocationSettingViewController.swift */; };
 		D957CF0A1D1F4B9100DBE484 /* InAppPurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957CF091D1F4B9100DBE484 /* InAppPurchaseModel.swift */; };
+		D968FAA21D5C201F00C4E3C7 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D968FAA11D5C201F00C4E3C7 /* AlertModel.swift */; };
 		D991BDEC1D1C061C0039BCCB /* OpenStreetMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D991BDEB1D1C061C0039BCCB /* OpenStreetMapData.swift */; };
 		D994F3571D28BEED00E73A85 /* Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = D994F3561D28BEED00E73A85 /* Setting.png */; };
 		D994F35E1D28C8C500E73A85 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994F35D1D28C8C500E73A85 /* AudioModel.swift */; };
@@ -166,6 +167,7 @@
 		D94AC8DD1D2A74D1006B13AD /* LocationRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRequestViewController.swift; sourceTree = "<group>"; };
 		D94AC8DF1D2A74E0006B13AD /* LocationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSettingViewController.swift; sourceTree = "<group>"; };
 		D957CF091D1F4B9100DBE484 /* InAppPurchaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchaseModel.swift; sourceTree = "<group>"; };
+		D968FAA11D5C201F00C4E3C7 /* AlertModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		D991BDEB1D1C061C0039BCCB /* OpenStreetMapData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapData.swift; sourceTree = "<group>"; };
 		D994F3561D28BEED00E73A85 /* Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Setting.png; path = Media/Setting.png; sourceTree = "<group>"; };
 		D994F35D1D28C8C500E73A85 /* AudioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 		D9F5ED3E1D2B115500482368 /* Limit WatchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D968FAA11D5C201F00C4E3C7 /* AlertModel.swift */,
 				D90B73691D34AB5000CA9B93 /* StatusModel.swift */,
 				D92EE0561D3337C500243799 /* RingModel.swift */,
 				D9F5ED571D2B2E0000482368 /* AppCommunicationModel.swift */,
@@ -707,6 +710,7 @@
 				D9F5ED461D2B115500482368 /* NotificationController.swift in Sources */,
 				D9F5ED441D2B115500482368 /* ExtensionDelegate.swift in Sources */,
 				D90B736A1D34AB5000CA9B93 /* StatusModel.swift in Sources */,
+				D968FAA21D5C201F00C4E3C7 /* AlertModel.swift in Sources */,
 				D9F5ED581D2B2E0000482368 /* AppCommunicationModel.swift in Sources */,
 				D9F5ED421D2B115500482368 /* InterfaceController.swift in Sources */,
 			);
