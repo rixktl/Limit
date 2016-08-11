@@ -19,10 +19,12 @@ enum Status: Int {
     case STOPPED = 2
     // Speed = 0
     case OPTIONAL_STOP = 3
+    // Initial status
+    case UNDEFINED = -1
 }
 
 public class StatusModel: NSObject {
-    private var status: Int = -1
+    private var status: Status = Status.UNDEFINED
     private var appModel: AppCommunicationModel?
     
     /* Set app model */
@@ -32,27 +34,27 @@ public class StatusModel: NSObject {
     
     /* Pass new data for now status */
     public func newData(speed: Double!) {
-        if(speed == 0 && status == Status.STARTED.rawValue) {
-            status = Status.OPTIONAL_STOP.rawValue
-        } else if(speed != 0 && status != Status.STARTED.rawValue) {
-            status = Status.STARTED.rawValue
+        if(speed == 0 && status == Status.STARTED) {
+            status = Status.OPTIONAL_STOP
+        } else if(speed != 0 && status != Status.STARTED) {
+            status = Status.STARTED
         }
     }
     
     /* Change model status according to status */
     public func update() {
         switch status {
-            case Status.STARTED.rawValue:
+            case Status.STARTED:
                 break
             
-            case Status.STOPPED.rawValue:
+            case Status.STOPPED:
                 appModel?.start()
-                status = Status.STARTED.rawValue
+                status = Status.STARTED
                 break
             
-            case Status.OPTIONAL_STOP.rawValue:
+            case Status.OPTIONAL_STOP:
                 appModel?.stop()
-                status = Status.STOPPED.rawValue
+                status = Status.STOPPED
                 break
             
             default:

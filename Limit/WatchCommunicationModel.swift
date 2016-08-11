@@ -19,11 +19,17 @@ enum WatchMessageMode: String {
     case FlipUnit = "FLIP_UNIT"
 }
 
+enum DataLabel: String {
+    case Speed = "SPEED"
+    case SpeedLimit = "SPEED_LIMIT"
+    case Unit = "UNIT"
+    case Status = "STATUS"
+}
+
 public class WatchCommunicationModel: NSObject, SpeedModelDelegate {
     
     private let speedModel: SpeedModel = SpeedModel()
     private let INFO_NAME: String! = "INFO"
-    private let SPEED_DATA_NAMES: [String!] = ["SPEED", "SPEED_LIMIT", "UNIT", "STATUS"]
     
     override init() {
         super.init()
@@ -55,10 +61,10 @@ public class WatchCommunicationModel: NSObject, SpeedModelDelegate {
     
     /* Updated by speed model */
     internal func updateSpeedInfo(speed: Double!, speedLimit: Double?, unit: Bool!, status: Status) {
-        let message: [String: AnyObject] = [SPEED_DATA_NAMES[0]:speed,
-                                            SPEED_DATA_NAMES[1]: (speedLimit != nil ? speedLimit! : -1.0),
-                                            SPEED_DATA_NAMES[2]: unit,
-                                            SPEED_DATA_NAMES[3]: status.rawValue]
+        let message: [String: AnyObject] = [DataLabel.Speed.rawValue:speed,
+                                            DataLabel.SpeedLimit.rawValue: (speedLimit != nil ? speedLimit! : -1.0),
+                                            DataLabel.Unit.rawValue: unit,
+                                            DataLabel.Status.rawValue: status.rawValue]
         // Send to Apple Watch
         sendMessage(message)
     }
