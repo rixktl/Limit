@@ -57,7 +57,7 @@ public class AppCommunicationModel: NSObject {
         timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(spamUntilConfirmation), userInfo: nil, repeats: true)
     }
     
-    /* Spam to iPhone to prevent MainView from running */
+    /* Spam to iPhone to prevent main view controller from running */
     internal func spamUntilConfirmation() {
         sendMessage([INFO_NAME:"NONE"])
     }

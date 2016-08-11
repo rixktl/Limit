@@ -50,7 +50,7 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
         super.awakeWithContext(context)
         // Configure interface objects here.
         
-        //self.presentControllerWithNames(["LocationRequestView"], contexts: nil)
+        // To show permission request
         //presentControllerWithName("LocationRequestView", context: nil)
         
         // Setup ring model

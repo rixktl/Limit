@@ -13,6 +13,7 @@
 		D91C6EFE1D1B727000923644 /* OpenStreetMapParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91C6EFD1D1B727000923644 /* OpenStreetMapParser.swift */; };
 		D91E96501D3355E50089B9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F5ED471D2B115500482368 /* Assets.xcassets */; };
 		D92192861D2A3DCE0002BFE2 /* LoadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92192851D2A3DCE0002BFE2 /* LoadingModel.swift */; };
+		D9262B0D1D5D16D7007194B0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9262B0C1D5D16D7007194B0 /* ViewModel.swift */; };
 		D92EE0571D3337C500243799 /* RingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EE0561D3337C500243799 /* RingModel.swift */; };
 		D92FA5901D1DC10900B7FACC /* SpeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92FA58F1D1DC10900B7FACC /* SpeedModel.swift */; };
 		D94AC8D71D2A73CF006B13AD /* GreenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D94AC8D51D2A73CF006B13AD /* GreenButton.png */; };
@@ -158,6 +159,7 @@
 		D9145EAA1D1CE75E009128E1 /* OpenStreetMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapModel.swift; sourceTree = "<group>"; };
 		D91C6EFD1D1B727000923644 /* OpenStreetMapParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStreetMapParser.swift; sourceTree = "<group>"; };
 		D92192851D2A3DCE0002BFE2 /* LoadingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModel.swift; sourceTree = "<group>"; };
+		D9262B0C1D5D16D7007194B0 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D92EE0561D3337C500243799 /* RingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingModel.swift; sourceTree = "<group>"; };
 		D92FA58F1D1DC10900B7FACC /* SpeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedModel.swift; sourceTree = "<group>"; };
 		D94AC8D51D2A73CF006B13AD /* GreenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenButton.png; path = Media/GreenButton.png; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		D9F5ED3E1D2B115500482368 /* Limit WatchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D9262B0C1D5D16D7007194B0 /* ViewModel.swift */,
 				D968FAA11D5C201F00C4E3C7 /* AlertModel.swift */,
 				D90B73691D34AB5000CA9B93 /* StatusModel.swift */,
 				D92EE0561D3337C500243799 /* RingModel.swift */,
@@ -712,6 +715,7 @@
 				D90B736A1D34AB5000CA9B93 /* StatusModel.swift in Sources */,
 				D968FAA21D5C201F00C4E3C7 /* AlertModel.swift in Sources */,
 				D9F5ED581D2B2E0000482368 /* AppCommunicationModel.swift in Sources */,
+				D9262B0D1D5D16D7007194B0 /* ViewModel.swift in Sources */,
 				D9F5ED421D2B115500482368 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

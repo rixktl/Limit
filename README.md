@@ -52,6 +52,7 @@ Views & Controllers(Notification, Start(Stopped), Optional-Stop(Started))
 * Possible solution: fallback to programmically change view
 * Possible solution 2: empty text for title and ignore tapping issue
 
+Find the guide written by Edward for views(start/stop)
 
 # Need To Work On (Potentially optional)
 
