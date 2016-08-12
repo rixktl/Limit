@@ -91,6 +91,7 @@ public class AppCommunicationModel: NSObject {
             
         } else {
             // Speed info received, updating
+            // SpeedLimit will be -1 if not provided
             delegate!.updateSpeedInfo(dict[SPEED_DATA_NAMES[0]] as! Double!, speedLimit: dict[SPEED_DATA_NAMES[1]] as! Double!, unit: dict[SPEED_DATA_NAMES[2]] as! Bool!, status: dict[SPEED_DATA_NAMES[3]] as! Int)
         }
     }

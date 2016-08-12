@@ -16,11 +16,11 @@ public class AlertModel: NSObject {
     private var lock: Bool! = false
     private let VIBRATION_OFFSET: Double! = 3.0
     private let VIBRATION_TYPE: WKHapticType = WKHapticType.Click
-    
+    private let NULL_SPEEDLIMIT: Double! = -1.0
     /* Receive new data */
     public func newData(speed: Double!, speedLimit: Double!) {
         // Check if overspeed
-        if(speed > speedLimit) {
+        if(speed > speedLimit && speedLimit != NULL_SPEEDLIMIT) {
             vibrate()
         }
     }

@@ -18,10 +18,12 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     
     private let MPH_NAME: String! = "M P H"
     private let KPH_NAME: String! = "K P H"
-    private var appModel: AppCommunicationModel = AppCommunicationModel()
-    private let ringModel: RingModel = RingModel()
     private let statusModel: StatusModel = StatusModel()
     private let alertModel: AlertModel = AlertModel()
+    
+    private var appModel: AppCommunicationModel = AppCommunicationModel()
+    private var ringModel: RingModel = RingModel()
+    private var viewModel: ViewModel?
     
     /* Called when unit button is clicked */
     @IBAction func unitButtonClicked() {
@@ -41,8 +43,7 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
         self.speedLabel.setText(  String( Int(round(speed)) )  )
         self.unitLabel.setText(unit! ? MPH_NAME : KPH_NAME)
         // Update data to models
-        ringModel.newData(speed, speedLimit: speedLimit)
-        statusModel.newData(speed)
+        statusModel.newData(speed, speedLimit: speedLimit)
         alertModel.newData(speed, speedLimit: speedLimit)
     }
     
@@ -53,16 +54,19 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
         // To show permission request
         //presentControllerWithName("LocationRequestView", context: nil)
         
-        // Setup ring model
-        // Pass by reference
+        // Setup models, pass by ref
+        viewModel = ViewModel(ig: &(ringGroup!), sLabel: &(speedLabel!), uLabel: &(unitLabel!))
         ringModel.setInterfaceGroup(&(ringGroup!))
         // Setup app model
         appModel.delegate = self
         // Setup status model
         statusModel.setAppModel( &(appModel) )
+        statusModel.setRingModel(&(ringModel))
+        statusModel.setViewModel(&(viewModel!))
         
         // Start app model
         appModel.start()
+        
     }
 
     override func willActivate() {
