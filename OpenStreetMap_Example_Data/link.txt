@@ -1,0 +1,1 @@
+https://www.overpass-api.de/api/xapi?way[maxspeed=*][bbox=-122.047246,37.324539,-122.027246,37.344539]

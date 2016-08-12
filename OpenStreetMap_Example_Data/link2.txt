@@ -1,0 +1,1 @@
+https://www.overpass-api.de/api/xapi?way[maxspeed=*][name=Junipero%20Serra%20Freeway][bbox=-122.047246,37.324539,-122.027246,37.344539]

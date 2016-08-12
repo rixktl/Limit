@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API">
+<note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+<meta osm_base="2016-06-25T16:57:02Z"/>
+
+  <node id="26497350" lat="37.3338739" lon="-122.0483371"/>
+  <node id="26497351" lat="37.3340488" lon="-122.0472589"/>
+  <node id="26497352" lat="37.3343130" lon="-122.0253306"/>
+  <node id="26497353" lat="37.3342559" lon="-122.0239923"/>
+  <node id="26497354" lat="37.3337782" lon="-122.0213101"/>
+  <node id="26506805" lat="37.3329763" lon="-122.0186762"/>
+  <node id="26506806" lat="37.3339574" lon="-122.0211975"/>
+  <node id="26506808" lat="37.3343839" lon="-122.0232681"/>
+  <node id="26506810" lat="37.3344991" lon="-122.0246736"/>
+  <node id="26506811" lat="37.3344071" lon="-122.0449253"/>
+  <node id="26506813" lat="37.3330123" lon="-122.0535674">
+    <tag k="exit_to" v="SR-85 South;Gilroy"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="12B"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="30237136" lat="37.3323521" lon="-122.0588159"/>
+  <node id="30237138" lat="37.3338174" lon="-122.0639792"/>
+  <node id="30237139" lat="37.3344060" lon="-122.0665434"/>
+  <node id="30237214" lat="37.3341074" lon="-122.0660606"/>
+  <node id="30237215" lat="37.3335956" lon="-122.0640757"/>
+  <node id="30237216" lat="37.3327094" lon="-122.0615121"/>
+  <node id="30237217" lat="37.3321379" lon="-122.0588299"/>
+  <node id="30237218" lat="37.3323810" lon="-122.0554289"/>
+  <node id="30674510" lat="37.3342439" lon="-122.0681473"/>
+  <node id="30674511" lat="37.3344785" lon="-122.0681044"/>
+  <node id="30675153" lat="37.3341757" lon="-122.0665595"/>
+  <node id="49071598" lat="37.3320995" lon="-122.0575103"/>
+  <node id="49071602" lat="37.3324621" lon="-122.0562228"/>
+  <node id="49071605" lat="37.3323639" lon="-122.0569202"/>
+  <node id="49071606" lat="37.3320995" lon="-122.0581486">
+    <tag k="exit_to" v="SR-85 North;Mountain View"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="12A"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="92274376" lat="37.3332536" lon="-122.0192609"/>
+  <node id="92274382" lat="37.3323384" lon="-122.0601871"/>
+  <node id="92274384" lat="37.3325388" lon="-122.0601120"/>
+  <node id="206686836" lat="37.3341938" lon="-122.0449414"/>
+  <node id="206686849" lat="37.3342151" lon="-122.0411488"/>
+  <node id="206686860" lat="37.3340768" lon="-122.0226405"/>
+  <node id="206686874" lat="37.3330787" lon="-122.0193843"/>
+  <node id="206691786" lat="37.3327844" lon="-122.0187888">
+    <tag k="exit_to" v="Wolfe Road"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="10"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="206691795" lat="37.3282458" lon="-122.0101067"/>
+  <node id="220218075" lat="37.3344325" lon="-122.0374596"/>
+  <node id="220218084" lat="37.3342448" lon="-122.0374435">
+    <tag k="exit_to" v="De Anza Boulevard"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="11"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="220221941" lat="37.3341042" lon="-122.0483961">
+    <tag k="exit_to" v="SR-85 North;Mountain View"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="12A"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="224490643" lat="37.3335838" lon="-122.0633414">
+    <tag k="exit_to" v="Foothill Expressway;Grant Road"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="13"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="239510026" lat="37.3340136" lon="-122.0655402"/>
+  <node id="239510045" lat="37.3338984" lon="-122.0650467"/>
+  <node id="239511038" lat="37.3322104" lon="-122.0595112"/>
+  <node id="239511043" lat="37.3325132" lon="-122.0608684">
+    <tag k="exit_to" v="SR-85 South;Gilroy"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="12B"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="255655733" lat="37.3345050" lon="-122.0270151">
+    <tag k="exit_to" v="De Anza Boulevard"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="11"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="255655749" lat="37.3343002" lon="-122.0270151"/>
+  <node id="257568212" lat="37.3332166" lon="-122.0629669"/>
+  <node id="258965393" lat="37.3255374" lon="-122.0048793">
+    <tag k="exit_to" v="Stevens Creek Boulevard;Lawrence Expressway"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="9"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="259416258" lat="37.3342183" lon="-122.0670691"/>
+  <node id="289638735" lat="37.3285691" lon="-122.0101781">
+    <tag k="exit_to" v="Wolfe Road"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="10"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="289651583" lat="37.3258508" lon="-122.0049599"/>
+  <node id="305548483" lat="37.3342354" lon="-122.0654544"/>
+  <node id="305548752" lat="37.3344198" lon="-122.0411971"/>
+  <node id="305548771" lat="37.3342843" lon="-122.0472735"/>
+  <node id="305548963" lat="37.3337484" lon="-122.0205269"/>
+  <node id="305548965" lat="37.3341280" lon="-122.0218895"/>
+  <node id="306086412" lat="37.3324237" lon="-122.0594629"/>
+  <node id="306086751" lat="37.3341554" lon="-122.0460626"/>
+  <node id="306087467" lat="37.3333304" lon="-122.0199905"/>
+  <node id="519453773" lat="37.3232501" lon="-122.0004868"/>
+  <node id="519453800" lat="37.3232534" lon="-121.9999531"/>
+  <node id="704789509" lat="37.3345076" lon="-122.0253388"/>
+  <node id="704809017" lat="37.3321421" lon="-122.0568826"/>
+  <node id="704809018" lat="37.3322360" lon="-122.0561852"/>
+  <node id="704809079" lat="37.3326028" lon="-122.0554771"/>
+  <node id="704809080" lat="37.3323213" lon="-122.0575639"/>
+  <node id="704809138" lat="37.3323170" lon="-122.0581701"/>
+  <node id="704809320" lat="37.3326924" lon="-122.0607557"/>
+  <node id="704809322" lat="37.3328929" lon="-122.0613726"/>
+  <node id="704811333" lat="37.3343943" lon="-122.0425221"/>
+  <node id="704811334" lat="37.3344028" lon="-122.0455208"/>
+  <node id="704811335" lat="37.3343815" lon="-122.0461216"/>
+  <node id="704811336" lat="37.3343431" lon="-122.0467170"/>
+  <node id="704811350" lat="37.3342023" lon="-122.0478436"/>
+  <node id="704811465" lat="37.3341127" lon="-122.0466580"/>
+  <node id="704811544" lat="37.3341810" lon="-122.0455154"/>
+  <node id="704811565" lat="37.3342151" lon="-122.0426186"/>
+  <node id="704811716" lat="37.3339677" lon="-122.0478382"/>
+  <node id="1067425308" lat="37.3344785" lon="-122.0675680"/>
+  <node id="1067425637" lat="37.3339837" lon="-122.0644781"/>
+  <node id="1067425638" lat="37.3341159" lon="-122.0649609"/>
+  <node id="1067425639" lat="37.3343292" lon="-122.0659747"/>
+  <node id="1067425641" lat="37.3344529" lon="-122.0670530"/>
+  <node id="1067426061" lat="37.3337534" lon="-122.0645478"/>
+  <node id="1067428479" lat="37.3342439" lon="-122.0675894"/>
+  <node id="1067707159" lat="37.3303829" lon="-122.0137141"/>
+  <node id="1067710873" lat="37.3342986" lon="-122.0246790"/>
+  <node id="1067710874" lat="37.3341834" lon="-122.0233110"/>
+  <node id="1067710875" lat="37.3339360" lon="-122.0219539"/>
+  <node id="1067710876" lat="37.3335692" lon="-122.0206288"/>
+  <node id="1067711775" lat="37.3344649" lon="-122.0240084"/>
+  <node id="1067711860" lat="37.3342730" lon="-122.0225976"/>
+  <node id="1067711992" lat="37.3335223" lon="-122.0198993"/>
+  <way id="158623065">
+    <nd ref="519453800"/>
+    <nd ref="289651583"/>
+    <nd ref="289638735"/>
+    <nd ref="1067707159"/>
+    <nd ref="26506805"/>
+    <nd ref="92274376"/>
+    <nd ref="1067711992"/>
+    <nd ref="305548963"/>
+    <nd ref="26506806"/>
+    <nd ref="305548965"/>
+    <nd ref="1067711860"/>
+    <nd ref="26506808"/>
+    <nd ref="1067711775"/>
+    <nd ref="26506810"/>
+    <nd ref="704789509"/>
+    <nd ref="255655733"/>
+    <nd ref="220218075"/>
+    <nd ref="305548752"/>
+    <nd ref="704811333"/>
+    <nd ref="26506811"/>
+    <nd ref="704811334"/>
+    <nd ref="704811335"/>
+    <nd ref="704811336"/>
+    <nd ref="305548771"/>
+    <nd ref="704811350"/>
+    <nd ref="220221941"/>
+    <nd ref="26506813"/>
+    <nd ref="704809079"/>
+    <nd ref="49071602"/>
+    <nd ref="49071605"/>
+    <nd ref="704809080"/>
+    <nd ref="704809138"/>
+    <nd ref="30237136"/>
+    <nd ref="306086412"/>
+    <nd ref="92274384"/>
+    <nd ref="704809320"/>
+    <nd ref="704809322"/>
+    <nd ref="224490643"/>
+    <nd ref="30237138"/>
+    <nd ref="1067425637"/>
+    <nd ref="1067425638"/>
+    <nd ref="305548483"/>
+    <nd ref="1067425639"/>
+    <nd ref="30237139"/>
+    <nd ref="1067425641"/>
+    <nd ref="1067425308"/>
+    <nd ref="30674511"/>
+    <tag k="bicycle" v="no"/>
+    <tag k="foot" v="no"/>
+    <tag k="hgv" v="designated"/>
+    <tag k="highway" v="motorway"/>
+    <tag k="horse" v="no"/>
+    <tag k="hov" v="lane"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="65 mph"/>
+    <tag k="maxspeed:hgv" v="55 mph"/>
+    <tag k="maxspeed:trailer" v="55 mph"/>
+    <tag k="name" v="Junipero Serra Freeway"/>
+    <tag k="note:lanes" v="left lane is hov"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="ref" v="I 280"/>
+    <tag k="sidewalk" v="none"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+  <way id="158623068">
+    <nd ref="30674510"/>
+    <nd ref="1067428479"/>
+    <nd ref="259416258"/>
+    <nd ref="30675153"/>
+    <nd ref="30237214"/>
+    <nd ref="239510026"/>
+    <nd ref="239510045"/>
+    <nd ref="1067426061"/>
+    <nd ref="30237215"/>
+    <nd ref="257568212"/>
+    <nd ref="30237216"/>
+    <nd ref="239511043"/>
+    <nd ref="92274382"/>
+    <nd ref="239511038"/>
+    <nd ref="30237217"/>
+    <nd ref="49071606"/>
+    <nd ref="49071598"/>
+    <nd ref="704809017"/>
+    <nd ref="704809018"/>
+    <nd ref="30237218"/>
+    <nd ref="26497350"/>
+    <nd ref="704811716"/>
+    <nd ref="26497351"/>
+    <nd ref="704811465"/>
+    <nd ref="306086751"/>
+    <nd ref="704811544"/>
+    <nd ref="206686836"/>
+    <nd ref="704811565"/>
+    <nd ref="206686849"/>
+    <nd ref="220218084"/>
+    <nd ref="255655749"/>
+    <nd ref="26497352"/>
+    <nd ref="1067710873"/>
+    <nd ref="26497353"/>
+    <nd ref="1067710874"/>
+    <nd ref="206686860"/>
+    <nd ref="1067710875"/>
+    <nd ref="26497354"/>
+    <nd ref="1067710876"/>
+    <nd ref="306087467"/>
+    <nd ref="206686874"/>
+    <nd ref="206691786"/>
+    <nd ref="206691795"/>
+    <nd ref="258965393"/>
+    <nd ref="519453773"/>
+    <tag k="bicycle" v="no"/>
+    <tag k="foot" v="no"/>
+    <tag k="hgv" v="designated"/>
+    <tag k="highway" v="motorway"/>
+    <tag k="horse" v="no"/>
+    <tag k="hov" v="lane"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="65 mph"/>
+    <tag k="maxspeed:hgv" v="55 mph"/>
+    <tag k="maxspeed:trailer" v="55 mph"/>
+    <tag k="name" v="Junipero Serra Freeway"/>
+    <tag k="note:lanes" v="left lane is hov"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="ref" v="I 280"/>
+    <tag k="sidewalk" v="none"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+
+</osm>

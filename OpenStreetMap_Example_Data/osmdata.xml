@@ -1,0 +1,4330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API">
+<note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+<meta osm_base="2016-06-25T16:48:02Z"/>
+
+  <node id="26497350" lat="37.3338739" lon="-122.0483371"/>
+  <node id="26497351" lat="37.3340488" lon="-122.0472589"/>
+  <node id="26497352" lat="37.3343130" lon="-122.0253306"/>
+  <node id="26497353" lat="37.3342559" lon="-122.0239923"/>
+  <node id="26497354" lat="37.3337782" lon="-122.0213101"/>
+  <node id="26506805" lat="37.3329763" lon="-122.0186762"/>
+  <node id="26506806" lat="37.3339574" lon="-122.0211975"/>
+  <node id="26506808" lat="37.3343839" lon="-122.0232681"/>
+  <node id="26506810" lat="37.3344991" lon="-122.0246736"/>
+  <node id="26506811" lat="37.3344071" lon="-122.0449253"/>
+  <node id="26506813" lat="37.3330123" lon="-122.0535674">
+    <tag k="exit_to" v="SR-85 South;Gilroy"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="12B"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="30237136" lat="37.3323521" lon="-122.0588159"/>
+  <node id="30237138" lat="37.3338174" lon="-122.0639792"/>
+  <node id="30237139" lat="37.3344060" lon="-122.0665434"/>
+  <node id="30237214" lat="37.3341074" lon="-122.0660606"/>
+  <node id="30237215" lat="37.3335956" lon="-122.0640757"/>
+  <node id="30237216" lat="37.3327094" lon="-122.0615121"/>
+  <node id="30237217" lat="37.3321379" lon="-122.0588299"/>
+  <node id="30237218" lat="37.3323810" lon="-122.0554289"/>
+  <node id="30674510" lat="37.3342439" lon="-122.0681473"/>
+  <node id="30674511" lat="37.3344785" lon="-122.0681044"/>
+  <node id="30675153" lat="37.3341757" lon="-122.0665595"/>
+  <node id="49071598" lat="37.3320995" lon="-122.0575103"/>
+  <node id="49071602" lat="37.3324621" lon="-122.0562228"/>
+  <node id="49071605" lat="37.3323639" lon="-122.0569202"/>
+  <node id="49071606" lat="37.3320995" lon="-122.0581486">
+    <tag k="exit_to" v="SR-85 North;Mountain View"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="12A"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="65383026" lat="37.3350323" lon="-122.0324568">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="65385699" lat="37.3356437" lon="-122.0367923">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65391829" lat="37.3430154" lon="-122.0371539"/>
+  <node id="65392298" lat="37.3372370" lon="-122.0388566"/>
+  <node id="65392303" lat="37.3358705" lon="-122.0407576"/>
+  <node id="65392305" lat="37.3358393" lon="-122.0409458"/>
+  <node id="65392307" lat="37.3358383" lon="-122.0410652"/>
+  <node id="65392313" lat="37.3355175" lon="-122.0410856"/>
+  <node id="65392316" lat="37.3348303" lon="-122.0410844"/>
+  <node id="65392318" lat="37.3347916" lon="-122.0410209"/>
+  <node id="65392329" lat="37.3348646" lon="-122.0370146"/>
+  <node id="65392330" lat="37.3364824" lon="-122.0370268"/>
+  <node id="65392340" lat="37.3371792" lon="-122.0373742"/>
+  <node id="65392341" lat="37.3372409" lon="-122.0374498"/>
+  <node id="65426547" lat="37.3376266" lon="-122.0324087"/>
+  <node id="65426561" lat="37.3302271" lon="-122.0324134">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="65426563" lat="37.3265414" lon="-122.0324151">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="65426564" lat="37.3251102" lon="-122.0323914"/>
+  <node id="65427249" lat="37.3306865" lon="-122.0368899"/>
+  <node id="65427255" lat="37.3306929" lon="-122.0403931"/>
+  <node id="65427256" lat="37.3307179" lon="-122.0414616">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="65427258" lat="37.3307281" lon="-122.0425174"/>
+  <node id="65427260" lat="37.3307393" lon="-122.0436893"/>
+  <node id="65427262" lat="37.3306574" lon="-122.0439604"/>
+  <node id="65427269" lat="37.3303070" lon="-122.0443618"/>
+  <node id="65427275" lat="37.3303027" lon="-122.0454347"/>
+  <node id="65427279" lat="37.3303027" lon="-122.0463628"/>
+  <node id="65430084" lat="37.3430159" lon="-122.0324400"/>
+  <node id="65430086" lat="37.3430157" lon="-122.0341660"/>
+  <node id="65430088" lat="37.3430157" lon="-122.0350420"/>
+  <node id="65430092" lat="37.3430155" lon="-122.0362497"/>
+  <node id="65430095" lat="37.3430154" lon="-122.0376747"/>
+  <node id="65430097" lat="37.3430153" lon="-122.0385290"/>
+  <node id="65430099" lat="37.3430152" lon="-122.0393570"/>
+  <node id="65430101" lat="37.3430152" lon="-122.0398737"/>
+  <node id="65430104" lat="37.3430151" lon="-122.0405708"/>
+  <node id="65430108" lat="37.3430150" lon="-122.0415168">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="65430112" lat="37.3425842" lon="-122.0349306"/>
+  <node id="65431017" lat="37.3229746" lon="-122.0414310"/>
+  <node id="65436753" lat="37.3506622" lon="-122.0415163"/>
+  <node id="65436756" lat="37.3482067" lon="-122.0415161">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="65436758" lat="37.3466555" lon="-122.0415194"/>
+  <node id="65436760" lat="37.3448307" lon="-122.0415195">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="65436763" lat="37.3422145" lon="-122.0415184"/>
+  <node id="65436766" lat="37.3375356" lon="-122.0414552"/>
+  <node id="65438737" lat="37.3439966" lon="-122.0347181"/>
+  <node id="65438739" lat="37.3437501" lon="-122.0362477"/>
+  <node id="65438741" lat="37.3437687" lon="-122.0374917">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65440273" lat="37.3412781" lon="-122.0227266">
+    <tag k="highway" v="stop"/>
+    <tag k="stop" v="both"/>
+  </node>
+  <node id="65442202" lat="37.3411785" lon="-122.0585775"/>
+  <node id="65443727" lat="37.3413073" lon="-122.0160932"/>
+  <node id="65453229" lat="37.3437507" lon="-122.0312439"/>
+  <node id="65453538" lat="37.3375198" lon="-122.0461229"/>
+  <node id="65453541" lat="37.3375265" lon="-122.0442751"/>
+  <node id="65453546" lat="37.3375341" lon="-122.0431533"/>
+  <node id="65453548" lat="37.3375356" lon="-122.0397929"/>
+  <node id="65453550" lat="37.3375331" lon="-122.0367622"/>
+  <node id="65453554" lat="37.3376064" lon="-122.0334760"/>
+  <node id="65456912" lat="37.3448519" lon="-122.0312650"/>
+  <node id="65456914" lat="37.3448501" lon="-122.0302361">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="65456919" lat="37.3448484" lon="-122.0292815"/>
+  <node id="65459232" lat="37.3411918" lon="-122.0559006"/>
+  <node id="65459588" lat="37.3466288" lon="-122.0346861"/>
+  <node id="65466395" lat="37.3470757" lon="-122.0337495"/>
+  <node id="65469739" lat="37.3409201" lon="-122.0473618"/>
+  <node id="65471827" lat="37.3399528" lon="-122.0324248"/>
+  <node id="65471832" lat="37.3399486" lon="-122.0335877"/>
+  <node id="65471834" lat="37.3399475" lon="-122.0363026"/>
+  <node id="65473831" lat="37.3388610" lon="-122.0277550">
+    <tag k="highway" v="mini_roundabout"/>
+  </node>
+  <node id="65484793" lat="37.3427196" lon="-122.0350245"/>
+  <node id="65484794" lat="37.3422175" lon="-122.0346745"/>
+  <node id="65484797" lat="37.3419320" lon="-122.0345998"/>
+  <node id="65484799" lat="37.3413726" lon="-122.0345988"/>
+  <node id="65484800" lat="37.3413384" lon="-122.0345968"/>
+  <node id="65484801" lat="37.3409497" lon="-122.0344061"/>
+  <node id="65484803" lat="37.3408576" lon="-122.0342361"/>
+  <node id="65484805" lat="37.3407107" lon="-122.0338489"/>
+  <node id="65484808" lat="37.3406217" lon="-122.0337185"/>
+  <node id="65484809" lat="37.3405121" lon="-122.0336272"/>
+  <node id="65484811" lat="37.3404360" lon="-122.0335851"/>
+  <node id="65484890" lat="37.3444565" lon="-122.0312413"/>
+  <node id="65488335" lat="37.3426533" lon="-122.0293641"/>
+  <node id="65488337" lat="37.3419385" lon="-122.0293643"/>
+  <node id="65488338" lat="37.3412216" lon="-122.0293644">
+    <tag k="stop" v="both"/>
+  </node>
+  <node id="65488341" lat="37.3405090" lon="-122.0294565"/>
+  <node id="65488343" lat="37.3398057" lon="-122.0296836"/>
+  <node id="65488346" lat="37.3390809" lon="-122.0297620"/>
+  <node id="65488745" lat="37.3477709" lon="-122.0337463"/>
+  <node id="65488758" lat="37.3401138" lon="-122.0455382"/>
+  <node id="65488761" lat="37.3383704" lon="-122.0451147"/>
+  <node id="65488764" lat="37.3383758" lon="-122.0442289"/>
+  <node id="65489208" lat="37.3445648" lon="-122.0355773">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65489209" lat="37.3444803" lon="-122.0374992"/>
+  <node id="65489212" lat="37.3444790" lon="-122.0384057"/>
+  <node id="65489214" lat="37.3444762" lon="-122.0396057"/>
+  <node id="65489216" lat="37.3443538" lon="-122.0405470"/>
+  <node id="65492020" lat="37.3412333" lon="-122.0259546">
+    <tag k="highway" v="stop"/>
+    <tag k="stop" v="both"/>
+  </node>
+  <node id="65492579" lat="37.3407456" lon="-122.0387305"/>
+  <node id="65492582" lat="37.3399680" lon="-122.0387730">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65493382" lat="37.3270438" lon="-122.0358700"/>
+  <node id="65493388" lat="37.3270325" lon="-122.0368336"/>
+  <node id="65493390" lat="37.3270014" lon="-122.0403891"/>
+  <node id="65493393" lat="37.3270019" lon="-122.0414878"/>
+  <node id="65497188" lat="37.3448285" lon="-122.0451292"/>
+  <node id="65497190" lat="37.3448259" lon="-122.0480139"/>
+  <node id="65497193" lat="37.3448258" lon="-122.0489717"/>
+  <node id="65502013" lat="37.3320029" lon="-122.0368939"/>
+  <node id="65503470" lat="37.3410017" lon="-122.0447198"/>
+  <node id="65503472" lat="37.3407519" lon="-122.0442005"/>
+  <node id="65512157" lat="37.3391093" lon="-122.0461315"/>
+  <node id="65512159" lat="37.3391126" lon="-122.0467113"/>
+  <node id="65513890" lat="37.3252560" lon="-122.0414959"/>
+  <node id="65513904" lat="37.3264109" lon="-122.0414918"/>
+  <node id="65513916" lat="37.3282891" lon="-122.0414610"/>
+  <node id="65513920" lat="37.3311410" lon="-122.0414618"/>
+  <node id="65513922" lat="37.3314600" lon="-122.0414618"/>
+  <node id="65513923" lat="37.3316990" lon="-122.0414619"/>
+  <node id="65513926" lat="37.3319310" lon="-122.0414620"/>
+  <node id="65513931" lat="37.3321870" lon="-122.0414620"/>
+  <node id="65513933" lat="37.3330617" lon="-122.0414488"/>
+  <node id="65513935" lat="37.3334317" lon="-122.0414468"/>
+  <node id="65518180" lat="37.3410782" lon="-122.0500215"/>
+  <node id="65520643" lat="37.3437207" lon="-122.0327747">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65520646" lat="37.3437689" lon="-122.0339265"/>
+  <node id="65522434" lat="37.3466529" lon="-122.0324593"/>
+  <node id="65522458" lat="37.3390996" lon="-122.0324154"/>
+  <node id="65524121" lat="37.3391756" lon="-122.0374159"/>
+  <node id="65524124" lat="37.3391651" lon="-122.0387682">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65524384" lat="37.3399784" lon="-122.0363629"/>
+  <node id="65524387" lat="37.3400367" lon="-122.0364014"/>
+  <node id="65524389" lat="37.3402278" lon="-122.0364186"/>
+  <node id="65524392" lat="37.3404161" lon="-122.0364358"/>
+  <node id="65524394" lat="37.3405576" lon="-122.0364852"/>
+  <node id="65524396" lat="37.3406598" lon="-122.0365908"/>
+  <node id="65524398" lat="37.3407251" lon="-122.0367194"/>
+  <node id="65524410" lat="37.3407418" lon="-122.0375592"/>
+  <node id="65524423" lat="37.3407907" lon="-122.0397366"/>
+  <node id="65528192" lat="37.3430152" lon="-122.0312305"/>
+  <node id="65529845" lat="37.3420554" lon="-122.0397506"/>
+  <node id="65530686" lat="37.3318306" lon="-122.0329052"/>
+  <node id="65530688" lat="37.3322913" lon="-122.0337635"/>
+  <node id="65530694" lat="37.3323339" lon="-122.0347130"/>
+  <node id="65530696" lat="37.3323372" lon="-122.0358718"/>
+  <node id="65530698" lat="37.3320122" lon="-122.0365943"/>
+  <node id="65530700" lat="37.3319936" lon="-122.0383465"/>
+  <node id="65530702" lat="37.3330008" lon="-122.0387022"/>
+  <node id="65540797" lat="37.3411831" lon="-122.0396888"/>
+  <node id="65540800" lat="37.3411763" lon="-122.0403325">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65544064" lat="37.3440486" lon="-122.0451522"/>
+  <node id="65544067" lat="37.3424753" lon="-122.0451323"/>
+  <node id="65544069" lat="37.3408619" lon="-122.0460078"/>
+  <node id="65544071" lat="37.3403211" lon="-122.0467712"/>
+  <node id="65544074" lat="37.3383465" lon="-122.0480279"/>
+  <node id="65544694" lat="37.3380033" lon="-122.0431586"/>
+  <node id="65544697" lat="37.3379988" lon="-122.0437301">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65545696" lat="37.3412953" lon="-122.0192599"/>
+  <node id="65553970" lat="37.3376450" lon="-122.0258599"/>
+  <node id="65553971" lat="37.3376400" lon="-122.0277810"/>
+  <node id="65553975" lat="37.3376263" lon="-122.0289120"/>
+  <node id="65554935" lat="37.3413165" lon="-122.0169893"/>
+  <node id="65561592" lat="37.3488071" lon="-122.0337438"/>
+  <node id="65562458" lat="37.3383391" lon="-122.0461274"/>
+  <node id="65565386" lat="37.3410707" lon="-122.0511079"/>
+  <node id="65567570" lat="37.3384021" lon="-122.0375775"/>
+  <node id="65573440" lat="37.3440547" lon="-122.0461028"/>
+  <node id="65573441" lat="37.3414339" lon="-122.0465946"/>
+  <node id="65575056" lat="37.3411439" lon="-122.0537524"/>
+  <node id="65577320" lat="37.3411883" lon="-122.0549764"/>
+  <node id="65580821" lat="37.3412312" lon="-122.0302274"/>
+  <node id="65580823" lat="37.3412205" lon="-122.0277960">
+    <tag k="stop" v="both"/>
+  </node>
+  <node id="65580825" lat="37.3412227" lon="-122.0268907">
+    <tag k="stop" v="s"/>
+  </node>
+  <node id="65580827" lat="37.3412258" lon="-122.0250418">
+    <tag k="stop" v="s"/>
+  </node>
+  <node id="65580829" lat="37.3412932" lon="-122.0208103"/>
+  <node id="65580838" lat="37.3413027" lon="-122.0183827">
+    <tag k="highway" v="stop"/>
+    <tag k="stop" v="both"/>
+  </node>
+  <node id="65580840" lat="37.3413272" lon="-122.0152057"/>
+  <node id="65584273" lat="37.3418116" lon="-122.0431085">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65584276" lat="37.3414987" lon="-122.0431208"/>
+  <node id="65584579" lat="37.3430033" lon="-122.0302837"/>
+  <node id="65589007" lat="37.3438893" lon="-122.0384198"/>
+  <node id="65592657" lat="37.3424120" lon="-122.0443783"/>
+  <node id="65592658" lat="37.3416369" lon="-122.0443784"/>
+  <node id="65592659" lat="37.3397245" lon="-122.0462315"/>
+  <node id="65604729" lat="37.3383905" lon="-122.0397866"/>
+  <node id="65606181" lat="37.3455770" lon="-122.0480241"/>
+  <node id="65606182" lat="37.3428553" lon="-122.0480222"/>
+  <node id="65606183" lat="37.3424971" lon="-122.0470996"/>
+  <node id="65608585" lat="37.3411846" lon="-122.0595879"/>
+  <node id="65610121" lat="37.3491645" lon="-122.0337401"/>
+  <node id="65610123" lat="37.3484653" lon="-122.0337474"/>
+  <node id="65610124" lat="37.3481185" lon="-122.0337456"/>
+  <node id="65610127" lat="37.3474219" lon="-122.0337481"/>
+  <node id="65610129" lat="37.3466571" lon="-122.0337368"/>
+  <node id="65610134" lat="37.3451346" lon="-122.0336861"/>
+  <node id="65610135" lat="37.3444223" lon="-122.0336771"/>
+  <node id="65611524" lat="37.3282891" lon="-122.0425134"/>
+  <node id="65611525" lat="37.3282735" lon="-122.0454195"/>
+  <node id="65614836" lat="37.3437736" lon="-122.0396096">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65615134" lat="37.3440573" lon="-122.0469070"/>
+  <node id="65615138" lat="37.3415320" lon="-122.0479442"/>
+  <node id="65615143" lat="37.3410670" lon="-122.0518284"/>
+  <node id="65615145" lat="37.3411210" lon="-122.0520470"/>
+  <node id="65635239" lat="37.3350070" lon="-122.0442168">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65635240" lat="37.3349675" lon="-122.0447227"/>
+  <node id="65635776" lat="37.3415380" lon="-122.0385401">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="65649792" lat="37.3421817" lon="-122.0485586"/>
+  <node id="65649800" lat="37.3430143" lon="-122.0489797"/>
+  <node id="65650648" lat="37.3444261" lon="-122.0327929">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="92274376" lat="37.3332536" lon="-122.0192609"/>
+  <node id="92274382" lat="37.3323384" lon="-122.0601871"/>
+  <node id="92274384" lat="37.3325388" lon="-122.0601120"/>
+  <node id="102788306" lat="37.3368721" lon="-122.0367837">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="206686836" lat="37.3341938" lon="-122.0449414"/>
+  <node id="206686849" lat="37.3342151" lon="-122.0411488"/>
+  <node id="206686860" lat="37.3340768" lon="-122.0226405"/>
+  <node id="206686874" lat="37.3330787" lon="-122.0193843"/>
+  <node id="206691786" lat="37.3327844" lon="-122.0187888">
+    <tag k="exit_to" v="Wolfe Road"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="10"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="206691795" lat="37.3282458" lon="-122.0101067"/>
+  <node id="220217852" lat="37.3266455" lon="-122.0321802"/>
+  <node id="220217865" lat="37.3270148" lon="-122.0321802"/>
+  <node id="220217877" lat="37.3275092" lon="-122.0321944"/>
+  <node id="220217889" lat="37.3282365" lon="-122.0321873"/>
+  <node id="220217910" lat="37.3291514" lon="-122.0321944"/>
+  <node id="220217924" lat="37.3302234" lon="-122.0321781">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="220217943" lat="37.3314605" lon="-122.0321738"/>
+  <node id="220218003" lat="37.3350648" lon="-122.0321738">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="220218075" lat="37.3344325" lon="-122.0374596"/>
+  <node id="220218084" lat="37.3342448" lon="-122.0374435">
+    <tag k="exit_to" v="De Anza Boulevard"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="11"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="220218171" lat="37.3318647" lon="-122.0331198"/>
+  <node id="220218182" lat="37.3319500" lon="-122.0333022"/>
+  <node id="220218192" lat="37.3323339" lon="-122.0339942"/>
+  <node id="220221941" lat="37.3341042" lon="-122.0483961">
+    <tag k="exit_to" v="SR-85 North;Mountain View"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="12A"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="224490643" lat="37.3335838" lon="-122.0633414">
+    <tag k="exit_to" v="Foothill Expressway;Grant Road"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="13"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="239510026" lat="37.3340136" lon="-122.0655402"/>
+  <node id="239510045" lat="37.3338984" lon="-122.0650467"/>
+  <node id="239511038" lat="37.3322104" lon="-122.0595112"/>
+  <node id="239511043" lat="37.3325132" lon="-122.0608684">
+    <tag k="exit_to" v="SR-85 South;Gilroy"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="12B"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="255655733" lat="37.3345050" lon="-122.0270151">
+    <tag k="exit_to" v="De Anza Boulevard"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="11"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="255655749" lat="37.3343002" lon="-122.0270151"/>
+  <node id="255655914" lat="37.3336871" lon="-122.0324688">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="255655915" lat="37.3336830" lon="-122.0321787">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="257568212" lat="37.3332166" lon="-122.0629669"/>
+  <node id="258965393" lat="37.3255374" lon="-122.0048793">
+    <tag k="exit_to" v="Stevens Creek Boulevard;Lawrence Expressway"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="9"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="258972910" lat="37.3229718" lon="-122.0321898"/>
+  <node id="258972911" lat="37.3265433" lon="-122.0321752">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="259416258" lat="37.3342183" lon="-122.0670691"/>
+  <node id="262239989" lat="37.3430175" lon="-122.0322452"/>
+  <node id="262452525" lat="37.3437769" lon="-122.0386516">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="262452528" lat="37.3438448" lon="-122.0349931"/>
+  <node id="262452592" lat="37.3426091" lon="-122.0460985"/>
+  <node id="262452593" lat="37.3419418" lon="-122.0463005"/>
+  <node id="262452704" lat="37.3426143" lon="-122.0477647"/>
+  <node id="262452900" lat="37.3411146" lon="-122.0489492"/>
+  <node id="262453181" lat="37.3425848" lon="-122.0488642"/>
+  <node id="262453335" lat="37.3399727" lon="-122.0473602"/>
+  <node id="262453336" lat="37.3396027" lon="-122.0477935"/>
+  <node id="262453337" lat="37.3390184" lon="-122.0480204"/>
+  <node id="262453483" lat="37.3398348" lon="-122.0452640"/>
+  <node id="262453484" lat="37.3393324" lon="-122.0451502"/>
+  <node id="262453489" lat="37.3415284" lon="-122.0439095"/>
+  <node id="262453524" lat="37.3385609" lon="-122.0374058"/>
+  <node id="265340946" lat="37.3444751" lon="-122.0403266"/>
+  <node id="266191696" lat="37.3434372" lon="-122.0341421"/>
+  <node id="272264710" lat="37.3411457" lon="-122.0522523"/>
+  <node id="272273998" lat="37.3361908" lon="-122.0321953"/>
+  <node id="272275079" lat="37.3362715" lon="-122.0443041"/>
+  <node id="272275080" lat="37.3354856" lon="-122.0441929"/>
+  <node id="272275107" lat="37.3383494" lon="-122.0487927"/>
+  <node id="272275247" lat="37.3419549" lon="-122.0473814"/>
+  <node id="272275343" lat="37.3414876" lon="-122.0455040"/>
+  <node id="272275390" lat="37.3421882" lon="-122.0442190"/>
+  <node id="273004310" lat="37.3346809" lon="-122.0321631"/>
+  <node id="273004350" lat="37.3346893" lon="-122.0324608"/>
+  <node id="273004392" lat="37.3340453" lon="-122.0324608"/>
+  <node id="273004401" lat="37.3340454" lon="-122.0321631"/>
+  <node id="289638735" lat="37.3285691" lon="-122.0101781">
+    <tag k="exit_to" v="Wolfe Road"/>
+    <tag k="highway" v="motorway_junction"/>
+    <tag k="ref" v="10"/>
+    <tag k="source" v="http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightynorth.pdf;http://www.dot.ca.gov/hq/traffops/signtech/calnexus/pdf/twoeightysouth.pdf"/>
+  </node>
+  <node id="289651583" lat="37.3258508" lon="-122.0049599"/>
+  <node id="305548483" lat="37.3342354" lon="-122.0654544"/>
+  <node id="305548752" lat="37.3344198" lon="-122.0411971"/>
+  <node id="305548771" lat="37.3342843" lon="-122.0472735"/>
+  <node id="305548963" lat="37.3337484" lon="-122.0205269"/>
+  <node id="305548965" lat="37.3341280" lon="-122.0218895"/>
+  <node id="306086412" lat="37.3324237" lon="-122.0594629"/>
+  <node id="306086751" lat="37.3341554" lon="-122.0460626"/>
+  <node id="306087467" lat="37.3333304" lon="-122.0199905"/>
+  <node id="368383325" lat="37.3445087" lon="-122.0293932"/>
+  <node id="368383326" lat="37.3442534" lon="-122.0293989"/>
+  <node id="390085936" lat="37.3346809" lon="-122.0414382"/>
+  <node id="390085937" lat="37.3340454" lon="-122.0414435"/>
+  <node id="431984974" lat="37.3395437" lon="-122.0297683"/>
+  <node id="431985812" lat="37.3403304" lon="-122.0375318"/>
+  <node id="431985816" lat="37.3399399" lon="-122.0374214"/>
+  <node id="431988313" lat="37.3421043" lon="-122.0407273"/>
+  <node id="431989497" lat="37.3391759" lon="-122.0469441">
+    <tag k="highway" v="turning_circle"/>
+  </node>
+  <node id="460289175" lat="37.3410259" lon="-122.0344802"/>
+  <node id="460289179" lat="37.3407767" lon="-122.0293702"/>
+  <node id="478453809" lat="37.3412223" lon="-122.0243534"/>
+  <node id="478454705" lat="37.3439144" lon="-122.0470650"/>
+  <node id="479365519" lat="37.3411429" lon="-122.0546407"/>
+  <node id="517807889" lat="37.3318306" lon="-122.0324117"/>
+  <node id="517811006" lat="37.3310025" lon="-122.0321756"/>
+  <node id="517816592" lat="37.3376281" lon="-122.0322093"/>
+  <node id="517818852" lat="37.3421673" lon="-122.0415195"/>
+  <node id="519453773" lat="37.3232501" lon="-122.0004868"/>
+  <node id="519453800" lat="37.3232534" lon="-121.9999531"/>
+  <node id="527386189" lat="37.3375151" lon="-122.0483441"/>
+  <node id="613891821" lat="37.3411937" lon="-122.0550749">
+    <tag k="direction" v="backward"/>
+    <tag k="highway" v="stop"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="613892196" lat="37.3303582" lon="-122.0442224"/>
+  <node id="613892344" lat="37.3270694" lon="-122.0385736"/>
+  <node id="647767047" lat="37.3421055" lon="-122.0398967"/>
+  <node id="647767049" lat="37.3422175" lon="-122.0412553"/>
+  <node id="647767147" lat="37.3419776" lon="-122.0397063"/>
+  <node id="647767178" lat="37.3423838" lon="-122.0347375"/>
+  <node id="647767191" lat="37.3411755" lon="-122.0345739"/>
+  <node id="647767270" lat="37.3432591" lon="-122.0293972"/>
+  <node id="647768010" lat="37.3458600" lon="-122.0336932"/>
+  <node id="647768019" lat="37.3460387" lon="-122.0337397"/>
+  <node id="647768021" lat="37.3440982" lon="-122.0337022"/>
+  <node id="647768081" lat="37.3443808" lon="-122.0303541"/>
+  <node id="647768084" lat="37.3433519" lon="-122.0303280"/>
+  <node id="647768124" lat="37.3412413" lon="-122.0237359"/>
+  <node id="647768127" lat="37.3412750" lon="-122.0233224"/>
+  <node id="647768131" lat="37.3413400" lon="-122.0148516"/>
+  <node id="647768134" lat="37.3413869" lon="-122.0145807"/>
+  <node id="663937521" lat="37.3402710" lon="-122.0277795">
+    <tag k="traffic_calming" v="hump"/>
+  </node>
+  <node id="664103573" lat="37.3405507" lon="-122.0414751"/>
+  <node id="664383420" lat="37.3384462" lon="-122.0374553"/>
+  <node id="664383421" lat="37.3444436" lon="-122.0404634"/>
+  <node id="664383423" lat="37.3445304" lon="-122.0357589"/>
+  <node id="664743907" lat="37.3383968" lon="-122.0489024"/>
+  <node id="704787071" lat="37.3320737" lon="-122.0334363"/>
+  <node id="704787072" lat="37.3322145" lon="-122.0335972"/>
+  <node id="704787709" lat="37.3327050" lon="-122.0324170"/>
+  <node id="704788133" lat="37.3318956" lon="-122.0321684"/>
+  <node id="704788134" lat="37.3330973" lon="-122.0321811"/>
+  <node id="704789509" lat="37.3345076" lon="-122.0253388"/>
+  <node id="704801949" lat="37.3357088" lon="-122.0322060"/>
+  <node id="704802051" lat="37.3365150" lon="-122.0324206"/>
+  <node id="704802052" lat="37.3358666" lon="-122.0324474"/>
+  <node id="704809017" lat="37.3321421" lon="-122.0568826"/>
+  <node id="704809018" lat="37.3322360" lon="-122.0561852"/>
+  <node id="704809079" lat="37.3326028" lon="-122.0554771"/>
+  <node id="704809080" lat="37.3323213" lon="-122.0575639"/>
+  <node id="704809138" lat="37.3323170" lon="-122.0581701"/>
+  <node id="704809320" lat="37.3326924" lon="-122.0607557"/>
+  <node id="704809322" lat="37.3328929" lon="-122.0613726"/>
+  <node id="704811333" lat="37.3343943" lon="-122.0425221"/>
+  <node id="704811334" lat="37.3344028" lon="-122.0455208"/>
+  <node id="704811335" lat="37.3343815" lon="-122.0461216"/>
+  <node id="704811336" lat="37.3343431" lon="-122.0467170"/>
+  <node id="704811350" lat="37.3342023" lon="-122.0478436"/>
+  <node id="704811465" lat="37.3341127" lon="-122.0466580"/>
+  <node id="704811544" lat="37.3341810" lon="-122.0455154"/>
+  <node id="704811565" lat="37.3342151" lon="-122.0426186"/>
+  <node id="704811716" lat="37.3339677" lon="-122.0478382"/>
+  <node id="764510314" lat="37.3412209" lon="-122.0276428"/>
+  <node id="764510390" lat="37.3412586" lon="-122.0235409"/>
+  <node id="764510408" lat="37.3412322" lon="-122.0257062"/>
+  <node id="765335131" lat="37.3454161" lon="-122.0322296"/>
+  <node id="765335132" lat="37.3458426" lon="-122.0322314"/>
+  <node id="1067425308" lat="37.3344785" lon="-122.0675680"/>
+  <node id="1067425637" lat="37.3339837" lon="-122.0644781"/>
+  <node id="1067425638" lat="37.3341159" lon="-122.0649609"/>
+  <node id="1067425639" lat="37.3343292" lon="-122.0659747"/>
+  <node id="1067425641" lat="37.3344529" lon="-122.0670530"/>
+  <node id="1067426061" lat="37.3337534" lon="-122.0645478"/>
+  <node id="1067428479" lat="37.3342439" lon="-122.0675894"/>
+  <node id="1067707159" lat="37.3303829" lon="-122.0137141"/>
+  <node id="1067710873" lat="37.3342986" lon="-122.0246790"/>
+  <node id="1067710874" lat="37.3341834" lon="-122.0233110"/>
+  <node id="1067710875" lat="37.3339360" lon="-122.0219539"/>
+  <node id="1067710876" lat="37.3335692" lon="-122.0206288"/>
+  <node id="1067711775" lat="37.3344649" lon="-122.0240084"/>
+  <node id="1067711860" lat="37.3342730" lon="-122.0225976"/>
+  <node id="1067711992" lat="37.3335223" lon="-122.0198993"/>
+  <node id="1106363197" lat="37.3375789" lon="-122.0340948"/>
+  <node id="1106363228" lat="37.3375790" lon="-122.0351919"/>
+  <node id="1106363246" lat="37.3375781" lon="-122.0350799"/>
+  <node id="1106363249" lat="37.3375544" lon="-122.0291817"/>
+  <node id="1106363279" lat="37.3374958" lon="-122.0322049"/>
+  <node id="1106363287" lat="37.3376798" lon="-122.0291095"/>
+  <node id="1106363293" lat="37.3374819" lon="-122.0351419"/>
+  <node id="1106363299" lat="37.3374943" lon="-122.0324044"/>
+  <node id="1106363306" lat="37.3375790" lon="-122.0355900"/>
+  <node id="1106363314" lat="37.3375790" lon="-122.0366305">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="1106363354" lat="37.3375789" lon="-122.0345888"/>
+  <node id="1106363357" lat="37.3374929" lon="-122.0340926"/>
+  <node id="1106363362" lat="37.3374885" lon="-122.0366305"/>
+  <node id="1219218886" lat="37.3240616" lon="-122.0414446"/>
+  <node id="1219218914" lat="37.3235440" lon="-122.0414341"/>
+  <node id="1700678634" lat="37.3281577" lon="-122.0321881"/>
+  <node id="1700678669" lat="37.3283738" lon="-122.0321884"/>
+  <node id="1848525688" lat="37.3356407" lon="-122.0324499"/>
+  <node id="1996189617" lat="37.3257713" lon="-122.0414940"/>
+  <node id="1996189629" lat="37.3258566" lon="-122.0414937"/>
+  <node id="1999574321" lat="37.3362760" lon="-122.0414567"/>
+  <node id="1999574326" lat="37.3369890" lon="-122.0414559"/>
+  <node id="1999574332" lat="37.3370725" lon="-122.0414558"/>
+  <node id="1999574339" lat="37.3372400" lon="-122.0380653"/>
+  <node id="1999574344" lat="37.3375389" lon="-122.0420293"/>
+  <node id="1999574345" lat="37.3375380" lon="-122.0426877"/>
+  <node id="1999574346" lat="37.3375358" lon="-122.0405157"/>
+  <node id="1999574347" lat="37.3375397" lon="-122.0421575"/>
+  <node id="1999574348" lat="37.3375373" lon="-122.0380614"/>
+  <node id="1999574349" lat="37.3375368" lon="-122.0399552"/>
+  <node id="1999574350" lat="37.3375789" lon="-122.0350146"/>
+  <node id="1999574353" lat="37.3376381" lon="-122.0316099"/>
+  <node id="1999574356" lat="37.3376859" lon="-122.0413880"/>
+  <node id="1999574358" lat="37.3376808" lon="-122.0414948">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="1999574368" lat="37.3378845" lon="-122.0322098"/>
+  <node id="1999574388" lat="37.3381328" lon="-122.0322103"/>
+  <node id="1999574391" lat="37.3381662" lon="-122.0415105"/>
+  <node id="1999574403" lat="37.3385738" lon="-122.0413858"/>
+  <node id="1999574407" lat="37.3386928" lon="-122.0397794"/>
+  <node id="1999574414" lat="37.3389207" lon="-122.0413933"/>
+  <node id="1999574416" lat="37.3389228" lon="-122.0414894"/>
+  <node id="1999574420" lat="37.3389633" lon="-122.0397568"/>
+  <node id="1999574422" lat="37.3390808" lon="-122.0397655"/>
+  <node id="1999574426" lat="37.3391572" lon="-122.0413904"/>
+  <node id="1999574435" lat="37.3394799" lon="-122.0397954"/>
+  <node id="1999574438" lat="37.3395044" lon="-122.0461576"/>
+  <node id="1999574440" lat="37.3395941" lon="-122.0374159"/>
+  <node id="1999574447" lat="37.3397363" lon="-122.0413833"/>
+  <node id="1999574452" lat="37.3399490" lon="-122.0352164"/>
+  <node id="1999574456" lat="37.3400775" lon="-122.0364051"/>
+  <node id="1999574463" lat="37.3403067" lon="-122.0413763"/>
+  <node id="1999574471" lat="37.3405506" lon="-122.0413733"/>
+  <node id="1999574482" lat="37.3406802" lon="-122.0366198"/>
+  <node id="1999574483" lat="37.3407353" lon="-122.0367645"/>
+  <node id="1999574484" lat="37.3407450" lon="-122.0369175"/>
+  <node id="1999574491" lat="37.3408876" lon="-122.0414075"/>
+  <node id="1999574514" lat="37.3411467" lon="-122.0431249"/>
+  <node id="1999574531" lat="37.3412771" lon="-122.0414471"/>
+  <node id="1999574542" lat="37.3416156" lon="-122.0414903"/>
+  <node id="1999574558" lat="37.3418149" lon="-122.0385386"/>
+  <node id="1999574576" lat="37.3419796" lon="-122.0452768"/>
+  <node id="1999574582" lat="37.3420922" lon="-122.0385364"/>
+  <node id="1999574590" lat="37.3423322" lon="-122.0442556"/>
+  <node id="2087228732" lat="37.3364802" lon="-122.0373753"/>
+  <node id="2160826106" lat="37.3348143" lon="-122.0381084"/>
+  <node id="2160826110" lat="37.3348200" lon="-122.0370759"/>
+  <node id="2160826115" lat="37.3353198" lon="-122.0381169"/>
+  <node id="2160826116" lat="37.3354455" lon="-122.0380783"/>
+  <node id="2160826117" lat="37.3355492" lon="-122.0410641"/>
+  <node id="2160826118" lat="37.3358383" lon="-122.0414572"/>
+  <node id="2160826119" lat="37.3358628" lon="-122.0390851"/>
+  <node id="2160826120" lat="37.3359484" lon="-122.0389165"/>
+  <node id="2160826121" lat="37.3360702" lon="-122.0388639"/>
+  <node id="2160826122" lat="37.3375378" lon="-122.0388629"/>
+  <node id="2298932132" lat="37.3375360" lon="-122.0404143"/>
+  <node id="2471567006" lat="37.3251450" lon="-122.0415573"/>
+  <node id="2471567735" lat="37.3373487" lon="-122.0414554">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="traffic_signals:direction" v="forward"/>
+  </node>
+  <node id="2471567736" lat="37.3375366" lon="-122.0416290">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="traffic_signals:direction" v="forward"/>
+  </node>
+  <node id="2471567737" lat="37.3375344" lon="-122.0412641">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="traffic_signals:direction" v="backward"/>
+  </node>
+  <node id="2471571788" lat="37.3251612" lon="-122.0414378"/>
+  <node id="2471571794" lat="37.3270025" lon="-122.0413457">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2471571795" lat="37.3282891" lon="-122.0415848">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2471571796" lat="37.3329651" lon="-122.0406196"/>
+  <node id="2471571797" lat="37.3329661" lon="-122.0414493"/>
+  <node id="2471571798" lat="37.3330048" lon="-122.0404442"/>
+  <node id="2471571799" lat="37.3330550" lon="-122.0406248"/>
+  <node id="2471571800" lat="37.3330622" lon="-122.0413250">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2471571802" lat="37.3422225" lon="-122.0413951">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2471575439" lat="37.3382403" lon="-122.0413873"/>
+  <node id="2471575444" lat="37.3388907" lon="-122.0414909"/>
+  <node id="2471575446" lat="37.3402409" lon="-122.0413774"/>
+  <node id="2471575450" lat="37.3405033" lon="-122.0414757"/>
+  <node id="2496987274" lat="37.3264007" lon="-122.0321732">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="2496987282" lat="37.3266586" lon="-122.0324149">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="2497361041" lat="37.3375386" lon="-122.0419798"/>
+  <node id="2497361044" lat="37.3375350" lon="-122.0409346"/>
+  <node id="2497361063" lat="37.3379330" lon="-122.0413877"/>
+  <node id="2497361066" lat="37.3381360" lon="-122.0415094"/>
+  <node id="2582851750" lat="37.3374017" lon="-122.0442820">
+    <tag k="direction" v="backward"/>
+    <tag k="highway" v="stop"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="2582851759" lat="37.3375181" lon="-122.0460073">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="source" v="bing;survey"/>
+    <tag k="traffic_signals:direction" v="backward"/>
+  </node>
+  <node id="2582851762" lat="37.3375182" lon="-122.0462876">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="source" v="bing;survey"/>
+    <tag k="traffic_signals:direction" v="forward"/>
+  </node>
+  <node id="2582851766" lat="37.3376496" lon="-122.0461233">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="source" v="bing;survey"/>
+    <tag k="traffic_signals:direction" v="backward"/>
+  </node>
+  <node id="2582851785" lat="37.3402539" lon="-122.0468729">
+    <tag k="direction" v="backward"/>
+    <tag k="highway" v="stop"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="2582851788" lat="37.3403851" lon="-122.0466752">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="2582851791" lat="37.3411845" lon="-122.0594562">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="2582851792" lat="37.3411798" lon="-122.0548667">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="2582851795" lat="37.3447247" lon="-122.0480125">
+    <tag k="direction" v="backward"/>
+    <tag k="highway" v="give_way"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="2582851812" lat="37.3447259" lon="-122.0451308">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="2582851848" lat="37.3449276" lon="-122.0480153">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="give_way"/>
+    <tag k="source" v="bing;survey"/>
+  </node>
+  <node id="2583024206" lat="37.3374137" lon="-122.0367780">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="source" v="bing;survey"/>
+    <tag k="traffic_signals:direction" v="backward"/>
+  </node>
+  <node id="2583024209" lat="37.3375383" lon="-122.0369087">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="source" v="bing;survey"/>
+    <tag k="traffic_signals:direction" v="forward"/>
+  </node>
+  <node id="2583024216" lat="37.3444791" lon="-122.0376015">
+    <tag k="highway" v="give_way"/>
+  </node>
+  <node id="2583024219" lat="37.3444814" lon="-122.0373955">
+    <tag k="highway" v="give_way"/>
+  </node>
+  <node id="2583024221" lat="37.3444960" lon="-122.0361595"/>
+  <node id="2630323094" lat="37.3233780" lon="-122.0414332"/>
+  <node id="2640319852" lat="37.3373953" lon="-122.0321996">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="2640319858" lat="37.3374919" lon="-122.0325933">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="2640319862" lat="37.3376304" lon="-122.0320544">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="2640319865" lat="37.3377559" lon="-122.0277799">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2640319867" lat="37.3377645" lon="-122.0324100">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="2648143498" lat="37.3504285" lon="-122.0415163"/>
+  <node id="2648143560" lat="37.3512764" lon="-122.0415141"/>
+  <node id="2658425803" lat="37.3380183" lon="-122.0413876"/>
+  <node id="2671838715" lat="37.3431005" lon="-122.0362501">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2671838718" lat="37.3431032" lon="-122.0341734">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2671838721" lat="37.3433001" lon="-122.0341717"/>
+  <node id="2671838723" lat="37.3437205" lon="-122.0337918"/>
+  <node id="2671838725" lat="37.3437564" lon="-122.0361129"/>
+  <node id="2671838727" lat="37.3438477" lon="-122.0353630"/>
+  <node id="2671838729" lat="37.3439060" lon="-122.0348542"/>
+  <node id="2671838731" lat="37.3442108" lon="-122.0346223"/>
+  <node id="2671838733" lat="37.3465367" lon="-122.0346219"/>
+  <node id="2672380142" lat="37.3430156" lon="-122.0355228"/>
+  <node id="2672381689" lat="37.3437456" lon="-122.0373228"/>
+  <node id="2672381690" lat="37.3438066" lon="-122.0385033"/>
+  <node id="2672381698" lat="37.3440975" lon="-122.0346472"/>
+  <node id="2672395249" lat="37.3428190" lon="-122.0322448">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="2672395250" lat="37.3430159" lon="-122.0321042">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="traffic_signals:direction" v="backward"/>
+  </node>
+  <node id="2672395251" lat="37.3430159" lon="-122.0326092">
+    <tag k="highway" v="traffic_signals"/>
+    <tag k="traffic_signals:direction" v="backward"/>
+  </node>
+  <node id="2672395252" lat="37.3431636" lon="-122.0324524">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="2675531901" lat="37.3433973" lon="-122.0415294"/>
+  <node id="2675568858" lat="37.3430914" lon="-122.0405723">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2675568859" lat="37.3442358" lon="-122.0405846"/>
+  <node id="2676130819" lat="37.3430152" lon="-122.0396039"/>
+  <node id="2779816132" lat="37.3430444" lon="-122.0451395"/>
+  <node id="2779816201" lat="37.3436591" lon="-122.0451474"/>
+  <node id="2779816216" lat="37.3440671" lon="-122.0451513"/>
+  <node id="2779816225" lat="37.3445085" lon="-122.0451376"/>
+  <node id="2779845881" lat="37.3383354" lon="-122.0443920"/>
+  <node id="2779845882" lat="37.3383363" lon="-122.0449669"/>
+  <node id="2779845883" lat="37.3384707" lon="-122.0441893"/>
+  <node id="2779845885" lat="37.3384972" lon="-122.0451480"/>
+  <node id="2779845886" lat="37.3395937" lon="-122.0451816"/>
+  <node id="2779845887" lat="37.3398089" lon="-122.0460567"/>
+  <node id="2779845888" lat="37.3399227" lon="-122.0458302"/>
+  <node id="2779845892" lat="37.3399686" lon="-122.0453595"/>
+  <node id="2779845942" lat="37.3403523" lon="-122.0452861"/>
+  <node id="2779845971" lat="37.3406155" lon="-122.0441865"/>
+  <node id="2779845977" lat="37.3406635" lon="-122.0449758"/>
+  <node id="2779845994" lat="37.3408293" lon="-122.0443124"/>
+  <node id="2779846020" lat="37.3413055" lon="-122.0445399"/>
+  <node id="2779846032" lat="37.3415081" lon="-122.0438014"/>
+  <node id="2779846064" lat="37.3419094" lon="-122.0442908"/>
+  <node id="2779846100" lat="37.3422627" lon="-122.0442228"/>
+  <node id="2779846112" lat="37.3423820" lon="-122.0443105"/>
+  <node id="2781678522" lat="37.3376422" lon="-122.0431557">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2781678844" lat="37.3393771" lon="-122.0431454"/>
+  <node id="2781678918" lat="37.3397764" lon="-122.0431408"/>
+  <node id="2781679010" lat="37.3403561" lon="-122.0431341"/>
+  <node id="2781679065" lat="37.3407643" lon="-122.0431293"/>
+  <node id="2781679123" lat="37.3411655" lon="-122.0431247"/>
+  <node id="2781869085" lat="37.3375222" lon="-122.0451591"/>
+  <node id="2781869086" lat="37.3375235" lon="-122.0448968"/>
+  <node id="2793160846" lat="37.3411852" lon="-122.0456892"/>
+  <node id="2793160859" lat="37.3412423" lon="-122.0464683"/>
+  <node id="2793160883" lat="37.3415600" lon="-122.0465488"/>
+  <node id="2793160938" lat="37.3421558" lon="-122.0461994"/>
+  <node id="2793161125" lat="37.3440126" lon="-122.0470117"/>
+  <node id="2793208666" lat="37.3410782" lon="-122.0498408">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2793208669" lat="37.3410780" lon="-122.0492070"/>
+  <node id="2793208671" lat="37.3411634" lon="-122.0487317"/>
+  <node id="2793208674" lat="37.3412292" lon="-122.0485151"/>
+  <node id="2793208731" lat="37.3414727" lon="-122.0480486">
+    <tag k="direction" v="backward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2793208749" lat="37.3416001" lon="-122.0478338">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2793208766" lat="37.3417960" lon="-122.0475538"/>
+  <node id="2793208786" lat="37.3421418" lon="-122.0472369"/>
+  <node id="2793208803" lat="37.3423097" lon="-122.0471471"/>
+  <node id="2793208809" lat="37.3425449" lon="-122.0475221"/>
+  <node id="2793208811" lat="37.3426065" lon="-122.0470732"/>
+  <node id="2793208828" lat="37.3427156" lon="-122.0479112"/>
+  <node id="2793327145" lat="37.3424380" lon="-122.0487811"/>
+  <node id="2793327184" lat="37.3427497" lon="-122.0489268"/>
+  <node id="2793327200" lat="37.3429031" lon="-122.0489641"/>
+  <node id="2793819133" lat="37.3423686" lon="-122.0461405"/>
+  <node id="2793822330" lat="37.3392424" lon="-122.0479697"/>
+  <node id="2793822331" lat="37.3393741" lon="-122.0461314"/>
+  <node id="2793822333" lat="37.3394409" lon="-122.0478915"/>
+  <node id="2793822335" lat="37.3398041" lon="-122.0475974"/>
+  <node id="2793822337" lat="37.3399050" lon="-122.0463709"/>
+  <node id="2794892505" lat="37.3355090" lon="-122.0414576"/>
+  <node id="2794892530" lat="37.3376681" lon="-122.0397884">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2799007964" lat="37.3411278" lon="-122.0277976">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2799007965" lat="37.3411311" lon="-122.0293644">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2799007973" lat="37.3413216" lon="-122.0293644">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2799007984" lat="37.3429897" lon="-122.0308181"/>
+  <node id="2799007985" lat="37.3429957" lon="-122.0303991">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2799007986" lat="37.3431080" lon="-122.0312354">
+    <tag k="highway" v="give_way"/>
+  </node>
+  <node id="2833950813" lat="37.3352698" lon="-122.0388403"/>
+  <node id="2833950814" lat="37.3348086" lon="-122.0388402"/>
+  <node id="2833950815" lat="37.3348095" lon="-122.0387247"/>
+  <node id="2833950817" lat="37.3358660" lon="-122.0397802"/>
+  <node id="2833950818" lat="37.3347977" lon="-122.0402438"/>
+  <node id="2833950819" lat="37.3351817" lon="-122.0402438"/>
+  <node id="2844388782" lat="37.3410755" lon="-122.0501707">
+    <tag k="direction" v="backward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="2864532578" lat="37.3411821" lon="-122.0590945"/>
+  <node id="2864532579" lat="37.3411834" lon="-122.0592942"/>
+  <node id="2908071151" lat="37.3239775" lon="-122.0415580"/>
+  <node id="2908071152" lat="37.3245966" lon="-122.0414421"/>
+  <node id="2908071153" lat="37.3256839" lon="-122.0414932"/>
+  <node id="2908071154" lat="37.3364984" lon="-122.0414561"/>
+  <node id="3063907837" lat="37.3400556" lon="-122.0335930">
+    <tag k="direction" v="forward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="3063907838" lat="37.3429153" lon="-122.0350505">
+    <tag k="direction" v="backward"/>
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="3065378116" lat="37.3425474" lon="-122.0324377"/>
+  <node id="3065378120" lat="37.3427415" lon="-122.0324386"/>
+  <node id="3067276563" lat="37.3412303" lon="-122.0301080">
+    <tag k="highway" v="stop"/>
+  </node>
+  <node id="3067276564" lat="37.3428062" lon="-122.0302593"/>
+  <node id="3099731968" lat="37.3349737" lon="-122.0443149"/>
+  <node id="3099731969" lat="37.3351027" lon="-122.0441703"/>
+  <node id="3099731970" lat="37.3353430" lon="-122.0441715"/>
+  <node id="3099731971" lat="37.3401309" lon="-122.0374700"/>
+  <node id="3099731972" lat="37.3404580" lon="-122.0375570"/>
+  <node id="3148743728" lat="37.3247615" lon="-122.0323910"/>
+  <node id="3185538147" lat="37.3306994" lon="-122.0413399"/>
+  <node id="3369079743" lat="37.3228252" lon="-122.0321942"/>
+  <node id="3394885016" lat="37.3242566" lon="-122.0415578"/>
+  <node id="3394885036" lat="37.3375178" lon="-122.0310707"/>
+  <node id="3394885038" lat="37.3375133" lon="-122.0313015"/>
+  <node id="3426214274" lat="37.3255018" lon="-122.0414943"/>
+  <node id="3466032309" lat="37.3385096" lon="-122.0413867"/>
+  <node id="3466032310" lat="37.3392264" lon="-122.0414883"/>
+  <node id="3466032311" lat="37.3410110" lon="-122.0414800"/>
+  <node id="3472662828" lat="37.3375163" lon="-122.0475719"/>
+  <node id="3472668920" lat="37.3395525" lon="-122.0414851"/>
+  <node id="3472668921" lat="37.3395504" lon="-122.0413856"/>
+  <node id="3499642496" lat="37.3365239" lon="-122.0367861"/>
+  <node id="3499642505" lat="37.3369541" lon="-122.0324133"/>
+  <node id="3499642513" lat="37.3374922" lon="-122.0330300"/>
+  <node id="3554448425" lat="37.3320639" lon="-122.0384856"/>
+  <node id="3554448426" lat="37.3321088" lon="-122.0363531"/>
+  <node id="3554448427" lat="37.3322729" lon="-122.0360965"/>
+  <node id="3554448428" lat="37.3329075" lon="-122.0385317"/>
+  <node id="3695511021" lat="37.3235910" lon="-122.0321868"/>
+  <node id="3695512126" lat="37.3242297" lon="-122.0321837"/>
+  <node id="3701123830" lat="37.3233442" lon="-122.0321880"/>
+  <node id="3710193390" lat="37.3281870" lon="-122.0324143"/>
+  <node id="3710193393" lat="37.3289612" lon="-122.0324139"/>
+  <node id="3721678498" lat="37.3264007" lon="-122.0324128">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="3721678499" lat="37.3266656" lon="-122.0321802">
+    <tag k="crossing" v="traffic_signals"/>
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="3829697121" lat="37.3348991" lon="-122.0414433"/>
+  <node id="3829697132" lat="37.3356204" lon="-122.0414575"/>
+  <node id="3829697139" lat="37.3360508" lon="-122.0414570"/>
+  <node id="3850922615" lat="37.3375194" lon="-122.0460945"/>
+  <node id="3850922618" lat="37.3375167" lon="-122.0473225"/>
+  <node id="3859909899" lat="37.3375203" lon="-122.0455434"/>
+  <node id="3966835390" lat="37.3241503" lon="-122.0323906"/>
+  <node id="3966835391" lat="37.3257369" lon="-122.0321809"/>
+  <node id="3966835396" lat="37.3269750" lon="-122.0324134"/>
+  <node id="3966835397" lat="37.3295380" lon="-122.0321951"/>
+  <node id="3966835399" lat="37.3311719" lon="-122.0324163"/>
+  <node id="4167704897" lat="37.3368410" lon="-122.0414560"/>
+  <node id="4167704900" lat="37.3375164" lon="-122.0491900"/>
+  <node id="4167704902" lat="37.3375180" lon="-122.0464246"/>
+  <node id="4167704903" lat="37.3375192" lon="-122.0457678"/>
+  <node id="4167704907" lat="37.3375282" lon="-122.0440218"/>
+  <node id="4167704909" lat="37.3375322" lon="-122.0434283"/>
+  <node id="4167704910" lat="37.3375357" lon="-122.0405774"/>
+  <node id="4167704911" lat="37.3375380" lon="-122.0372481"/>
+  <node id="4167704912" lat="37.3375392" lon="-122.0422991"/>
+  <node id="4167704913" lat="37.3375790" lon="-122.0363456"/>
+  <node id="4167710127" lat="37.3377858" lon="-122.0414980"/>
+  <node id="4167710129" lat="37.3384789" lon="-122.0415020"/>
+  <node id="4167795989" lat="37.3360092" lon="-122.0321993"/>
+  <node id="4167795990" lat="37.3365969" lon="-122.0321967"/>
+  <node id="4167795991" lat="37.3366832" lon="-122.0321971"/>
+  <node id="4167795993" lat="37.3420166" lon="-122.0322389"/>
+  <node id="4167795994" lat="37.3442962" lon="-122.0324546"/>
+  <node id="4167795995" lat="37.3459263" lon="-122.0322353"/>
+  <node id="4167830449" lat="37.3374925" lon="-122.0334337"/>
+  <node id="4167830450" lat="37.3375457" lon="-122.0296296"/>
+  <node id="4167830451" lat="37.3375789" lon="-122.0347010"/>
+  <node id="4167830452" lat="37.3375790" lon="-122.0354547"/>
+  <node id="4167830453" lat="37.3375921" lon="-122.0337973"/>
+  <node id="4167830454" lat="37.3376308" lon="-122.0285380"/>
+  <node id="4167830455" lat="37.3376352" lon="-122.0281758"/>
+  <node id="4167830456" lat="37.3376408" lon="-122.0314489"/>
+  <node id="4167830457" lat="37.3376459" lon="-122.0255480"/>
+  <node id="4167830458" lat="37.3376538" lon="-122.0306677"/>
+  <node id="4167834281" lat="37.3430158" lon="-122.0319706"/>
+  <node id="4167834282" lat="37.3430159" lon="-122.0327658"/>
+  <node id="4176450694" lat="37.3273074" lon="-122.0414814"/>
+  <node id="4176450695" lat="37.3303812" lon="-122.0414615"/>
+  <node id="4176450696" lat="37.3310313" lon="-122.0414617"/>
+  <node id="4183825693" lat="37.3379481" lon="-122.0415033"/>
+  <way id="8924983">
+    <nd ref="1999574339"/>
+    <nd ref="65392298"/>
+    <nd ref="2160826121"/>
+    <nd ref="2160826120"/>
+    <nd ref="2160826119"/>
+    <nd ref="2833950817"/>
+    <nd ref="65392303"/>
+    <nd ref="65392305"/>
+    <nd ref="65392307"/>
+    <nd ref="2160826117"/>
+    <nd ref="65392313"/>
+    <nd ref="65392316"/>
+    <nd ref="65392318"/>
+    <nd ref="2833950818"/>
+    <nd ref="2833950814"/>
+    <nd ref="2833950815"/>
+    <nd ref="2160826106"/>
+    <nd ref="2160826110"/>
+    <nd ref="65392329"/>
+    <nd ref="65392330"/>
+    <nd ref="2087228732"/>
+    <nd ref="65392340"/>
+    <nd ref="65392341"/>
+    <nd ref="1999574339"/>
+    <tag k="highway" v="service"/>
+    <tag k="maxspeed" v="15 mph"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+  </way>
+  <way id="8928814">
+    <nd ref="65426547"/>
+    <nd ref="1106363299"/>
+    <nd ref="3499642505"/>
+    <nd ref="704802051"/>
+    <nd ref="704802052"/>
+    <nd ref="1848525688"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="8928881">
+    <nd ref="65427249"/>
+    <nd ref="65427255"/>
+    <nd ref="3185538147"/>
+    <nd ref="65427256"/>
+    <nd ref="65427258"/>
+    <nd ref="65427260"/>
+    <nd ref="65427262"/>
+    <nd ref="613892196"/>
+    <nd ref="65427269"/>
+    <nd ref="65427275"/>
+    <nd ref="65427279"/>
+    <tag k="cycleway" v="shared_lane"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Greenleaf Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Greenleaf"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="8929276">
+    <nd ref="4167834282"/>
+    <nd ref="65430086"/>
+    <nd ref="65430088"/>
+    <nd ref="2672380142"/>
+    <nd ref="65430092"/>
+    <nd ref="65391829"/>
+    <nd ref="65430095"/>
+    <nd ref="65430097"/>
+    <nd ref="65430099"/>
+    <nd ref="2676130819"/>
+    <nd ref="65430101"/>
+    <nd ref="65430104"/>
+    <nd ref="65430108"/>
+    <tag k="HFCS" v="Collector"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Alberta Avenue"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Alberta"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8930612">
+    <nd ref="65438737"/>
+    <nd ref="2671838729"/>
+    <nd ref="262452528"/>
+    <nd ref="2671838727"/>
+    <nd ref="2671838725"/>
+    <nd ref="65438739"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Fort Laramie Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Fort Laramie"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8933402">
+    <nd ref="65459588"/>
+    <nd ref="2671838733"/>
+    <nd ref="2671838731"/>
+    <nd ref="2672381698"/>
+    <nd ref="65438737"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Valcartier Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Valcartier"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8935322">
+    <nd ref="65471827"/>
+    <nd ref="65471832"/>
+    <nd ref="1999574452"/>
+    <nd ref="65471834"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="La Conner Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="La Conner"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8936852">
+    <nd ref="65430088"/>
+    <nd ref="3063907838"/>
+    <nd ref="65484793"/>
+    <nd ref="65430112"/>
+    <nd ref="647767178"/>
+    <nd ref="65484794"/>
+    <nd ref="65484797"/>
+    <nd ref="65484799"/>
+    <nd ref="65484800"/>
+    <nd ref="647767191"/>
+    <nd ref="460289175"/>
+    <nd ref="65484801"/>
+    <nd ref="65484803"/>
+    <nd ref="65484805"/>
+    <nd ref="65484808"/>
+    <nd ref="65484809"/>
+    <nd ref="65484811"/>
+    <nd ref="3063907837"/>
+    <nd ref="65471832"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Tenaka Place"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Tenaka"/>
+    <tag k="tiger:name_type" v="Pl"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8937253">
+    <nd ref="65456919"/>
+    <nd ref="368383325"/>
+    <nd ref="368383326"/>
+    <nd ref="647767270"/>
+    <nd ref="65488335"/>
+    <nd ref="65488337"/>
+    <nd ref="2799007973"/>
+    <nd ref="65488338"/>
+    <nd ref="2799007965"/>
+    <nd ref="460289179"/>
+    <nd ref="65488341"/>
+    <nd ref="65488343"/>
+    <nd ref="431984974"/>
+    <nd ref="65488346"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Blackhawk Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Blackhawk"/>
+    <tag k="tiger:name_type" v="Dr"/>
+  </way>
+  <way id="8937324">
+    <nd ref="65488758"/>
+    <nd ref="2779845892"/>
+    <nd ref="262453483"/>
+    <nd ref="2779845886"/>
+    <nd ref="262453484"/>
+    <nd ref="2779845885"/>
+    <nd ref="65488761"/>
+    <nd ref="2779845882"/>
+    <nd ref="2779845881"/>
+    <nd ref="65488764"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Lachine Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Lachine"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8937774">
+    <nd ref="65492579"/>
+    <nd ref="65492582"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Ottawa Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Ottawa"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8937881">
+    <nd ref="65493382"/>
+    <nd ref="65493388"/>
+    <nd ref="613892344"/>
+    <nd ref="65493390"/>
+    <nd ref="2471571794"/>
+    <nd ref="65493393"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Garden Gate Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Garden Gate"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="8939360">
+    <nd ref="65503470"/>
+    <nd ref="2779845994"/>
+    <nd ref="65503472"/>
+    <nd ref="2779845971"/>
+    <nd ref="2779845883"/>
+    <nd ref="65488764"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Manitoba Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Manitoba"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8940910">
+    <nd ref="65512157"/>
+    <nd ref="65512159"/>
+    <nd ref="431989497"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Logan Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Logan"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8941244">
+    <nd ref="65431017"/>
+    <nd ref="2630323094"/>
+    <nd ref="1219218914"/>
+    <nd ref="1219218886"/>
+    <nd ref="2908071152"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway:right" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="8942232">
+    <nd ref="65489208"/>
+    <nd ref="664383423"/>
+    <nd ref="2583024221"/>
+    <nd ref="2583024219"/>
+    <nd ref="65489209"/>
+    <nd ref="2583024216"/>
+    <nd ref="65489212"/>
+    <nd ref="65489214"/>
+    <nd ref="265340946"/>
+    <nd ref="664383421"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Endicott Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8942310">
+    <nd ref="65520643"/>
+    <nd ref="2671838723"/>
+    <nd ref="65520646"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Fern Ridge Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Fern Ridge"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8942625">
+    <nd ref="262239989"/>
+    <nd ref="765335131"/>
+    <nd ref="765335132"/>
+    <nd ref="4167795995"/>
+    <tag k="bicycle" v="yes"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="Sunnyvale-Saratoga Road"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="8943099">
+    <nd ref="65524121"/>
+    <nd ref="65524124"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Kodiak Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Kodiak"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8943164">
+    <nd ref="65471834"/>
+    <nd ref="65524384"/>
+    <nd ref="65524387"/>
+    <nd ref="1999574456"/>
+    <nd ref="65524389"/>
+    <nd ref="65524392"/>
+    <nd ref="65524394"/>
+    <nd ref="65524396"/>
+    <nd ref="1999574482"/>
+    <nd ref="65524398"/>
+    <nd ref="1999574483"/>
+    <nd ref="1999574484"/>
+    <nd ref="65524410"/>
+    <nd ref="65492579"/>
+    <nd ref="65524423"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Kirkland Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Kirkland"/>
+    <tag k="tiger:name_type" v="Dr"/>
+  </way>
+  <way id="8944304">
+    <nd ref="65456912"/>
+    <nd ref="65484890"/>
+    <nd ref="65453229"/>
+    <nd ref="2799007986"/>
+    <nd ref="65528192"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Albatross Drive"/>
+    <tag k="oneway" v="no"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Albatross"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8944712">
+    <nd ref="65529845"/>
+    <nd ref="647767047"/>
+    <nd ref="431988313"/>
+    <nd ref="647767049"/>
+    <nd ref="2471571802"/>
+    <nd ref="65436763"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Grand Coulee Avenue"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Grand Coulee"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8944926">
+    <nd ref="517807889"/>
+    <nd ref="65530686"/>
+    <nd ref="220218171"/>
+    <nd ref="220218182"/>
+    <nd ref="704787071"/>
+    <nd ref="704787072"/>
+    <nd ref="65530688"/>
+    <nd ref="220218192"/>
+    <nd ref="65530694"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Valley Green Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Valley Green"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:reviewed" v="no"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="8946643">
+    <nd ref="65540797"/>
+    <nd ref="65540800"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Ontario Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Ontario"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8947071">
+    <nd ref="65544694"/>
+    <nd ref="65544697"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Lowell Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Lowell"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8947639">
+    <nd ref="65453550"/>
+    <nd ref="2583024206"/>
+    <nd ref="102788306"/>
+    <nd ref="3499642496"/>
+    <nd ref="65385699"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Franco Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Franco"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:reviewed" v="no"/>
+  </way>
+  <way id="8949835">
+    <nd ref="65524410"/>
+    <nd ref="3099731972"/>
+    <nd ref="431985812"/>
+    <nd ref="3099731971"/>
+    <nd ref="431985816"/>
+    <nd ref="1999574440"/>
+    <nd ref="65524121"/>
+    <nd ref="262453524"/>
+    <nd ref="664383420"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Queen Charlotte Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Queen Charlotte"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8950638">
+    <nd ref="65573440"/>
+    <nd ref="262452592"/>
+    <nd ref="2793819133"/>
+    <nd ref="2793160938"/>
+    <nd ref="262452593"/>
+    <nd ref="2793160883"/>
+    <nd ref="65573441"/>
+    <nd ref="2793160859"/>
+    <nd ref="65544069"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Klamath Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Klamath"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8953046">
+    <nd ref="65584273"/>
+    <nd ref="65584276"/>
+    <nd ref="2781679123"/>
+    <nd ref="1999574514"/>
+    <nd ref="2781679065"/>
+    <nd ref="2781679010"/>
+    <nd ref="2781678918"/>
+    <nd ref="2781678844"/>
+    <nd ref="65544694"/>
+    <nd ref="2781678522"/>
+    <nd ref="65453546"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="New Brunswick Avenue"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="New Brunswick"/>
+    <tag k="tiger:name_type" v="Ave"/>
+  </way>
+  <way id="8953097">
+    <nd ref="4167834281"/>
+    <nd ref="65528192"/>
+    <nd ref="2799007984"/>
+    <nd ref="2799007985"/>
+    <nd ref="65584579"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Harwick Way"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Harwick"/>
+    <tag k="tiger:name_type" v="Way"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8953806">
+    <nd ref="65489212"/>
+    <nd ref="65589007"/>
+    <nd ref="2672381690"/>
+    <nd ref="262452525"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Queenstown Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Queenstown"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8954364">
+    <nd ref="65544067"/>
+    <nd ref="65592657"/>
+    <nd ref="2779846112"/>
+    <nd ref="1999574590"/>
+    <nd ref="2779846100"/>
+    <nd ref="272275390"/>
+    <nd ref="2779846064"/>
+    <nd ref="65592658"/>
+    <nd ref="2779846020"/>
+    <nd ref="65503470"/>
+    <nd ref="2779845977"/>
+    <nd ref="2779845942"/>
+    <nd ref="65488758"/>
+    <nd ref="2779845888"/>
+    <nd ref="2779845887"/>
+    <nd ref="65592659"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Nisqually Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Nisqually"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8956126">
+    <nd ref="65438739"/>
+    <nd ref="2671838715"/>
+    <nd ref="65430092"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Richelieu Place"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Richelieu"/>
+    <tag k="tiger:name_type" v="Pl"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8957083">
+    <nd ref="664383420"/>
+    <nd ref="65567570"/>
+    <nd ref="65604729"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="La Grande Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="La Grande:Queen Charlotte"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8957338">
+    <nd ref="65606181"/>
+    <nd ref="2582851848"/>
+    <nd ref="65497190"/>
+    <nd ref="2582851795"/>
+    <nd ref="65606182"/>
+    <nd ref="2793208828"/>
+    <nd ref="262452704"/>
+    <nd ref="2793208809"/>
+    <nd ref="65606183"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Kingsgate Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Kings Gate"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8958151">
+    <nd ref="65513916"/>
+    <nd ref="2471571795"/>
+    <nd ref="65611524"/>
+    <nd ref="65611525"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Hazelbrook Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hazelbrook"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:reviewed" v="no"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="8958630">
+    <nd ref="65489214"/>
+    <nd ref="65614836"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Orillia Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Orillia"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8958675">
+    <nd ref="65544064"/>
+    <nd ref="65573440"/>
+    <nd ref="65615134"/>
+    <nd ref="2793161125"/>
+    <nd ref="478454705"/>
+    <nd ref="2793208811"/>
+    <nd ref="65606183"/>
+    <nd ref="2793208803"/>
+    <nd ref="2793208786"/>
+    <nd ref="272275247"/>
+    <nd ref="2793208766"/>
+    <nd ref="2793208749"/>
+    <nd ref="65615138"/>
+    <nd ref="2793208731"/>
+    <nd ref="2793208674"/>
+    <nd ref="2793208671"/>
+    <nd ref="262452900"/>
+    <nd ref="2793208669"/>
+    <nd ref="2793208666"/>
+    <nd ref="65518180"/>
+    <nd ref="2844388782"/>
+    <nd ref="65565386"/>
+    <nd ref="65615143"/>
+    <nd ref="65615145"/>
+    <nd ref="272264710"/>
+    <nd ref="65575056"/>
+    <nd ref="479365519"/>
+    <nd ref="2582851792"/>
+    <nd ref="65577320"/>
+    <nd ref="613891821"/>
+    <nd ref="65459232"/>
+    <nd ref="65442202"/>
+    <nd ref="2864532578"/>
+    <nd ref="2864532579"/>
+    <nd ref="2582851791"/>
+    <nd ref="65608585"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Helena Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Helena"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8961951">
+    <nd ref="65580823"/>
+    <nd ref="2799007964"/>
+    <nd ref="663937521"/>
+    <nd ref="65473831"/>
+    <nd ref="2640319865"/>
+    <nd ref="65553971"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Canary Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Canary"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8962065">
+    <nd ref="65453541"/>
+    <nd ref="2582851750"/>
+    <nd ref="272275079"/>
+    <nd ref="272275080"/>
+    <nd ref="3099731970"/>
+    <nd ref="3099731969"/>
+    <nd ref="65635239"/>
+    <nd ref="3099731968"/>
+    <nd ref="65635240"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Noranda Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Noranda"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8962203">
+    <nd ref="65430097"/>
+    <nd ref="1999574582"/>
+    <nd ref="1999574558"/>
+    <nd ref="65635776"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Quebec Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Quebec"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8964231">
+    <nd ref="65584276"/>
+    <nd ref="2779846032"/>
+    <nd ref="262453489"/>
+    <nd ref="65592658"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Harking Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Harking"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8964497">
+    <nd ref="65453538"/>
+    <nd ref="2582851766"/>
+    <nd ref="65562458"/>
+    <nd ref="65512157"/>
+    <nd ref="2793822331"/>
+    <nd ref="1999574438"/>
+    <nd ref="65592659"/>
+    <nd ref="2793822337"/>
+    <nd ref="65544071"/>
+    <nd ref="65469739"/>
+    <nd ref="65615138"/>
+    <nd ref="65649792"/>
+    <nd ref="2793327145"/>
+    <nd ref="262453181"/>
+    <nd ref="2793327184"/>
+    <nd ref="2793327200"/>
+    <nd ref="65649800"/>
+    <nd ref="65497193"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Kennewick Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Kennewick"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8964629">
+    <nd ref="65650648"/>
+    <nd ref="65610135"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Davenport Court"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Davenport"/>
+    <tag k="tiger:name_type" v="Ct"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="8967032">
+    <nd ref="65529845"/>
+    <nd ref="647767147"/>
+    <nd ref="65540797"/>
+    <nd ref="65524423"/>
+    <nd ref="1999574435"/>
+    <nd ref="1999574422"/>
+    <nd ref="1999574420"/>
+    <nd ref="1999574407"/>
+    <nd ref="65604729"/>
+    <nd ref="2794892530"/>
+    <nd ref="65453548"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Ontario Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Ontario"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="20540091">
+    <nd ref="258972911"/>
+    <nd ref="220217852"/>
+    <nd ref="3721678499"/>
+    <nd ref="220217865"/>
+    <nd ref="220217877"/>
+    <nd ref="1700678634"/>
+    <nd ref="220217889"/>
+    <nd ref="1700678669"/>
+    <nd ref="220217910"/>
+    <nd ref="3966835397"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="25085657">
+    <nd ref="4167795991"/>
+    <nd ref="2640319852"/>
+    <nd ref="1106363279"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="6"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="turn:lanes" v="left|left||||right"/>
+  </way>
+  <way id="52142438">
+    <nd ref="4176450696"/>
+    <nd ref="65513920"/>
+    <nd ref="65513922"/>
+    <nd ref="65513923"/>
+    <nd ref="65513926"/>
+    <nd ref="65513931"/>
+    <nd ref="2471571797"/>
+    <nd ref="65513933"/>
+    <nd ref="65513935"/>
+    <nd ref="390085937"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="52142441">
+    <nd ref="65438739"/>
+    <nd ref="2672381689"/>
+    <nd ref="65438741"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Fort Laramie Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Fort Laramie"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="52142442">
+    <nd ref="664383421"/>
+    <nd ref="65489216"/>
+    <nd ref="2675568859"/>
+    <nd ref="2675568858"/>
+    <nd ref="65430104"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Norland Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="52142444">
+    <nd ref="65610121"/>
+    <nd ref="65561592"/>
+    <nd ref="65610123"/>
+    <nd ref="65610124"/>
+    <nd ref="65488745"/>
+    <nd ref="65610127"/>
+    <nd ref="65466395"/>
+    <nd ref="65610129"/>
+    <nd ref="647768019"/>
+    <nd ref="647768010"/>
+    <nd ref="65610134"/>
+    <nd ref="65610135"/>
+    <nd ref="647768021"/>
+    <nd ref="65520646"/>
+    <nd ref="266191696"/>
+    <nd ref="2671838721"/>
+    <nd ref="2671838718"/>
+    <nd ref="65430086"/>
+    <tag k="addr:country" v="US"/>
+    <tag k="addr:county" v="Santa Clara"/>
+    <tag k="addr:state" v="CA"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Yukon Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="52194578">
+    <nd ref="65544071"/>
+    <nd ref="2582851785"/>
+    <nd ref="262453335"/>
+    <nd ref="2793822335"/>
+    <nd ref="262453336"/>
+    <nd ref="2793822333"/>
+    <nd ref="2793822330"/>
+    <nd ref="262453337"/>
+    <nd ref="65544074"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Lewiston Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Lewiston"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="52194579">
+    <nd ref="664743907"/>
+    <nd ref="272275107"/>
+    <nd ref="65544074"/>
+    <nd ref="65562458"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Louise Drive"/>
+    <tag k="source:maxspeed" v="California vehicle code 22352"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="64833731">
+    <nd ref="4167704903"/>
+    <nd ref="3859909899"/>
+    <nd ref="2781869085"/>
+    <nd ref="2781869086"/>
+    <nd ref="65453541"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+  </way>
+  <way id="95412064">
+    <nd ref="65453550"/>
+    <nd ref="1106363362"/>
+    <nd ref="1106363293"/>
+    <nd ref="1106363357"/>
+    <nd ref="4167830449"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="95412068">
+    <nd ref="1106363197"/>
+    <nd ref="1106363354"/>
+    <nd ref="4167830451"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="95412075">
+    <nd ref="1106363299"/>
+    <nd ref="1106363279"/>
+    <nd ref="3394885038"/>
+    <nd ref="3394885036"/>
+    <nd ref="4167830450"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="95412085">
+    <nd ref="4167830456"/>
+    <nd ref="1999574353"/>
+    <nd ref="2640319862"/>
+    <nd ref="517816592"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes" v="left|left||"/>
+  </way>
+  <way id="112367559">
+    <nd ref="647768134"/>
+    <nd ref="647768131"/>
+    <nd ref="65580840"/>
+    <nd ref="65443727"/>
+    <nd ref="65554935"/>
+    <nd ref="65580838"/>
+    <nd ref="65545696"/>
+    <nd ref="65580829"/>
+    <nd ref="65440273"/>
+    <nd ref="647768127"/>
+    <nd ref="764510390"/>
+    <nd ref="647768124"/>
+    <nd ref="478453809"/>
+    <nd ref="65580827"/>
+    <nd ref="764510408"/>
+    <nd ref="65492020"/>
+    <nd ref="65580825"/>
+    <nd ref="764510314"/>
+    <nd ref="65580823"/>
+    <nd ref="65488338"/>
+    <nd ref="3067276563"/>
+    <nd ref="65580821"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Inverness Way"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Inverness"/>
+    <tag k="tiger:name_type" v="Way"/>
+  </way>
+  <way id="112367560">
+    <nd ref="65584579"/>
+    <nd ref="3067276564"/>
+    <nd ref="65580821"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Bittern Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Bittern"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="155527244">
+    <nd ref="65456914"/>
+    <nd ref="647768081"/>
+    <nd ref="647768084"/>
+    <nd ref="65584579"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Bittern Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Bittern"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="158259079">
+    <nd ref="65430108"/>
+    <nd ref="65436763"/>
+    <nd ref="517818852"/>
+    <nd ref="1999574542"/>
+    <nd ref="1999574531"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="158259103">
+    <nd ref="390085937"/>
+    <nd ref="390085936"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="bridge" v="yes"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="ele" v="73"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="layer" v="1"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="158259104">
+    <nd ref="390085936"/>
+    <nd ref="3829697121"/>
+    <nd ref="2794892505"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="158623065">
+    <nd ref="519453800"/>
+    <nd ref="289651583"/>
+    <nd ref="289638735"/>
+    <nd ref="1067707159"/>
+    <nd ref="26506805"/>
+    <nd ref="92274376"/>
+    <nd ref="1067711992"/>
+    <nd ref="305548963"/>
+    <nd ref="26506806"/>
+    <nd ref="305548965"/>
+    <nd ref="1067711860"/>
+    <nd ref="26506808"/>
+    <nd ref="1067711775"/>
+    <nd ref="26506810"/>
+    <nd ref="704789509"/>
+    <nd ref="255655733"/>
+    <nd ref="220218075"/>
+    <nd ref="305548752"/>
+    <nd ref="704811333"/>
+    <nd ref="26506811"/>
+    <nd ref="704811334"/>
+    <nd ref="704811335"/>
+    <nd ref="704811336"/>
+    <nd ref="305548771"/>
+    <nd ref="704811350"/>
+    <nd ref="220221941"/>
+    <nd ref="26506813"/>
+    <nd ref="704809079"/>
+    <nd ref="49071602"/>
+    <nd ref="49071605"/>
+    <nd ref="704809080"/>
+    <nd ref="704809138"/>
+    <nd ref="30237136"/>
+    <nd ref="306086412"/>
+    <nd ref="92274384"/>
+    <nd ref="704809320"/>
+    <nd ref="704809322"/>
+    <nd ref="224490643"/>
+    <nd ref="30237138"/>
+    <nd ref="1067425637"/>
+    <nd ref="1067425638"/>
+    <nd ref="305548483"/>
+    <nd ref="1067425639"/>
+    <nd ref="30237139"/>
+    <nd ref="1067425641"/>
+    <nd ref="1067425308"/>
+    <nd ref="30674511"/>
+    <tag k="bicycle" v="no"/>
+    <tag k="foot" v="no"/>
+    <tag k="hgv" v="designated"/>
+    <tag k="highway" v="motorway"/>
+    <tag k="horse" v="no"/>
+    <tag k="hov" v="lane"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="65 mph"/>
+    <tag k="maxspeed:hgv" v="55 mph"/>
+    <tag k="maxspeed:trailer" v="55 mph"/>
+    <tag k="name" v="Junipero Serra Freeway"/>
+    <tag k="note:lanes" v="left lane is hov"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="ref" v="I 280"/>
+    <tag k="sidewalk" v="none"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+  <way id="158623068">
+    <nd ref="30674510"/>
+    <nd ref="1067428479"/>
+    <nd ref="259416258"/>
+    <nd ref="30675153"/>
+    <nd ref="30237214"/>
+    <nd ref="239510026"/>
+    <nd ref="239510045"/>
+    <nd ref="1067426061"/>
+    <nd ref="30237215"/>
+    <nd ref="257568212"/>
+    <nd ref="30237216"/>
+    <nd ref="239511043"/>
+    <nd ref="92274382"/>
+    <nd ref="239511038"/>
+    <nd ref="30237217"/>
+    <nd ref="49071606"/>
+    <nd ref="49071598"/>
+    <nd ref="704809017"/>
+    <nd ref="704809018"/>
+    <nd ref="30237218"/>
+    <nd ref="26497350"/>
+    <nd ref="704811716"/>
+    <nd ref="26497351"/>
+    <nd ref="704811465"/>
+    <nd ref="306086751"/>
+    <nd ref="704811544"/>
+    <nd ref="206686836"/>
+    <nd ref="704811565"/>
+    <nd ref="206686849"/>
+    <nd ref="220218084"/>
+    <nd ref="255655749"/>
+    <nd ref="26497352"/>
+    <nd ref="1067710873"/>
+    <nd ref="26497353"/>
+    <nd ref="1067710874"/>
+    <nd ref="206686860"/>
+    <nd ref="1067710875"/>
+    <nd ref="26497354"/>
+    <nd ref="1067710876"/>
+    <nd ref="306087467"/>
+    <nd ref="206686874"/>
+    <nd ref="206691786"/>
+    <nd ref="206691795"/>
+    <nd ref="258965393"/>
+    <nd ref="519453773"/>
+    <tag k="bicycle" v="no"/>
+    <tag k="foot" v="no"/>
+    <tag k="hgv" v="designated"/>
+    <tag k="highway" v="motorway"/>
+    <tag k="horse" v="no"/>
+    <tag k="hov" v="lane"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="65 mph"/>
+    <tag k="maxspeed:hgv" v="55 mph"/>
+    <tag k="maxspeed:trailer" v="55 mph"/>
+    <tag k="name" v="Junipero Serra Freeway"/>
+    <tag k="note:lanes" v="left lane is hov"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="ref" v="I 280"/>
+    <tag k="sidewalk" v="none"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+  <way id="189315224">
+    <nd ref="1999574531"/>
+    <nd ref="3466032311"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="1"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="189315226">
+    <nd ref="1999574347"/>
+    <nd ref="1999574344"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:reviewed" v="no"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:forward" v="left||"/>
+  </way>
+  <way id="189315264">
+    <nd ref="1999574348"/>
+    <nd ref="1999574339"/>
+    <nd ref="2160826116"/>
+    <nd ref="2160826115"/>
+    <nd ref="2160826106"/>
+    <tag k="highway" v="service"/>
+    <tag k="maxspeed" v="15 mph"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+  <way id="206086161">
+    <nd ref="2160826118"/>
+    <nd ref="65392307"/>
+    <tag k="highway" v="service"/>
+    <tag k="maxspeed" v="15 mph"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+  <way id="206086162">
+    <nd ref="65392298"/>
+    <nd ref="2160826122"/>
+    <tag k="highway" v="service"/>
+    <tag k="maxspeed" v="15 mph"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+  <way id="238698354">
+    <nd ref="65436766"/>
+    <nd ref="1999574356"/>
+    <nd ref="2497361063"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="239362308">
+    <nd ref="65513890"/>
+    <nd ref="3426214274"/>
+    <nd ref="2908071153"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="lanes:forward" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="239362311">
+    <nd ref="65513890"/>
+    <nd ref="2471567006"/>
+    <nd ref="3394885016"/>
+    <nd ref="2908071151"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway:right" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="239363041">
+    <nd ref="2471571797"/>
+    <nd ref="2471571796"/>
+    <nd ref="2471571798"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Valley Green Drive"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Valley Green"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:reviewed" v="no"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="239363042">
+    <nd ref="2471571798"/>
+    <nd ref="2471571799"/>
+    <nd ref="2471571800"/>
+    <nd ref="65513933"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Valley Green Drive"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Valley Green"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:reviewed" v="no"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="242222999">
+    <nd ref="2497361063"/>
+    <nd ref="2658425803"/>
+    <nd ref="2471575439"/>
+    <nd ref="3466032309"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="1"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="242223000">
+    <nd ref="1999574344"/>
+    <nd ref="2497361041"/>
+    <nd ref="2471567736"/>
+    <nd ref="65436766"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:forward" v="left||"/>
+  </way>
+  <way id="242223001">
+    <nd ref="4167704910"/>
+    <nd ref="1999574346"/>
+    <nd ref="2298932132"/>
+    <nd ref="1999574349"/>
+    <nd ref="65453548"/>
+    <nd ref="2160826122"/>
+    <nd ref="1999574348"/>
+    <nd ref="4167704911"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+  </way>
+  <way id="263260075">
+    <nd ref="65497188"/>
+    <nd ref="2582851812"/>
+    <nd ref="2779816225"/>
+    <nd ref="2779816216"/>
+    <nd ref="65544064"/>
+    <nd ref="2779816201"/>
+    <nd ref="2779816132"/>
+    <nd ref="65544067"/>
+    <nd ref="1999574576"/>
+    <nd ref="272275343"/>
+    <nd ref="2793160846"/>
+    <nd ref="65544069"/>
+    <nd ref="2582851788"/>
+    <nd ref="65544071"/>
+    <tag k="highway" v="residential"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Lewiston Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Lewiston"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="274823807">
+    <nd ref="2794892505"/>
+    <nd ref="3829697132"/>
+    <nd ref="2160826118"/>
+    <nd ref="3829697139"/>
+    <nd ref="1999574321"/>
+    <nd ref="2908071154"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="lanes:forward" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes:backward" v="|slight_left"/>
+  </way>
+  <way id="279152505">
+    <nd ref="2833950813"/>
+    <nd ref="2833950814"/>
+    <tag k="highway" v="service"/>
+    <tag k="maxspeed" v="15 mph"/>
+    <tag k="oneway" v="no"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+  <way id="279152507">
+    <nd ref="2833950817"/>
+    <nd ref="65453548"/>
+    <tag k="highway" v="service"/>
+    <tag k="maxspeed" v="15 mph"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+  <way id="279152510">
+    <nd ref="2833950818"/>
+    <nd ref="2833950819"/>
+    <tag k="highway" v="service"/>
+    <tag k="maxspeed" v="15 mph"/>
+    <tag k="source:maxspeed" v="sign"/>
+  </way>
+  <way id="287163329">
+    <nd ref="4167710127"/>
+    <nd ref="1999574358"/>
+    <nd ref="65436766"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left|"/>
+  </way>
+  <way id="287163330">
+    <nd ref="2908071152"/>
+    <nd ref="2471571788"/>
+    <nd ref="65513890"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway:right" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes" v="left||"/>
+  </way>
+  <way id="287163332">
+    <nd ref="2908071153"/>
+    <nd ref="1996189617"/>
+    <nd ref="1996189629"/>
+    <nd ref="65513904"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="lanes:forward" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes:forward" v="|slight_left"/>
+  </way>
+  <way id="287163333">
+    <nd ref="4167704897"/>
+    <nd ref="1999574326"/>
+    <nd ref="1999574332"/>
+    <nd ref="2471567735"/>
+    <nd ref="65436766"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="6"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes:forward" v="left|left||"/>
+  </way>
+  <way id="311341164">
+    <nd ref="65430084"/>
+    <nd ref="3065378120"/>
+    <nd ref="3065378116"/>
+    <nd ref="65471827"/>
+    <nd ref="65522458"/>
+    <tag k="bicycle" v="yes"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="Sunnyvale-Saratoga Road"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="339412114">
+    <nd ref="3466032310"/>
+    <nd ref="1999574416"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left|none"/>
+  </way>
+  <way id="339412119">
+    <nd ref="3466032311"/>
+    <nd ref="664103573"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="|right"/>
+  </way>
+  <way id="339412123">
+    <nd ref="2471575446"/>
+    <nd ref="1999574463"/>
+    <nd ref="1999574471"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left|"/>
+  </way>
+  <way id="339412124">
+    <nd ref="664103573"/>
+    <nd ref="2471575450"/>
+    <nd ref="3472668920"/>
+    <nd ref="3466032310"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="1"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="339412125">
+    <nd ref="1999574471"/>
+    <nd ref="1999574491"/>
+    <nd ref="1999574531"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="1"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="339412129">
+    <nd ref="3466032309"/>
+    <nd ref="1999574403"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="339412134">
+    <nd ref="1999574414"/>
+    <nd ref="1999574426"/>
+    <nd ref="3472668921"/>
+    <nd ref="1999574447"/>
+    <nd ref="2471575446"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="1"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="339412140">
+    <nd ref="4167710129"/>
+    <nd ref="1999574391"/>
+    <nd ref="2497361066"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="|right"/>
+  </way>
+  <way id="339412141">
+    <nd ref="2648143560"/>
+    <nd ref="65436753"/>
+    <nd ref="2648143498"/>
+    <nd ref="65436756"/>
+    <nd ref="65436758"/>
+    <nd ref="65436760"/>
+    <nd ref="2675531901"/>
+    <nd ref="65430108"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="349589966">
+    <nd ref="65530700"/>
+    <nd ref="3554448425"/>
+    <nd ref="3554448428"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Valley Green Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Valley Green"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:reviewed" v="no"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="349589968">
+    <nd ref="3554448428"/>
+    <nd ref="65530702"/>
+    <nd ref="2471571798"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Valley Green Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Valley Green"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:reviewed" v="no"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="393494128">
+    <nd ref="3966835399"/>
+    <nd ref="65426561"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="6"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes" v="left|left||||"/>
+  </way>
+  <way id="393494129">
+    <nd ref="273004392"/>
+    <nd ref="255655914"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes" v="left|left|through|through|through"/>
+  </way>
+  <way id="393494130">
+    <nd ref="65383026"/>
+    <nd ref="273004350"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes" v="left|left|||"/>
+  </way>
+  <way id="393494131">
+    <nd ref="704788134"/>
+    <nd ref="255655915"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="6"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="turn:lanes" v="through|through||||right"/>
+  </way>
+  <way id="393494132">
+    <nd ref="255655915"/>
+    <nd ref="273004401"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="turn:lanes" v="left|left|||"/>
+  </way>
+  <way id="393494133">
+    <nd ref="273004310"/>
+    <nd ref="220218003"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="turn:lanes" v="left|left|through|through|through"/>
+  </way>
+  <way id="393494134">
+    <nd ref="3966835397"/>
+    <nd ref="220217924"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="turn:lanes" v="left||||"/>
+  </way>
+  <way id="393494135">
+    <nd ref="3966835391"/>
+    <nd ref="2496987274"/>
+    <nd ref="258972911"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="turn:lanes" v="left||||"/>
+  </way>
+  <way id="393494136">
+    <nd ref="3966835396"/>
+    <nd ref="2496987282"/>
+    <nd ref="65426563"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes" v="left||||"/>
+  </way>
+  <way id="393494137">
+    <nd ref="255655914"/>
+    <nd ref="704787709"/>
+    <nd ref="517807889"/>
+    <nd ref="3966835399"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="393494138">
+    <nd ref="65426561"/>
+    <nd ref="3710193393"/>
+    <nd ref="3710193390"/>
+    <nd ref="3966835396"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="393494139">
+    <nd ref="220217924"/>
+    <nd ref="517811006"/>
+    <nd ref="220217943"/>
+    <nd ref="704788133"/>
+    <nd ref="704788134"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="393494140">
+    <nd ref="65426563"/>
+    <nd ref="3721678498"/>
+    <nd ref="65426564"/>
+    <nd ref="3148743728"/>
+    <nd ref="3966835390"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="393494141">
+    <nd ref="3369079743"/>
+    <nd ref="258972910"/>
+    <nd ref="3701123830"/>
+    <nd ref="3695511021"/>
+    <nd ref="3695512126"/>
+    <nd ref="3966835391"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="409486502">
+    <nd ref="1999574403"/>
+    <nd ref="1999574414"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left|"/>
+  </way>
+  <way id="413360870">
+    <nd ref="65502013"/>
+    <nd ref="65530700"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Valley Green Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Valley Green"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:reviewed" v="no"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="413367106">
+    <nd ref="65530694"/>
+    <nd ref="65530696"/>
+    <nd ref="3554448427"/>
+    <nd ref="3554448426"/>
+    <nd ref="65530698"/>
+    <nd ref="65502013"/>
+    <tag k="cycleway" v="shared_lane"/>
+    <tag k="highway" v="unclassified"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Valley Green Drive"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Valley Green"/>
+    <tag k="tiger:name_type" v="Dr"/>
+    <tag k="tiger:reviewed" v="no"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="415817911">
+    <nd ref="2908071154"/>
+    <nd ref="4167704897"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="415817913">
+    <nd ref="4167704907"/>
+    <nd ref="4167704909"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+  </way>
+  <way id="415817916">
+    <nd ref="4167704912"/>
+    <nd ref="1999574347"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:forward" v="left||"/>
+  </way>
+  <way id="415817918">
+    <nd ref="65453541"/>
+    <nd ref="4167704907"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:forward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:backward" v="left||"/>
+  </way>
+  <way id="415817921">
+    <nd ref="2497361044"/>
+    <nd ref="4167704910"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:forward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:backward" v="left||"/>
+  </way>
+  <way id="415817922">
+    <nd ref="4167704909"/>
+    <nd ref="65453546"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:forward" v="left||"/>
+  </way>
+  <way id="415817925">
+    <nd ref="65453546"/>
+    <nd ref="1999574345"/>
+    <nd ref="4167704912"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+  </way>
+  <way id="415817926">
+    <nd ref="65436766"/>
+    <nd ref="2471567737"/>
+    <nd ref="2497361044"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:forward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:backward" v="left||"/>
+  </way>
+  <way id="415817927">
+    <nd ref="4167704902"/>
+    <nd ref="2582851762"/>
+    <nd ref="65453538"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:forward" v="left||"/>
+  </way>
+  <way id="415817928">
+    <nd ref="4167704913"/>
+    <nd ref="1106363314"/>
+    <nd ref="65453550"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left||"/>
+  </way>
+  <way id="415817930">
+    <nd ref="4167704911"/>
+    <nd ref="2583024209"/>
+    <nd ref="65453550"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:forward" v="left||"/>
+  </way>
+  <way id="415817933">
+    <nd ref="65453538"/>
+    <nd ref="3850922615"/>
+    <nd ref="2582851759"/>
+    <nd ref="4167704903"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:forward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="turn:lanes:backward" v="left||"/>
+  </way>
+  <way id="415817934">
+    <nd ref="4167704900"/>
+    <nd ref="527386189"/>
+    <nd ref="3472662828"/>
+    <nd ref="3850922618"/>
+    <nd ref="4167704902"/>
+    <tag k="HFCS" v="Principal Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="94087"/>
+  </way>
+  <way id="415818224">
+    <nd ref="2497361066"/>
+    <nd ref="4183825693"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="|right"/>
+  </way>
+  <way id="415818229">
+    <nd ref="1999574416"/>
+    <nd ref="2471575444"/>
+    <nd ref="4167710129"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="415829888">
+    <nd ref="4167795990"/>
+    <nd ref="4167795991"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="6"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="turn:lanes" v="left|left||||"/>
+  </way>
+  <way id="415829889">
+    <nd ref="1106363279"/>
+    <nd ref="517816592"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+  </way>
+  <way id="415829890">
+    <nd ref="1848525688"/>
+    <nd ref="65383026"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes" v="through|through|through|through|through"/>
+  </way>
+  <way id="415829895">
+    <nd ref="4167795989"/>
+    <nd ref="272273998"/>
+    <nd ref="4167795990"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="turn:lanes" v="left|||"/>
+  </way>
+  <way id="415829896">
+    <nd ref="220218003"/>
+    <nd ref="704801949"/>
+    <nd ref="4167795989"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="North De Anza Boulevard"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+  </way>
+  <way id="415829897">
+    <nd ref="65522434"/>
+    <nd ref="4167795994"/>
+    <tag k="bicycle" v="yes"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="Sunnyvale-Saratoga Road"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="415829899">
+    <nd ref="4167795993"/>
+    <nd ref="2672395249"/>
+    <nd ref="262239989"/>
+    <tag k="bicycle" v="yes"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="Sunnyvale-Saratoga Road"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="turn:lanes" v="left|||"/>
+  </way>
+  <way id="415829901">
+    <nd ref="4167795994"/>
+    <nd ref="2672395252"/>
+    <nd ref="65430084"/>
+    <tag k="bicycle" v="yes"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="Sunnyvale-Saratoga Road"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="turn:lanes" v="left|||"/>
+  </way>
+  <way id="415829903">
+    <nd ref="65522458"/>
+    <nd ref="2640319867"/>
+    <nd ref="65426547"/>
+    <tag k="bicycle" v="yes"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="Sunnyvale-Saratoga Road"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="turn:lanes" v="left|left|||"/>
+  </way>
+  <way id="415829906">
+    <nd ref="517816592"/>
+    <nd ref="1999574368"/>
+    <nd ref="1999574388"/>
+    <nd ref="4167795993"/>
+    <tag k="bicycle" v="yes"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="40 mph"/>
+    <tag k="name" v="Sunnyvale-Saratoga Road"/>
+    <tag k="old_ref" v="SR 9"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="415833641">
+    <nd ref="4167830458"/>
+    <nd ref="4167830456"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes" v="left||"/>
+  </way>
+  <way id="415833644">
+    <nd ref="4167830455"/>
+    <nd ref="4167830454"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="415833647">
+    <nd ref="65553971"/>
+    <nd ref="4167830455"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:forward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes:backward" v="left||"/>
+  </way>
+  <way id="415833648">
+    <nd ref="517816592"/>
+    <nd ref="65426547"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="415833649">
+    <nd ref="4167830454"/>
+    <nd ref="65553975"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="5"/>
+    <tag k="lanes:backward" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes:forward" v="left||"/>
+  </way>
+  <way id="415833651">
+    <nd ref="4167830450"/>
+    <nd ref="1106363249"/>
+    <nd ref="65553975"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes" v="left||"/>
+  </way>
+  <way id="415833666">
+    <nd ref="4167830457"/>
+    <nd ref="65553970"/>
+    <nd ref="65553971"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="415833668">
+    <nd ref="65553975"/>
+    <nd ref="1106363287"/>
+    <nd ref="4167830458"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="East Homestead Road"/>
+    <tag k="name_1" v="Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_base_1" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="E"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:name_type_1" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="415833698">
+    <nd ref="4167830453"/>
+    <nd ref="1106363197"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left||"/>
+  </way>
+  <way id="415833700">
+    <nd ref="1106363228"/>
+    <nd ref="4167830452"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="merge_to_right||"/>
+  </way>
+  <way id="415833702">
+    <nd ref="4167830449"/>
+    <nd ref="3499642513"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left|||"/>
+  </way>
+  <way id="415833704">
+    <nd ref="1106363246"/>
+    <nd ref="1106363228"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="415833706">
+    <nd ref="65426547"/>
+    <nd ref="65453554"/>
+    <nd ref="4167830453"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="415833708">
+    <nd ref="4167830452"/>
+    <nd ref="1106363306"/>
+    <nd ref="4167704913"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="415833711">
+    <nd ref="3499642513"/>
+    <nd ref="2640319858"/>
+    <nd ref="1106363299"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="4"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left|||"/>
+  </way>
+  <way id="415833714">
+    <nd ref="4167830451"/>
+    <nd ref="1999574350"/>
+    <nd ref="1106363246"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="35 mph"/>
+    <tag k="name" v="West Homestead Road"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Homestead"/>
+    <tag k="tiger:name_direction_prefix" v="W"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left||"/>
+  </way>
+  <way id="415834825">
+    <nd ref="65430084"/>
+    <nd ref="2672395251"/>
+    <nd ref="4167834282"/>
+    <tag k="HFCS" v="Collector"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Alberta Avenue"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Alberta"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes:backward" v="left|"/>
+  </way>
+  <way id="415834829">
+    <nd ref="65430084"/>
+    <nd ref="262239989"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Harwick Way"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Harwick"/>
+    <tag k="tiger:name_type" v="Way"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+  </way>
+  <way id="415834835">
+    <nd ref="262239989"/>
+    <nd ref="2672395250"/>
+    <nd ref="4167834281"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="25 mph"/>
+    <tag k="name" v="Harwick Way"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="paved"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Harwick"/>
+    <tag k="tiger:name_type" v="Way"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes:backward" v="|right"/>
+  </way>
+  <way id="417002721">
+    <nd ref="65493393"/>
+    <nd ref="4176450694"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes:backward" v="left|"/>
+  </way>
+  <way id="417002742">
+    <nd ref="65513904"/>
+    <nd ref="65493393"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="417002769">
+    <nd ref="4176450695"/>
+    <nd ref="65427256"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes:forward" v="left|"/>
+  </way>
+  <way id="417002794">
+    <nd ref="65427256"/>
+    <nd ref="4176450696"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+    <tag k="turn:lanes:backward" v="left|"/>
+  </way>
+  <way id="417002814">
+    <nd ref="4176450694"/>
+    <nd ref="65513916"/>
+    <nd ref="4176450695"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="North Stelling Road"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Stelling"/>
+    <tag k="tiger:name_direction_prefix" v="N"/>
+    <tag k="tiger:name_type" v="Rd"/>
+    <tag k="tiger:zip_left" v="95014"/>
+    <tag k="tiger:zip_right" v="95014"/>
+  </way>
+  <way id="417911627">
+    <nd ref="4183825693"/>
+    <nd ref="4167710127"/>
+    <tag k="HFCS" v="Minor Arterial"/>
+    <tag k="cycleway" v="lane"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="lanes" v="3"/>
+    <tag k="maxspeed" v="30 mph"/>
+    <tag k="name" v="Hollenbeck Avenue"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="sign"/>
+    <tag k="surface" v="asphalt"/>
+    <tag k="tiger:cfcc" v="A41"/>
+    <tag k="tiger:county" v="Santa Clara, CA"/>
+    <tag k="tiger:name_base" v="Hollenbeck"/>
+    <tag k="tiger:name_type" v="Ave"/>
+    <tag k="tiger:zip_left" v="94087"/>
+    <tag k="tiger:zip_right" v="94087"/>
+    <tag k="turn:lanes" v="left||right"/>
+  </way>
+
+</osm>
