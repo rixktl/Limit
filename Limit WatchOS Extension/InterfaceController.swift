@@ -39,10 +39,7 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     
     /* Updated by app communication model */
     internal func updateSpeedInfo(speed: Double!, speedLimit: Double!, unit: Bool!, status: Int) {
-        // Update speed interface
-        //self.speedLabel.setText(  String( Int(round(speed)) )  )
-        //self.unitLabel.setText(unit! ? MPH_NAME : KPH_NAME)
-        // Update data to models
+        // Update data to model
         statusModel.newData(speed, speedLimit: speedLimit, unitString: unit! ? MPH_NAME : KPH_NAME)
     }
     
@@ -78,7 +75,6 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     }
     
     override func willDisappear() {
-        appModel.stop()
     }
 
 }

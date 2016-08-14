@@ -75,6 +75,11 @@ public class AppCommunicationModel: NSObject {
     
     /* Request to flip unit */
     public func flipUnit() {
+        // Ensure started before stopping
+        guard (self.didStart == true) else {
+            return
+        }
+        
         sendMessage([INFO_NAME:WatchMessageMode.FlipUnit.rawValue])
     }
     

@@ -54,7 +54,7 @@ public class StatusModel: NSObject {
     public func newData(speed: Double!, speedLimit: Double!, unitString: String!) {
         if(speed == 0.0 && status == Status.STARTED) {
             // Zero speed
-            viewModel?.optionalStopView()
+            viewModel?.optionalStopView(unitString)
             status = Status.OPTIONAL_STOP
         } else if(speed != 0.0 && status != Status.STARTED) {
             status = Status.STARTED
@@ -67,6 +67,10 @@ public class StatusModel: NSObject {
             viewModel?.normalView(speed, speedLimit: speedLimit, unit: unitString)
             alertModel?.enable()
             alertModel?.newData(speed, speedLimit: speedLimit)
+        }
+        
+        if(status == Status.OPTIONAL_STOP) {
+            viewModel?.optionalStopView(unitString)
         }
     }
     

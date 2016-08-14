@@ -36,6 +36,8 @@ public class ViewModel: NSObject {
             return
         }
         
+        print("Normal View")
+        
         speedLabel!.setText(  String( Int(round(speed)) )  )
         unitLabel!.setText(unit)
     }
@@ -54,9 +56,10 @@ public class ViewModel: NSObject {
         interfaceGroup?.setBackgroundImageNamed(STOPPED_IMAGE_NAME)
     }
     
-    public func optionalStopView() {
+    public func optionalStopView(unit: String!) {
         print("Optional Stop View")
         speedLabel?.setText(EMPTY)
+        unitLabel!.setText(unit)
         interfaceGroup?.setBackgroundImageNamed(OPTIONAL_STOP_IMAGE_NAME)
     }
 }
