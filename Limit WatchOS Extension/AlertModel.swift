@@ -13,6 +13,7 @@ import WatchKit
 
 public class AlertModel: NSObject {
     
+    private var isEnabled: Bool! = true
     private var lock: Bool! = false
     private let VIBRATION_OFFSET: Double! = 3.0
     private let VIBRATION_TYPE: WKHapticType = WKHapticType.Click
@@ -25,10 +26,18 @@ public class AlertModel: NSObject {
         }
     }
     
+    public func enable() {
+        self.isEnabled = true
+    }
+    
+    public func disable() {
+        self.isEnabled = false
+    }
+    
     /* Request to vibrate */
     private func vibrate() {
         // Ensure status ok
-        guard (self.lock != true) else {
+        guard (self.lock != true && self.isEnabled) else {
             return
         }
         

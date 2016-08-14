@@ -28,6 +28,7 @@ public class StatusModel: NSObject {
     private var appModel: AppCommunicationModel?
     private var viewModel: ViewModel?
     private var ringModel: RingModel?
+    private var alertModel: AlertModel?
     
     /* Set app model */
     public func setAppModel(inout appModel: AppCommunicationModel) {
@@ -44,20 +45,33 @@ public class StatusModel: NSObject {
         self.ringModel = ringModel
     }
     
+    /* Set alert model */
+    public func setAlertModel(inout alertModel: AlertModel) {
+        self.alertModel = alertModel
+    }
+    
     /* Pass new data for now status */
-    public func newData(speed: Double!, speedLimit: Double!) {
-        if(speed == 0 && status == Status.STARTED) {
+    public func newData(speed: Double!, speedLimit: Double!, unitString: String!) {
+        if(speed == 0.0 && status == Status.STARTED) {
             // Zero speed
             viewModel?.optionalStopView()
             status = Status.OPTIONAL_STOP
-        } else if(speed != 0 && status != Status.STARTED) {
+        } else if(speed != 0.0 && status != Status.STARTED) {
             status = Status.STARTED
+            ringModel?.initialRing()
         }
         
         // Activate ring only if status is started
         if(status == Status.STARTED) {
             ringModel?.newData(speed, speedLimit: speedLimit)
+            viewModel?.normalView(speed, speedLimit: speedLimit, unit: unitString)
+            alertModel?.enable()
+            alertModel?.newData(speed, speedLimit: speedLimit)
         }
+    }
+    
+    public func initialStart() {
+        update()
     }
     
     /* Change model status according to status
@@ -67,6 +81,14 @@ public class StatusModel: NSObject {
      */
     public func update() {
         switch status {
+            
+            case Status.UNDEFINED:
+                // Initial state
+                viewModel?.stoppedView()
+                alertModel?.disable()
+                status = Status.STOPPED
+                break
+            
             case Status.STARTED:
                 // Tapped when it is started, should do nothing
                 break
@@ -75,6 +97,7 @@ public class StatusModel: NSObject {
                 // Tapped when it is stopped, should now start
                 appModel?.start()
                 viewModel?.startedView()
+                ringModel?.initialRing()
                 status = Status.STARTED
                 break
             
@@ -82,10 +105,8 @@ public class StatusModel: NSObject {
                 // Tapped when it is optional stop, should now stop
                 appModel?.stop()
                 viewModel?.stoppedView()
+                alertModel?.disable()
                 status = Status.STOPPED
-                break
-            
-            default:
                 break
         }
     }

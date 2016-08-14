@@ -32,10 +32,15 @@ public class RingModel: NSObject {
         newData(Double(rand()%100+1), speedLimit: Double(rand()%150+1))
     }
     
+    public func initialRing() {
+        self.interfaceGroup?.setBackgroundImageNamed(IMAGE_NAME)
+        self.frame = 0
+    }
+    
     /* Move ring according to new data */
     public func newData(speed: Double!, speedLimit: Double!) {
         // Ensure interface group exist
-        guard(self.interfaceGroup != nil) else {
+        guard(self.interfaceGroup != nil && speedLimit != -1.0) else {
             return
         }
         

@@ -31,6 +31,15 @@ public class ViewModel: NSObject {
         unitLabel = uLabel
     }
     
+    public func normalView(speed: Double!, speedLimit: Double?, unit: String!) {
+        guard (speedLabel != nil && unitLabel != nil) else {
+            return
+        }
+        
+        speedLabel!.setText(  String( Int(round(speed)) )  )
+        unitLabel!.setText(unit)
+    }
+    
     public func startedView() {
         print("Started View")
         speedLabel?.setText(DEFAULT_SPEED)

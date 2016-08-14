@@ -19,8 +19,8 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     private let MPH_NAME: String! = "M P H"
     private let KPH_NAME: String! = "K P H"
     private let statusModel: StatusModel = StatusModel()
-    private let alertModel: AlertModel = AlertModel()
     
+    private var alertModel: AlertModel = AlertModel()
     private var appModel: AppCommunicationModel = AppCommunicationModel()
     private var ringModel: RingModel = RingModel()
     private var viewModel: ViewModel?
@@ -40,11 +40,10 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     /* Updated by app communication model */
     internal func updateSpeedInfo(speed: Double!, speedLimit: Double!, unit: Bool!, status: Int) {
         // Update speed interface
-        self.speedLabel.setText(  String( Int(round(speed)) )  )
-        self.unitLabel.setText(unit! ? MPH_NAME : KPH_NAME)
+        //self.speedLabel.setText(  String( Int(round(speed)) )  )
+        //self.unitLabel.setText(unit! ? MPH_NAME : KPH_NAME)
         // Update data to models
-        statusModel.newData(speed, speedLimit: speedLimit)
-        alertModel.newData(speed, speedLimit: speedLimit)
+        statusModel.newData(speed, speedLimit: speedLimit, unitString: unit! ? MPH_NAME : KPH_NAME)
     }
     
     override func awakeWithContext(context: AnyObject?) {
@@ -62,11 +61,10 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
         // Setup status model
         statusModel.setAppModel( &(appModel) )
         statusModel.setRingModel(&(ringModel))
+        statusModel.setAlertModel(&(alertModel))
         statusModel.setViewModel(&(viewModel!))
         
-        // Start app model
-        appModel.start()
-        
+        statusModel.initialStart()
     }
 
     override func willActivate() {
