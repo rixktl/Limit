@@ -44,15 +44,20 @@ Implement control for Start/Stop
 
 Vibration alert
 
-# To Do (WatchOS3)
-
+###
 Views & Controllers(Notification, Start(Stopped), Optional-Stop(Started))
 
 * Problem with showing view
-* Possible solution: fallback to programmically change view
+* Possible solution 1: fallback to programmically change view
 * Possible solution 2: empty text for title and ignore tapping issue
+-> Chosen solution 1
 
 Find the guide written by Edward for views(start/stop)
+###
+
+# To Do (WatchOS3)
+
+None!
 
 # Need To Work On (Potentially optional)
 
