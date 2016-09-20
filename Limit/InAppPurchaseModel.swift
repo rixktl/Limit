@@ -14,10 +14,10 @@ import StoreKit
  */
 
 internal protocol InAppPurchaseModelDelegate {
-    func updatePurchaseInfo(productIdentifier: String, code: Int)
+    func updatePurchaseInfo(_ productIdentifier: String, code: Int)
 }
 
-public class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+open class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     internal let TRANSACTION_DEFERRED: Int = 1
     internal let TRANSACTION_PURCHASING: Int = 2
@@ -29,33 +29,33 @@ public class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentT
     internal let TRANSACTION_ERROR_NOT_ALLOWED: Int = 7
     
     // Harcoded products (product request will tell whether they are available or not)
-    private let defaultProductIdentifiers: [String] = ["California", "Oregon", "Washington"]
-    private var productDict: [String:SKProduct] = [String:SKProduct]()
+    fileprivate let defaultProductIdentifiers: [String] = ["California", "Oregon", "Washington"]
+    fileprivate var productDict: [String:SKProduct] = [String:SKProduct]()
     internal var delegate: InAppPurchaseModelDelegate!
     
     override init() {
         super.init()
-        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+        SKPaymentQueue.default().add(self)
     }
     
     deinit {
         // Prevent from crash when deinit
-        SKPaymentQueue.defaultQueue().removeTransactionObserver(self)
+        SKPaymentQueue.default().remove(self)
     }
     
     /* Convert product identifier to localized name */
-    public func convertProductIdentifierToName(productIdentifier: String) -> String? {
+    open func convertProductIdentifierToName(_ productIdentifier: String) -> String? {
         return productDict[productIdentifier]?.localizedTitle
     }
     
     /* Return all valid product identifiers */
-    public func getProductIdentifiers() -> [String] {
+    open func getProductIdentifiers() -> [String] {
         // Return sorted string (casting keys to array is possible: [String](x.keys) )
-        return productDict.keys.sort()
+        return productDict.keys.sorted()
     }
     
     /* Request to purchase a product with product identifier */
-    public func purchase(productIdentifier: String) -> Bool {
+    open func purchase(_ productIdentifier: String) -> Bool {
         // Ensure product exist
         guard (productDict[productIdentifier] != nil) else {
             return false
@@ -64,29 +64,29 @@ public class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentT
         // Set up payment
         let payment: SKPayment = SKPayment.init(product: productDict[productIdentifier]!)
         // Add payment
-        SKPaymentQueue.defaultQueue().addPayment(payment)
+        SKPaymentQueue.default().add(payment)
         return true
     }
     
     /* Request a restore */
-    public func restore() {
-        SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
+    open func restore() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
     /* Called when restore is completed */
-    public func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue) {
+    open func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         
     }
     
     /* Check if product is available */
-    public func checkProductAvailability() {
+    open func checkProductAvailability() {
         let productsRequest: SKProductsRequest = SKProductsRequest(productIdentifiers: Set<String>(defaultProductIdentifiers))
         productsRequest.delegate = self
         productsRequest.start()
     }
     
     /* Called when product request is responsed */
-    public func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
+    open func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         let products: [SKProduct] = response.products
         for product in products {
             // Update dictionary of product
@@ -95,7 +95,7 @@ public class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentT
     }
     
     /* Called when transcation status changes */
-    public func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    open func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         
         // Loop for transcations
         for transaction in transactions {
@@ -106,48 +106,48 @@ public class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentT
             switch (transaction.transactionState) {
                 
                 // Delay
-                case SKPaymentTransactionState.Deferred:
+                case SKPaymentTransactionState.deferred:
                     print("Deferred")
                     self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_DEFERRED)
                 
                 // Purchasing
-                case SKPaymentTransactionState.Purchasing:
+                case SKPaymentTransactionState.purchasing:
                     print("Purchasing")
                     self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_PURCHASING)
                     
                 // Purchased
-                case SKPaymentTransactionState.Purchased:
+                case SKPaymentTransactionState.purchased:
                     // Finish transaction
-                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    SKPaymentQueue.default().finishTransaction(transaction)
                     print("Purchased")
                     self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_PURCHASED)
                     // Then save to local record
                 
                 // Restored
-                case SKPaymentTransactionState.Restored:
+                case SKPaymentTransactionState.restored:
                     // Finish transaction
-                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    SKPaymentQueue.default().finishTransaction(transaction)
                     print("Restored")
                     self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_RESTORED)
                     // Then save to local record
                 
                 // Failed
-                case SKPaymentTransactionState.Failed:
+                case SKPaymentTransactionState.failed:
                     // Finish transaction
-                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    SKPaymentQueue.default().finishTransaction(transaction)
                     
                     // TODO: error handling
-                    switch transaction.error!.code {
+                    switch transaction.error! {
                         // Cancelled
-                        case SKErrorCode.PaymentCancelled.rawValue:
+                        case SKError.paymentCancelled:
                             self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_ERROR_CANCELLED)
                         
                         // Invalid
-                        case SKErrorCode.PaymentInvalid.rawValue:
+                        case SKError.paymentInvalid:
                             self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_ERROR_INVALID)
                         
                         // Not allowed
-                        case SKErrorCode.PaymentNotAllowed.rawValue:
+                        case SKError.paymentNotAllowed:
                             self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_ERROR_NOT_ALLOWED)
                         
                         default:

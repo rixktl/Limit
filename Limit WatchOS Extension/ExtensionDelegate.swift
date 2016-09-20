@@ -10,14 +10,20 @@ import WatchKit
 import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
+    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+    @available(watchOS 2.2, *)
+    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
         
         // Start WCSession for iPhone if possible
         if(WCSession.isSupported()) {
-            WCSession.defaultSession().delegate = self
-            WCSession.defaultSession().activateSession()
+            WCSession.default().delegate = self
+            WCSession.default().activate()
         }
     }
 
@@ -31,8 +37,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     }
     
     /* Receive message from iPhone */
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
-        NSNotificationCenter.defaultCenter().postNotificationName("DID_RECEIVE_MESSAGE", object: self, userInfo: message)
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "DID_RECEIVE_MESSAGE"), object: self, userInfo: message)
     }
 
 }

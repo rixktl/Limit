@@ -14,10 +14,10 @@ import Foundation
  */
 
 internal protocol OpenStreetMapParserDelegate {
-    func updateData(data: OpenStreetMapData!)
+    func updateData(_ data: OpenStreetMapData!)
 }
 
-public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
+open class OpenStreetMapParser: NSObject, XMLParserDelegate {
     
     /* 
      * Target XML is constructed based on tags, nodes and ways.
@@ -29,30 +29,30 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     internal var offsetLongitude: Double!
     internal var coord: Coordinates?
     
-    private let PRE_URL: String! = "https://www.overpass-api.de/api/xapi?way[maxspeed=*][bbox="
-    private let POST_URL: String! = "]"
-    private let COORDINATES_SEPARATION: String! = ","
-    private let LOCK_TIME: Double! = 2.5
+    fileprivate let PRE_URL: String = "https://www.overpass-api.de/api/xapi?way[maxspeed=*][bbox="
+    fileprivate let POST_URL: String = "]"
+    fileprivate let COORDINATES_SEPARATION: String = ","
+    fileprivate let LOCK_TIME: Double! = 2.5
     
-    private let OSM_IDENTIFIER: String! = "osm"
-    private let TAG_IDENTIFIER: String! = "tag"
-    private let NODE_IDENTIFIER: String! = "node"
-    private let WAY_IDENTIFIER: String! = "way"
-    private let SUB_NODE_IDENTIFIER: String! = "nd"
-    private let KEY_IDENTIFIER: String! = "k"
-    private let VALUE_IDENTIFIER: String! = "v"
-    private let REFERENCE_IDENTIFIER: String! = "ref"
-    private let ID_IDENTIFIER: String! = "id"
-    private let LATITUDE_IDENTIFIER: String! = "lat"
-    private let LONGITUDE_IDENTIFIER: String! = "lon"
+    fileprivate let OSM_IDENTIFIER: String = "osm"
+    fileprivate let TAG_IDENTIFIER: String = "tag"
+    fileprivate let NODE_IDENTIFIER: String = "node"
+    fileprivate let WAY_IDENTIFIER: String = "way"
+    fileprivate let SUB_NODE_IDENTIFIER: String = "nd"
+    fileprivate let KEY_IDENTIFIER: String = "k"
+    fileprivate let VALUE_IDENTIFIER: String = "v"
+    fileprivate let REFERENCE_IDENTIFIER: String = "ref"
+    fileprivate let ID_IDENTIFIER: String = "id"
+    fileprivate let LATITUDE_IDENTIFIER: String = "lat"
+    fileprivate let LONGITUDE_IDENTIFIER: String = "lon"
     
-    private var wayIndex: Int
-    private var nodeIndex: String!
-    private var tmpNode: [String: Node]!
-    private var result: OpenStreetMapData!
-    private var isNode: Bool!
-    private var parser: NSXMLParser!
-    private var lock: Bool! = false
+    fileprivate var wayIndex: Int
+    fileprivate var nodeIndex: String!
+    fileprivate var tmpNode: [String: Node]!
+    fileprivate var result: OpenStreetMapData!
+    fileprivate var isNode: Bool!
+    fileprivate var parser: XMLParser!
+    fileprivate var lock: Bool! = false
     
     override public init() {
         wayIndex = 0
@@ -60,7 +60,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
         tmpNode = [:]
         result = OpenStreetMapData()
         isNode = true
-        parser = NSXMLParser()
+        parser = XMLParser()
         // Default values
         offsetLatitude = 0.01
         offsetLongitude = 0.01
@@ -69,37 +69,38 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Form an url according to coordinates */
-    private func formUrl(minLat: Double!, _ maxLat: Double!, _ minLon: Double!, _ maxLon: Double!) -> String! {
-        return String(minLon) + COORDINATES_SEPARATION + String(minLat) + COORDINATES_SEPARATION + String(maxLon) + COORDINATES_SEPARATION + String(maxLat)
+    fileprivate func formUrl(_ minLat: Double!, _ maxLat: Double!, _ minLon: Double!, _ maxLon: Double!) -> String! {
+        return String(minLon) + COORDINATES_SEPARATION as String + String(minLat) + COORDINATES_SEPARATION as String + String(maxLon) + COORDINATES_SEPARATION as String + String(maxLat)
     }
     
     /* Send an async request */
-    private func asyncRequest(urlPath: String!) {
-        let url = NSURL(string: urlPath)!
-        let session = NSURLSession.sharedSession()
+    fileprivate func asyncRequest(_ urlPath: String!) {
+        let url = URL(string: urlPath)!
+        let session = URLSession.shared
         
-        let task = session.dataTaskWithURL(url) { data, response, error in
-            self.startParser(data, response: response, error: error)
-        }
+        let task = session.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
+            self.startParser(data, response: response, error: error as NSError?)
+            return ()
+        }) 
         
         task.resume()
     }
     
     /* Start XML parsing */
-    private func startParser(data: NSData?, response: NSURLResponse?, error: NSError?) {
+    fileprivate func startParser(_ data: Data?, response: URLResponse?, error: NSError?) {
         guard (data != nil) else {
             // TODO: error handling
             print("error:")
-            print(String(error))
+            print(String(describing: error))
             return
         }
-        parser = NSXMLParser(data: data!)
+        parser = XMLParser(data: data!)
         parser.delegate = self
         parser.parse()
     }
     
     /* Request for new data corresponding to coordinates */
-    internal func request(coord: Coordinates!) {
+    internal func request(_ coord: Coordinates!) {
         // Ensure unlocked
         guard (lock == false) else {
             return
@@ -109,7 +110,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
         lock = true
         
         // Delay unlock
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(LOCK_TIME * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(LOCK_TIME * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: ({
             self.lock = false
         }))
         
@@ -123,12 +124,12 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
         let maxLon: Double! = coord.longitude + offsetLongitude
         
         // Create url
-        let url: String! = PRE_URL + formUrl(minLat, maxLat, minLon, maxLon) + POST_URL
+        let url: String! = PRE_URL as String + formUrl(minLat, maxLat, minLon, maxLon) + POST_URL as String
         asyncRequest(url)
     }
     
     /* Called when parsing new element */
-    public func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    open func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         
         switch elementName {
             case TAG_IDENTIFIER:
@@ -184,7 +185,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Called when parsing element ends */
-    public func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    open func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         // Update result when reaching end of file
         if(elementName == OSM_IDENTIFIER) {
             delegate!.updateData(result!)
@@ -192,7 +193,7 @@ public class OpenStreetMapParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Called when error occurs in parser */
-    public func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError) {
+    open func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         // TODO: error handling
     }
 }

@@ -7,6 +7,26 @@
 //
 
 import Foundation
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 /*
  * A finder to search for speed limit from data.
@@ -14,10 +34,10 @@ import Foundation
  */
 
 internal protocol OpenStreetMapFinderDelegate {
-    func updateSpeedLimit(speedLimit: Double?)
+    func updateSpeedLimit(_ speedLimit: Double?)
 }
 
-public class OpenStreetMapFinder {
+open class OpenStreetMapFinder {
     internal var delegate: OpenStreetMapFinderDelegate!
     internal var offsetDegree: Double! = 15.0
     
@@ -25,27 +45,27 @@ public class OpenStreetMapFinder {
     internal var reverseGeoData: OpenStreetMapReverseGeoData?
     internal var locationData: LocationData?
     
-    private let MAXSPEED_TAG_IDENTIFIER: String! = "maxspeed"
-    private let HIGHWAY_TAG_IDENTIFIER: String! = "highway"
-    private let REFERENCE_TAG_IDENTIFIER: String! = "ref"
-    private let NAME_TAG_IDENTIFIER: String! = "name"
+    fileprivate let MAXSPEED_TAG_IDENTIFIER: String = "maxspeed"
+    fileprivate let HIGHWAY_TAG_IDENTIFIER: String = "highway"
+    fileprivate let REFERENCE_TAG_IDENTIFIER: String = "ref"
+    fileprivate let NAME_TAG_IDENTIFIER: String = "name"
     
-    private let RESIDENTIAL_VALUE_IDENTIFIER: String! = "residential"
-    private let SERVICE_VALUE_IDENTIFIER: String! = "service"
-    private let SECONDARY_VALUE_IDENTIFIER: String! = "secondary"
-    private let TERTIARY_VALUE_IDENTIFIER: String! = "tertiary"
-    private let PRIMARY_VALUE_IDENTIFIER: String! = "primary"
-    private let FREEWAY_VALUE_IDENTIFIER: String! = "freeway"
-    private let MOTORWAY_VALUE_IDENTIFIER: String! = "motorway"
-    private let TRUNK_VALUE_IDENTIFIER: String! = "trunk"
+    fileprivate let RESIDENTIAL_VALUE_IDENTIFIER: String = "residential"
+    fileprivate let SERVICE_VALUE_IDENTIFIER: String = "service"
+    fileprivate let SECONDARY_VALUE_IDENTIFIER: String = "secondary"
+    fileprivate let TERTIARY_VALUE_IDENTIFIER: String = "tertiary"
+    fileprivate let PRIMARY_VALUE_IDENTIFIER: String = "primary"
+    fileprivate let FREEWAY_VALUE_IDENTIFIER: String = "freeway"
+    fileprivate let MOTORWAY_VALUE_IDENTIFIER: String = "motorway"
+    fileprivate let TRUNK_VALUE_IDENTIFIER: String = "trunk"
     
     /* Async search for limit */
     internal func asyncSearch() {
         
         
-        let queue: NSOperationQueue = NSOperationQueue()
+        let queue: OperationQueue = OperationQueue()
         
-        queue.addOperationWithBlock { () -> Void in
+        queue.addOperation { () -> Void in
             var limit: Double?
             
             if(self.reverseGeoData != nil) {
@@ -79,7 +99,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Search limit by Id */
-    private func searchWithName(name: String?) -> Double? {
+    fileprivate func searchWithName(_ name: String?) -> Double? {
         // Ensure data exist
         guard (data != nil && data!.ways != nil && name != nil) else {
             return nil
@@ -99,7 +119,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Search limit by Id */
-    private func searchWithId(id: String?) -> Double? {
+    fileprivate func searchWithId(_ id: String?) -> Double? {
         // Ensure data exist
         guard (data != nil && data!.ways != nil && id != nil) else {
             return nil
@@ -118,7 +138,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Search limit by coordinates */
-    private func searchWithCoordinates(coord: Coordinates?, direction: Double?, thoroughfare: String?) -> Double? {
+    fileprivate func searchWithCoordinates(_ coord: Coordinates?, direction: Double?, thoroughfare: String?) -> Double? {
         // Ensure data exist
         guard (data != nil && data!.ways != nil && coord != nil && direction != nil) else {
             // Failed to find speed limit
@@ -196,7 +216,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Convert type to speed limit */
-    private func typeToLimit(type: String?) -> Double? {
+    fileprivate func typeToLimit(_ type: String?) -> Double? {
         // Ensure type exist
         guard (type != nil) else {
             return nil
@@ -215,7 +235,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Get limit from node's tag type */
-    private func getLimitFromNodeTagType(n: Node) -> Double? {
+    fileprivate func getLimitFromNodeTagType(_ n: Node) -> Double? {
         // Ensure tag exist
         guard (n.subTag != nil) else {
             return nil
@@ -231,7 +251,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Get limit from way's tag type */
-    private func getLimitFromWayTagType(w: Way) -> Double? {
+    fileprivate func getLimitFromWayTagType(_ w: Way) -> Double? {
         // Ensure tag exist
         guard (w.subTag != nil) else {
             return nil
@@ -247,7 +267,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Extract maxspeed from tag in node */
-    private func extractLimitFromNodeTag(n: Node) -> Double? {
+    fileprivate func extractLimitFromNodeTag(_ n: Node) -> Double? {
         // Ensure tag exist
         guard (n.subTag != nil) else {
             return nil
@@ -264,7 +284,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Extract name from tag in way */
-    private func extractNameFromWayTag(w: Way) -> String? {
+    fileprivate func extractNameFromWayTag(_ w: Way) -> String? {
         // Ensure tag exist
         guard (w.subTag != nil) else {
             return nil
@@ -281,7 +301,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Extract maxspeed from tag in way */
-    private func extractLimitFromWayTag(w: Way) -> Double? {
+    fileprivate func extractLimitFromWayTag(_ w: Way) -> Double? {
         // Ensure tag exist
         guard (w.subTag != nil) else {
             return nil
@@ -298,7 +318,7 @@ public class OpenStreetMapFinder {
     }
     
     /* Extract limit from way's tag with thoroughfare(ref) */
-    private func extractLimitFromWayTagWithThoroughfare(w: Way, thoroughfare: String!) -> Double? {
+    fileprivate func extractLimitFromWayTagWithThoroughfare(_ w: Way, thoroughfare: String!) -> Double? {
         // Ensure tag exist
         guard (w.subTag != nil) else {
             return nil
@@ -327,7 +347,7 @@ public class OpenStreetMapFinder {
     
     /* Search nearest way cooresponding to given coordinates */
     /* Return: wayIndex, nodeIndex, isNext, wayDistance*/
-    private func searchNearestWay(coord: Coordinates!, direction: Double!) -> [Int] {
+    fileprivate func searchNearestWay(_ coord: Coordinates!, direction: Double!) -> [Int] {
         var nearestWayIndex: Int = 0
         var wayDistance: Double! = 10000.0
         var finalNearestNodeIndex: Int = 0
@@ -408,13 +428,13 @@ public class OpenStreetMapFinder {
     }
     
     /* Check directional distance(degree) of given line segment and direction */
-    private func checkDirection(l: Line!, direction: Double!) -> Bool! {
+    fileprivate func checkDirection(_ l: Line!, direction: Double!) -> Bool! {
         let dir: Double! = getDirection(l)
         return (fabs(dir - direction) <= offsetDegree)
     }
     
     /* Get direction of given line segment */
-    private func getDirection(l: Line!) -> Double! {
+    fileprivate func getDirection(_ l: Line!) -> Double! {
         let dlon: Double! = l.coord2.longitude - l.coord1.longitude
         let y: Double! = sin(dlon) * cos(l.coord2.latitude)
         let x: Double! = cos(l.coord1.latitude) * sin(l.coord2.latitude) - sin(l.coord1.latitude) * cos(l.coord2.latitude) * cos(dlon)
@@ -425,12 +445,12 @@ public class OpenStreetMapFinder {
     }
     
     /* Calculate distance between two points */
-    private func distanceTwoPoints(coord1: Coordinates!, coord2: Coordinates!) -> Double! {
+    fileprivate func distanceTwoPoints(_ coord1: Coordinates!, coord2: Coordinates!) -> Double! {
         return sqrt(pow(coord1.latitude - coord2.latitude, 2) + pow(coord1.longitude - coord2.longitude, 2))
     }
     
     /* Calculate distance between line segment and point */
-    private func distanceLineSegmentPoint(l: Line, coord: Coordinates) -> Double! {
+    fileprivate func distanceLineSegmentPoint(_ l: Line, coord: Coordinates) -> Double! {
         // (x,y) -> (lat,lon)
         let x1: Double! = l.coord1.latitude
         let x2: Double! = l.coord2.latitude

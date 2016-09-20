@@ -8,6 +8,26 @@
 
 import Foundation
 import CoreLocation
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 
 /*
  * A model for handling location information update.
@@ -15,18 +35,18 @@ import CoreLocation
  */
 
 internal protocol LocationManagerDelegate {
-    func locationUpdate(data: LocationData)
+    func locationUpdate(_ data: LocationData)
 }
 
-public class LocationModel: NSObject, CLLocationManagerDelegate {
+open class LocationModel: NSObject, CLLocationManagerDelegate {
     
     internal var delegate: LocationManagerDelegate!
-    private var address: String?
-    private var thoroughfare: String?
-    private var locationManager: CLLocationManager?
+    fileprivate var address: String?
+    fileprivate var thoroughfare: String?
+    fileprivate var locationManager: CLLocationManager?
     // Location update details
-    private let GPS_DISTANCE_FILTER = kCLDistanceFilterNone
-    private let GPS_ACCURACY = kCLLocationAccuracyBestForNavigation
+    fileprivate let GPS_DISTANCE_FILTER = kCLDistanceFilterNone
+    fileprivate let GPS_ACCURACY = kCLLocationAccuracyBestForNavigation
     
     /* Manager raw velocity */
     struct velocity {
@@ -42,7 +62,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
         }
         
         /* Return a absolute value */
-        func getRealValue(speed: Double?) -> Double? {
+        func getRealValue(_ speed: Double?) -> Double? {
             // Check for nil
             guard (speed != nil) else {
                 return nil
@@ -86,7 +106,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
     }
     
     /* Convert location to state */
-    private func locationToState() {
+    fileprivate func locationToState() {
         
         // Return if nil
         guard (locationManager?.location != nil) else {
@@ -119,7 +139,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
     }
     
     /* Start updating location */
-    public func start() {
+    open func start() {
         // Request authorization if needed
         locationManager!.requestAlwaysAuthorization()
         // Start receiving location update
@@ -128,12 +148,12 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
     }
     
     /* Stop updating location */
-    public func stop() {
+    open func stop() {
         locationManager?.stopUpdatingLocation()
     }
     
     /* Receives update */
-    public func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    open func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Check if location details exist
         guard (locations.count > 0) else {
             return
@@ -158,7 +178,7 @@ public class LocationModel: NSObject, CLLocationManagerDelegate {
     }
     
     /*  Receives error */
-    public func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    open func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         // TODO: Error handling
     }
     

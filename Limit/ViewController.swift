@@ -16,17 +16,17 @@ class ViewController: UIViewController, SpeedModelDelegate {
     @IBOutlet weak var settingButton: UIButton!
     
     internal let speedModel: SpeedModel = SpeedModel()
-    private var loadingModel: LoadingModel? = nil
-    private let audioModel: AudioModel = AudioModel()
-    private let LOAD_VIEW_ID: String! = "LoadingView"
-    private let MPH_NAME: String! = "M P H"
-    private let KPH_NAME: String! = "K P H"
-    private let GREEN_COLOR = UIColor.init(red: 0.0/255.0, green: 180.0/255.0, blue: 81.0/255.0, alpha: 1)
-    private let RED_COLOR = UIColor.init(red: 222.0/255.0, green: 78.0/255.0, blue: 90.0/255.0, alpha: 1)
-    private let BLACK_COLOR = UIColor.blackColor()
+    fileprivate var loadingModel: LoadingModel? = nil
+    fileprivate let audioModel: AudioModel = AudioModel()
+    fileprivate let LOAD_VIEW_ID: String = "LoadingView"
+    fileprivate let MPH_NAME: String = "M P H"
+    fileprivate let KPH_NAME: String = "K P H"
+    fileprivate let GREEN_COLOR = UIColor.init(red: 0.0/255.0, green: 180.0/255.0, blue: 81.0/255.0, alpha: 1)
+    fileprivate let RED_COLOR = UIColor.init(red: 222.0/255.0, green: 78.0/255.0, blue: 90.0/255.0, alpha: 1)
+    fileprivate let BLACK_COLOR = UIColor.black
     
-    private var supposedColor: UIColor?
-    private var speed: Double?
+    fileprivate var supposedColor: UIColor?
+    fileprivate var speed: Double?
     
     /* Initialize */
     convenience init() {
@@ -37,24 +37,24 @@ class ViewController: UIViewController, SpeedModelDelegate {
     
     /* Deinitialize*/
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "DID_RECEIVE_MESSAGE", object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "DID_RECEIVE_MESSAGE"), object: nil)
     }
     
     // Handle rotation
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
-        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             
             // Get orientation
-            let orientation = UIApplication.sharedApplication().statusBarOrientation
+            let orientation = UIApplication.shared.statusBarOrientation
             
             switch orientation {
                 // Landscape
-                case .LandscapeLeft, .LandscapeRight:
-                    self.settingButton.hidden = true
+                case .landscapeLeft, .landscapeRight:
+                    self.settingButton.isHidden = true
                 default:
                     // Non-Landscape
-                    self.settingButton.hidden = false
+                    self.settingButton.isHidden = false
             }
             
             
@@ -63,90 +63,90 @@ class ViewController: UIViewController, SpeedModelDelegate {
         })
         
         // Transition for view
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        super.viewWillTransition(to: size, with: coordinator)
     }
     
     // Light status bar content
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     /* Setting button clicked */
-    @IBAction func settingButtonClicked(sender: AnyObject) {
+    @IBAction func settingButtonClicked(_ sender: AnyObject) {
         speedModel.stop()
         loadingModel!.stop()
     }
     
     /* Unit button clicked */
-    @IBAction func unitButtonClicked(sender: AnyObject) {
+    @IBAction func unitButtonClicked(_ sender: AnyObject) {
         speedModel.flipUnit()
     }
     
     /* Updated by speedModel */
-    func updateSpeedInfo(speed: Double!, speedLimit: Double?, unit: Bool!, status: Status) {
+    func updateSpeedInfo(_ speed: Double!, speedLimit: Double?, unit: Bool!, status: Status) {
         
         // Disabling loading view for a while
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             self.loadingModel?.removeView()
             self.loadingModel?.keepAlive()
         }
         
         // Update speed label with rounded number
         self.speed = speed
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             self.speedLabel.text = String(Int(round(self.speed!)))
         }
         
         // Update unit label
         if(unit!) {
-            dispatch_async(dispatch_get_main_queue()) {
-                self.unitButton.setTitle(self.MPH_NAME, forState: UIControlState.Normal)
+            DispatchQueue.main.async {
+                self.unitButton.setTitle(self.MPH_NAME, for: UIControlState())
             }
         } else {
-            dispatch_async(dispatch_get_main_queue()) {
-                self.unitButton.setTitle(self.KPH_NAME, forState: UIControlState.Normal)
+            DispatchQueue.main.async {
+                self.unitButton.setTitle(self.KPH_NAME, for: UIControlState())
             }
         }
         
         // Update background according to status code
         switch status {
-            case Status.Alert:
+            case Status.alert:
                 audioModel.play()
                 supposedColor = RED_COLOR
-            case Status.Normal:
+            case Status.normal:
                 supposedColor = GREEN_COLOR
-            case Status.Rest:
+            case Status.rest:
                 supposedColor = BLACK_COLOR
         }
         
         // Update background only if needed
         if(self.view.backgroundColor != supposedColor) {
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.view.backgroundColor = self.supposedColor
             }
         }
     }
     
     /* Receive message from Apple Watch */
-    func watchModel(notification: NSNotification) {
+    func watchModel(_ notification: Notification) {
         // Check if it is pre-message
-        if(notification.userInfo!["INFO"] != nil && notification.userInfo!["INFO"] as! String == "NONE") {
+        if((notification as NSNotification).userInfo!["INFO"] != nil && (notification as NSNotification).userInfo!["INFO"] as! String == "NONE") {
             // Shut down unnessary job
             speedModel.stop()
             loadingModel!.stop()
             // Reply Apple Watch
-            WCSession.defaultSession().sendMessage(["INFO":"CONFIRMED"], replyHandler: nil, errorHandler: nil)
+            WCSession.default().sendMessage(["INFO":"CONFIRMED"], replyHandler: nil, errorHandler: nil)
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Listen to message from Apple Watch
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(watchModel), name: "DID_RECEIVE_MESSAGE", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(watchModel), name: NSNotification.Name(rawValue: "DID_RECEIVE_MESSAGE"), object: nil)
         
         // Get views
-        let loadingViewController: UIViewController = (self.storyboard?.instantiateViewControllerWithIdentifier(LOAD_VIEW_ID))!
+        let loadingViewController: UIViewController = (self.storyboard?.instantiateViewController(withIdentifier: LOAD_VIEW_ID))!
         let masterView: UIView = self.view
         // Set up loading model
         self.loadingModel = LoadingModel(loadingViewController: loadingViewController, masterView: masterView)

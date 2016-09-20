@@ -13,32 +13,32 @@ import WatchKit
  * A model that control ring movement
  */
 
-public class RingModel: NSObject {
-    private let RING_FPS: Double! = 60.0
-    private let IMAGE_NAME: String! = "single"
+open class RingModel: NSObject {
+    fileprivate let RING_FPS: Double! = 60.0
+    fileprivate let IMAGE_NAME: String = "single"
     
-    private var isMoving: Bool! = false
-    private var frame: Int = 0
-    private var interfaceGroup: WKInterfaceGroup?
+    fileprivate var isMoving: Bool! = false
+    fileprivate var frame: Int = 0
+    fileprivate var interfaceGroup: WKInterfaceGroup?
     
     /* Set interface group */
-    public func setInterfaceGroup(inout interfaceGroup: WKInterfaceGroup) {
+    open func setInterfaceGroup(_ interfaceGroup: inout WKInterfaceGroup) {
         self.interfaceGroup = interfaceGroup
         self.interfaceGroup?.setBackgroundImageNamed(IMAGE_NAME)
     }
     
     /* Random ring movement */
-    public func randomData() {
-        newData(Double(rand()%100+1), speedLimit: Double(rand()%150+1))
+    open func randomData() {
+        newData(Double(arc4random()%100+1), speedLimit: Double(arc4random()%150+1))
     }
     
-    public func initialRing() {
+    open func initialRing() {
         self.interfaceGroup?.setBackgroundImageNamed(IMAGE_NAME)
         self.frame = 0
     }
     
     /* Move ring according to new data */
-    public func newData(speed: Double!, speedLimit: Double!) {
+    open func newData(_ speed: Double!, speedLimit: Double!) {
         // Ensure interface group exist
         guard(self.interfaceGroup != nil && speedLimit != -1.0) else {
             return
@@ -58,7 +58,7 @@ public class RingModel: NSObject {
     }
     
     /* Move to destination frame */
-    private func moveFrame(destFrame: Int) {
+    fileprivate func moveFrame(_ destFrame: Int) {
         // Ensure needed to move
         if(destFrame == self.frame || self.isMoving) {
             return
@@ -86,10 +86,10 @@ public class RingModel: NSObject {
         }
         
         // Start animation
-        self.interfaceGroup?.startAnimatingWithImagesInRange(NSMakeRange(startFrame, len), duration: Double( (Double(len)/RING_FPS)*Double(dir) ), repeatCount: 1)
+        self.interfaceGroup?.startAnimatingWithImages(in: NSMakeRange(startFrame, len), duration: Double( (Double(len)/RING_FPS)*Double(dir) ), repeatCount: 1)
         
         // Delay unlock
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64((Double(len)/RING_FPS) * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64((Double(len)/RING_FPS) * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: ({
             self.isMoving = false
         }))
     }

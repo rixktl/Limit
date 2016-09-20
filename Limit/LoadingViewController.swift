@@ -11,38 +11,38 @@ import UIKit
 class LoadingViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
-    private let BACKGROUND_COLOR: UIColor = UIColor.init(red: 39.0/255.0, green: 179.0/255.0, blue: 160.0/255.0, alpha: 1)
-    private let GIF_POSTFIX = "gif"
-    private let GIF_NAME = "Loading"
-    private let MIME_TYPE = "image/gif"
+    fileprivate let BACKGROUND_COLOR: UIColor = UIColor.init(red: 39.0/255.0, green: 179.0/255.0, blue: 160.0/255.0, alpha: 1)
+    fileprivate let GIF_POSTFIX = "gif"
+    fileprivate let GIF_NAME = "Loading"
+    fileprivate let MIME_TYPE = "image/gif"
     
     // Light status bar content
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     /* Load gif from local file */
-    private func loadgif() {
-        let filePath = NSBundle.mainBundle().pathForResource(GIF_NAME, ofType: GIF_POSTFIX)
+    fileprivate func loadgif() {
+        let filePath = Bundle.main.path(forResource: GIF_NAME, ofType: GIF_POSTFIX)
         if(filePath != nil) {
-            let data = NSData(contentsOfFile: filePath!)
-            let url = NSURL.init(fileURLWithPath: filePath!)
-            webView.loadData(data!, MIMEType: MIME_TYPE, textEncodingName: GIF_NAME+GIF_POSTFIX, baseURL: url)
-            webView.userInteractionEnabled = false
+            let data = try? Data(contentsOf: URL(fileURLWithPath: filePath!))
+            let url = URL.init(fileURLWithPath: filePath!)
+            webView.load(data!, mimeType: MIME_TYPE, textEncodingName: GIF_NAME+GIF_POSTFIX, baseURL: url)
+            webView.isUserInteractionEnabled = false
         } else {
             // TODO: error handling
             print("Cannot load gif file")
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.view.backgroundColor = BACKGROUND_COLOR
         
         // Maybe a bug in simulator, a bit delay before gif moves, iPhone 6S Plus / 6 Plus
         // But it works on iPhone 5 and iPhone 6S
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             // Load gif
             self.loadgif()
         }

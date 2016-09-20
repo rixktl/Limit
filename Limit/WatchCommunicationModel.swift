@@ -26,10 +26,10 @@ enum DataLabel: String {
     case Status = "STATUS"
 }
 
-public class WatchCommunicationModel: NSObject, SpeedModelDelegate {
+open class WatchCommunicationModel: NSObject, SpeedModelDelegate {
     
-    private let speedModel: SpeedModel = SpeedModel()
-    private let INFO_NAME: String! = "INFO"
+    fileprivate let speedModel: SpeedModel = SpeedModel()
+    fileprivate let INFO_NAME: String = "INFO"
     
     override init() {
         super.init()
@@ -39,7 +39,7 @@ public class WatchCommunicationModel: NSObject, SpeedModelDelegate {
     // Need to implement a exit in case idle for a long time
     
     /* Receive new Message */
-    public func newMessage(message: [String : AnyObject]) {
+    open func newMessage(_ message: [String : Any]) {
         switch message[INFO_NAME] {
             
             case WatchMessageMode.Start.rawValue as String:
@@ -60,9 +60,9 @@ public class WatchCommunicationModel: NSObject, SpeedModelDelegate {
     }
     
     /* Updated by speed model */
-    internal func updateSpeedInfo(speed: Double!, speedLimit: Double?, unit: Bool!, status: Status) {
-        let message: [String: AnyObject] = [DataLabel.Speed.rawValue:speed,
-                                            DataLabel.SpeedLimit.rawValue: (speedLimit != nil ? speedLimit! : -1.0),
+    internal func updateSpeedInfo(_ speed: Double!, speedLimit: Double?, unit: Bool!, status: Status) {
+        let message: [String: Any] = [DataLabel.Speed.rawValue:speed as Any,
+                                            DataLabel.SpeedLimit.rawValue: (speedLimit != nil ? speedLimit! : -1.0 as Any),
                                             DataLabel.Unit.rawValue: unit,
                                             DataLabel.Status.rawValue: status.rawValue]
         // Send to Apple Watch
@@ -70,9 +70,9 @@ public class WatchCommunicationModel: NSObject, SpeedModelDelegate {
     }
     
     /* Send message to Apple Watch */
-    private func sendMessage(message: [String : AnyObject]) {
-        if(WCSession.defaultSession().reachable) {
-            WCSession.defaultSession().sendMessage(message, replyHandler: nil, errorHandler: nil)
+    fileprivate func sendMessage(_ message: [String : Any]) {
+        if(WCSession.default().isReachable) {
+            WCSession.default().sendMessage(message, replyHandler: nil, errorHandler: nil)
         }
     }
     

@@ -11,11 +11,11 @@ import CoreLocation
 
 class LocationRequestViewController: UIViewController, CLLocationManagerDelegate {
     
-    private let locationManager: CLLocationManager = CLLocationManager()
-    private let STORYBOARD_NAME: String! = "Main"
-    private let MAIN_VIEW_NAME: String! = "MainView"
-    private let LOCATION_SETTING_VIEW_NAME: String! = "LocationSettingView"
-    private var clicked: Bool! = false
+    fileprivate let locationManager: CLLocationManager = CLLocationManager()
+    fileprivate let STORYBOARD_NAME: String = "Main"
+    fileprivate let MAIN_VIEW_NAME: String = "MainView"
+    fileprivate let LOCATION_SETTING_VIEW_NAME: String = "LocationSettingView"
+    fileprivate var clicked: Bool! = false
     
     /* Background is white, no needed
     // Light status bar content
@@ -25,13 +25,13 @@ class LocationRequestViewController: UIViewController, CLLocationManagerDelegate
     */
     
     /* Called when enable button is clicked */
-    @IBAction func enableButtonClicked(sender: AnyObject) {
+    @IBAction func enableButtonClicked(_ sender: AnyObject) {
         clicked = true
         // Check permission before requesting
         switch CLLocationManager.authorizationStatus() {
-            case CLAuthorizationStatus.AuthorizedAlways:
+            case CLAuthorizationStatus.authorizedAlways:
                 switchToView(MAIN_VIEW_NAME)
-            case CLAuthorizationStatus.Denied:
+            case CLAuthorizationStatus.denied:
                 switchToView(LOCATION_SETTING_VIEW_NAME)
             default:
                 locationManager.requestAlwaysAuthorization()
@@ -40,17 +40,17 @@ class LocationRequestViewController: UIViewController, CLLocationManagerDelegate
     }
     
     /* Called when permission status is changed */
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         // Ensure clicked
         guard (clicked == true) else {
             return
         }
         
         switch status {
-            case CLAuthorizationStatus.AuthorizedAlways:
+            case CLAuthorizationStatus.authorizedAlways:
                 switchToView(MAIN_VIEW_NAME)
                 break
-            case CLAuthorizationStatus.NotDetermined:
+            case CLAuthorizationStatus.notDetermined:
                 break
             default:
                 switchToView(LOCATION_SETTING_VIEW_NAME)
@@ -59,12 +59,12 @@ class LocationRequestViewController: UIViewController, CLLocationManagerDelegate
     }
     
     /* Switch to other view */
-    private func switchToView(name: String!) {
-        let view: UIViewController = UIStoryboard.init(name: STORYBOARD_NAME, bundle: nil).instantiateViewControllerWithIdentifier(name)
-        self.presentViewController(view, animated: true, completion: nil)
+    fileprivate func switchToView(_ name: String!) {
+        let view: UIViewController = UIStoryboard.init(name: STORYBOARD_NAME, bundle: nil).instantiateViewController(withIdentifier: name)
+        self.present(view, animated: true, completion: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Set up location manger
         locationManager.delegate = self

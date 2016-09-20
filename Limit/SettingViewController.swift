@@ -12,64 +12,64 @@ class SettingViewController: UIViewController, SettingModelDelegate {
     
     @IBOutlet weak var unitButton: UIButton!
     @IBOutlet weak var accuracyButton: UIButton!
-    private let settingModel: SettingModel = SettingModel()
-    private let MPH_NAME: String! = "M P H"
-    private let KPH_NAME: String! = "K P H"
-    private let ON_NAME: String! = "On"
-    private let OFF_NAME: String! = "Off"
+    fileprivate let settingModel: SettingModel = SettingModel()
+    fileprivate let MPH_NAME: String = "M P H"
+    fileprivate let KPH_NAME: String = "K P H"
+    fileprivate let ON_NAME: String = "On"
+    fileprivate let OFF_NAME: String = "Off"
     
     // Light status bar content
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     // Disable rotation
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
     
     /* Called when unit button is clicked */
-    @IBAction func unitButtonClicked(sender: AnyObject) {
+    @IBAction func unitButtonClicked(_ sender: AnyObject) {
         settingModel.flipUnit()
     }
     
     /* Called when accuracy button is clicked */
-    @IBAction func accuracyButtonClicked(sender: AnyObject) {
+    @IBAction func accuracyButtonClicked(_ sender: AnyObject) {
         settingModel.flipAccuracy()
     }
     
     /* Called when done button is clicked */
-    @IBAction func doneButtonClicked(sender: AnyObject) {
+    @IBAction func doneButtonClicked(_ sender: AnyObject) {
         // Go back to main view
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     /* Updated by setting model */
-    internal func updateSettings(settings: Settings!) {
+    internal func updateSettings(_ settings: Settings!) {
         // Update unit
         if(settings.isMPH!) {
-            dispatch_async(dispatch_get_main_queue()) {
-                self.unitButton.setTitle(self.MPH_NAME, forState: UIControlState.Normal)
+            DispatchQueue.main.async {
+                self.unitButton.setTitle(self.MPH_NAME, for: UIControlState())
             }
         } else {
-            dispatch_async(dispatch_get_main_queue()) {
-                self.unitButton.setTitle(self.KPH_NAME, forState: UIControlState.Normal)
+            DispatchQueue.main.async {
+                self.unitButton.setTitle(self.KPH_NAME, for: UIControlState())
             }
         }
         
         // Update accuracy
         if(settings.isExact!) {
-            dispatch_async(dispatch_get_main_queue()) {
-                self.accuracyButton.setTitle(self.ON_NAME, forState: UIControlState.Normal)
+            DispatchQueue.main.async {
+                self.accuracyButton.setTitle(self.ON_NAME, for: UIControlState())
             }
         } else {
-            dispatch_async(dispatch_get_main_queue()) {
-                self.accuracyButton.setTitle(self.OFF_NAME, forState: UIControlState.Normal)
+            DispatchQueue.main.async {
+                self.accuracyButton.setTitle(self.OFF_NAME, for: UIControlState())
             }
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         settingModel.delegate = self

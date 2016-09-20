@@ -12,28 +12,28 @@ import CoreLocation
 
 class LocationSettingViewController: UIViewController, CLLocationManagerDelegate {
     
-    private let locationManager: CLLocationManager = CLLocationManager()
-    private let STORYBOARD_NAME: String! = "Main"
-    private let MAIN_VIEW_NAME: String! = "MainView"
+    fileprivate let locationManager: CLLocationManager = CLLocationManager()
+    fileprivate let STORYBOARD_NAME: String = "Main"
+    fileprivate let MAIN_VIEW_NAME: String = "MainView"
     
     // Light status bar content
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     /* Called when setting button is clicked */
-    @IBAction func SettingButtonClicked(sender: AnyObject) {
+    @IBAction func SettingButtonClicked(_ sender: AnyObject) {
         // Open setting url
-        UIApplication.sharedApplication().openURL(NSURL.init(string: UIApplicationOpenSettingsURLString)!)
+        UIApplication.shared.open(URL.init(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
     }
     
     /* Called when permission status is changed */
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
-        case CLAuthorizationStatus.AuthorizedAlways:
+        case CLAuthorizationStatus.authorizedAlways:
             switchToView(MAIN_VIEW_NAME)
             break
-        case CLAuthorizationStatus.NotDetermined:
+        case CLAuthorizationStatus.notDetermined:
             break
         default:
             break
@@ -41,12 +41,12 @@ class LocationSettingViewController: UIViewController, CLLocationManagerDelegate
     }
     
     /* Switch to other view */
-    private func switchToView(name: String!) {
-        let view: UIViewController = UIStoryboard.init(name: STORYBOARD_NAME, bundle: nil).instantiateViewControllerWithIdentifier(name)
-        self.presentViewController(view, animated: true, completion: nil)
+    fileprivate func switchToView(_ name: String!) {
+        let view: UIViewController = UIStoryboard.init(name: STORYBOARD_NAME, bundle: nil).instantiateViewController(withIdentifier: name)
+        self.present(view, animated: true, completion: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Set up location manger
         locationManager.delegate = self

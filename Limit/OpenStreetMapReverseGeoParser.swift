@@ -14,7 +14,7 @@ import Foundation
  */
 
 internal protocol OpenStreetMapReverseGeoParserDelegate {
-    func updateReverseGeoResult(data: OpenStreetMapReverseGeoData!)
+    func updateReverseGeoResult(_ data: OpenStreetMapReverseGeoData!)
 }
 
 /* Struct of result for reverse geo */
@@ -33,56 +33,57 @@ struct OpenStreetMapReverseGeoData {
     }
 }
 
-public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
+open class OpenStreetMapReverseGeoParser: NSObject, XMLParserDelegate {
     
-    private let PRE_URL: String! = "https://nominatim.openstreetmap.org/reverse?format=xml&lat="
-    private let POST_URL: String! = "&zoom=17&addressdetails=1"
-    private let COORDINATES_SEPARATION: String! = "&lon="
-    private let RESULT_IDENTIFIER: String! = "result"
-    private let OSM_ID_IDENTIFIER: String! = "osm_id"
-    private let ROAD_NAME_IDENTIFIER: String! = "road"
-    private let LOCK_TIME: Double! = 1.0
+    fileprivate let PRE_URL: String = "https://nominatim.openstreetmap.org/reverse?format=xml&lat="
+    fileprivate let POST_URL: String = "&zoom=17&addressdetails=1"
+    fileprivate let COORDINATES_SEPARATION: String = "&lon="
+    fileprivate let RESULT_IDENTIFIER: String = "result"
+    fileprivate let OSM_ID_IDENTIFIER: String = "osm_id"
+    fileprivate let ROAD_NAME_IDENTIFIER: String = "road"
+    fileprivate let LOCK_TIME: Double! = 1.0
     
     internal var delegate: OpenStreetMapReverseGeoParserDelegate!
-    private var parser: NSXMLParser!
-    private var lock: Bool! = false
-    private var foundRoadName: Bool! = false
+    fileprivate var parser: XMLParser!
+    fileprivate var lock: Bool! = false
+    fileprivate var foundRoadName: Bool! = false
     
-    private var data: OpenStreetMapReverseGeoData! = OpenStreetMapReverseGeoData()
+    fileprivate var data: OpenStreetMapReverseGeoData! = OpenStreetMapReverseGeoData()
 
     /* Form an url according to coordinates */
-    private func formUrl(coord: Coordinates) -> String! {
+    fileprivate func formUrl(_ coord: Coordinates) -> String! {
         return String(coord.latitude) + COORDINATES_SEPARATION + String(coord.longitude)
     }
     
     /* Send an async request */
-    private func asyncRequest(urlPath: String!) {
+    fileprivate func asyncRequest(_ urlPath: String!) {
         //print(urlPath)
-        let url = NSURL(string: urlPath)!
-        let session = NSURLSession.sharedSession()
+        let url = URL(string: urlPath)!
+        let session = URLSession.shared
         
-        let task = session.dataTaskWithURL(url) { data, response, error in
-            self.startParser(data, response: response, error: error)
-        }
+        let task = session.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
+            self.startParser(data, response: response, error: error as NSError?)
+            return ()
+        }) 
         
         task.resume()
     }
     
     /* Start XML parsing */
-    private func startParser(data: NSData?, response: NSURLResponse?, error: NSError?) {
+    fileprivate func startParser(_ data: Data?, response: URLResponse?, error: NSError?) {
         guard (data != nil) else {
             // TODO: error handling
             print("error:")
-            print(String(error))
+            print(String(describing: error))
             return
         }
-        parser = NSXMLParser(data: data!)
+        parser = XMLParser(data: data!)
         parser.delegate = self
         parser.parse()
     }
     
     /* Request for new data corresponding to coordinates */
-    internal func request(coord: Coordinates!) {
+    internal func request(_ coord: Coordinates!) {
         
         // Ensure unlocked
         guard (lock == false) else {
@@ -93,7 +94,7 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
         lock = true
         
         // Delay unlock
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(LOCK_TIME * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), ({
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(LOCK_TIME * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: ({
             self.lock = false
         }))
         
@@ -103,7 +104,7 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Called when parsing new element */
-    public func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    open func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if(elementName == RESULT_IDENTIFIER) {
             self.data.id = attributeDict[OSM_ID_IDENTIFIER]
         } else if(elementName == ROAD_NAME_IDENTIFIER) {
@@ -112,7 +113,7 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Called when parsing character */
-    public func parser(parser: NSXMLParser, foundCharacters string: String) {
+    open func parser(_ parser: XMLParser, foundCharacters string: String) {
         if(self.foundRoadName!) {
             self.data.name = string
             self.foundRoadName = false
@@ -120,7 +121,7 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Called when parsing element ends */
-    public func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    open func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if(self.data.id != nil && self.data.name != nil) {
             self.delegate.updateReverseGeoResult(self.data!)
             
@@ -131,7 +132,7 @@ public class OpenStreetMapReverseGeoParser: NSObject, NSXMLParserDelegate {
     }
     
     /* Called when error occurs in parser */
-    public func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError) {
+    open func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         // TODO: error handling
     }    
 }

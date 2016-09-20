@@ -13,13 +13,13 @@ import UIKit
  * A model that show a loading view
  */
 
-public class LoadingModel: NSObject {
+open class LoadingModel: NSObject {
     
-    private let TIMER_DELAY: Double! = 2.0
+    fileprivate let TIMER_DELAY: Double! = 2.0
     
-    private var loadingView: UIView?
-    private var masterView: UIView?
-    private var timer: NSTimer? = NSTimer()
+    fileprivate var loadingView: UIView?
+    fileprivate var masterView: UIView?
+    fileprivate var timer: Timer? = Timer()
     
     init(loadingViewController: UIViewController!, masterView: UIView!) {
         // Prepare loading view controller
@@ -31,7 +31,7 @@ public class LoadingModel: NSObject {
     }
     
     /* Disable loading view for a while */
-    public func keepAlive() {
+    open func keepAlive() {
         if(timer != nil) {
             // Cancel scheduled job
             timer!.invalidate()
@@ -39,11 +39,11 @@ public class LoadingModel: NSObject {
         // Remove timer
         timer = nil
         // Delayed call
-        timer = NSTimer.scheduledTimerWithTimeInterval(TIMER_DELAY, target: self, selector: #selector(addView), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: TIMER_DELAY, target: self, selector: #selector(addView), userInfo: nil, repeats: false)
     }
     
     /* Stop loading model */
-    public func stop() {
+    open func stop() {
         if(timer != nil) {
             // Cancel scheduled job
             timer!.invalidate()
@@ -53,23 +53,23 @@ public class LoadingModel: NSObject {
     }
     
     /* Add loading view to master view */
-    public func addView() {
+    open func addView() {
         // Ensure subview is not added
-        guard (!(self.loadingView!.isDescendantOfView(self.masterView!))  ) else {
+        guard (!(self.loadingView!.isDescendant(of: self.masterView!))  ) else {
             return
         }
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async(execute: {
             self.masterView!.addSubview(self.loadingView!)
         })
     }
     
     /* Remove loading view from master view */
-    public func removeView() {
+    open func removeView() {
         // Ensure subview is added
-        guard (self.loadingView!.isDescendantOfView(self.masterView!)) else {
+        guard (self.loadingView!.isDescendant(of: self.masterView!)) else {
             return
         }
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async(execute: {
             self.loadingView!.removeFromSuperview()
         })
     }

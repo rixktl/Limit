@@ -7,26 +7,46 @@
 //
 
 import Foundation
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 /*
  * A model that manage OSM-XAPI and OSM-Nominatim and takes current location data
  */
 
 internal protocol OpenStreetMapModelDelegate {
-    func updateSpeedLimit(speedLimit: Double?)
+    func updateSpeedLimit(_ speedLimit: Double?)
 }
 
-public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreetMapFinderDelegate, OpenStreetMapReverseGeoParserDelegate {
+open class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreetMapFinderDelegate, OpenStreetMapReverseGeoParserDelegate {
     
-    private let osmParser: OpenStreetMapParser! = OpenStreetMapParser()
-    private let osmFinder: OpenStreetMapFinder! = OpenStreetMapFinder()
-    private let osmReverseGeo: OpenStreetMapReverseGeoParser! = OpenStreetMapReverseGeoParser()
+    fileprivate let osmParser: OpenStreetMapParser! = OpenStreetMapParser()
+    fileprivate let osmFinder: OpenStreetMapFinder! = OpenStreetMapFinder()
+    fileprivate let osmReverseGeo: OpenStreetMapReverseGeoParser! = OpenStreetMapReverseGeoParser()
     
     internal var delegate: OpenStreetMapModelDelegate!
-    private var locationData: LocationData?
-    private var reverseGeoData: OpenStreetMapReverseGeoData?
-    private var upperBound: Coordinates?
-    private var lowerBound: Coordinates?
+    fileprivate var locationData: LocationData?
+    fileprivate var reverseGeoData: OpenStreetMapReverseGeoData?
+    fileprivate var upperBound: Coordinates?
+    fileprivate var lowerBound: Coordinates?
     
     override public init() {
         // Set up parser
@@ -42,7 +62,7 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     }
     
     /* Attempt to request update */
-    private func request() {
+    fileprivate func request() {
         
         // Always get reverse geo
         osmReverseGeo.request(self.locationData?.coord)
@@ -65,7 +85,7 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     }
     
     /* Check if coordinates within bound */
-    private func checkBound() -> Bool? {
+    fileprivate func checkBound() -> Bool? {
         // Ensure non nil
         guard (self.locationData?.coord != nil && upperBound != nil && lowerBound != nil) else {
             return nil
@@ -79,13 +99,13 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     }
     
     /* Set bounded offset for parser */
-    internal func setBoundedOffset(offsetLatitude: Double!, offsetLongitude: Double!) {
+    internal func setBoundedOffset(_ offsetLatitude: Double!, offsetLongitude: Double!) {
         osmParser.offsetLatitude = offsetLatitude
         osmParser.offsetLongitude = offsetLongitude
     }
     
     /* Update new coordinate */
-    internal func newCoordinates(data: LocationData) {
+    internal func newCoordinates(_ data: LocationData) {
         guard (data.coord?.latitude != nil && data.coord?.longitude != nil) else {
             return
         }
@@ -95,13 +115,13 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     }
     
     /* Receives update from reverse geo parser */
-    internal func updateReverseGeoResult(data: OpenStreetMapReverseGeoData!) {
+    internal func updateReverseGeoResult(_ data: OpenStreetMapReverseGeoData!) {
         // Update local data
         self.reverseGeoData = data
     }
     
     /* Receives update from parser */
-    internal func updateData(data: OpenStreetMapData!) {
+    internal func updateData(_ data: OpenStreetMapData!) {
         // Update data for finder
         osmFinder.data = data
         osmFinder.locationData = locationData
@@ -116,7 +136,7 @@ public class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStre
     }
     
     /* Receives update from finder */
-    internal func updateSpeedLimit(speedLimit: Double?) {
+    internal func updateSpeedLimit(_ speedLimit: Double?) {
         // Update to handler
         self.delegate.updateSpeedLimit(speedLimit)
     }

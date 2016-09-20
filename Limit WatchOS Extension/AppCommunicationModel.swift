@@ -21,30 +21,30 @@ enum WatchMessageMode: String {
 
 
 internal protocol AppCommunicationModelDelegate {
-    func updateSpeedInfo(speed: Double!, speedLimit: Double!, unit: Bool!, status: Int)
+    func updateSpeedInfo(_ speed: Double!, speedLimit: Double!, unit: Bool!, status: Int)
 }
 
-public class AppCommunicationModel: NSObject {
+open class AppCommunicationModel: NSObject {
     
     internal var delegate: AppCommunicationModelDelegate!
-    private let NOTIFICATION_NAME: String! = "DID_RECEIVE_MESSAGE"
-    private let INFO_NAME: String! = "INFO"
-    private let SPEED_DATA_NAMES: [String!] = ["SPEED", "SPEED_LIMIT", "UNIT", "STATUS"]
+    fileprivate let NOTIFICATION_NAME: String = "DID_RECEIVE_MESSAGE"
+    fileprivate let INFO_NAME: String = "INFO"
+    fileprivate let SPEED_DATA_NAMES: [String] = ["SPEED", "SPEED_LIMIT", "UNIT", "STATUS"]
     
-    private var timer: NSTimer?
-    private var didStart: Bool! = false
+    fileprivate var timer: Timer?
+    fileprivate var didStart: Bool! = false
     
     override init() {
         super.init()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(receiveMessage), name: NOTIFICATION_NAME, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveMessage), name: NSNotification.Name(rawValue: NOTIFICATION_NAME), object: nil)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: NOTIFICATION_NAME, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: NOTIFICATION_NAME), object: nil)
     }
     
     /* Start communicating with iPhone */
-    public func start() {
+    open func start() {
         // Ensure stopped before starting
         guard (self.didStart == false) else {
             return
@@ -52,40 +52,40 @@ public class AppCommunicationModel: NSObject {
         
         self.didStart = true
         // Send message to start
-        sendMessage([INFO_NAME:WatchMessageMode.Start.rawValue])
+        sendMessage([INFO_NAME:WatchMessageMode.Start.rawValue as AnyObject])
         // Setup spammer
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(spamUntilConfirmation), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(spamUntilConfirmation), userInfo: nil, repeats: true)
     }
     
     /* Spam to iPhone to prevent main view controller from running */
     internal func spamUntilConfirmation() {
-        sendMessage([INFO_NAME:"NONE"])
+        sendMessage([INFO_NAME:"NONE" as AnyObject])
     }
     
     /* Stop communcating with iPhone */
-    public func stop() {
+    open func stop() {
         // Ensure started before stopping
         guard (self.didStart == true) else {
             return
         }
         
         self.didStart = false
-        sendMessage([INFO_NAME:WatchMessageMode.Stop.rawValue])
+        sendMessage([INFO_NAME:WatchMessageMode.Stop.rawValue as AnyObject])
     }
     
     /* Request to flip unit */
-    public func flipUnit() {
+    open func flipUnit() {
         // Ensure started before stopping
         guard (self.didStart == true) else {
             return
         }
         
-        sendMessage([INFO_NAME:WatchMessageMode.FlipUnit.rawValue])
+        sendMessage([INFO_NAME:WatchMessageMode.FlipUnit.rawValue as AnyObject])
     }
     
     /* Called when receive new message from iPhone */
-    internal func receiveMessage(notification: NSNotification) {
-        let dict: NSDictionary = notification.userInfo!
+    internal func receiveMessage(_ notification: Notification) {
+        let dict: NSDictionary = (notification as NSNotification).userInfo! as NSDictionary
         
         // Check if receiving confirmation
         if(dict["INFO"] != nil && dict["INFO"]! as! String == "CONFIRMED") {
@@ -102,10 +102,10 @@ public class AppCommunicationModel: NSObject {
     }
     
     /* Send message to iPhone */
-    private func sendMessage(message: [String: AnyObject]) {
-        if(WCSession.defaultSession().reachable) {
+    fileprivate func sendMessage(_ message: [String: AnyObject]) {
+        if(WCSession.default().isReachable) {
             print("Sending:",message)
-            WCSession.defaultSession().sendMessage(message, replyHandler: nil, errorHandler: nil)
+            WCSession.default().sendMessage(message, replyHandler: nil, errorHandler: nil)
         } else {
             print("Unreachable")
         }

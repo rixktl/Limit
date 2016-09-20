@@ -18,26 +18,26 @@ struct Settings{
 }
 
 internal protocol SettingModelDelegate {
-    func updateSettings(settings: Settings!)
+    func updateSettings(_ settings: Settings!)
 }
 
-public class SettingModel: NSObject {
+open class SettingModel: NSObject {
     
-    private let userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    private let UNIT_NAME: String! = "UNIT_IS_MPH"
-    private let ACCURACY_NAME: String! = "ACCURACY_IS_EXACT"
-    private var settings: Settings! = Settings()
+    fileprivate let userDefaults: UserDefaults = UserDefaults.standard
+    fileprivate let UNIT_NAME: String = "UNIT_IS_MPH"
+    fileprivate let ACCURACY_NAME: String = "ACCURACY_IS_EXACT"
+    fileprivate var settings: Settings! = Settings()
     internal var delegate: SettingModelDelegate!
     
     override init() {
         super.init()
         // Add self to observer for unit changes
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangeSetting), name: NSUserDefaultsDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeSetting), name: UserDefaults.didChangeNotification, object: nil)
     }
     
     deinit {
         // Remove observer when deallocate
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSUserDefaultsDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
     }
     
     /* Called when receive change in setting */
@@ -48,51 +48,51 @@ public class SettingModel: NSObject {
     }
     
     /* Flip accuracy */
-    public func flipAccuracy() {
+    open func flipAccuracy() {
         let boolUnit: Bool! = flipSetting(ACCURACY_NAME, defaultBoolean: Settings().isExact)
         self.settings.isExact = boolUnit
         delegate?.updateSettings(self.settings)
     }
     
     /* Flip unit */
-    public func flipUnit() {
+    open func flipUnit() {
         let boolUnit: Bool! = flipSetting(UNIT_NAME, defaultBoolean: Settings().isMPH)
         self.settings.isMPH = boolUnit
         delegate?.updateSettings(self.settings)
     }
     
     /* Flip unit */
-    private func flipSetting(key: String!, defaultBoolean: Bool!) -> Bool! {
+    fileprivate func flipSetting(_ key: String!, defaultBoolean: Bool!) -> Bool! {
         
         // Boolean setting
         let boolSetting = getSettingWithDefault(key, defaultBoolean: defaultBoolean)
         
         if (boolSetting == true) {
-            userDefaults.setBool(false, forKey: key)
+            userDefaults.set(false, forKey: key)
             return false
             
         } else {
-            userDefaults.setBool(true, forKey: key)
+            userDefaults.set(true, forKey: key)
             return true
         }
 
     }
     
     /* Get setting with given default value */
-    private func getSettingWithDefault(key: String!, defaultBoolean: Bool!) -> Bool! {
+    fileprivate func getSettingWithDefault(_ key: String!, defaultBoolean: Bool!) -> Bool! {
         
         // Get info
-        let info = userDefaults.objectForKey(key)
+        let info = userDefaults.object(forKey: key)
         
         // Check if user setting for info exist
         if(info == nil) {
             // Write into setting, do not use synchronize
-            userDefaults.setBool(defaultBoolean, forKey: key)
+            userDefaults.set(defaultBoolean, forKey: key)
             return defaultBoolean
             
         } else {
             // Boolean info
-            let boolInfo = userDefaults.boolForKey(key)
+            let boolInfo = userDefaults.bool(forKey: key)
             
             if (boolInfo == true) {
                 return true

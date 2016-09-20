@@ -14,67 +14,67 @@ import Foundation
 
 enum Status: Int {
     // Speed > 0
-    case STARTED = 1
+    case started = 1
     // No speed
-    case STOPPED = 2
+    case stopped = 2
     // Speed = 0
-    case OPTIONAL_STOP = 3
+    case optional_STOP = 3
     // Initial status
-    case UNDEFINED = -1
+    case undefined = -1
 }
 
-public class StatusModel: NSObject {
-    private var status: Status = Status.UNDEFINED
-    private var appModel: AppCommunicationModel?
-    private var viewModel: ViewModel?
-    private var ringModel: RingModel?
-    private var alertModel: AlertModel?
+open class StatusModel: NSObject {
+    fileprivate var status: Status = Status.undefined
+    fileprivate var appModel: AppCommunicationModel?
+    fileprivate var viewModel: ViewModel?
+    fileprivate var ringModel: RingModel?
+    fileprivate var alertModel: AlertModel?
     
     /* Set app model */
-    public func setAppModel(inout appModel: AppCommunicationModel) {
+    open func setAppModel(_ appModel: inout AppCommunicationModel) {
         self.appModel = appModel
     }
     
     /* Set view model */
-    public func setViewModel(inout viewModel: ViewModel) {
+    open func setViewModel(_ viewModel: inout ViewModel) {
         self.viewModel = viewModel
     }
     
     /* Set ring model */
-    public func setRingModel(inout ringModel: RingModel) {
+    open func setRingModel(_ ringModel: inout RingModel) {
         self.ringModel = ringModel
     }
     
     /* Set alert model */
-    public func setAlertModel(inout alertModel: AlertModel) {
+    open func setAlertModel(_ alertModel: inout AlertModel) {
         self.alertModel = alertModel
     }
     
     /* Pass new data for now status */
-    public func newData(speed: Double!, speedLimit: Double!, unitString: String!) {
-        if(speed == 0.0 && status == Status.STARTED) {
+    open func newData(_ speed: Double!, speedLimit: Double!, unitString: String!) {
+        if(speed == 0.0 && status == Status.started) {
             // Zero speed
             viewModel?.optionalStopView(unitString)
-            status = Status.OPTIONAL_STOP
-        } else if(speed != 0.0 && status != Status.STARTED) {
-            status = Status.STARTED
+            status = Status.optional_STOP
+        } else if(speed != 0.0 && status != Status.started) {
+            status = Status.started
             ringModel?.initialRing()
         }
         
         // Activate ring only if status is started
-        if(status == Status.STARTED) {
+        if(status == Status.started) {
             ringModel?.newData(speed, speedLimit: speedLimit)
             viewModel?.normalView(speed, speedLimit: speedLimit, unit: unitString)
             alertModel?.enable()
             alertModel?.newData(speed, speedLimit: speedLimit)
         }
         
-        if(status == Status.OPTIONAL_STOP) {
+        if(status == Status.optional_STOP) {
             viewModel?.optionalStopView(unitString)
         }
     }
     
-    public func initialStart() {
+    open func initialStart() {
         update()
     }
     
@@ -83,34 +83,34 @@ public class StatusModel: NSObject {
         the following function perform a change from
         current status to new status(when user tapped)
      */
-    public func update() {
+    open func update() {
         switch status {
             
-            case Status.UNDEFINED:
+            case Status.undefined:
                 // Initial state
                 viewModel?.stoppedView()
                 alertModel?.disable()
-                status = Status.STOPPED
+                status = Status.stopped
                 break
             
-            case Status.STARTED:
+            case Status.started:
                 // Tapped when it is started, should do nothing
                 break
             
-            case Status.STOPPED:
+            case Status.stopped:
                 // Tapped when it is stopped, should now start
                 appModel?.start()
                 viewModel?.startedView()
                 ringModel?.initialRing()
-                status = Status.STARTED
+                status = Status.started
                 break
             
-            case Status.OPTIONAL_STOP:
+            case Status.optional_STOP:
                 // Tapped when it is optional stop, should now stop
                 appModel?.stop()
                 viewModel?.stoppedView()
                 alertModel?.disable()
-                status = Status.STOPPED
+                status = Status.stopped
                 break
         }
     }

@@ -7,35 +7,64 @@
 //
 
 import Foundation
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 
 /*
  * A model that manage location data and OSM-Model
  */
 
 enum Status: Int {
-    case Alert
-    case Normal
-    case Rest
+    case alert
+    case normal
+    case rest
 }
 
 internal protocol SpeedModelDelegate {
-    func updateSpeedInfo(speed: Double!, speedLimit: Double?, unit: Bool!, status: Status)
+    func updateSpeedInfo(_ speed: Double!, speedLimit: Double?, unit: Bool!, status: Status)
 }
 
-public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDelegate, SettingModelDelegate {
+open class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDelegate, SettingModelDelegate {
     
-    private let osmModel: OpenStreetMapModel = OpenStreetMapModel()
-    private let locManager: LocationModel = LocationModel()
-    private let settingModel: SettingModel = SettingModel()
-    private let MPH_TO_KPH_RATE: Double! = 1.609344
-    private let LIMIT_OFFSET: Double! = 5.0
+    fileprivate let osmModel: OpenStreetMapModel = OpenStreetMapModel()
+    fileprivate let locManager: LocationModel = LocationModel()
+    fileprivate let settingModel: SettingModel = SettingModel()
+    fileprivate let MPH_TO_KPH_RATE: Double! = 1.609344
+    fileprivate let LIMIT_OFFSET: Double! = 5.0
     
     // TODO: research, problem with delegate, it could be nil at some situation
     internal var delegate: SpeedModelDelegate!
-    private var speed: Double?
-    private var speedLimit: Double?
-    private var settings: Settings! = Settings()
-    private var lock: Bool! = false
+    fileprivate var speed: Double?
+    fileprivate var speedLimit: Double?
+    fileprivate var settings: Settings! = Settings()
+    fileprivate var lock: Bool! = false
     
     override init() {
         super.init()
@@ -47,24 +76,24 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
     }
     
     /* Start receiving location data */
-    public func start() {
+    open func start() {
         self.lock = false
         locManager.start()
     }
     
     /* Stop receiving location data */
-    public func stop() {
+    open func stop() {
         self.lock = true
         locManager.stop()
     }
     
     /* Flip unit */
-    public func flipUnit() {
+    open func flipUnit() {
         settingModel.flipUnit()
     }
     
     /* Convert MPH to KPH if needed */
-    private func convertKPH(value: Double?) -> Double? {
+    fileprivate func convertKPH(_ value: Double?) -> Double? {
         guard (value != nil) else {
             return nil
         }
@@ -77,7 +106,7 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
     }
     
     /* Offset speed limit in MPH if needed, should run before convertKPH */
-    private func offsetSpeedLimit(speedlimit: Double?) -> Double? {
+    fileprivate func offsetSpeedLimit(_ speedlimit: Double?) -> Double? {
         guard (speedlimit != nil) else {
             return nil
         }
@@ -91,7 +120,7 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
     }
     
     /* Get status code with speedlimit(offset added) */
-    private func getStatus(limit: Double?) -> Status {
+    fileprivate func getStatus(_ limit: Double?) -> Status {
         //print("offseted-limit:", limit)
         //print("speed:", self.speed)
         //print("")
@@ -100,33 +129,33 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
         if(limit != nil && self.speed != nil) {
             // Over speed
             if(self.speed > limit) {
-                return Status.Alert
+                return Status.alert
                 
             } else if(self.speed > 0 && self.speed <= limit){
                 // Running with acceptable speed
-                return Status.Normal
+                return Status.normal
                 
             } else {
                 // At rest
-                return Status.Rest
+                return Status.rest
             }
             
         } else if (self.speed != nil) {
             // Only speed
             if(self.speed > 0) {
-                return Status.Normal
+                return Status.normal
             } else {
-                return Status.Rest
+                return Status.rest
             }
             
         } else {
             // Only limit or no data
-            return Status.Rest
+            return Status.rest
         }
     }
     
     /* Get final speed (always valid number) */
-    private func getFinalSpeed() -> Double! {
+    fileprivate func getFinalSpeed() -> Double! {
         if(self.speed != nil) {
             return self.speed
         } else {
@@ -135,7 +164,7 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
     }
     
     /* Update all info to handler */
-    private func updateInfo() {
+    fileprivate func updateInfo() {
         guard (self.lock != true) else {
             return
         }
@@ -144,14 +173,14 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
     }
     
     /* Called when settings are updated */
-    internal func updateSettings(settings: Settings!) {
+    internal func updateSettings(_ settings: Settings!) {
         self.settings = settings
         // Update to handler
         updateInfo()
     }
     
     /* Called when speed limit is updated */
-    internal func updateSpeedLimit(speedLimit: Double?) {
+    internal func updateSpeedLimit(_ speedLimit: Double?) {
         // Update speed limit
         self.speedLimit = speedLimit
         // Update to handler
@@ -159,7 +188,7 @@ public class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDe
     }
     
     /* Called when location is updated */
-    internal func locationUpdate(data: LocationData) {
+    internal func locationUpdate(_ data: LocationData) {
         // Update speed
         self.speed = data.speed
         // Update to internal handler

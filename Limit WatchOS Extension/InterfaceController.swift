@@ -16,14 +16,14 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     @IBOutlet var speedLabel: WKInterfaceLabel!
     @IBOutlet var unitLabel: WKInterfaceLabel!
     
-    private let MPH_NAME: String! = "M P H"
-    private let KPH_NAME: String! = "K P H"
-    private let statusModel: StatusModel = StatusModel()
+    fileprivate let MPH_NAME: String = "M P H"
+    fileprivate let KPH_NAME: String = "K P H"
+    fileprivate let statusModel: StatusModel = StatusModel()
     
-    private var alertModel: AlertModel = AlertModel()
-    private var appModel: AppCommunicationModel = AppCommunicationModel()
-    private var ringModel: RingModel = RingModel()
-    private var viewModel: ViewModel?
+    fileprivate var alertModel: AlertModel = AlertModel()
+    fileprivate var appModel: AppCommunicationModel = AppCommunicationModel()
+    fileprivate var ringModel: RingModel = RingModel()
+    fileprivate var viewModel: ViewModel?
     
     /* Called when unit button is clicked */
     @IBAction func unitButtonClicked() {
@@ -38,13 +38,13 @@ class InterfaceController: WKInterfaceController, AppCommunicationModelDelegate 
     }
     
     /* Updated by app communication model */
-    internal func updateSpeedInfo(speed: Double!, speedLimit: Double!, unit: Bool!, status: Int) {
+    internal func updateSpeedInfo(_ speed: Double!, speedLimit: Double!, unit: Bool!, status: Int) {
         // Update data to model
         statusModel.newData(speed, speedLimit: speedLimit, unitString: unit! ? MPH_NAME : KPH_NAME)
     }
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         // Configure interface objects here.
         
         // To show permission request
