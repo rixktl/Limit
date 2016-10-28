@@ -23,7 +23,12 @@ class LoadingViewController: UIViewController {
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
-    
+
+    /* Only support portrait view */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+
     /* Load gif from local file */
     fileprivate func loadgif() {
         let filePath = Bundle.main.path(forResource: GIF_NAME,
@@ -41,7 +46,7 @@ class LoadingViewController: UIViewController {
             print("Cannot load gif file")
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 

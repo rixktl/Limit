@@ -22,12 +22,12 @@ class SettingViewController: UIViewController, SettingModelDelegate {
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
-    
-    // Disable rotation
-    override var shouldAutorotate : Bool {
-        return false
+
+    /* Only support portrait view */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
-    
+
     /* Called when unit button is clicked */
     @IBAction func unitButtonClicked(_ sender: AnyObject) {
         settingModel.flipUnit()
@@ -71,7 +71,7 @@ class SettingViewController: UIViewController, SettingModelDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         settingModel.delegate = self
         // Check settings
         settingModel.didChangeSetting()

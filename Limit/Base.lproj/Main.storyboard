@@ -93,7 +93,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ZWl-7q-Mxr">
             <objects>
-                <navigationController storyboardIdentifier="NavigationView" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="YmE-9V-YPZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationView" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="YmE-9V-YPZ" customClass="NavigationController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="fBw-kc-Bbm">

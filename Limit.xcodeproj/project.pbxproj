@@ -45,6 +45,7 @@
 		D9A5EF9B1D1B2D420077C1C0 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF9A1D1B2D420077C1C0 /* LocationData.swift */; };
 		D9AC102F1D29D75F00B75B04 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AC102E1D29D75F00B75B04 /* LoadingViewController.swift */; };
 		D9AC10311D29DB7E00B75B04 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9AC10301D29DB7E00B75B04 /* Loading.gif */; };
+		D9C412311DC351A10077B60A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C412301DC351A10077B60A /* NavigationController.swift */; };
 		D9E643FB1D336E7E00637982 /* SanFranciscoDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9E643E61D336E7E00637982 /* SanFranciscoDisplay-Black.otf */; };
 		D9E643FC1D336E7E00637982 /* SanFranciscoDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9E643E61D336E7E00637982 /* SanFranciscoDisplay-Black.otf */; };
 		D9E643FD1D336E7E00637982 /* SanFranciscoDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9E643E71D336E7E00637982 /* SanFranciscoDisplay-Bold.otf */; };
@@ -199,6 +200,7 @@
 		D9A5EF9A1D1B2D420077C1C0 /* LocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		D9AC102E1D29D75F00B75B04 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		D9AC10301D29DB7E00B75B04 /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Loading.gif; path = Media/Loading.gif; sourceTree = "<group>"; };
+		D9C412301DC351A10077B60A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D9E643E61D336E7E00637982 /* SanFranciscoDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Black.otf"; path = "Fonts/SanFranciscoDisplay-Black.otf"; sourceTree = "<group>"; };
 		D9E643E71D336E7E00637982 /* SanFranciscoDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Bold.otf"; path = "Fonts/SanFranciscoDisplay-Bold.otf"; sourceTree = "<group>"; };
 		D9E643E81D336E7E00637982 /* SanFranciscoDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Heavy.otf"; path = "Fonts/SanFranciscoDisplay-Heavy.otf"; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				D94AC8DD1D2A74D1006B13AD /* LocationRequestViewController.swift */,
 				D94AC8DF1D2A74E0006B13AD /* LocationSettingViewController.swift */,
 				D9F5ED551D2B2DF100482368 /* WatchCommunicationModel.swift */,
+				D9C412301DC351A10077B60A /* NavigationController.swift */,
 			);
 			path = Limit;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				D9145EA91D1CE74C009128E1 /* OpenStreetMapFinder.swift in Sources */,
 				D92192861D2A3DCE0002BFE2 /* LoadingModel.swift in Sources */,
 				D92FA5901D1DC10900B7FACC /* SpeedModel.swift in Sources */,
+				D9C412311DC351A10077B60A /* NavigationController.swift in Sources */,
 				D9A49C141D29753A00338883 /* SettingModel.swift in Sources */,
 				D9A5EF6B1D1B079F0077C1C0 /* AppDelegate.swift in Sources */,
 			);

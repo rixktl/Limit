@@ -20,7 +20,12 @@ class LocationSettingViewController: UIViewController, CLLocationManagerDelegate
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
-    
+
+    /* Only support portrait view */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+
     /* Called when setting button is clicked */
     @IBAction func SettingButtonClicked(_ sender: AnyObject) {
         // Open setting url

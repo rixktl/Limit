@@ -23,7 +23,12 @@ class LocationRequestViewController: UIViewController, CLLocationManagerDelegate
         return UIStatusBarStyle.LightContent
     }
     */
-    
+
+    /* Only support portrait view */
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+
     /* Called when enable button is clicked */
     @IBAction func enableButtonClicked(_ sender: AnyObject) {
         clicked = true
