@@ -33,7 +33,9 @@ class LoadingViewController: UIViewController {
             let url = URL.init(fileURLWithPath: filePath!)
             webView.load(data!, mimeType: MIME_TYPE,
                          textEncodingName: GIF_NAME+GIF_POSTFIX, baseURL: url)
-            webView.isUserInteractionEnabled = false
+            //webView.loadRequest(URLRequest.init(url: url))
+            // this makes no difference on loading performance in simulator
+         
         } else {
             // TODO: error handling
             print("Cannot load gif file")
@@ -42,12 +44,12 @@ class LoadingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         self.view.backgroundColor = BACKGROUND_COLOR
         
-        // Maybe a bug in simulator, a bit delay before gif moves, iPhone 6S 
-        // Plus or 6 Plus
-        // But it works on iPhone 5 and iPhone 6S
+        // Maybe a bug in simulator, there is a delay before gif moves,
+        // iPhone 6S Plus, 6 Plus, 7 Plus affected
+        // But it works on iPhone 5 and iPhone 6S and iPhone 7
         DispatchQueue.main.async {
             // Load gif
             self.loadgif()
