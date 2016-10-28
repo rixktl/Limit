@@ -32,18 +32,22 @@ open class SettingModel: NSObject {
     override init() {
         super.init()
         // Add self to observer for unit changes
-        NotificationCenter.default.addObserver(self, selector: #selector(didChangeSetting), name: UserDefaults.didChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeSetting),
+                                               name: UserDefaults.didChangeNotification,
+                                               object: nil)
     }
     
     deinit {
         // Remove observer when deallocate
-        NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification,
+                                                  object: nil)
     }
     
     /* Called when receive change in setting */
     internal func didChangeSetting() {
         self.settings.isMPH = getSettingWithDefault(UNIT_NAME, defaultBoolean: Settings().isMPH)
-        self.settings.isExact = getSettingWithDefault(ACCURACY_NAME, defaultBoolean: Settings().isExact)
+        self.settings.isExact = getSettingWithDefault(ACCURACY_NAME,
+                                                      defaultBoolean: Settings().isExact)
         delegate?.updateSettings(self.settings)
     }
     

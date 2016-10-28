@@ -17,7 +17,8 @@ internal protocol InAppPurchaseModelDelegate {
     func updatePurchaseInfo(_ productIdentifier: String, code: Int)
 }
 
-open class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+open class InAppPurchaseModel: NSObject, SKProductsRequestDelegate,
+SKPaymentTransactionObserver {
     
     internal let TRANSACTION_DEFERRED: Int = 1
     internal let TRANSACTION_PURCHASING: Int = 2
@@ -29,7 +30,8 @@ open class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentTra
     internal let TRANSACTION_ERROR_NOT_ALLOWED: Int = 7
     
     // Harcoded products (product request will tell whether they are available or not)
-    fileprivate let defaultProductIdentifiers: [String] = ["California", "Oregon", "Washington"]
+    fileprivate let defaultProductIdentifiers: [String] = ["California",
+                                                           "Oregon", "Washington"]
     fileprivate var productDict: [String:SKProduct] = [String:SKProduct]()
     internal var delegate: InAppPurchaseModelDelegate!
     
@@ -108,19 +110,22 @@ open class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentTra
                 // Delay
                 case SKPaymentTransactionState.deferred:
                     print("Deferred")
-                    self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_DEFERRED)
+                    self.delegate.updatePurchaseInfo(productIdentifier,
+                                                     code: TRANSACTION_DEFERRED)
                 
                 // Purchasing
                 case SKPaymentTransactionState.purchasing:
                     print("Purchasing")
-                    self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_PURCHASING)
+                    self.delegate.updatePurchaseInfo(productIdentifier,
+                                                     code: TRANSACTION_PURCHASING)
                     
                 // Purchased
                 case SKPaymentTransactionState.purchased:
                     // Finish transaction
                     SKPaymentQueue.default().finishTransaction(transaction)
                     print("Purchased")
-                    self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_PURCHASED)
+                    self.delegate.updatePurchaseInfo(productIdentifier,
+                                                     code: TRANSACTION_PURCHASED)
                     // Then save to local record
                 
                 // Restored
@@ -128,7 +133,8 @@ open class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentTra
                     // Finish transaction
                     SKPaymentQueue.default().finishTransaction(transaction)
                     print("Restored")
-                    self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_RESTORED)
+                    self.delegate.updatePurchaseInfo(productIdentifier,
+                                                     code: TRANSACTION_RESTORED)
                     // Then save to local record
                 
                 // Failed
@@ -140,15 +146,18 @@ open class InAppPurchaseModel: NSObject, SKProductsRequestDelegate, SKPaymentTra
                     switch transaction.error! {
                         // Cancelled
                         case SKError.paymentCancelled:
-                            self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_ERROR_CANCELLED)
+                            self.delegate.updatePurchaseInfo(productIdentifier,
+                                                             code: TRANSACTION_ERROR_CANCELLED)
                         
                         // Invalid
                         case SKError.paymentInvalid:
-                            self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_ERROR_INVALID)
+                            self.delegate.updatePurchaseInfo(productIdentifier,
+                                                             code: TRANSACTION_ERROR_INVALID)
                         
                         // Not allowed
                         case SKError.paymentNotAllowed:
-                            self.delegate.updatePurchaseInfo(productIdentifier, code: TRANSACTION_ERROR_NOT_ALLOWED)
+                            self.delegate.updatePurchaseInfo(productIdentifier,
+                                                             code: TRANSACTION_ERROR_NOT_ALLOWED)
                         
                         default:
                             break

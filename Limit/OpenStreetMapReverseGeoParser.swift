@@ -52,7 +52,8 @@ open class OpenStreetMapReverseGeoParser: NSObject, XMLParserDelegate {
 
     /* Form an url according to coordinates */
     fileprivate func formUrl(_ coord: Coordinates) -> String! {
-        return String(coord.latitude) + COORDINATES_SEPARATION + String(coord.longitude)
+        return String(coord.latitude) + COORDINATES_SEPARATION +
+         String(coord.longitude)
     }
     
     /* Send an async request */
@@ -61,7 +62,8 @@ open class OpenStreetMapReverseGeoParser: NSObject, XMLParserDelegate {
         let url = URL(string: urlPath)!
         let session = URLSession.shared
         
-        let task = session.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
+        let task = session.dataTask(with: url,
+                        completionHandler: { (data, response, error) -> Void in
             self.startParser(data, response: response, error: error as NSError?)
             return ()
         }) 
@@ -70,7 +72,8 @@ open class OpenStreetMapReverseGeoParser: NSObject, XMLParserDelegate {
     }
     
     /* Start XML parsing */
-    fileprivate func startParser(_ data: Data?, response: URLResponse?, error: NSError?) {
+    fileprivate func startParser(_ data: Data?, response: URLResponse?,
+                                 error: NSError?) {
         guard (data != nil) else {
             // TODO: error handling
             print("error:")
@@ -94,7 +97,9 @@ open class OpenStreetMapReverseGeoParser: NSObject, XMLParserDelegate {
         lock = true
         
         // Delay unlock
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(LOCK_TIME * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: ({
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() +
+         Double(Int64(LOCK_TIME * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC),
+                                      execute: ({
             self.lock = false
         }))
         
@@ -104,7 +109,9 @@ open class OpenStreetMapReverseGeoParser: NSObject, XMLParserDelegate {
     }
     
     /* Called when parsing new element */
-    open func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    open func parser(_ parser: XMLParser, didStartElement elementName: String,
+                     namespaceURI: String?, qualifiedName qName: String?,
+                     attributes attributeDict: [String : String]) {
         if(elementName == RESULT_IDENTIFIER) {
             self.data.id = attributeDict[OSM_ID_IDENTIFIER]
         } else if(elementName == ROAD_NAME_IDENTIFIER) {
@@ -121,7 +128,8 @@ open class OpenStreetMapReverseGeoParser: NSObject, XMLParserDelegate {
     }
     
     /* Called when parsing element ends */
-    open func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    open func parser(_ parser: XMLParser, didEndElement elementName: String,
+                     namespaceURI: String?, qualifiedName qName: String?) {
         if(self.data.id != nil && self.data.name != nil) {
             self.delegate.updateReverseGeoResult(self.data!)
             

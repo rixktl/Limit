@@ -43,7 +43,9 @@ open class AudioModel: NSObject {
         self.audioPlayer!.play()
         
         // Delay unlock
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(self.audioPlayer!.duration + AUDIO_OFFSET * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: ({
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() +
+         Double(Int64(self.audioPlayer!.duration + AUDIO_OFFSET * Double(NSEC_PER_SEC))) /
+         Double(NSEC_PER_SEC), execute: ({
             self.lock = false
         }))
         

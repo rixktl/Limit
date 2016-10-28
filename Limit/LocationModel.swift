@@ -115,7 +115,8 @@ open class LocationModel: NSObject, CLLocationManagerDelegate {
         
         // Reserve geocode from location
         let geocoder: CLGeocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation((locationManager?.location)!, completionHandler: {(placemarks, error) -> Void in
+        geocoder.reverseGeocodeLocation((locationManager?.location)!,
+                           completionHandler: {(placemarks, error) -> Void in
             // Check if error exist
             if error != nil {
                 // TODO: Error handling
@@ -153,7 +154,8 @@ open class LocationModel: NSObject, CLLocationManagerDelegate {
     }
     
     /* Receives update */
-    open func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    open func locationManager(_ manager: CLLocationManager,
+                              didUpdateLocations locations: [CLLocation]) {
         // Check if location details exist
         guard (locations.count > 0) else {
             return
@@ -170,7 +172,11 @@ open class LocationModel: NSObject, CLLocationManagerDelegate {
         locationToState()
 
         // Construct data
-        let data: LocationData = LocationData(speed: speed, direction:v.direction, thoroughfare: thoroughfare, coord: Coordinates(latitude: info.coordinate.latitude, longitude: info.coordinate.longitude), state: address)
+        let data: LocationData = LocationData(speed: speed,
+                              direction:v.direction, thoroughfare: thoroughfare,
+                              coord: Coordinates(latitude: info.coordinate.latitude,
+                              longitude: info.coordinate.longitude),
+                              state: address)
         
         // Update to handler
         delegate!.locationUpdate(data)
@@ -178,7 +184,8 @@ open class LocationModel: NSObject, CLLocationManagerDelegate {
     }
     
     /*  Receives error */
-    open func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    open func locationManager(_ manager: CLLocationManager,
+                              didFailWithError error: Error) {
         // TODO: Error handling
     }
     

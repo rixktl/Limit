@@ -69,8 +69,11 @@ open class OpenStreetMapParser: NSObject, XMLParserDelegate {
     }
     
     /* Form an url according to coordinates */
-    fileprivate func formUrl(_ minLat: Double!, _ maxLat: Double!, _ minLon: Double!, _ maxLon: Double!) -> String! {
-        return String(minLon) + COORDINATES_SEPARATION as String + String(minLat) + COORDINATES_SEPARATION as String + String(maxLon) + COORDINATES_SEPARATION as String + String(maxLat)
+    fileprivate func formUrl(_ minLat: Double!, _ maxLat: Double!,
+                             _ minLon: Double!, _ maxLon: Double!) -> String! {
+        return String(minLon) + COORDINATES_SEPARATION as String +
+         String(minLat) + COORDINATES_SEPARATION as String + String(maxLon) +
+         COORDINATES_SEPARATION as String + String(maxLat)
     }
     
     /* Send an async request */
@@ -78,7 +81,8 @@ open class OpenStreetMapParser: NSObject, XMLParserDelegate {
         let url = URL(string: urlPath)!
         let session = URLSession.shared
         
-        let task = session.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
+        let task = session.dataTask(with: url,
+                        completionHandler: { (data, response, error) -> Void in
             self.startParser(data, response: response, error: error as NSError?)
             return ()
         }) 
@@ -87,7 +91,8 @@ open class OpenStreetMapParser: NSObject, XMLParserDelegate {
     }
     
     /* Start XML parsing */
-    fileprivate func startParser(_ data: Data?, response: URLResponse?, error: NSError?) {
+    fileprivate func startParser(_ data: Data?, response: URLResponse?,
+                                 error: NSError?) {
         guard (data != nil) else {
             // TODO: error handling
             print("error:")
@@ -110,7 +115,9 @@ open class OpenStreetMapParser: NSObject, XMLParserDelegate {
         lock = true
         
         // Delay unlock
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(LOCK_TIME * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: ({
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() +
+         Double(Int64(LOCK_TIME * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC),
+                                      execute: ({
             self.lock = false
         }))
         
@@ -124,16 +131,21 @@ open class OpenStreetMapParser: NSObject, XMLParserDelegate {
         let maxLon: Double! = coord.longitude + offsetLongitude
         
         // Create url
-        let url: String! = PRE_URL as String + formUrl(minLat, maxLat, minLon, maxLon) + POST_URL as String
+        let url: String! = PRE_URL as String +
+         formUrl(minLat, maxLat, minLon, maxLon) + POST_URL as String
         asyncRequest(url)
     }
     
     /* Called when parsing new element */
-    open func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    open func parser(_ parser: XMLParser,
+                     didStartElement elementName: String,
+                     namespaceURI: String?, qualifiedName qName: String?,
+                     attributes attributeDict: [String : String]) {
         
         switch elementName {
             case TAG_IDENTIFIER:
-                let newTag: Tag = Tag(key: attributeDict[KEY_IDENTIFIER], value: attributeDict[VALUE_IDENTIFIER])
+                let newTag: Tag = Tag(key: attributeDict[KEY_IDENTIFIER],
+                                      value: attributeDict[VALUE_IDENTIFIER])
                 // Determines type of father struct
                 if(isNode!) {
                     // Initialize if not exist
@@ -153,7 +165,8 @@ open class OpenStreetMapParser: NSObject, XMLParserDelegate {
             
             case NODE_IDENTIFIER:
                 isNode = true
-                var newNode: Node = Node(latitude: Double(attributeDict[LATITUDE_IDENTIFIER]!), longitude: Double(attributeDict[LONGITUDE_IDENTIFIER]!))
+                var newNode: Node = Node(latitude: Double(attributeDict[LATITUDE_IDENTIFIER]!),
+                                         longitude: Double(attributeDict[LONGITUDE_IDENTIFIER]!))
                 newNode.id = attributeDict[ID_IDENTIFIER]
                 // Add new node
                 tmpNode[attributeDict[ID_IDENTIFIER]!] = newNode
@@ -185,7 +198,8 @@ open class OpenStreetMapParser: NSObject, XMLParserDelegate {
     }
     
     /* Called when parsing element ends */
-    open func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    open func parser(_ parser: XMLParser, didEndElement elementName: String,
+                     namespaceURI: String?, qualifiedName qName: String?) {
         // Update result when reaching end of file
         if(elementName == OSM_IDENTIFIER) {
             delegate!.updateData(result!)

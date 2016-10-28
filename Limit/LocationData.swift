@@ -16,7 +16,8 @@ struct LocationData {
     var speed: Double?
     var direction: Double?
     
-    init(speed: Double?, direction: Double?, thoroughfare: String?, coord: Coordinates?, state: String?) {
+    init(speed: Double?, direction: Double?, thoroughfare: String?,
+         coord: Coordinates?, state: String?) {
         self.coord = coord
         self.state = state
         self.thoroughfare = thoroughfare

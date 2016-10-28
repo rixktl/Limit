@@ -39,7 +39,9 @@ open class LoadingModel: NSObject {
         // Remove timer
         timer = nil
         // Delayed call
-        timer = Timer.scheduledTimer(timeInterval: TIMER_DELAY, target: self, selector: #selector(addView), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: TIMER_DELAY, target: self,
+                                     selector: #selector(addView), userInfo: nil,
+                                     repeats: false)
     }
     
     /* Stop loading model */

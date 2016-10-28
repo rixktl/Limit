@@ -60,11 +60,12 @@ open class WatchCommunicationModel: NSObject, SpeedModelDelegate {
     }
     
     /* Updated by speed model */
-    internal func updateSpeedInfo(_ speed: Double!, speedLimit: Double?, unit: Bool!, status: Status) {
+    internal func updateSpeedInfo(_ speed: Double!, speedLimit: Double?,
+                                  unit: Bool!, status: Status) {
         let message: [String: Any] = [DataLabel.Speed.rawValue:speed as Any,
-                                            DataLabel.SpeedLimit.rawValue: (speedLimit != nil ? speedLimit! : -1.0 as Any),
-                                            DataLabel.Unit.rawValue: unit,
-                                            DataLabel.Status.rawValue: status.rawValue]
+            DataLabel.SpeedLimit.rawValue: (speedLimit != nil ? speedLimit! : -1.0 as Any),
+            DataLabel.Unit.rawValue: unit,
+            DataLabel.Status.rawValue: status.rawValue]
         // Send to Apple Watch
         sendMessage(message)
     }
@@ -72,7 +73,8 @@ open class WatchCommunicationModel: NSObject, SpeedModelDelegate {
     /* Send message to Apple Watch */
     fileprivate func sendMessage(_ message: [String : Any]) {
         if(WCSession.default().isReachable) {
-            WCSession.default().sendMessage(message, replyHandler: nil, errorHandler: nil)
+            WCSession.default().sendMessage(message, replyHandler: nil,
+                                            errorHandler: nil)
         }
     }
     

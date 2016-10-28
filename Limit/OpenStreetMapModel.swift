@@ -36,7 +36,8 @@ internal protocol OpenStreetMapModelDelegate {
     func updateSpeedLimit(_ speedLimit: Double?)
 }
 
-open class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreetMapFinderDelegate, OpenStreetMapReverseGeoParserDelegate {
+open class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate,
+OpenStreetMapFinderDelegate, OpenStreetMapReverseGeoParserDelegate {
     
     fileprivate let osmParser: OpenStreetMapParser! = OpenStreetMapParser()
     fileprivate let osmFinder: OpenStreetMapFinder! = OpenStreetMapFinder()
@@ -75,7 +76,9 @@ open class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreet
         }
         
         // See if Bound check fail
-        if(!checkBound()! || (osmParser.coord!.latitude != self.locationData!.coord!.latitude || osmParser.coord!.longitude != self.locationData!.coord!.longitude) ) {
+        if(!checkBound()! ||
+         (osmParser.coord!.latitude != self.locationData!.coord!.latitude ||
+            osmParser.coord!.longitude != self.locationData!.coord!.longitude) ) {
             // Request new data
             osmParser.request(self.locationData?.coord)
         } else {
@@ -87,7 +90,8 @@ open class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreet
     /* Check if coordinates within bound */
     fileprivate func checkBound() -> Bool? {
         // Ensure non nil
-        guard (self.locationData?.coord != nil && upperBound != nil && lowerBound != nil) else {
+        guard (self.locationData?.coord != nil &&
+         upperBound != nil && lowerBound != nil) else {
             return nil
         }
         
@@ -99,14 +103,16 @@ open class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreet
     }
     
     /* Set bounded offset for parser */
-    internal func setBoundedOffset(_ offsetLatitude: Double!, offsetLongitude: Double!) {
+    internal func setBoundedOffset(_ offsetLatitude: Double!,
+                                   offsetLongitude: Double!) {
         osmParser.offsetLatitude = offsetLatitude
         osmParser.offsetLongitude = offsetLongitude
     }
     
     /* Update new coordinate */
     internal func newCoordinates(_ data: LocationData) {
-        guard (data.coord?.latitude != nil && data.coord?.longitude != nil) else {
+        guard (data.coord?.latitude != nil &&
+         data.coord?.longitude != nil) else {
             return
         }
         
@@ -128,8 +134,10 @@ open class OpenStreetMapModel: NSObject, OpenStreetMapParserDelegate, OpenStreet
         osmFinder.reverseGeoData = reverseGeoData
         
         // Update local boundary
-        upperBound = Coordinates(latitude: osmParser.coord!.latitude + osmParser.offsetLatitude, longitude: osmParser.coord!.longitude + osmParser.offsetLongitude)
-        lowerBound = Coordinates(latitude: osmParser.coord!.latitude - osmParser.offsetLatitude, longitude: osmParser.coord!.longitude - osmParser.offsetLongitude)
+        upperBound = Coordinates(latitude: osmParser.coord!.latitude + osmParser.offsetLatitude,
+                                 longitude: osmParser.coord!.longitude + osmParser.offsetLongitude)
+        lowerBound = Coordinates(latitude: osmParser.coord!.latitude - osmParser.offsetLatitude,
+                                 longitude: osmParser.coord!.longitude - osmParser.offsetLongitude)
         
         // Search speed limit 
         osmFinder.asyncSearch()

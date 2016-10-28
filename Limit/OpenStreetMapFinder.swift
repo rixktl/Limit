@@ -90,7 +90,9 @@ open class OpenStreetMapFinder {
             
             if(self.locationData != nil) {
                 // Fallback mode, search limit with coordinates
-                limit = self.searchWithCoordinates(self.locationData!.coord, direction: self.locationData!.direction, thoroughfare: self.locationData!.thoroughfare)
+                limit = self.searchWithCoordinates(self.locationData!.coord,
+                                 direction: self.locationData!.direction,
+                                 thoroughfare: self.locationData!.thoroughfare)
                 
                 self.delegate.updateSpeedLimit(limit)
                 
@@ -138,9 +140,12 @@ open class OpenStreetMapFinder {
     }
     
     /* Search limit by coordinates */
-    fileprivate func searchWithCoordinates(_ coord: Coordinates?, direction: Double?, thoroughfare: String?) -> Double? {
+    fileprivate func searchWithCoordinates(_ coord: Coordinates?,
+                                           direction: Double?,
+                                           thoroughfare: String?) -> Double? {
         // Ensure data exist
-        guard (data != nil && data!.ways != nil && coord != nil && direction != nil) else {
+        guard (data != nil && data!.ways != nil &&
+               coord != nil && direction != nil) else {
             // Failed to find speed limit
             return nil
         }
@@ -149,7 +154,8 @@ open class OpenStreetMapFinder {
         
             for wayIndex in 0..<data!.ways!.count {
             
-                let maxspeed: Double! = extractLimitFromWayTagWithThoroughfare(data!.ways![wayIndex], thoroughfare: thoroughfare)
+                let maxspeed: Double! = extractLimitFromWayTagWithThoroughfare(data!.ways![wayIndex],
+                                                   thoroughfare: thoroughfare)
                 if(maxspeed != nil) {
                     return maxspeed
                 }
@@ -227,7 +233,8 @@ open class OpenStreetMapFinder {
             return 25.0
         case SECONDARY_VALUE_IDENTIFIER, TERTIARY_VALUE_IDENTIFIER:
             return 30.0
-        case PRIMARY_VALUE_IDENTIFIER, FREEWAY_VALUE_IDENTIFIER, MOTORWAY_VALUE_IDENTIFIER, TRUNK_VALUE_IDENTIFIER:
+        case PRIMARY_VALUE_IDENTIFIER, FREEWAY_VALUE_IDENTIFIER,
+             MOTORWAY_VALUE_IDENTIFIER, TRUNK_VALUE_IDENTIFIER:
             return 60.0
         default:
             return nil
@@ -318,7 +325,8 @@ open class OpenStreetMapFinder {
     }
     
     /* Extract limit from way's tag with thoroughfare(ref) */
-    fileprivate func extractLimitFromWayTagWithThoroughfare(_ w: Way, thoroughfare: String!) -> Double? {
+    fileprivate func extractLimitFromWayTagWithThoroughfare(_ w: Way,
+                                             thoroughfare: String!) -> Double? {
         // Ensure tag exist
         guard (w.subTag != nil) else {
             return nil
@@ -360,11 +368,13 @@ open class OpenStreetMapFinder {
                 
                 var nearestNodeIndex: Int = 0
                 // Distance between first node and given coordinates
-                var nodeDistance: Double! = distanceTwoPoints(data!.ways![wayIndex].subNode![0].coord, coord2: coord)
+                var nodeDistance: Double! = distanceTwoPoints(data!.ways![wayIndex].subNode![0].coord,
+                                                              coord2: coord)
                 
                 // Loop through all nodes in a single way
                 for nodeIndex in 0..<data!.ways![wayIndex].subNode!.count {
-                    let distance: Double! = distanceTwoPoints(data!.ways![wayIndex].subNode![nodeIndex].coord, coord2: coord)
+                    let distance: Double! = distanceTwoPoints(data!.ways![wayIndex].subNode![nodeIndex].coord,
+                                                              coord2: coord)
                     // Get smallest distance
                     if(distance < nodeDistance) {
                         nearestNodeIndex = nodeIndex
@@ -379,13 +389,15 @@ open class OpenStreetMapFinder {
                 
                 if(nearestNodeIndex > 0) {
                     // Line formed with pervious node
-                    let perviousLine: Line = Line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord, coord2: data!.ways![wayIndex].subNode![nearestNodeIndex - 1].coord)
+                    let perviousLine: Line = Line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord,
+                                                  coord2: data!.ways![wayIndex].subNode![nearestNodeIndex - 1].coord)
                     distancePervious = distanceLineSegmentPoint(perviousLine, coord: coord)
                 }
                 
                 if(nearestNodeIndex + 1 < data!.ways![wayIndex].subNode!.count) {
                     // Line formed with next node
-                    let nextLine: Line = Line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord, coord2: data!.ways![wayIndex].subNode![nearestNodeIndex + 1].coord)
+                    let nextLine: Line = Line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord,
+                                              coord2: data!.ways![wayIndex].subNode![nearestNodeIndex + 1].coord)
                     distanceNext = distanceLineSegmentPoint(nextLine, coord: coord)
                 }
                 
@@ -406,15 +418,18 @@ open class OpenStreetMapFinder {
                 var l: Line!
                 if(finalNextNearest == 1) {
                     // Next
-                    l = Line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord, coord2: data!.ways![wayIndex].subNode![nearestNodeIndex + 1].coord)
+                    l = Line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex].coord,
+                             coord2: data!.ways![wayIndex].subNode![nearestNodeIndex + 1].coord)
                 } else {
                     // Previous
-                    l = Line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex - 1].coord, coord2: data!.ways![wayIndex].subNode![nearestNodeIndex].coord)
+                    l = Line(coord1: data!.ways![wayIndex].subNode![nearestNodeIndex - 1].coord,
+                             coord2: data!.ways![wayIndex].subNode![nearestNodeIndex].coord)
                 }
                 
                 
                 // Get smallest distance with acceptable direction
-                if(distance < wayDistance && checkDirection(l, direction: direction)) {
+                if(distance < wayDistance &&
+                  checkDirection(l, direction: direction)) {
                     wayDistance = distance
                     nearestWayIndex = wayIndex
                     finalNearestNodeIndex = nearestNodeIndex
@@ -424,7 +439,8 @@ open class OpenStreetMapFinder {
             }
         }
 
-        return [nearestWayIndex, finalNearestNodeIndex, finalNextNearest, Int(wayDistance)]
+        return [nearestWayIndex, finalNearestNodeIndex,
+                finalNextNearest, Int(wayDistance)]
     }
     
     /* Check directional distance(degree) of given line segment and direction */
@@ -437,7 +453,8 @@ open class OpenStreetMapFinder {
     fileprivate func getDirection(_ l: Line!) -> Double! {
         let dlon: Double! = l.coord2.longitude - l.coord1.longitude
         let y: Double! = sin(dlon) * cos(l.coord2.latitude)
-        let x: Double! = cos(l.coord1.latitude) * sin(l.coord2.latitude) - sin(l.coord1.latitude) * cos(l.coord2.latitude) * cos(dlon)
+        let x: Double! = cos(l.coord1.latitude) * sin(l.coord2.latitude) -
+         sin(l.coord1.latitude) * cos(l.coord2.latitude) * cos(dlon)
         var brng: Double! = atan2(y, x)
         brng = brng * 180 / M_PI
         brng = 360 - brng
@@ -445,12 +462,15 @@ open class OpenStreetMapFinder {
     }
     
     /* Calculate distance between two points */
-    fileprivate func distanceTwoPoints(_ coord1: Coordinates!, coord2: Coordinates!) -> Double! {
-        return sqrt(pow(coord1.latitude - coord2.latitude, 2) + pow(coord1.longitude - coord2.longitude, 2))
+    fileprivate func distanceTwoPoints(_ coord1: Coordinates!,
+                                       coord2: Coordinates!) -> Double! {
+        return sqrt(pow(coord1.latitude - coord2.latitude, 2) +
+         pow(coord1.longitude - coord2.longitude, 2))
     }
     
     /* Calculate distance between line segment and point */
-    fileprivate func distanceLineSegmentPoint(_ l: Line, coord: Coordinates) -> Double! {
+    fileprivate func distanceLineSegmentPoint(_ l: Line,
+                                              coord: Coordinates) -> Double! {
         // (x,y) -> (lat,lon)
         let x1: Double! = l.coord1.latitude
         let x2: Double! = l.coord2.latitude

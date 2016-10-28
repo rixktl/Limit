@@ -40,7 +40,8 @@ class LocationRequestViewController: UIViewController, CLLocationManagerDelegate
     }
     
     /* Called when permission status is changed */
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
         // Ensure clicked
         guard (clicked == true) else {
             return
@@ -60,7 +61,8 @@ class LocationRequestViewController: UIViewController, CLLocationManagerDelegate
     
     /* Switch to other view */
     fileprivate func switchToView(_ name: String!) {
-        let view: UIViewController = UIStoryboard.init(name: STORYBOARD_NAME, bundle: nil).instantiateViewController(withIdentifier: name)
+        let view: UIViewController = UIStoryboard.init(name: STORYBOARD_NAME,
+                     bundle: nil).instantiateViewController(withIdentifier: name)
         self.present(view, animated: true, completion: nil)
     }
     

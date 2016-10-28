@@ -48,10 +48,12 @@ enum Status: Int {
 }
 
 internal protocol SpeedModelDelegate {
-    func updateSpeedInfo(_ speed: Double!, speedLimit: Double?, unit: Bool!, status: Status)
+    func updateSpeedInfo(_ speed: Double!, speedLimit: Double?, unit: Bool!,
+                         status: Status)
 }
 
-open class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDelegate, SettingModelDelegate {
+open class SpeedModel: NSObject, OpenStreetMapModelDelegate,
+                       LocationManagerDelegate, SettingModelDelegate {
     
     fileprivate let osmModel: OpenStreetMapModel = OpenStreetMapModel()
     fileprivate let locManager: LocationModel = LocationModel()
@@ -169,7 +171,11 @@ open class SpeedModel: NSObject, OpenStreetMapModelDelegate, LocationManagerDele
             return
         }
         
-        delegate?.updateSpeedInfo(convertKPH(getFinalSpeed()), speedLimit:convertKPH(self.speedLimit), unit: self.settings.isMPH, status: getStatus(offsetSpeedLimit(self.speedLimit)))
+        delegate?.updateSpeedInfo(convertKPH(getFinalSpeed()),
+                                  speedLimit:convertKPH(self.speedLimit),
+                                  unit: self.settings.isMPH,
+                                  status: getStatus(
+                                          offsetSpeedLimit(self.speedLimit))  )
     }
     
     /* Called when settings are updated */

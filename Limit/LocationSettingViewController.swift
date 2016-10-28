@@ -24,11 +24,13 @@ class LocationSettingViewController: UIViewController, CLLocationManagerDelegate
     /* Called when setting button is clicked */
     @IBAction func SettingButtonClicked(_ sender: AnyObject) {
         // Open setting url
-        UIApplication.shared.open(URL.init(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL.init(string: UIApplicationOpenSettingsURLString)!,
+                                  options: [:], completionHandler: nil)
     }
     
     /* Called when permission status is changed */
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case CLAuthorizationStatus.authorizedAlways:
             switchToView(MAIN_VIEW_NAME)
@@ -42,7 +44,8 @@ class LocationSettingViewController: UIViewController, CLLocationManagerDelegate
     
     /* Switch to other view */
     fileprivate func switchToView(_ name: String!) {
-        let view: UIViewController = UIStoryboard.init(name: STORYBOARD_NAME, bundle: nil).instantiateViewController(withIdentifier: name)
+        let view: UIViewController = UIStoryboard.init(name: STORYBOARD_NAME,
+                     bundle: nil).instantiateViewController(withIdentifier: name)
         self.present(view, animated: true, completion: nil)
     }
     
