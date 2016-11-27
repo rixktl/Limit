@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="limit_icon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vDC-md-4lu">
-                                <rect key="frame" x="120" y="334" width="157" height="67"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="limit_icon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vDC-md-4lu">
+                                <rect key="frame" x="128.66666666666669" y="334" width="157.00000000000006" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="LaG-hw-OVH"/>
                                     <constraint firstAttribute="width" constant="157" id="MOG-vl-XiM"/>
@@ -42,7 +42,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="limit_icon.jpg" width="697" height="332"/>
+        <image name="limit_icon.jpg" width="640" height="304"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

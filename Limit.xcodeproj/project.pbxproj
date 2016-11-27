@@ -42,6 +42,7 @@
 		D9AC102F1D29D75F00B75B04 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AC102E1D29D75F00B75B04 /* LoadingViewController.swift */; };
 		D9AC10311D29DB7E00B75B04 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9AC10301D29DB7E00B75B04 /* Loading.gif */; };
 		D9C412311DC351A10077B60A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C412301DC351A10077B60A /* NavigationController.swift */; };
+		D9D709391DEA799C008D3EBD /* limit_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D9D709381DEA799C008D3EBD /* limit_icon.jpg */; };
 		D9E643FB1D336E7E00637982 /* SanFranciscoDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9E643E61D336E7E00637982 /* SanFranciscoDisplay-Black.otf */; };
 		D9E643FC1D336E7E00637982 /* SanFranciscoDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9E643E61D336E7E00637982 /* SanFranciscoDisplay-Black.otf */; };
 		D9E643FD1D336E7E00637982 /* SanFranciscoDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9E643E71D336E7E00637982 /* SanFranciscoDisplay-Bold.otf */; };
@@ -96,7 +97,6 @@
 		D9F5ED4C1D2B115500482368 /* Limit WatchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D9F5ED2E1D2B115500482368 /* Limit WatchOS.app */; };
 		D9F5ED561D2B2DF100482368 /* WatchCommunicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5ED551D2B2DF100482368 /* WatchCommunicationModel.swift */; };
 		D9F5ED581D2B2E0000482368 /* AppCommunicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5ED571D2B2E0000482368 /* AppCommunicationModel.swift */; };
-		E12D142F1DEA6D6900AB114A /* limit_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E12D142E1DEA6D6900AB114A /* limit_icon.jpg */; };
 		E1ECB2681DEA42440025C845 /* OptionalStop.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB2661DEA42440025C845 /* OptionalStop.png */; };
 		E1ECB2691DEA42440025C845 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB2671DEA42440025C845 /* Start.png */; };
 		E1ECB26A1DEA42800025C845 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB2671DEA42440025C845 /* Start.png */; };
@@ -200,6 +200,7 @@
 		D9AC102E1D29D75F00B75B04 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		D9AC10301D29DB7E00B75B04 /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Loading.gif; path = Media/Loading.gif; sourceTree = "<group>"; };
 		D9C412301DC351A10077B60A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		D9D709381DEA799C008D3EBD /* limit_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = limit_icon.jpg; sourceTree = "<group>"; };
 		D9E643E61D336E7E00637982 /* SanFranciscoDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Black.otf"; path = "Fonts/SanFranciscoDisplay-Black.otf"; sourceTree = "<group>"; };
 		D9E643E71D336E7E00637982 /* SanFranciscoDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Bold.otf"; path = "Fonts/SanFranciscoDisplay-Bold.otf"; sourceTree = "<group>"; };
 		D9E643E81D336E7E00637982 /* SanFranciscoDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoDisplay-Heavy.otf"; path = "Fonts/SanFranciscoDisplay-Heavy.otf"; sourceTree = "<group>"; };
@@ -235,7 +236,6 @@
 		D9F5ED491D2B115500482368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F5ED551D2B2DF100482368 /* WatchCommunicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchCommunicationModel.swift; sourceTree = "<group>"; };
 		D9F5ED571D2B2E0000482368 /* AppCommunicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCommunicationModel.swift; sourceTree = "<group>"; };
-		E12D142E1DEA6D6900AB114A /* limit_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = limit_icon.jpg; path = ../limit_icon.jpg; sourceTree = "<group>"; };
 		E1ECB2661DEA42440025C845 /* OptionalStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OptionalStop.png; path = Media/StatusRings/OptionalStop.png; sourceTree = "<group>"; };
 		E1ECB2671DEA42440025C845 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Start.png; path = Media/StatusRings/Start.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -275,7 +275,7 @@
 		D994F3581D28BEF500E73A85 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				E12D142E1DEA6D6900AB114A /* limit_icon.jpg */,
+				D9D709381DEA799C008D3EBD /* limit_icon.jpg */,
 				E1ECB2661DEA42440025C845 /* OptionalStop.png */,
 				E1ECB2671DEA42440025C845 /* Start.png */,
 				D94AC8D91D2A7440006B13AD /* IconLogoBlackWhite.jpg */,
@@ -560,6 +560,7 @@
 					};
 					D9F5ED391D2B115500482368 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = DKYHV57U2S;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -602,7 +603,7 @@
 				D9A5EF721D1B079F0077C1C0 /* Assets.xcassets in Resources */,
 				D9A5EF701D1B079F0077C1C0 /* Main.storyboard in Resources */,
 				D9AC10311D29DB7E00B75B04 /* Loading.gif in Resources */,
-				E12D142F1DEA6D6900AB114A /* limit_icon.jpg in Resources */,
+				D9D709391DEA799C008D3EBD /* limit_icon.jpg in Resources */,
 				D94AC8D81D2A73CF006B13AD /* WhiteButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -965,6 +966,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DKYHV57U2S;
 				IBSC_MODULE = Limit_WatchOS_Extension;
 				INFOPLIST_FILE = "Limit WatchOS/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit.watchkitapp;
@@ -982,6 +984,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DKYHV57U2S;
 				IBSC_MODULE = Limit_WatchOS_Extension;
 				INFOPLIST_FILE = "Limit WatchOS/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit.watchkitapp;
@@ -997,6 +1000,7 @@
 		D9F5ED4F1D2B115500482368 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = DKYHV57U2S;
 				INFOPLIST_FILE = "Limit WatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit.watchkitapp.watchkitextension;
@@ -1012,6 +1016,7 @@
 		D9F5ED501D2B115500482368 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = DKYHV57U2S;
 				INFOPLIST_FILE = "Limit WatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.limitlabs.Limit.watchkitapp.watchkitextension;

@@ -59,7 +59,7 @@ open class ViewModel: NSObject {
     open func optionalStopView(_ unit: String!) {
         print("Optional Stop View")
         speedLabel?.setText(EMPTY)
-        unitLabel!.setText(unit)
+        unitLabel!.setText(EMPTY)
         interfaceGroup?.setBackgroundImageNamed(OPTIONAL_STOP_IMAGE_NAME)
     }
 }
