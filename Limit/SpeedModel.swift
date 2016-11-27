@@ -53,10 +53,9 @@ internal protocol SpeedModelDelegate {
 }
 
 open class SpeedModel: NSObject, OpenStreetMapModelDelegate,
-                       LocationManagerDelegate, SettingModelDelegate, GoogleMapModelDelegate {
+                       LocationManagerDelegate, SettingModelDelegate {
     
     fileprivate let osmModel: OpenStreetMapModel = OpenStreetMapModel()
-    fileprivate let googleModel: GoogleMapModel = GoogleMapModel()
     fileprivate let locManager: LocationModel = LocationModel()
     fileprivate let settingModel: SettingModel = SettingModel()
     fileprivate let MPH_TO_KPH_RATE: Double! = 1.609344
@@ -72,7 +71,6 @@ open class SpeedModel: NSObject, OpenStreetMapModelDelegate,
     override init() {
         super.init()
         osmModel.delegate = self
-        googleModel.delegate = self
         locManager.delegate = self
         settingModel.delegate = self
         // Check settings
@@ -201,7 +199,6 @@ open class SpeedModel: NSObject, OpenStreetMapModelDelegate,
         self.speed = data.speed
         // Update to internal handler
         osmModel.newCoordinates(data)
-        googleModel.request(data.coord)
         // Update to handler
         updateInfo()
     }

@@ -100,7 +100,6 @@
 		E1ECB2691DEA42440025C845 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB2671DEA42440025C845 /* Start.png */; };
 		E1ECB26A1DEA42800025C845 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB2671DEA42440025C845 /* Start.png */; };
 		E1ECB26B1DEA42830025C845 /* OptionalStop.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB2661DEA42440025C845 /* OptionalStop.png */; };
-		E1F86B2F1DEA46A8004A2EFA /* GoogleMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F86B2E1DEA46A8004A2EFA /* GoogleMapModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,7 +236,6 @@
 		D9F5ED571D2B2E0000482368 /* AppCommunicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCommunicationModel.swift; sourceTree = "<group>"; };
 		E1ECB2661DEA42440025C845 /* OptionalStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OptionalStop.png; path = Media/StatusRings/OptionalStop.png; sourceTree = "<group>"; };
 		E1ECB2671DEA42440025C845 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Start.png; path = Media/StatusRings/Start.png; sourceTree = "<group>"; };
-		E1F86B2E1DEA46A8004A2EFA /* GoogleMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,7 +339,6 @@
 				D94AC8DF1D2A74E0006B13AD /* LocationSettingViewController.swift */,
 				D9F5ED551D2B2DF100482368 /* WatchCommunicationModel.swift */,
 				D9C412301DC351A10077B60A /* NavigationController.swift */,
-				E1F86B2E1DEA46A8004A2EFA /* GoogleMapModel.swift */,
 			);
 			path = Limit;
 			sourceTree = "<group>";
@@ -694,7 +691,6 @@
 				D9A5EF6D1D1B079F0077C1C0 /* ViewController.swift in Sources */,
 				D9F5ED561D2B2DF100482368 /* WatchCommunicationModel.swift in Sources */,
 				D9AC102F1D29D75F00B75B04 /* LoadingViewController.swift in Sources */,
-				E1F86B2F1DEA46A8004A2EFA /* GoogleMapModel.swift in Sources */,
 				D994F35E1D28C8C500E73A85 /* AudioModel.swift in Sources */,
 				D91C6EFE1D1B727000923644 /* OpenStreetMapParser.swift in Sources */,
 				D9A49C161D298FA300338883 /* SettingViewController.swift in Sources */,
