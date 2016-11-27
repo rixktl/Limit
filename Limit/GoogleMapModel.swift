@@ -66,43 +66,42 @@ open class GoogleMapModel : NSObject, GoogleMapModelDelegate {
         let maxLon: Double! = coord.longitude + LONGITUDE_OFFSET
         
         // Create url
-        var url: String = GOOGLE_SPEEDLIMIT_URL
-        url += "path=" + formParameters(minLat, maxLat, minLon, maxLon)
-        url += "&key=" + GOOGLE_API_KEY
-        
+        let url: String! = GOOGLE_SPEEDLIMIT_URL as String + "path=" as String
+         + formParameters(minLat, maxLat, minLon, maxLon)
+         + "&key=" as String + GOOGLE_API_KEY as String
+
         asyncRequest(url)
     }
     
     /* Send an async request */
-    fileprivate func asyncRequest(_ urlPath: String) {
-        let url = NSURL(string: urlPath)
+    fileprivate func asyncRequest(_ urlPath: String!) {
+        let urlStr: NSString = NSString(string: urlPath)
+        let urlConverted: String? = urlStr.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let url = URL(string: urlConverted!)
+        print(urlStr)
         let session = URLSession.shared
-        /*
+
         let task = session.dataTask(with: url!,
-                                    completionHandler: { (data, response, error) -> Void in
-                                        self.startParser(data, response: response, error: error as NSError?)
-                                        return ()
-        })
-        */
-        
-        var request = URLRequest(url:url!)
-        let task = URLSession.shared().dataTask(with: request as URLRequest) {
+            completionHandler: { (data, response, error) -> Void in
             self.startParser(data, response: response, error: error as NSError?)
-        }
-        
+            return ()
+        })
+
         task.resume()
     }
-    
+
     /* Start XML parsing */
     fileprivate func startParser(_ data: Data?, response: URLResponse?,
                                  error: NSError?) {
+      /*
         guard (data != nil && (response as! HTTPURLResponse).statusCode == 200) else {
             // TODO: error handling
             print("error:")
             print(String(describing: error))
             return
         }
-        
+ */
+        print("^")
         print(data)
     }
     
