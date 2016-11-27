@@ -102,7 +102,7 @@
                 <navigationController storyboardIdentifier="NavigationView" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="YmE-9V-YPZ" customClass="NavigationController" customModule="Limit" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="fBw-kc-Bbm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="fBw-kc-Bbm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -313,7 +313,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="IconLogoWhiteGreen.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dbD-XQ-0R8">
-                                <rect key="frame" x="120" y="179" width="135" height="57"/>
+                                <rect key="frame" x="120" y="180" width="135" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="IMg-UU-EP3"/>
                                     <constraint firstAttribute="height" constant="57" id="QEp-7H-fUa"/>
@@ -335,22 +335,22 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xQ8-u3-TbZ">
-                                <rect key="frame" x="77.5" y="281" width="220" height="105.5"/>
+                                <rect key="frame" x="77.5" y="282" width="220" height="104"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Turn On " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pZ-RV-yC2">
-                                        <rect key="frame" x="40.5" y="0.0" width="139.5" height="24"/>
+                                        <rect key="frame" x="39" y="0.0" width="142" height="23.5"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="20"/>
                                         <color key="textColor" red="0.31279743020304573" green="0.31279743020304573" blue="0.31279743020304573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Services" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axu-8Q-yi8">
-                                        <rect key="frame" x="30.5" y="24" width="159.5" height="25.5"/>
+                                        <rect key="frame" x="26.5" y="23.5" width="167.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="21"/>
                                         <color key="textColor" red="0.18236437182741116" green="0.18236437182741116" blue="0.18236437182741116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This way, we can determine how fast you are driving." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eJ-Js-g0S">
-                                        <rect key="frame" x="0.0" y="49.5" width="220" height="56"/>
+                                        <rect key="frame" x="0.0" y="48" width="220" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5eJ-Js-g0S" secondAttribute="height" multiplier="55:14" id="L4r-DP-ZMP"/>
                                             <constraint firstAttribute="width" constant="220" id="dF7-ah-vcg"/>
@@ -394,16 +394,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="paH-CO-hO3">
-                                <rect key="frame" x="54.5" y="298" width="266" height="71"/>
+                                <rect key="frame" x="55" y="298" width="266" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location is Disabled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ7-yC-nRw">
-                                        <rect key="frame" x="24.5" y="0.0" width="217.5" height="28"/>
+                                        <rect key="frame" x="24" y="0.0" width="218" height="29"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To enable location, go to your Settings App &gt; Privacy &gt; Location Services" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyN-Y3-4rg">
-                                        <rect key="frame" x="0.0" y="28" width="266" height="43"/>
+                                        <rect key="frame" x="0.0" y="29" width="266" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="FzD-EY-qnW"/>
                                             <constraint firstAttribute="width" constant="266" id="fj5-iV-ccW"/>
@@ -423,7 +423,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XC0-vZ-9fB">
-                                <rect key="frame" x="147.5" y="537" width="80" height="80"/>
+                                <rect key="frame" x="148" y="537" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XC0-vZ-9fB" secondAttribute="height" multiplier="1:1" id="PbW-oJ-k3q"/>
                                     <constraint firstAttribute="width" constant="80" id="T1p-ME-ytd"/>

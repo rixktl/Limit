@@ -96,6 +96,7 @@
 		D9F5ED4C1D2B115500482368 /* Limit WatchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D9F5ED2E1D2B115500482368 /* Limit WatchOS.app */; };
 		D9F5ED561D2B2DF100482368 /* WatchCommunicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5ED551D2B2DF100482368 /* WatchCommunicationModel.swift */; };
 		D9F5ED581D2B2E0000482368 /* AppCommunicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5ED571D2B2E0000482368 /* AppCommunicationModel.swift */; };
+		E12D142F1DEA6D6900AB114A /* limit_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E12D142E1DEA6D6900AB114A /* limit_icon.jpg */; };
 		E1ECB2681DEA42440025C845 /* OptionalStop.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB2661DEA42440025C845 /* OptionalStop.png */; };
 		E1ECB2691DEA42440025C845 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB2671DEA42440025C845 /* Start.png */; };
 		E1ECB26A1DEA42800025C845 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB2671DEA42440025C845 /* Start.png */; };
@@ -234,6 +235,7 @@
 		D9F5ED491D2B115500482368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F5ED551D2B2DF100482368 /* WatchCommunicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchCommunicationModel.swift; sourceTree = "<group>"; };
 		D9F5ED571D2B2E0000482368 /* AppCommunicationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCommunicationModel.swift; sourceTree = "<group>"; };
+		E12D142E1DEA6D6900AB114A /* limit_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = limit_icon.jpg; path = ../limit_icon.jpg; sourceTree = "<group>"; };
 		E1ECB2661DEA42440025C845 /* OptionalStop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OptionalStop.png; path = Media/StatusRings/OptionalStop.png; sourceTree = "<group>"; };
 		E1ECB2671DEA42440025C845 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Start.png; path = Media/StatusRings/Start.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -273,6 +275,7 @@
 		D994F3581D28BEF500E73A85 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				E12D142E1DEA6D6900AB114A /* limit_icon.jpg */,
 				E1ECB2661DEA42440025C845 /* OptionalStop.png */,
 				E1ECB2671DEA42440025C845 /* Start.png */,
 				D94AC8D91D2A7440006B13AD /* IconLogoBlackWhite.jpg */,
@@ -599,6 +602,7 @@
 				D9A5EF721D1B079F0077C1C0 /* Assets.xcassets in Resources */,
 				D9A5EF701D1B079F0077C1C0 /* Main.storyboard in Resources */,
 				D9AC10311D29DB7E00B75B04 /* Loading.gif in Resources */,
+				E12D142F1DEA6D6900AB114A /* limit_icon.jpg in Resources */,
 				D94AC8D81D2A73CF006B13AD /* WhiteButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

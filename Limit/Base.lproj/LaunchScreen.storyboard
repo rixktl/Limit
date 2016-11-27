@@ -21,25 +21,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIMIT" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="TN2-1o-Lj5">
-                                <rect key="frame" x="111" y="313.66666666666669" width="192" height="109"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="95"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="limit_icon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vDC-md-4lu">
+                                <rect key="frame" x="120" y="334" width="157" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="LaG-hw-OVH"/>
+                                    <constraint firstAttribute="width" constant="157" id="MOG-vl-XiM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2395363450050354" green="0.73997205495834351" blue="0.69547051191329956" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="TN2-1o-Lj5" secondAttribute="centerY" id="4D9-Qw-5nY"/>
-                            <constraint firstAttribute="centerX" secondItem="TN2-1o-Lj5" secondAttribute="centerX" id="oCB-RV-EJg"/>
+                            <constraint firstItem="vDC-md-4lu" firstAttribute="centerX" secondItem="mha-zg-sNn" secondAttribute="centerX" id="Hbb-IQ-6tq"/>
+                            <constraint firstItem="vDC-md-4lu" firstAttribute="centerY" secondItem="mha-zg-sNn" secondAttribute="centerY" id="t5P-Rd-CrX"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.266666666666666" y="355"/>
+            <point key="canvasLocation" x="28" y="355"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="limit_icon.jpg" width="697" height="332"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
